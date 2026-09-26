@@ -45,33 +45,113 @@ const dexState = {
 };
 
 // Helpers
-const spriteMap = new Map();
+const dexSpriteFilenameMap = new Map();
+const spriteMetadataMap = new Map();
+const croppedSpriteCache = new Map();
+
+function getSpriteFilename(p) {
+  const id1 = String(p.poke_id || '');
+  const id2 = String(p.dex || '');
+  let fname = dexSpriteFilenameMap.get(id1) || dexSpriteFilenameMap.get(id2);
+
+  if (!fname && p.nome) {
+    const targetClean = p.nome.toLowerCase().replace(/[^a-z0-9]/g, '');
+    for (const [id, f] of dexSpriteFilenameMap.entries()) {
+      const fClean = f.toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (fClean.includes(targetClean) || targetClean.includes(fClean.replace(/^[0-9]+/, ''))) {
+        fname = f;
+        break;
+      }
+    }
+  }
+
+  if (!fname && p.nome) {
+    const parts = p.nome.trim().split(' ');
+    const baseName = parts[parts.length - 1];
+    const baseClean = baseName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    for (const [id, f] of dexSpriteFilenameMap.entries()) {
+      const fClean = f.toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (fClean.includes(baseClean)) {
+        fname = f;
+        break;
+      }
+    }
+  }
+
+  return fname;
+}
 
 function getSpriteHTML(p, isShiny = false) {
-  const pId = String(p.poke_id || p.dex);
-  const info = spriteMap.get(pId);
-  if (!info) return `<i class="monster-icon"></i>`;
-
-  const spriteData = (isShiny && info.shiny) ? info.shiny : (info.normal || info.shiny);
-  if (!spriteData || !spriteData.file) return `<i class="monster-icon"></i>`;
-
-  const dir = 3; // Direção 3 = FRENTE
-  const tileW = spriteData.tileW || 32;
-  const tileH = spriteData.tileH || 32;
-  const dirs = spriteData.directions || 4;
-  const frames = spriteData.frames || 1;
-  const xOffset = (dir - 1) * tileW;
-
-  const src = `assets/sprites-pokemon/${spriteData.file}`;
   const boxSize = 32;
-  const scale = boxSize / Math.max(tileW, tileH);
-  const bgW = tileW * dirs * scale;
-  const bgH = frames * tileH * scale;
-  const bgX = -xOffset * scale;
-  const bgY = 0;
+  const fname = getSpriteFilename(p);
 
-  return `<div class="monster-sprite-box" style="width:${boxSize}px;height:${boxSize}px;display:grid;place-items:center;background:#18261b;border:1px solid #6a9b27;border-radius:5px;overflow:hidden;flex-shrink:0;">
-    <div style="width:${tileW * scale}px;height:${tileH * scale}px;background-image:url('${src}');background-position:${bgX}px ${bgY}px;background-size:${bgW}px ${bgH}px;image-rendering:pixelated;image-rendering:crisp-edges;"></div>
+  if (!fname) {
+    return `<div class="monster-sprite-box" style="width:${boxSize}px;height:${boxSize}px;display:grid;place-items:center;background:#18261b;border:1px solid #6a9b27;border-radius:5px;flex-shrink:0;">
+      <i class="monster-icon" style="border:0;background:transparent;"></i>
+    </div>`;
+  }
+
+  const folder = isShiny ? 'shiny' : 'normal';
+  const spriteFile = `${folder}/${fname}`;
+  const cacheKey = `${spriteFile}`;
+
+  const existingDataUrl = croppedSpriteCache.get(cacheKey);
+
+  if (existingDataUrl) {
+    return `<div class="monster-sprite-box" style="width:${boxSize}px;height:${boxSize}px;display:grid;place-items:center;background:#18261b;border:1px solid #6a9b27;border-radius:5px;overflow:hidden;flex-shrink:0;">
+      <img src="${existingDataUrl}" alt="${p.nome}" style="max-width:${boxSize}px;max-height:${boxSize}px;object-fit:contain;image-rendering:pixelated;image-rendering:crisp-edges;display:block;" />
+    </div>`;
+  }
+
+  const src = `assets/sprites-pokemon/${spriteFile}`;
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.onload = () => {
+    try {
+      const w = img.width;
+      const h = img.height;
+      const meta = spriteMetadataMap.get(spriteFile);
+
+      let sx = 0, sy = 0, cropW = w, cropH = h;
+
+      if (meta && meta.tileW && meta.frames) {
+        const tw = meta.tileW;
+        const th = meta.tileH;
+        const frs = meta.frames || 3;
+        const dir = 3; // Direção 3 = FRENTE / SUL
+
+        sx = (dir - 1) * frs * tw;
+        sy = 0;
+        if (sx >= w) {
+          const row = Math.floor(sx / w);
+          sx = sx % w;
+          sy = row * th;
+        }
+        cropW = tw;
+        cropH = th;
+      }
+
+      const canvas = document.createElement('canvas');
+      canvas.width = cropW;
+      canvas.height = cropH;
+      const ctx = canvas.getContext('2d');
+      ctx.imageSmoothingEnabled = false;
+
+      ctx.drawImage(img, sx, sy, cropW, cropH, 0, 0, cropW, cropH);
+      const dataUrl = canvas.toDataURL('image/png');
+      croppedSpriteCache.set(cacheKey, dataUrl);
+
+      document.querySelectorAll(`[data-sprite-key="${cacheKey}"]`).forEach(box => {
+        box.innerHTML = `<img src="${dataUrl}" alt="${p.nome}" style="max-width:${boxSize}px;max-height:${boxSize}px;object-fit:contain;image-rendering:pixelated;image-rendering:crisp-edges;display:block;" />`;
+      });
+    } catch (e) {
+      console.error('Erro ao cortar sprite para ' + p.nome, e);
+    }
+  };
+  img.src = src;
+
+  return `<div class="monster-sprite-box" data-sprite-key="${cacheKey}" style="width:${boxSize}px;height:${boxSize}px;display:grid;place-items:center;background:#18261b;border:1px solid #6a9b27;border-radius:5px;overflow:hidden;flex-shrink:0;">
+    <i class="monster-icon" style="border:0;background:transparent;"></i>
   </div>`;
 }
 
@@ -100,20 +180,29 @@ function cleanHunt(r) {
 
 async function loadPokemonData() {
   try {
-    const [res, mapRes] = await Promise.all([
+    const [res, dexMapRes, mapRes] = await Promise.all([
       fetch('data/pokedex_portal.json').then(r => r.json()),
-      fetch('assets/sprites-pokemon/mapping.json').then(r => r.json()).catch(() => [])
+      fetch('data/dex_sprite_map.json').then(r => r.json()).catch(() => ({})),
+      fetch('assets/sprites-pokemon/mapping.json').then(r => r.json()).catch(err => {
+        console.warn('mapping.json error:', err);
+        return [];
+      })
     ]);
 
+    Object.entries(dexMapRes || {}).forEach(([id, file]) => {
+      dexSpriteFilenameMap.set(String(id), file);
+    });
+
     (mapRes || []).forEach(item => {
-      if (item.pokeId) spriteMap.set(String(item.pokeId), item);
+      if (item.normal && item.normal.file) spriteMetadataMap.set(item.normal.file, item.normal);
+      if (item.shiny && item.shiny.file) spriteMetadataMap.set(item.shiny.file, item.shiny);
     });
 
     dexState.allSpecies = res.filter(p => p.is_cacavel);
     dexState.allSpecies.forEach(p => {
       p.tipos = [p.tipo1, p.tipo2].filter(Boolean);
     });
-    console.log('Dados carregados:', dexState.allSpecies.length, 'Pokémon caçáveis,', spriteMap.size, 'sprites mapeadas');
+    console.log('Dados carregados:', dexState.allSpecies.length, 'Pokémon caçáveis,', dexSpriteFilenameMap.size, 'mapa de arquivos,', spriteMetadataMap.size, 'metadados de atlas');
   } catch (err) {
     console.error('Erro ao carregar dados:', err);
   }
