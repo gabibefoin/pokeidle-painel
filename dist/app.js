@@ -160,7 +160,7 @@ function getSpriteHTML(p, isShiny = false) {
   </div>`;
 }
 
-const mon = p => `<div class="monster">${getSpriteHTML(p, dexState.currentTab === 'shiny' && dexState.apenasShiny)}<span>${p.nome}</span></div>`;
+const mon = p => `<div class="monster"><span>${p.nome}</span></div>`;
 const type = x => x ? `<span class="type ${x.toLowerCase()}">${x[0].toUpperCase()+x.slice(1).toLowerCase()}</span>` : '';
 const panel = (x, c = '') => `<section class="section-card ${c}">${x}</section>`;
 const names = ['Começando no PokéIdle','Guia de XP e Evolução','Bosses e Tokens: rota completa','Outland — guia de região completo','Estratégias de PvP e GvG','Mecânicas de shinies explicadas','Evento sazonal: Festival de Outono','Ginásio: primeiros passos'];
