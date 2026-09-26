@@ -179,6 +179,34 @@ function cleanHunt(r) {
   return `${reg}, Nv ${lvl}`;
 }
 
+function isRelevantDrop(itemStr) {
+  if (!itemStr) return false;
+  const lower = String(itemStr).trim().toLowerCase();
+  
+  // Excluir lixos que contêm 'stone' no nome mas não são pedras de evolução
+  if (['small stone', 'stone orb', 'branch of stone'].includes(lower)) return false;
+
+  // 1. Pedras de Evolução
+  if (lower.includes('stone')) return true;
+
+  // 5. Tokens, Fragmentos & Utilidades
+  if (
+    lower.includes('token') ||
+    lower.includes('fragmento') ||
+    lower.includes('fragment') ||
+    lower.includes('rope') ||
+    lower.includes('chave') ||
+    lower.includes('key') ||
+    lower.includes('bicicleta') ||
+    lower.includes('bike') ||
+    lower.includes('mega')
+  ) {
+    return true;
+  }
+
+  return false;
+}
+
 // ==========================================
 // DADOS
 // ==========================================
@@ -513,12 +541,13 @@ function renderTable(xpBoost, lootBoost) {
 
     if (currentTab === 'loot') {
       const goldNum = parseInt(r.ouro_por_derrota, 10) || 0;
-      const dropsArr = r.drops_parsed || [];
-      const dropsHtml = dropsArr.length
-        ? dropsArr.map(d => {
+      const relevantDrops = (r.drops_parsed || []).filter(d => isRelevantDrop(d.name || d.nome || d.item));
+      const dropsHtml = relevantDrops.length
+        ? relevantDrops.map(d => {
             let pct = d.pct;
             if (lootBoost && pct > 0) pct = Math.min(100, Math.round(pct * 1.4 * 100) / 100);
-            return `<span style="display:inline-block;margin:1px 3px;background:#1e2029;padding:2px 6px;border-radius:4px;font-size:11px;"><b style="color:#f59e0b">${d.name}</b> ${pct}%</span>`;
+            const itemName = d.name || d.nome || d.item;
+            return `<span style="display:inline-block;margin:1px 3px;background:#1e2029;padding:2px 6px;border-radius:4px;font-size:11px;"><b style="color:#f59e0b">${itemName}</b> ${pct}%</span>`;
           }).join('')
         : '—';
       return `<tr>
@@ -770,7 +799,7 @@ function filterBar(mode) {
           <span style="color:#858b95;font-size:11px;">a</span>
           <input class="control" id="gold-nv-max" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.goldLvlMax ?? ''}">
         </div>
-        <select class="control dropdown" id="filter-item-drop"><option value="">Todos os Drops (Itens)</option></select>
+        <select class="control dropdown" id="filter-item-drop"><option value="">Todos os Drops Relevantes</option></select>
         <button class="control check ${dexState.lootBoost ? 'selected' : ''}" id="dex-loot-boost">Loot Boost (+40%)</button>
         ${colToggleHTML()}
       </div>
@@ -1214,14 +1243,18 @@ function attachDexListeners(mode) {
     });
   }
 
-  // Preencher dropdown de itens da aba Loot
+  // Preencher dropdown de itens da aba Loot (apenas relevantes)
   if (mode === 'loot') {
     const itemSel = document.getElementById('filter-item-drop');
     if (itemSel && dexState.allSpecies.length > 0) {
       const itemSet = new Set();
-      dexState.allSpecies.forEach(s => (s.item_names || []).forEach(i => i && itemSet.add(i)));
+      dexState.allSpecies.forEach(s => {
+        (s.item_names || []).forEach(i => {
+          if (i && isRelevantDrop(i)) itemSet.add(i);
+        });
+      });
       const sorted = Array.from(itemSet).sort((a,b) => a.localeCompare(b));
-      itemSel.innerHTML = '<option value="">Todos os Drops (Itens)</option>' + sorted.map(i => `<option value="${i}">${i}</option>`).join('');
+      itemSel.innerHTML = '<option value="">Todos os Drops Relevantes</option>' + sorted.map(i => `<option value="${i}">${i}</option>`).join('');
     }
   }
 
