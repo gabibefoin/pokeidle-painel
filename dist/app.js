@@ -12,6 +12,7 @@ const dexState = {
   tipo2: '',
   regiao: '',
   apenasShiny: false,
+  hiddenCols: [],
 
   // Aba Captura
   ball: 'poke',
@@ -322,7 +323,12 @@ function renderTable(xpBoost, lootBoost) {
   const tbody = document.querySelector('.data-table tbody');
   if (!tbody) return;
 
-  const { filteredSpecies, currentTab, ball, captureBoost, shinyLure } = dexState;
+  const { filteredSpecies, currentTab, ball, captureBoost, shinyLure, hiddenCols = [] } = dexState;
+  const isHidden = colKey => hiddenCols.includes(colKey) ? ' col-hidden' : '';
+  const cell = (colKey, content, extraCls = '') => {
+    const cls = (extraCls + ' ' + isHidden(colKey)).trim();
+    return `<td data-col="${colKey}" class="${cls}">${content}</td>`;
+  };
 
   if (filteredSpecies.length === 0) {
     tbody.innerHTML = `<tr><td colspan="14" style="text-align:center;padding:2rem;color:#858b95;">Nenhum Pokémon encontrado com os filtros aplicados.</td></tr>`;
@@ -337,14 +343,14 @@ function renderTable(xpBoost, lootBoost) {
       const bd = getBallData(r, ball, captureBoost, shinyLure);
       const shinyText = bd.shiny ? '1 em ' + formatNum(bd.shiny) : '—';
       return `<tr>
-        <td class="rank">${formattedDex}</td>
-        <td>${mon(r)}</td>
-        <td><span class="type-row">${r.tipos.map(type).join('')}</span></td>
-        <td>${huntText}</td>
-        <td class="stat-positive">${bd.pct}<i class="meter"></i></td>
-        <td>${bd.derrotas}</td>
-        <td>${shinyText}</td>
-        <td><button class="detail" onclick="openDetailsModal('${r.dex}')">Detalhes</button></td>
+        ${cell('dex', formattedDex, 'rank')}
+        ${cell('nome', mon(r))}
+        ${cell('tipo', `<span class="type-row">${r.tipos.map(type).join('')}</span>`)}
+        ${cell('hunt', huntText)}
+        ${cell('captura', `${bd.pct}<i class="meter"></i>`, 'stat-positive')}
+        ${cell('derrotas', bd.derrotas)}
+        ${cell('shiny', shinyText)}
+        ${cell('acoes', `<button class="detail" onclick="openDetailsModal('${r.dex}')">Detalhes</button>`)}
       </tr>`;
     }
 
@@ -352,19 +358,19 @@ function renderTable(xpBoost, lootBoost) {
       const xpVal = xpBoost ? (r.xp_boosted || r.xp_base || 0) : (r.xp_base || r.xp_por_derrota || 0);
       const xpText = xpVal > 0 ? xpVal.toLocaleString('pt-BR') : '—';
       return `<tr>
-        <td class="rank">${formattedDex}</td>
-        <td>${mon(r)}</td>
-        <td><span class="type-row">${r.tipos.map(type).join('')}</span></td>
-        <td>${huntText}</td>
-        <td>${renderTypeBadges(r.f4_types)}</td>
-        <td>${renderTypeBadges(r.f2_types)}</td>
-        <td>${renderResistBadges(r)}</td>
-        <td>${renderTypeBadges(r.imune_types)}</td>
-        <td>${r.def_num || r.def || '—'}</td>
-        <td>${r.spdef_num || r.spdef || '—'}</td>
-        <td>${r.hp_num || r.hp || '—'}</td>
-        <td class="stat-green">${xpText}${xpBoost ? ' <span class="badge update">+50%</span>' : ''}</td>
-        <td><button class="detail" onclick="openDetailsModal('${r.dex}')">Detalhes</button></td>
+        ${cell('dex', formattedDex, 'rank')}
+        ${cell('nome', mon(r))}
+        ${cell('tipo', `<span class="type-row">${r.tipos.map(type).join('')}</span>`)}
+        ${cell('hunt', huntText)}
+        ${cell('f4', renderTypeBadges(r.f4_types), 'col-matchup')}
+        ${cell('f2', renderTypeBadges(r.f2_types), 'col-matchup')}
+        ${cell('resist', renderResistBadges(r), 'col-matchup')}
+        ${cell('imune', renderTypeBadges(r.imune_types), 'col-matchup')}
+        ${cell('def', r.def_num || r.def || '—')}
+        ${cell('spdef', r.spdef_num || r.spdef || '—')}
+        ${cell('hp', r.hp_num || r.hp || '—')}
+        ${cell('xp', `${xpText}${xpBoost ? ' <span class="badge update">+50%</span>' : ''}`, 'stat-green')}
+        ${cell('acoes', `<button class="detail" onclick="openDetailsModal('${r.dex}')">Detalhes</button>`)}
       </tr>`;
     }
 
@@ -379,32 +385,32 @@ function renderTable(xpBoost, lootBoost) {
           }).join('')
         : '—';
       return `<tr>
-        <td class="rank">${formattedDex}</td>
-        <td>${mon(r)}</td>
-        <td><span class="type-row">${r.tipos.map(type).join('')}</span></td>
-        <td>${huntText}</td>
-        <td class="stat-gold">${goldNum > 0 ? goldNum.toLocaleString('pt-BR') + ' Gold' : '—'}</td>
-        <td>${dropsHtml}</td>
-        <td><button class="detail" onclick="openDetailsModal('${r.dex}')">Detalhes</button></td>
+        ${cell('dex', formattedDex, 'rank')}
+        ${cell('nome', mon(r))}
+        ${cell('tipo', `<span class="type-row">${r.tipos.map(type).join('')}</span>`)}
+        ${cell('hunt', huntText)}
+        ${cell('gold', goldNum > 0 ? goldNum.toLocaleString('pt-BR') + ' Gold' : '—', 'stat-gold')}
+        ${cell('drops', dropsHtml)}
+        ${cell('acoes', `<button class="detail" onclick="openDetailsModal('${r.dex}')">Detalhes</button>`)}
       </tr>`;
     }
 
     if (currentTab === 'strong') {
       const evoText = r.evolui_para ? '→ ' + r.evolui_para : 'Não evolui';
       return `<tr>
-        <td class="rank">${formattedDex}</td>
-        <td>${mon(r)}</td>
-        <td><span class="type-row">${r.tipos.map(type).join('')}</span></td>
-        <td>${huntText}</td>
-        <td class="stat-positive">${r.bst_num || r.total_stats || '—'}</td>
-        <td>${r.atk_num || r.atk || '—'}</td>
-        <td>${r.def_num || r.def || '—'}</td>
-        <td>${r.spatk_num || r.spatk || '—'}</td>
-        <td>${r.spdef_num || r.spdef || '—'}</td>
-        <td>${r.spd_num || r.spd || '—'}</td>
-        <td><span class="badge update">Estágio ${r.estagio_num || r.estagio_evolutivo || 1}</span></td>
-        <td>${evoText}</td>
-        <td><button class="detail" onclick="openDetailsModal('${r.dex}')">Detalhes</button></td>
+        ${cell('dex', formattedDex, 'rank')}
+        ${cell('nome', mon(r))}
+        ${cell('tipo', `<span class="type-row">${r.tipos.map(type).join('')}</span>`)}
+        ${cell('hunt', huntText)}
+        ${cell('bst', r.bst_num || r.total_stats || '—', 'stat-positive')}
+        ${cell('atk', r.atk_num || r.atk || '—')}
+        ${cell('def', r.def_num || r.def || '—')}
+        ${cell('spatk', r.spatk_num || r.spatk || '—')}
+        ${cell('spdef', r.spdef_num || r.spdef || '—')}
+        ${cell('spd', r.spd_num || r.spd || '—')}
+        ${cell('estagio', `<span class="badge update">Estágio ${r.estagio_num || r.estagio_evolutivo || 1}</span>`)}
+        ${cell('evolucao', evoText)}
+        ${cell('acoes', `<button class="detail" onclick="openDetailsModal('${r.dex}')">Detalhes</button>`)}
       </tr>`;
     }
 
@@ -443,39 +449,126 @@ function typeSelectorHTML() {
 }
 
 function tableHeader(mode) {
-  const th = (label, col, extra = '') =>
-    `<th data-sort="${col}" style="cursor:pointer;" ${extra}>${label}<span class="sort-ico"></span></th>`;
+  const hiddenCols = dexState.hiddenCols || [];
+  const isHidden = colKey => hiddenCols.includes(colKey) ? ' col-hidden' : '';
+
+  const th = (label, colKey, extra = '', colCls = '') => {
+    const cls = (colCls + ' ' + isHidden(colKey)).trim();
+    return `<th data-col="${colKey}" data-sort="${colKey}" class="${cls}" style="cursor:pointer;" ${extra}>${label}<span class="sort-ico"></span></th>`;
+  };
+  const thNoSort = (label, colKey, colCls = '') => {
+    const cls = (colCls + ' ' + isHidden(colKey)).trim();
+    return `<th data-col="${colKey}" class="${cls}">${label}</th>`;
+  };
 
   if (mode === 'shiny') {
     return `<tr>
       ${th('#ID', 'dex')}${th('POKÉMON', 'nome')}${th('TIPOS', 'tipo')}${th('HUNT', 'hunt')}
       ${th('% CAPTURA', 'captura')}${th('DERROTAS (MÉDIA)', 'derrotas')}${th('SHINY (1 EM)', 'shiny')}
-      <th>AÇÕES</th>
+      ${thNoSort('AÇÕES', 'acoes')}
     </tr>`;
   }
   if (mode === 'hunt') {
     return `<tr>
       ${th('#ID', 'dex')}${th('POKÉMON', 'nome')}${th('TIPOS', 'tipo')}${th('HUNT / LOCAL', 'hunt')}
-      ${th('FRAQUEZA 4X', 'f4')}${th('FRAQUEZA 2X', 'f2')}${th('RESISTÊNCIA', 'resist')}${th('IMUNE', 'imune')}
+      ${th('FRAQUEZA 4X', 'f4', '', 'col-matchup')}${th('FRAQUEZA 2X', 'f2', '', 'col-matchup')}
+      ${th('RESISTÊNCIA', 'resist', '', 'col-matchup')}${th('IMUNE', 'imune', '', 'col-matchup')}
       ${th('DEF', 'def')}${th('SP.DEF', 'spdef')}${th('HP', 'hp')}${th('XP', 'xp')}
-      <th>AÇÕES</th>
+      ${thNoSort('AÇÕES', 'acoes')}
     </tr>`;
   }
   if (mode === 'loot') {
     return `<tr>
       ${th('#ID', 'dex')}${th('POKÉMON', 'nome')}${th('TIPOS', 'tipo')}${th('HUNT / LOCAL', 'hunt')}
       ${th('GOLD NPC', 'gold')}${th('DROPS & CHANCES', 'drops')}
-      <th>AÇÕES</th>
+      ${thNoSort('AÇÕES', 'acoes')}
     </tr>`;
   }
   if (mode === 'strong') {
     return `<tr>
       ${th('#ID', 'dex')}${th('POKÉMON', 'nome')}${th('TIPOS', 'tipo')}${th('HUNT / LOCAL', 'hunt')}
       ${th('BST TOTAL', 'bst')}${th('ATK', 'atk')}${th('DEF', 'def')}${th('SP.ATK', 'spatk')}${th('SP.DEF', 'spdef')}${th('SPEED', 'spd')}
-      ${th('ESTÁGIO', 'estagio')}<th>EVOLUÇÃO</th><th>AÇÕES</th>
+      ${th('ESTÁGIO', 'estagio')}${thNoSort('EVOLUÇÃO', 'evolucao')}${thNoSort('AÇÕES', 'acoes')}
     </tr>`;
   }
   return '<tr></tr>';
+}
+
+function colToggleHTML() {
+  const mode = dexState.currentTab;
+  const colsMap = {
+    shiny: [
+      { id: 'dex', label: '#ID' },
+      { id: 'nome', label: 'Pokémon' },
+      { id: 'tipo', label: 'Tipos' },
+      { id: 'hunt', label: 'Hunt / Local' },
+      { id: 'captura', label: '% Captura' },
+      { id: 'derrotas', label: 'Derrotas' },
+      { id: 'shiny', label: 'Shiny' }
+    ],
+    hunt: [
+      { id: 'dex', label: '#ID' },
+      { id: 'nome', label: 'Pokémon' },
+      { id: 'tipo', label: 'Tipos' },
+      { id: 'hunt', label: 'Hunt / Local' },
+      { id: 'f4', label: 'Fraqueza 4x' },
+      { id: 'f2', label: 'Fraqueza 2x' },
+      { id: 'resist', label: 'Resistência' },
+      { id: 'imune', label: 'Imunidade' },
+      { id: 'def', label: 'DEF' },
+      { id: 'spdef', label: 'SP.DEF' },
+      { id: 'hp', label: 'HP' },
+      { id: 'xp', label: 'XP' }
+    ],
+    loot: [
+      { id: 'dex', label: '#ID' },
+      { id: 'nome', label: 'Pokémon' },
+      { id: 'tipo', label: 'Tipos' },
+      { id: 'hunt', label: 'Hunt / Local' },
+      { id: 'gold', label: 'Gold NPC' },
+      { id: 'drops', label: 'Drops' }
+    ],
+    strong: [
+      { id: 'dex', label: '#ID' },
+      { id: 'nome', label: 'Pokémon' },
+      { id: 'tipo', label: 'Tipos' },
+      { id: 'hunt', label: 'Hunt / Local' },
+      { id: 'bst', label: 'BST Total' },
+      { id: 'atk', label: 'ATK' },
+      { id: 'def', label: 'DEF' },
+      { id: 'spatk', label: 'SP.ATK' },
+      { id: 'spdef', label: 'SP.DEF' },
+      { id: 'spd', label: 'SPEED' },
+      { id: 'estagio', label: 'Estágio' },
+      { id: 'evolucao', label: 'Evolução' }
+    ]
+  };
+
+  const currentCols = colsMap[mode] || [];
+  const hiddenCols = dexState.hiddenCols || [];
+
+  const items = currentCols.map(c => {
+    const isChecked = !hiddenCols.includes(c.id);
+    return `<label class="cols-popover-item">
+      <input type="checkbox" data-col-toggle="${c.id}" ${isChecked ? 'checked' : ''}>
+      <span>${c.label}</span>
+    </label>`;
+  }).join('');
+
+  return `<div class="cols-toggle-container">
+    <button class="control" id="cols-toggle-btn" style="display:inline-flex;align-items:center;gap:6px;">
+      <span>👁️</span> Colunas
+    </button>
+    <div class="cols-popover" id="cols-popover">
+      <div class="cols-popover-title">
+        <span>EXIBIR COLUNAS</span>
+        <small style="color:#7984f4;cursor:pointer;" id="cols-reset-btn">Restaurar</small>
+      </div>
+      <div class="cols-popover-list">
+        ${items}
+      </div>
+    </div>
+  </div>`;
 }
 
 function filterBar(mode) {
@@ -503,6 +596,7 @@ function filterBar(mode) {
           <button class="control check ${dexState.captureBoost ? 'selected' : ''}" id="dex-boost-capture">Capture Boost</button>
           <button class="control check ${dexState.shinyLure ? 'selected' : ''}" id="dex-boost-lure">Shiny Lure</button>
         </div>
+        ${colToggleHTML()}
       </div>
       <div class="filter-row-bottom" style="width:100%;">
         ${typeSelectorHTML()}
@@ -525,6 +619,7 @@ function filterBar(mode) {
         <select class="control dropdown" id="filter-r025">${typeMatchupOpts('Resistência 0,25x')}</select>
         <select class="control dropdown" id="filter-imune">${typeMatchupOpts('Imunidade')}</select>
         <button class="control check ${dexState.xpBoost ? 'selected' : ''}" id="dex-xp-boost">⚡ XP Boost (+50%)</button>
+        ${colToggleHTML()}
       </div>
       <div class="filter-row-bottom" style="width:100%;">
         ${typeSelectorHTML()}
@@ -543,6 +638,7 @@ function filterBar(mode) {
         </div>
         <select class="control dropdown" id="filter-item-drop"><option value="">Todos os Drops (Itens)</option></select>
         <button class="control check ${dexState.lootBoost ? 'selected' : ''}" id="dex-loot-boost">Loot Boost (+40%)</button>
+        ${colToggleHTML()}
       </div>
       <div class="filter-row-bottom" style="width:100%;">
         ${typeSelectorHTML()}
@@ -569,6 +665,7 @@ function filterBar(mode) {
           <option value="bst_desc">BST Total (Maior)</option>
           <option value="bst_asc">BST Total (Menor)</option>
         </select>
+        ${colToggleHTML()}
       </div>
       <div class="filter-row-bottom" style="width:100%;">
         ${typeSelectorHTML()}
@@ -945,6 +1042,38 @@ function attachDexListeners(mode) {
     dexState.sortDir = val === 'bst_desc' ? 'desc' : 'asc';
     applyFiltersAndRender();
   });
+
+  // Popover de ocultar colunas
+  const toggleBtn = document.getElementById('cols-toggle-btn');
+  const popover = document.getElementById('cols-popover');
+  if (toggleBtn && popover) {
+    toggleBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      popover.classList.toggle('open');
+    });
+    popover.addEventListener('click', e => {
+      e.stopPropagation();
+      const chk = e.target.closest('[data-col-toggle]');
+      if (chk) {
+        const colId = chk.dataset.colToggle;
+        if (chk.checked) {
+          dexState.hiddenCols = dexState.hiddenCols.filter(c => c !== colId);
+        } else {
+          if (!dexState.hiddenCols.includes(colId)) dexState.hiddenCols.push(colId);
+        }
+        document.querySelectorAll(`.data-table [data-col="${colId}"]`).forEach(el => {
+          el.classList.toggle('col-hidden', !chk.checked);
+        });
+      }
+      if (e.target.id === 'cols-reset-btn') {
+        dexState.hiddenCols = [];
+        renderDex();
+      }
+    });
+    document.addEventListener('click', () => {
+      popover.classList.remove('open');
+    });
+  }
 
   // Preencher dropdown de itens da aba Loot
   if (mode === 'loot') {
