@@ -45,7 +45,37 @@ const dexState = {
 };
 
 // Helpers
-const mon = p => `<div class="monster"><i class="monster-icon"></i>${p.nome}</div>`;
+const spriteMap = new Map();
+
+function getSpriteHTML(p, isShiny = false) {
+  const pId = String(p.poke_id || p.dex);
+  const info = spriteMap.get(pId);
+  if (!info) return `<i class="monster-icon"></i>`;
+
+  const spriteData = (isShiny && info.shiny) ? info.shiny : (info.normal || info.shiny);
+  if (!spriteData || !spriteData.file) return `<i class="monster-icon"></i>`;
+
+  const dir = 3; // Direção 3 = FRENTE
+  const tileW = spriteData.tileW || 32;
+  const tileH = spriteData.tileH || 32;
+  const dirs = spriteData.directions || 4;
+  const frames = spriteData.frames || 1;
+  const xOffset = (dir - 1) * tileW;
+
+  const src = `assets/sprites-pokemon/${spriteData.file}`;
+  const boxSize = 32;
+  const scale = boxSize / Math.max(tileW, tileH);
+  const bgW = tileW * dirs * scale;
+  const bgH = frames * tileH * scale;
+  const bgX = -xOffset * scale;
+  const bgY = 0;
+
+  return `<div class="monster-sprite-box" style="width:${boxSize}px;height:${boxSize}px;display:grid;place-items:center;background:#18261b;border:1px solid #6a9b27;border-radius:5px;overflow:hidden;flex-shrink:0;">
+    <div style="width:${tileW * scale}px;height:${tileH * scale}px;background-image:url('${src}');background-position:${bgX}px ${bgY}px;background-size:${bgW}px ${bgH}px;image-rendering:pixelated;image-rendering:crisp-edges;"></div>
+  </div>`;
+}
+
+const mon = p => `<div class="monster">${getSpriteHTML(p, dexState.currentTab === 'shiny' && dexState.apenasShiny)}<span>${p.nome}</span></div>`;
 const type = x => x ? `<span class="type ${x.toLowerCase()}">${x[0].toUpperCase()+x.slice(1).toLowerCase()}</span>` : '';
 const panel = (x, c = '') => `<section class="section-card ${c}">${x}</section>`;
 const names = ['Começando no PokéIdle','Guia de XP e Evolução','Bosses e Tokens: rota completa','Outland — guia de região completo','Estratégias de PvP e GvG','Mecânicas de shinies explicadas','Evento sazonal: Festival de Outono','Ginásio: primeiros passos'];
@@ -70,16 +100,22 @@ function cleanHunt(r) {
 
 async function loadPokemonData() {
   try {
-    const res = await fetch('data/pokedex_portal.json');
-    const raw = await res.json();
-    // Apenas caçáveis, espelhando o hub
-    dexState.allSpecies = raw.filter(p => p.is_cacavel);
+    const [res, mapRes] = await Promise.all([
+      fetch('data/pokedex_portal.json').then(r => r.json()),
+      fetch('assets/sprites-pokemon/mapping.json').then(r => r.json()).catch(() => [])
+    ]);
+
+    (mapRes || []).forEach(item => {
+      if (item.pokeId) spriteMap.set(String(item.pokeId), item);
+    });
+
+    dexState.allSpecies = res.filter(p => p.is_cacavel);
     dexState.allSpecies.forEach(p => {
       p.tipos = [p.tipo1, p.tipo2].filter(Boolean);
     });
-    console.log('Dados carregados:', dexState.allSpecies.length, 'Pokémon caçáveis');
+    console.log('Dados carregados:', dexState.allSpecies.length, 'Pokémon caçáveis,', spriteMap.size, 'sprites mapeadas');
   } catch (err) {
-    console.error('Erro ao carregar pokedex_portal.json:', err);
+    console.error('Erro ao carregar dados:', err);
   }
 }
 
