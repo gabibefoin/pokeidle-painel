@@ -478,11 +478,11 @@ function filterBar(mode) {
   `;
 
   if (mode === 'shiny') {
-    return `<div class="filter-groups">
-      <div class="filter-group filter-basics" style="flex-wrap:wrap;gap:8px;align-items:center;">
+    return `<div class="filter-groups" style="display:flex;flex-direction:column;gap:10px;width:100%;">
+      <div class="filter-row-top" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;width:100%;">
         ${globalFilters}
         <button class="control ${dexState.apenasShiny ? 'selected' : ''}" id="dex-apenas-shiny">✨ Apenas Shiny</button>
-        <div class="filter-group ball-group" style="display:inline-flex;align-items:center;gap:6px;">
+        <div class="ball-group" style="display:inline-flex;align-items:center;gap:6px;">
           <span class="group-label">POKÉBOLA</span>
           <button class="control ball ${dexState.ball === 'poke' ? 'selected' : ''}" data-ball="poke">Poké Ball (x1)</button>
           <button class="control ball ${dexState.ball === 'great' ? 'selected' : ''}" data-ball="great">Great Ball</button>
@@ -490,13 +490,15 @@ function filterBar(mode) {
           <button class="control ball ${dexState.ball === 'ultra' ? 'selected' : ''}" data-ball="ultra">Ultra Ball</button>
           <button class="control ball ${dexState.ball === 'beast' ? 'selected' : ''}" data-ball="beast">Beast Ball</button>
         </div>
-        <div class="filter-group boost-options" style="display:inline-flex;align-items:center;gap:6px;">
+        <div class="boost-options" style="display:inline-flex;align-items:center;gap:6px;">
           <span class="group-label">BOOSTS ATIVOS</span>
           <button class="control check ${dexState.captureBoost ? 'selected' : ''}" id="dex-boost-capture">Capture Boost</button>
           <button class="control check ${dexState.shinyLure ? 'selected' : ''}" id="dex-boost-lure">Shiny Lure</button>
         </div>
       </div>
-      ${typeSelectorHTML()}
+      <div class="filter-row-bottom" style="width:100%;">
+        ${typeSelectorHTML()}
+      </div>
     </div>`;
   }
 
