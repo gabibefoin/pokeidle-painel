@@ -120,15 +120,20 @@ function getSpriteHTML(p, isShiny = false) {
         const frs = meta.frames || 3;
         const dir = 3; // Direção 3 = FRENTE / SUL
 
-        sx = (dir - 1) * frs * tw;
+        const cellW = Math.floor((tw * 33) / 32);
+        const cellH = Math.floor((th * 33) / 32);
+
+        const colIdx = (dir - 1) * frs;
+
+        sx = colIdx * cellW;
         sy = 0;
         if (sx >= w) {
           const row = Math.floor(sx / w);
           sx = sx % w;
-          sy = row * th;
+          sy = row * cellH;
         }
-        cropW = tw;
-        cropH = th;
+        cropW = cellW;
+        cropH = cellH;
       }
 
       const canvas = document.createElement('canvas');
