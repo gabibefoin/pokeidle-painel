@@ -826,9 +826,6 @@ function pokedex(mode = 'shiny') {
       <button class="${mode === 'strong' ? 'active' : ''}" data-mode="strong">Pokémons Fortes</button>
     </div>
     ${filterBar(mode)}
-    <div style="display:flex;justify-content:flex-end;padding:4px 0 8px;font-size:11px;color:#858b95;">
-      <span id="dex-counter">Carregando...</span>
-    </div>
     <div class="data-panel">
       <table class="data-table">
         <thead>${tableHeader(mode)}</thead>
