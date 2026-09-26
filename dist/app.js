@@ -503,12 +503,14 @@ function filterBar(mode) {
   }
 
   if (mode === 'hunt') {
-    return `<div class="filter-groups">
-      <div class="filter-group filter-basics" style="flex-wrap:wrap;gap:6px;">
+    return `<div class="filter-groups" style="display:flex;flex-direction:column;gap:10px;width:100%;">
+      <div class="filter-row-top" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;width:100%;">
         ${globalFilters}
-        <input class="control" id="hunt-nv-min" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.huntLvlMin ?? ''}">
-        <span style="color:#858b95;font-size:11px;align-self:center;">a</span>
-        <input class="control" id="hunt-nv-max" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.huntLvlMax ?? ''}">
+        <div style="display:inline-flex;align-items:center;gap:4px;">
+          <input class="control" id="hunt-nv-min" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.huntLvlMin ?? ''}">
+          <span style="color:#858b95;font-size:11px;">a</span>
+          <input class="control" id="hunt-nv-max" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.huntLvlMax ?? ''}">
+        </div>
         <select class="control dropdown" id="filter-f4">${typeMatchupOpts('Fraqueza 4x')}</select>
         <select class="control dropdown" id="filter-f2">${typeMatchupOpts('Fraqueza 2x')}</select>
         <select class="control dropdown" id="filter-r05">${typeMatchupOpts('Resistência 0,5x')}</select>
@@ -516,31 +518,39 @@ function filterBar(mode) {
         <select class="control dropdown" id="filter-imune">${typeMatchupOpts('Imunidade 0x')}</select>
         <button class="control check ${dexState.xpBoost ? 'selected' : ''}" id="dex-xp-boost">⚡ XP Boost (+50%)</button>
       </div>
-      ${typeSelectorHTML()}
+      <div class="filter-row-bottom" style="width:100%;">
+        ${typeSelectorHTML()}
+      </div>
     </div>`;
   }
 
   if (mode === 'loot') {
-    return `<div class="filter-groups">
-      <div class="filter-group filter-basics" style="flex-wrap:wrap;gap:6px;">
+    return `<div class="filter-groups" style="display:flex;flex-direction:column;gap:10px;width:100%;">
+      <div class="filter-row-top" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;width:100%;">
         ${globalFilters}
-        <input class="control" id="gold-nv-min" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.goldLvlMin ?? ''}">
-        <span style="color:#858b95;font-size:11px;align-self:center;">a</span>
-        <input class="control" id="gold-nv-max" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.goldLvlMax ?? ''}">
+        <div style="display:inline-flex;align-items:center;gap:4px;">
+          <input class="control" id="gold-nv-min" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.goldLvlMin ?? ''}">
+          <span style="color:#858b95;font-size:11px;">a</span>
+          <input class="control" id="gold-nv-max" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.goldLvlMax ?? ''}">
+        </div>
         <select class="control dropdown" id="filter-item-drop"><option value="">Todos os Drops (Itens)</option></select>
         <button class="control check ${dexState.lootBoost ? 'selected' : ''}" id="dex-loot-boost">Loot Boost (+40%)</button>
       </div>
-      ${typeSelectorHTML()}
+      <div class="filter-row-bottom" style="width:100%;">
+        ${typeSelectorHTML()}
+      </div>
     </div>`;
   }
 
   if (mode === 'strong') {
-    return `<div class="filter-groups">
-      <div class="filter-group filter-basics" style="flex-wrap:wrap;gap:6px;">
+    return `<div class="filter-groups" style="display:flex;flex-direction:column;gap:10px;width:100%;">
+      <div class="filter-row-top" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;width:100%;">
         ${globalFilters}
-        <input class="control" id="fortes-nv-min" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.fortesLvlMin ?? ''}">
-        <span style="color:#858b95;font-size:11px;align-self:center;">a</span>
-        <input class="control" id="fortes-nv-max" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.fortesLvlMax ?? ''}">
+        <div style="display:inline-flex;align-items:center;gap:4px;">
+          <input class="control" id="fortes-nv-min" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.fortesLvlMin ?? ''}">
+          <span style="color:#858b95;font-size:11px;">a</span>
+          <input class="control" id="fortes-nv-max" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.fortesLvlMax ?? ''}">
+        </div>
         <select class="control dropdown" id="filter-estagio">
           <option value="">Todos Estágios</option>
           <option value="1">Estágio 1</option>
@@ -552,7 +562,9 @@ function filterBar(mode) {
           <option value="bst_asc">BST Total (Menor)</option>
         </select>
       </div>
-      ${typeSelectorHTML()}
+      <div class="filter-row-bottom" style="width:100%;">
+        ${typeSelectorHTML()}
+      </div>
     </div>`;
   }
 
