@@ -183,8 +183,8 @@ function isRelevantDrop(itemStr) {
   if (!itemStr) return false;
   const lower = String(itemStr).trim().toLowerCase();
   
-  // Excluir lixos que contêm 'stone' no nome mas não são pedras de evolução
-  if (['small stone', 'stone orb', 'branch of stone'].includes(lower)) return false;
+  // Excluir lixos que contêm 'stone' no nome mas não são pedras de evolução ou monkey paw
+  if (['small stone', 'stone orb', 'branch of stone', 'monkey paw'].includes(lower)) return false;
 
   // 1. Pedras de Evolução
   if (lower.includes('stone')) return true;
@@ -196,7 +196,7 @@ function isRelevantDrop(itemStr) {
     lower.includes('fragment') ||
     lower.includes('rope') ||
     lower.includes('chave') ||
-    lower.includes('key') ||
+    /\bkey\b/.test(lower) ||
     lower.includes('bicicleta') ||
     lower.includes('bike') ||
     lower.includes('mega')
@@ -799,7 +799,7 @@ function filterBar(mode) {
           <span style="color:#858b95;font-size:11px;">a</span>
           <input class="control" id="gold-nv-max" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.goldLvlMax ?? ''}">
         </div>
-        <select class="control dropdown" id="filter-item-drop"><option value="">Todos os Drops Relevantes</option></select>
+        <select class="control dropdown" id="filter-item-drop"><option value="">Todas as stones</option></select>
         <button class="control check ${dexState.lootBoost ? 'selected' : ''}" id="dex-loot-boost">Loot Boost (+40%)</button>
         ${colToggleHTML()}
       </div>
@@ -1254,7 +1254,7 @@ function attachDexListeners(mode) {
         });
       });
       const sorted = Array.from(itemSet).sort((a,b) => a.localeCompare(b));
-      itemSel.innerHTML = '<option value="">Todos os Drops Relevantes</option>' + sorted.map(i => `<option value="${i}">${i}</option>`).join('');
+      itemSel.innerHTML = '<option value="">Todas as stones</option>' + sorted.map(i => `<option value="${i}">${i}</option>`).join('');
     }
   }
 
