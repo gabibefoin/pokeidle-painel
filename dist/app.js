@@ -23,8 +23,7 @@ const dexState = {
   huntLvlMax: null,
   f4Filter: '',
   f2Filter: '',
-  r05Filter: '',
-  r025Filter: '',
+  resistFilter: '',
   imuneFilter: '',
   xpBoost: false,
 
@@ -209,13 +208,14 @@ function applyFiltersAndRender() {
         if (f2Filter === 'has_any') { if (!(s.f2_types || []).length) return false; }
         else { if (!(s.f2_types || []).includes(f2Filter)) return false; }
       }
-      if (r05Filter) {
-        if (r05Filter === 'has_any') { if (!(s.r05_types || []).length) return false; }
-        else { if (!(s.r05_types || []).includes(r05Filter)) return false; }
-      }
-      if (r025Filter) {
-        if (r025Filter === 'has_any') { if (!(s.r025_types || []).length) return false; }
-        else { if (!(s.r025_types || []).includes(r025Filter)) return false; }
+      if (resistFilter) {
+        if (resistFilter === 'has_any') {
+          if (!(s.r05_types || []).length && !(s.r025_types || []).length) return false;
+        } else {
+          const has05 = (s.r05_types || []).includes(resistFilter);
+          const has025 = (s.r025_types || []).includes(resistFilter);
+          if (!has05 && !has025) return false;
+        }
       }
       if (imuneFilter) {
         if (imuneFilter === 'has_any') { if (!(s.imune_types || []).length) return false; }
@@ -309,6 +309,15 @@ function renderTypeBadges(typesArray) {
   return `<span class="type-row">${typesArray.map(type).join('')}</span>`;
 }
 
+function renderResistBadges(r) {
+  const r05 = r.r05_types || [];
+  const r025 = r.r025_types || [];
+  if (!r05.length && !r025.length) return '<span style="color:#555">—</span>';
+  const b05 = r05.map(t => `<span class="type-badge-wrap">${type(t)}</span>`).join('');
+  const b025 = r025.map(t => `<span class="type-badge-wrap">${type(t)}<small style="color:#f4af25;font-size:8px;font-weight:800;">0,25x</small></span>`).join('');
+  return `<span class="type-row">${b05}${b025}</span>`;
+}
+
 function renderTable(xpBoost, lootBoost) {
   const tbody = document.querySelector('.data-table tbody');
   if (!tbody) return;
@@ -349,8 +358,7 @@ function renderTable(xpBoost, lootBoost) {
         <td>${huntText}</td>
         <td>${renderTypeBadges(r.f4_types)}</td>
         <td>${renderTypeBadges(r.f2_types)}</td>
-        <td>${renderTypeBadges(r.r05_types)}</td>
-        <td>${renderTypeBadges(r.r025_types)}</td>
+        <td>${renderResistBadges(r)}</td>
         <td>${renderTypeBadges(r.imune_types)}</td>
         <td>${r.def_num || r.def || '—'}</td>
         <td>${r.spdef_num || r.spdef || '—'}</td>
@@ -412,13 +420,13 @@ const TYPE_OPTS = ['NORMAL','FIRE','WATER','GRASS','ELECTRIC','ICE','FIGHTING','
 const REGION_OPTS = ['Kanto','Johto','Hoenn','Sinnoh','Unova','Kalos','Alola','Galar','Paldea'];
 
 function typeMatchupOpts(label) {
-  return `<option value="">${label} (Todas)</option>` +
+  return `<option value="">${label}</option>` +
     `<option value="has_any">Qualquer</option>` +
     TYPE_OPTS.map(t => `<option value="${t}">${t[0] + t.slice(1).toLowerCase()}</option>`).join('');
 }
 
 function regionOpts() {
-  return `<option value="">Todas as Áreas</option>` + REGION_OPTS.map(r => `<option value="${r}">${r}</option>`).join('');
+  return `<option value="">Região</option>` + REGION_OPTS.map(r => `<option value="${r}">${r}</option>`).join('');
 }
 
 // Seletor visual de tipos (clicável, até 2 seleções)
@@ -448,7 +456,7 @@ function tableHeader(mode) {
   if (mode === 'hunt') {
     return `<tr>
       ${th('#ID', 'dex')}${th('POKÉMON', 'nome')}${th('TIPOS', 'tipo')}${th('HUNT / LOCAL', 'hunt')}
-      ${th('FRAQUEZA 4X', 'f4')}${th('FRAQUEZA 2X', 'f2')}${th('RESIST. 0,5X', 'r05')}${th('RESIST. 0,25X', 'r025')}${th('IMUNE', 'imune')}
+      ${th('FRAQUEZA 4X', 'f4')}${th('FRAQUEZA 2X', 'f2')}${th('RESISTÊNCIA', 'resist')}${th('IMUNE', 'imune')}
       ${th('DEF', 'def')}${th('SP.DEF', 'spdef')}${th('HP', 'hp')}${th('XP', 'xp')}
       <th>AÇÕES</th>
     </tr>`;
@@ -513,9 +521,8 @@ function filterBar(mode) {
         </div>
         <select class="control dropdown" id="filter-f4">${typeMatchupOpts('Fraqueza 4x')}</select>
         <select class="control dropdown" id="filter-f2">${typeMatchupOpts('Fraqueza 2x')}</select>
-        <select class="control dropdown" id="filter-r05">${typeMatchupOpts('Resistência 0,5x')}</select>
-        <select class="control dropdown" id="filter-r025">${typeMatchupOpts('Resistência 0,25x')}</select>
-        <select class="control dropdown" id="filter-imune">${typeMatchupOpts('Imunidade 0x')}</select>
+        <select class="control dropdown" id="filter-resist">${typeMatchupOpts('Resistência')}</select>
+        <select class="control dropdown" id="filter-imune">${typeMatchupOpts('Imunidade')}</select>
         <button class="control check ${dexState.xpBoost ? 'selected' : ''}" id="dex-xp-boost">⚡ XP Boost (+50%)</button>
       </div>
       <div class="filter-row-bottom" style="width:100%;">
@@ -790,8 +797,7 @@ function attachDexListeners(mode) {
   setVal('dex-regiao', dexState.regiao);
   setVal('filter-f4', dexState.f4Filter);
   setVal('filter-f2', dexState.f2Filter);
-  setVal('filter-r05', dexState.r05Filter);
-  setVal('filter-r025', dexState.r025Filter);
+  setVal('filter-resist', dexState.resistFilter);
   setVal('filter-imune', dexState.imuneFilter);
 
   // Seletor visual de tipos — clique em tag seleciona tipo 1 (roxo) ou tipo 2 (amarelo)
@@ -881,12 +887,8 @@ function attachDexListeners(mode) {
     dexState.f2Filter = e.target.value;
     applyFiltersAndRender();
   });
-  document.getElementById('filter-r05')?.addEventListener('change', e => {
-    dexState.r05Filter = e.target.value;
-    applyFiltersAndRender();
-  });
-  document.getElementById('filter-r025')?.addEventListener('change', e => {
-    dexState.r025Filter = e.target.value;
+  document.getElementById('filter-resist')?.addEventListener('change', e => {
+    dexState.resistFilter = e.target.value;
     applyFiltersAndRender();
   });
   document.getElementById('filter-imune')?.addEventListener('change', e => {
