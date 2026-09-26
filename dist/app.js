@@ -484,18 +484,20 @@ function filterBar(mode) {
         <button class="control ${dexState.apenasShiny ? 'selected' : ''}" id="dex-apenas-shiny">✨ Apenas Shiny</button>
       </div>
       ${typeSelectorHTML()}
-      <div class="filter-group ball-group">
-        <span class="group-label">POKÉBOLA</span>
-        <button class="control ball ${dexState.ball === 'poke' ? 'selected' : ''}" data-ball="poke">Poké Ball (x1)</button>
-        <button class="control ball ${dexState.ball === 'great' ? 'selected' : ''}" data-ball="great">Great Ball</button>
-        <button class="control ball ${dexState.ball === 'super' ? 'selected' : ''}" data-ball="super">Super Ball</button>
-        <button class="control ball ${dexState.ball === 'ultra' ? 'selected' : ''}" data-ball="ultra">Ultra Ball</button>
-        <button class="control ball ${dexState.ball === 'beast' ? 'selected' : ''}" data-ball="beast">Beast Ball</button>
-      </div>
-      <div class="filter-group boost-options">
-        <span class="group-label">BOOSTS ATIVOS</span>
-        <button class="control check ${dexState.captureBoost ? 'selected' : ''}" id="dex-boost-capture">Capture Boost</button>
-        <button class="control check ${dexState.shinyLure ? 'selected' : ''}" id="dex-boost-lure">Shiny Lure</button>
+      <div class="filter-group ball-boost-row" style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+        <div class="filter-group ball-group" style="display:flex;align-items:center;gap:6px;">
+          <span class="group-label">POKÉBOLA</span>
+          <button class="control ball ${dexState.ball === 'poke' ? 'selected' : ''}" data-ball="poke">Poké Ball (x1)</button>
+          <button class="control ball ${dexState.ball === 'great' ? 'selected' : ''}" data-ball="great">Great Ball</button>
+          <button class="control ball ${dexState.ball === 'super' ? 'selected' : ''}" data-ball="super">Super Ball</button>
+          <button class="control ball ${dexState.ball === 'ultra' ? 'selected' : ''}" data-ball="ultra">Ultra Ball</button>
+          <button class="control ball ${dexState.ball === 'beast' ? 'selected' : ''}" data-ball="beast">Beast Ball</button>
+        </div>
+        <div class="filter-group boost-options" style="display:flex;align-items:center;gap:6px;">
+          <span class="group-label">BOOSTS ATIVOS</span>
+          <button class="control check ${dexState.captureBoost ? 'selected' : ''}" id="dex-boost-capture">Capture Boost</button>
+          <button class="control check ${dexState.shinyLure ? 'selected' : ''}" id="dex-boost-lure">Shiny Lure</button>
+        </div>
       </div>
     </div>`;
   }
