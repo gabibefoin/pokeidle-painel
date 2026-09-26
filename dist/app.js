@@ -46,7 +46,7 @@ const dexState = {
 
 // Helpers
 const mon = p => `<div class="monster"><i class="monster-icon"></i>${p.nome}</div>`;
-const type = x => `<span class="type ${x ? x.toLowerCase() : ''}">${x}</span>`;
+const type = x => x ? `<span class="type ${x.toLowerCase()}">${x[0].toUpperCase()+x.slice(1).toLowerCase()}</span>` : '';
 const panel = (x, c = '') => `<section class="section-card ${c}">${x}</section>`;
 const names = ['Começando no PokéIdle','Guia de XP e Evolução','Bosses e Tokens: rota completa','Outland — guia de região completo','Estratégias de PvP e GvG','Mecânicas de shinies explicadas','Evento sazonal: Festival de Outono','Ginásio: primeiros passos'];
 
@@ -408,12 +408,8 @@ function renderTable(xpBoost, lootBoost) {
 // VIEWS
 // ==========================================
 
-const TYPE_OPTS = ['BUG','POISON','NORMAL','FLYING','GRASS','WATER','FIRE','ELECTRIC','GROUND','PSYCHIC','ROCK','ICE','FIGHTING','GHOST','DRAGON','STEEL','DARK','FAIRY'];
+const TYPE_OPTS = ['NORMAL','FIRE','WATER','GRASS','ELECTRIC','ICE','FIGHTING','POISON','GROUND','FLYING','PSYCHIC','BUG','ROCK','GHOST','DRAGON','DARK','STEEL','FAIRY'];
 const REGION_OPTS = ['Kanto','Johto','Hoenn','Sinnoh','Unova','Kalos','Alola','Galar','Paldea'];
-
-function typeSelectOpts(label) {
-  return `<option value="">${label}</option>` + TYPE_OPTS.map(t => `<option value="${t}">${t[0] + t.slice(1).toLowerCase()}</option>`).join('');
-}
 
 function typeMatchupOpts(label) {
   return `<option value="">${label} (Todas)</option>` +
@@ -423,6 +419,28 @@ function typeMatchupOpts(label) {
 
 function regionOpts() {
   return `<option value="">Todas as Áreas</option>` + REGION_OPTS.map(r => `<option value="${r}">${r}</option>`).join('');
+}
+
+// Seletor visual de tipos (clicável, até 2 seleções)
+function typeSelectorHTML() {
+  const t1 = dexState.tipo1;
+  const t2 = dexState.tipo2;
+  const tags = TYPE_OPTS.map(t => {
+    let cls = t.toLowerCase();
+    if (t === t1) cls += ' sel-1';
+    else if (t === t2) cls += ' sel-2';
+    return `<span class="type ${cls}" data-type-filter="${t}">${t[0]+t.slice(1).toLowerCase()}</span>`;
+  }).join('');
+  const hint = t1 && t2
+    ? `<span class="type-selector-hint">2 selecionados — clique para remover</span>`
+    : t1
+    ? `<span class="type-selector-hint">+ selecione 2º tipo (amarelo)</span>`
+    : `<span class="type-selector-hint">selecione até 2 tipos</span>`;
+  return `<div class="type-selector" id="type-selector">
+    <span class="type-selector-label">TIPOS</span>
+    ${tags}
+    ${hint}
+  </div>`;
 }
 
 function tableHeader(mode) {
@@ -472,10 +490,9 @@ function filterBar(mode) {
     return `<div class="filter-groups">
       <div class="filter-group filter-basics">
         ${globalFilters}
-        <select class="control dropdown" id="dex-tipo1">${typeSelectOpts('Tipo 1 (Todos)')}</select>
-        <select class="control dropdown" id="dex-tipo2">${typeSelectOpts('Tipo 2 (Qualquer)')}</select>
-        <button class="control ${dexState.apenasShiny ? 'selected' : ''}" id="dex-apenas-shiny">Apenas Shiny</button>
+        <button class="control ${dexState.apenasShiny ? 'selected' : ''}" id="dex-apenas-shiny">✨ Apenas Shiny</button>
       </div>
+      ${typeSelectorHTML()}
       <div class="filter-group ball-group">
         <span class="group-label">POKÉBOLA</span>
         <button class="control ball ${dexState.ball === 'poke' ? 'selected' : ''}" data-ball="poke">Poké Ball (x1)</button>
@@ -499,17 +516,14 @@ function filterBar(mode) {
         <input class="control" id="hunt-nv-min" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.huntLvlMin ?? ''}">
         <span style="color:#858b95;font-size:11px;align-self:center;">a</span>
         <input class="control" id="hunt-nv-max" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.huntLvlMax ?? ''}">
-        <select class="control dropdown" id="dex-tipo1">${typeSelectOpts('Tipo 1 (Todos)')}</select>
-        <select class="control dropdown" id="dex-tipo2">${typeSelectOpts('Tipo 2 (Qualquer)')}</select>
         <select class="control dropdown" id="filter-f4">${typeMatchupOpts('Fraqueza 4x')}</select>
         <select class="control dropdown" id="filter-f2">${typeMatchupOpts('Fraqueza 2x')}</select>
         <select class="control dropdown" id="filter-r05">${typeMatchupOpts('Resistência 0,5x')}</select>
         <select class="control dropdown" id="filter-r025">${typeMatchupOpts('Resistência 0,25x')}</select>
         <select class="control dropdown" id="filter-imune">${typeMatchupOpts('Imunidade 0x')}</select>
+        <button class="control check ${dexState.xpBoost ? 'selected' : ''}" id="dex-xp-boost">⚡ XP Boost (+50%)</button>
       </div>
-      <div class="filter-group boost-options">
-        <button class="control check ${dexState.xpBoost ? 'selected' : ''}" id="dex-xp-boost">XP Boost (+50%)</button>
-      </div>
+      ${typeSelectorHTML()}
     </div>`;
   }
 
@@ -520,13 +534,10 @@ function filterBar(mode) {
         <input class="control" id="gold-nv-min" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.goldLvlMin ?? ''}">
         <span style="color:#858b95;font-size:11px;align-self:center;">a</span>
         <input class="control" id="gold-nv-max" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.goldLvlMax ?? ''}">
-        <select class="control dropdown" id="dex-tipo1">${typeSelectOpts('Tipo 1 (Todos)')}</select>
-        <select class="control dropdown" id="dex-tipo2">${typeSelectOpts('Tipo 2 (Qualquer)')}</select>
         <select class="control dropdown" id="filter-item-drop"><option value="">Todos os Drops (Itens)</option></select>
-      </div>
-      <div class="filter-group boost-options">
         <button class="control check ${dexState.lootBoost ? 'selected' : ''}" id="dex-loot-boost">Loot Boost (+40%)</button>
       </div>
+      ${typeSelectorHTML()}
     </div>`;
   }
 
@@ -537,8 +548,6 @@ function filterBar(mode) {
         <input class="control" id="fortes-nv-min" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.fortesLvlMin ?? ''}">
         <span style="color:#858b95;font-size:11px;align-self:center;">a</span>
         <input class="control" id="fortes-nv-max" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.fortesLvlMax ?? ''}">
-        <select class="control dropdown" id="dex-tipo1">${typeSelectOpts('Tipo 1 (Todos)')}</select>
-        <select class="control dropdown" id="dex-tipo2">${typeSelectOpts('Tipo 2 (Qualquer)')}</select>
         <select class="control dropdown" id="filter-estagio">
           <option value="">Todos Estágios</option>
           <option value="1">Estágio 1</option>
@@ -550,6 +559,7 @@ function filterBar(mode) {
           <option value="bst_asc">BST Total (Menor)</option>
         </select>
       </div>
+      ${typeSelectorHTML()}
     </div>`;
   }
 
@@ -772,14 +782,40 @@ function attachDexListeners(mode) {
 
   // Preenchimento inicial dos selects com valor atual do estado
   const setVal = (id, val) => { const el = document.getElementById(id); if (el && val) el.value = val; };
-  setVal('dex-tipo1', dexState.tipo1);
-  setVal('dex-tipo2', dexState.tipo2);
   setVal('dex-regiao', dexState.regiao);
   setVal('filter-f4', dexState.f4Filter);
   setVal('filter-f2', dexState.f2Filter);
   setVal('filter-r05', dexState.r05Filter);
   setVal('filter-r025', dexState.r025Filter);
   setVal('filter-imune', dexState.imuneFilter);
+
+  // Seletor visual de tipos — clique em tag seleciona tipo 1 (roxo) ou tipo 2 (amarelo)
+  document.getElementById('type-selector')?.addEventListener('click', e => {
+    const tag = e.target.closest('[data-type-filter]');
+    if (!tag) return;
+    const t = tag.dataset.typeFilter;
+    if (dexState.tipo1 === t) {
+      // Remove tipo1, promove tipo2 se existir
+      dexState.tipo1 = dexState.tipo2;
+      dexState.tipo2 = '';
+    } else if (dexState.tipo2 === t) {
+      dexState.tipo2 = '';
+    } else if (!dexState.tipo1) {
+      dexState.tipo1 = t;
+    } else if (!dexState.tipo2) {
+      dexState.tipo2 = t;
+    } else {
+      // Já tem 2 selecionados — substitui o tipo1, mantém tipo2
+      dexState.tipo1 = dexState.tipo2;
+      dexState.tipo2 = t;
+    }
+    // Re-renderiza o seletor de tipos no lugar
+    const sel = document.getElementById('type-selector');
+    if (sel) sel.outerHTML = typeSelectorHTML();
+    // Rebinda o listener no novo elemento
+    document.getElementById('type-selector')?.addEventListener('click', arguments.callee);
+    applyFiltersAndRender();
+  });
 
   // Filtros globais
   document.getElementById('dex-search')?.addEventListener('input', e => {
@@ -788,14 +824,6 @@ function attachDexListeners(mode) {
   });
   document.getElementById('dex-regiao')?.addEventListener('change', e => {
     dexState.regiao = e.target.value;
-    applyFiltersAndRender();
-  });
-  document.getElementById('dex-tipo1')?.addEventListener('change', e => {
-    dexState.tipo1 = e.target.value;
-    applyFiltersAndRender();
-  });
-  document.getElementById('dex-tipo2')?.addEventListener('change', e => {
-    dexState.tipo2 = e.target.value;
     applyFiltersAndRender();
   });
   document.getElementById('dex-apenas-shiny')?.addEventListener('click', function() {
