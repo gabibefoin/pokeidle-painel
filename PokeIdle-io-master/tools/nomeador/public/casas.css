@@ -1,0 +1,213 @@
+.cs-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  align-items: center;
+}
+
+.cs-toolbar label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.cs-toolbar select {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.cs-hint {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.cs-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 14px;
+  padding: 0 14px 20px;
+  min-height: calc(100vh - 140px);
+}
+
+@media (max-width: 960px) {
+  .cs-layout { grid-template-columns: 1fr; }
+}
+
+.cs-tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cs-tier {
+  background: var(--panel);
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.cs-tier.ativo {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px #7fd4ff44;
+}
+
+.cs-tier h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cs-tier h3 i {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.cs-tier .meta {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.cs-tier .meta b { color: var(--text); }
+
+.cs-tier .avisos {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #ffb74d;
+}
+
+.cs-mapa {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cs-mapa-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.cs-viewport {
+  position: relative;
+  flex: 1;
+  min-height: 420px;
+  background: #0a0c10;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+.cs-viewport.pan { cursor: grab; }
+.cs-viewport.pan.drag { cursor: grabbing; }
+
+.cs-viewport canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  image-rendering: pixelated;
+  transform-origin: 0 0;
+}
+
+#overlay { pointer-events: none; }
+
+.cs-legenda {
+  margin: 8px 0 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.cs-jogo {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #0a0c10;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px 14px;
+}
+
+.cs-jogo.hidden { display: none; }
+
+.cs-jogo-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.cs-jogo-bar #jogo-pos {
+  flex: 1;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.cs-viewport-jogo {
+  flex: 1;
+  min-height: 0;
+  cursor: default;
+  outline: none;
+}
+
+.cs-viewport-jogo:focus {
+  box-shadow: 0 0 0 2px #7fd4ff55;
+}
+
+#jogo-debug { pointer-events: none; opacity: 0.35; }
+#jogo-debug.editavel { pointer-events: auto; opacity: 0.55; cursor: cell; }
+#jogo-debug.bonecos { pointer-events: auto; opacity: 0.65; cursor: crosshair; }
+#jogo-hero { pointer-events: none; }
+
+.cs-jogo-bar #jogo-passagens.on,
+.cs-jogo-bar #jogo-bonecos.on {
+  border-color: #7fd4ff;
+  box-shadow: 0 0 0 1px #7fd4ff55;
+}
+
+.cs-jogo-bar #jogo-bonecos.on {
+  border-color: #8bc34a;
+  box-shadow: 0 0 0 1px #8bc34a66;
+}
+
+.cs-jogo-legenda { text-align: center; margin-top: 8px; }
+
+.cs-tier-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.cs-tier-actions button {
+  flex: 1;
+  font-size: 11px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.cs-andares { margin-left: 4px; }
+
+.cs-andares button.on {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px #7fd4ff44;
+}

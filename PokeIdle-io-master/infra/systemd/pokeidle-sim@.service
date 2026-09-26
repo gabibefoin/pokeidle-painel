@@ -1,0 +1,43 @@
+[Unit]
+Description=Pokeidle.io — sim shard %i
+Documentation=https://github.com/pedrofasi/PokeIdle-io/blob/master/infra/FASES-ESCALA.md
+After=network-online.target docker.service pokeidle-gateway.service
+Wants=network-online.target
+Requires=docker.service
+
+[Service]
+Type=simple
+User=__USUARIO__
+Group=__USUARIO__
+WorkingDirectory=__DESTINO__/game
+Environment=ROLE=sim
+Environment=SHARD_COUNT=2
+Environment=SHARD_ID=%i
+# Glibc abre uma arena de malloc por thread; com o zlib e o `pg` fragmentando, a memória nativa
+# do processo cresce com as horas no ar sem o heap do JS crescer. Duas arenas seguram isso.
+Environment=MALLOC_ARENA_MAX=2
+# Conexões do Postgres por processo. Um sim usa ~10 com ~580 jogadores (produção, 15/09/2026); o teto
+# de 20 folga para a rajada de reconexão sem que 10 sims + 6 gateways passem do `max_connections`
+# de 300 (`game/docker-compose.escala.yml`). Orçamento em `infra/FASES-ESCALA.md`.
+Environment=PG_POOL_MAX=20
+EnvironmentFile=-__DESTINO__/game/.env
+ExecStart=/usr/bin/node src/server/index.mjs
+Restart=always
+RestartSec=3
+StartLimitBurst=0
+KillSignal=SIGTERM
+# 90 s, e não 30: no SIGTERM o sim grava TODO jogador antes de sair. Em 14/09/2026, com ~700
+# jogadores por sim, a gravação passou dos 30 s e o systemd matou os dois processos no meio.
+TimeoutStopSec=90
+KillMode=mixed
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=__DESTINO__
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=pokeidle-sim-%i
+
+[Install]
+WantedBy=multi-user.target

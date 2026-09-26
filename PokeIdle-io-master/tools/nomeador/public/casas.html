@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casas — Sprite Lab</title>
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="stylesheet" href="nomeador.css">
+<link rel="stylesheet" href="casas.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="dot"></span>
+    <div>
+      <h1>Casas</h1>
+      <p>recortes de Cerulean · 5 tiers · walkgrid de preview</p>
+    </div>
+  </div>
+  <nav class="lab-nav">
+    <a href="/">Nomeador</a>
+    <a href="/pokedex.html">Pokédex Lab</a>
+    <a href="/pokedex-oficial.html">Oficial</a>
+    <a href="/spawns.html">Spawns</a>
+    <a href="/mapas.html">Mapas</a>
+    <a href="/casas.html" class="on">Casas</a>
+    <a href="/ginasios.html">Ginásios</a>
+    <a href="/economia.html">Economia</a>
+    <a href="/moves.html">Moves</a>
+  </nav>
+  <div class="progresso">
+    <button type="button" class="btn-save" id="btn-entrar">entrar na casa</button>
+    <button type="button" class="btn-save" id="btn-salvar">salvar</button>
+    <span class="save-msg" id="save-msg"></span>
+  </div>
+</header>
+
+<section class="toolbar cs-toolbar">
+  <label>mapa
+    <select id="mapa-sel"></select>
+  </label>
+  <div class="seg" id="visoes">
+    <button type="button" data-visao="rua" class="on">rua</button>
+    <button type="button" data-visao="corte">corte</button>
+    <button type="button" data-visao="completo">tudo</button>
+  </div>
+  <div class="seg" id="modos">
+    <button type="button" data-modo="box" class="on">caixa</button>
+    <button type="button" data-modo="inicio">spawn</button>
+    <button type="button" data-modo="porta">porta</button>
+    <button type="button" data-modo="passagem">passagens</button>
+    <button type="button" data-modo="escada-subir">escada ↑</button>
+    <button type="button" data-modo="escada-descer">escada ↓</button>
+    <button type="button" data-modo="boneco">bonecos 🎯</button>
+  </div>
+  <div class="seg cs-andares" id="andares-passagem" hidden></div>
+  <span class="cs-hint" id="hint">Visão <b>rua</b> esconde telhados (andares acima do chão). Arraste para marcar a caixa.</span>
+</section>
+
+<main class="cs-layout">
+  <aside class="cs-tiers" id="tiers"></aside>
+  <section class="cs-mapa">
+    <div class="cs-mapa-head">
+      <span id="mapa-status">carregando mapa…</span>
+      <label class="check"><input type="checkbox" id="mostrar-centro" checked> mostrar Centro (referência)</label>
+    </div>
+    <div class="cs-viewport" id="viewport">
+      <canvas id="mapa"></canvas>
+      <canvas id="overlay"></canvas>
+    </div>
+    <p class="cs-legenda">Clique com <b>spawn</b> ou <b>porta</b> selecionado para marcar o ponto. Scroll = zoom · arrastar fundo = pan.</p>
+  </section>
+</main>
+
+<div id="cs-jogo" class="cs-jogo hidden" aria-hidden="true">
+  <div class="cs-jogo-bar">
+    <strong id="jogo-titulo">Casa</strong>
+    <span id="jogo-pos"></span>
+    <button type="button" class="btn-save" id="jogo-passagens">passagens</button>
+    <button type="button" class="btn-save" id="jogo-bonecos">bonecos 🎯</button>
+    <button type="button" class="btn-save" id="jogo-sair">Esc · sair</button>
+  </div>
+  <div class="cs-viewport cs-viewport-jogo" id="jogo-viewport" tabindex="0">
+    <canvas id="jogo-mapa"></canvas>
+    <canvas id="jogo-debug"></canvas>
+    <canvas id="jogo-hero"></canvas>
+  </div>
+  <p class="cs-legenda cs-jogo-legenda">WASD · <b>bonecos 🎯</b> + clique no chão verde · <b>passagens</b> + clique nos tiles · <b>Esc</b> sai</p>
+</div>
+
+<script type="module" src="casas.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html><meta charset="utf-8"><title>exportando…</title>
+<style>html,body{margin:0;padding:0;background:#000;overflow:hidden}canvas{display:block}</style>
+<body>
+<script type="module">
+// Página usada por tools/export-map-pngs.mjs: renderiza UM mapa colado no canto superior
+// esquerdo, sem margem, para o Chrome headless capturar a página inteira como PNG.
+//   _mapexport.html?slug=charizard[&escala=1]
+import { renderMapa } from './mapview.mjs';
+
+const p = new URLSearchParams(location.search);
+const slug = p.get('slug');
+const escala = p.get('escala') ? Number(p.get('escala')) : undefined;
+
+try {
+  const r = await renderMapa(slug, { escala });
+  document.body.appendChild(r.canvas);
+  // o runner lê o título para confirmar que terminou e conferir o tamanho
+  document.title = `PRONTO ${r.canvas.width}x${r.canvas.height} ${r.escala}`;
+} catch (e) {
+  document.title = `ERRO ${e.message}`;
+  document.body.textContent = e.message;
+}
+</script>

@@ -1,0 +1,58 @@
+[Unit]
+Description=Pokeidle.io — backup do Postgres para o Google Drive
+Documentation=https://github.com/pedrofasi/PokeIdle-io/blob/master/infra/BACKUP.md
+# Sem Docker não há `docker exec pg_dump`. `After` e não `Requires`: se o Docker estiver fora,
+# é melhor a rodada falhar e alertar do que o timer inteiro entrar em `failed` e parar de tentar.
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+# O usuário do jogo já está no grupo `docker` (o `provisionar.sh` põe), então o backup não
+# precisa de root. É a mesma escolha do `deploy.sh`: nada aqui roda como root porque não precisa.
+User=__USUARIO__
+Group=__USUARIO__
+WorkingDirectory=__DESTINO__
+ExecStart=__DESTINO__/infra/backup-drive.sh
+
+# Uma hora é folga imensa para um trabalho de ~30 s (2 s de dump + upload de 12 MB). O timeout
+# existe para o caso patológico — rede do Drive engasgada segurando o processo — não travar a
+# rodada seguinte.
+TimeoutStartSec=45min
+
+# ---- isolamento ----
+#
+# O mesmo perímetro do serviço do jogo: `ProtectSystem=strict` deixa o sistema de arquivos
+# INTEIRO somente-leitura, e o `ReadWritePaths` abre as duas exceções necessárias.
+#
+# A segunda exceção é a que não é óbvia: o rclone REESCREVE o `rclone.conf` a cada rodada. O
+# access token do Google vale uma hora, então ele usa o refresh token, ganha um novo e grava de
+# volta no arquivo. Sem esta linha o backup continua funcionando (ele renova em memória a cada
+# execução) mas reclama "Failed to save new token in config file" em toda rodada — e um log que
+# grita sempre é um log que ninguém lê no dia que importa.
+#
+# O caminho é `/etc/pokeidle` e não `~/.config/rclone` porque o HOME do usuário do jogo é
+# `/opt/pokeidle`, o diretório do repositório: o padrão do rclone poria o refresh token dentro
+# de uma árvore de git.
+NoNewPrivileges=true
+ProtectSystem=strict
+# A única pasta do sistema que este serviço escreve: o rclone reescreve o token a cada renovação
+# (ver acima). Todo o resto do disco fica somente-leitura para ele.
+ReadWritePaths=/etc/pokeidle
+# `/tmp` PRÓPRIO — e é ele que hospeda o dump de passagem e as listas da rotação.
+#
+# Com `ProtectSystem=strict` o `/tmp` do host fica somente-leitura e o `mktemp` do script morre:
+# o backup subia e a rotação falhava logo depois. `PrivateTmp` resolve dando ao serviço um /tmp
+# gravável e invisível para o resto da máquina, varrido no fim da execução.
+#
+# Ele privatiza o `/var/tmp` JUNTO — foi por isso que a passagem saiu de lá. Um
+# `ReadWritePaths=/var/tmp/algo` com `PrivateTmp=true` nem inicia: o caminho não existe dentro do
+# namespace e o systemd falha com `226/NAMESPACE` antes de rodar uma linha do script.
+PrivateTmp=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=pokeidle-backup

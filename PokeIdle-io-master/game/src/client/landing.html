@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<!-- Google Tag Manager — GTM-NZLNR5N8. Logo após charset (charset nos primeiros 1024 bytes). -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZLNR5N8');</script>
+<!-- End Google Tag Manager -->
+<!-- Facebook Pixel Code — 941286091638419 (Meta Ads). -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '941286091638419');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=941286091638419&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pokéidle.io · MMO Pokémon idle grátis no navegador, lançado oficialmente</title>
+<meta name="description" content="Lançado oficialmente em 7 de setembro. MMO Pokémon idle e gratuito no navegador: seu pokémon caça sozinho, e o shiny, o token ou o item raro que cair você vende pra outro jogador e saca em USDT. 1.210 espécies, 9 gerações, PvP ranqueado, 18 ginásios, guilds e bosses.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#2a1520">
+<link rel="canonical" href="https://pokeidle.io/">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="img/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pokéidle.io">
+<meta property="og:title" content="Pokéidle.io · lançado oficialmente · MMO Pokémon idle grátis">
+<meta property="og:description" content="Servidor oficial no ar desde 7 de setembro. Seu pokémon caça sozinho, e o raro que cair (shiny, token, Casa ou Bike Lendária) você vende pra outro jogador e saca em USDT. Grátis, sem instalar nada.">
+<meta property="og:url" content="https://pokeidle.io/">
+<meta property="og:image" content="https://pokeidle.io/midia/gameplay-poster.jpg">
+<meta property="og:image:alt" content="A tela do Pokéidle.io com um Charizard caçando sozinho numa área de mata.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pokéidle.io · lançado oficialmente · MMO Pokémon idle grátis">
+<meta name="twitter:description" content="Servidor oficial no ar desde 7 de setembro. Seu pokémon caça sozinho, e o raro que cair (shiny, token, Casa ou Bike Lendária) você vende pra outro jogador e saca em USDT. Grátis, sem instalar nada.">
+<meta name="twitter:image" content="https://pokeidle.io/midia/gameplay-poster.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Pokéidle.io",
+  "url": "https://pokeidle.io/",
+  "description": "MMO Pokémon idle no navegador, lançado oficialmente em 7 de setembro de 2026. O pokémon caça sozinho, com 1.210 espécies em 9 gerações, PvP ranqueado, 18 ginásios, guilds, casas, bicicletas e um mercado entre jogadores.",
+  "datePublished": "2026-09-07",
+  "image": "https://pokeidle.io/midia/gameplay-poster.jpg",
+  "applicationCategory": "Game",
+  "genre": ["MMO", "Idle", "RPG"],
+  "operatingSystem": "Web browser",
+  "playMode": "MultiPlayer",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<link rel="stylesheet" href="landing.css">
+<!-- O pôster do vídeo é a maior imagem da primeira dobra, e pré-carregá-lo tira uns 300 ms do
+     tempo até a página parecer pronta. O vídeo em si NÃO entra aqui de propósito (ver
+     `landing.js`): 4 MB antes do primeiro quadro pintado seria pior do que não ter vídeo. -->
+<link rel="preload" as="image" href="midia/gameplay-poster.jpg">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZLNR5N8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ═══════════════════════════════════════════════════════════════════ topo ══ -->
+<header class="topo">
+  <div class="limite">
+    <a href="/" class="marca" data-txt="Pokéidle.io" style="--tam:28px; text-decoration:none"><span>Pokéidle.io</span></a>
+    <nav>
+      <a href="#novidades" class="some">Novidades</a>
+      <a href="#dinheiro" class="some">Ganhar dinheiro</a>
+      <a href="#como" class="some">Como funciona</a>
+      <a href="#duvidas" class="some">Dúvidas</a>
+      <a class="cta cta-peq" href="/app" data-cta="topo">
+        <img src="midia/ball-poke.png" alt="">Jogar grátis
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════════════ herói ══ -->
+<main>
+<section class="heroi">
+  <div class="limite heroi-grade">
+    <div>
+      <!-- A notícia do momento: o beta acabou. A fita dourada substitui o "servidor no ar" e diz
+           em que dia do servidor oficial a pessoa chegou — o número é do `landing.js`, e sem JS
+           fica a data. -->
+      <span class="fita fita-lancamento">
+        <i class="estrela" aria-hidden="true">★</i>
+        <span>Lançado oficialmente <em data-dia-oficial="· dia {n}">· desde 07/09</em></span>
+      </span>
+
+      <h1>Seu pokémon<br><em>caça sozinho</em>.<br>Você só escolhe onde.</h1>
+
+      <p class="sub">
+        Um MMO de Pokémon que roda numa aba do navegador. Você abre o mapa, escolhe a hunt e
+        ele faz o resto: anda até o selvagem, luta, derruba e o loot cai na sua bolsa.
+        Você deixa a aba aberta e vai cuidar da sua vida.
+      </p>
+
+      <!-- O RMT na primeira dobra, e não só na seção lá embaixo. É o argumento que mais para o
+           dedo de quem rola o feed, e ele fica logo antes do botão de propósito. -->
+      <div class="destaque-rmt">
+        <img src="midia/moeda-gema.png" alt="">
+        <p>
+          <b>O raro que cair pode virar dinheiro de verdade.</b> Shiny, token de boss, Shiny
+          Stone, Casa ou Bike Lendária: você anuncia pro outro jogador e saca a Gema em USDT na
+          sua carteira.
+        </p>
+      </div>
+
+      <div class="heroi-botoes">
+        <a class="cta cta-grande" href="/app" data-cta="heroi">
+          <img src="midia/ball-poke.png" alt="">Jogar grátis
+        </a>
+        <a class="cta secundario cta-peq" href="#dinheiro" data-cta="ver-grana">Como ganho dinheiro?</a>
+      </div>
+      <p class="sob-botao">Conta local, Google ou Discord. Leva menos de um minuto.</p>
+
+      <div class="selos">
+        <span class="selo ouro">Lançado oficialmente</span>
+        <span class="selo">Grátis pra jogar</span>
+        <span class="selo">Dinheiro de verdade</span>
+        <span class="selo">Funciona no celular</span>
+      </div>
+    </div>
+
+    <!-- A gameplay em movimento, na primeira dobra. É a prova que importa: um MMO anunciado só
+         com arte cheira a golpe, e esse público já viu esse filme antes. -->
+    <figure class="quadro moldura-video" id="palco-video">
+      <span class="eh-real">gameplay real</span>
+      <video id="video-loop" muted loop playsinline preload="none"
+             poster="midia/gameplay-poster.jpg"
+             data-src="midia/gameplay-loop.webm"
+             aria-label="Gameplay do Pokéidle.io com um Charizard caçando sozinho"></video>
+      <button class="tocar" id="botao-tocar" type="button" hidden>
+        <span>▶ Ver em movimento</span>
+      </button>
+    </figure>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════════════════ o lançamento ══ -->
+<!-- A festa vem logo DEPOIS do herói, e não nele: a primeira dobra continua sendo do botão (o
+     `teste-landing.mjs` reprova se ele cair para baixo dela). Aqui cabe o que o herói não
+     comporta — carimbo, raios, confete e a notícia inteira. -->
+<section class="faixa" id="lancamento">
+  <div class="limite">
+    <div class="lancamento quadro">
+      <div class="lanc-raios" aria-hidden="true"></div>
+      <div class="lanc-confete" id="lanc-confete" aria-hidden="true"></div>
+
+      <span class="lanc-carimbo">07 · 09 · 2026</span>
+      <p class="lanc-pre">O beta acabou. Agora é pra valer.</p>
+      <h2>Estamos <em>oficialmente lançados</em></h2>
+      <p class="linha-fina">
+        O servidor oficial abriu no dia <b>7 de setembro</b>, e o mundo não parou de crescer
+        desde então: PvP Ranqueado com temporada, 18 ginásios disputados, bicicletas, casas com
+        XP Share e o drop Lendário anunciado em dourado no chat pra todo mundo ver. Quem jogou o
+        beta chegou com os seus <b>shinys</b>, <b>P5</b>, <b>diamantes</b> e <b>gemas
+        compradas</b>. Quem chega agora começa junto, no servidor que fica.
+      </p>
+
+      <div class="lanc-premios" aria-hidden="true">
+        <img src="midia/sprites/shiny-dragonite.png" alt="">
+        <img src="img/itens/bicicleta-lendaria.png" alt="">
+        <img class="liso" src="img/itens/casa-lendaria.png" alt="">
+        <img src="img/itens/shiny-stone.png" alt="">
+        <img src="midia/moeda-gema.png" alt="">
+        <img src="midia/trofeu-1.png" alt="">
+      </div>
+
+      <!-- A META DA COMUNIDADE: quantas contas existem de verdade, rumo a 100 mil. O número vem do
+           gateway (`/treinadores`, contado no banco) e o bloco nasce escondido — sem resposta ele
+           nem aparece, porque uma barra parada no zero diria que ninguém joga. -->
+      <div class="meta-treinadores" id="meta-treinadores" hidden>
+        <div class="meta-topo">
+          <span class="meta-rotulo">Meta da comunidade</span>
+          <b class="meta-alvo">100.000 treinadores</b>
+        </div>
+        <div class="meta-barra" role="progressbar" aria-label="Treinadores com conta, rumo a 100 mil"
+             aria-valuemin="0" aria-valuemax="100000" aria-valuenow="0">
+          <i class="meta-enche"></i>
+          <span class="meta-pct">0%</span>
+          <span class="meta-marco" data-em="10" style="left:10%"><span>10 mil</span></span>
+          <span class="meta-marco" data-em="25" style="left:25%"><span>25 mil</span></span>
+          <span class="meta-marco" data-em="50" style="left:50%"><span>50 mil</span></span>
+        </div>
+        <p class="meta-conta">
+          <b id="meta-total">0</b> treinadores já criaram conta.
+          <span id="meta-falta"></span>
+        </p>
+      </div>
+
+      <span class="lanc-dia" data-dia-oficial="Dia {n} do servidor oficial">Servidor oficial no ar</span>
+
+      <div>
+        <a class="cta cta-grande lanc-cta" href="/app" data-cta="lancamento">
+          <img src="midia/ball-poke.png" alt="">Entrar no lançamento
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ novidades ══ -->
+<!-- O que o jogo ganhou até o lançamento, com o ícone de verdade de cada coisa. A cor da moldura
+     é a da raridade do jogo (comum → lendária): a Lendária brilha, como brilha lá dentro. -->
+<section class="faixa" id="novidades">
+  <div class="limite">
+    <div class="cabecalho-secao">
+      <h2>O que tem de <em>novo</em></h2>
+      <p class="linha-fina">
+        Tudo aqui já está no ar e dá pra jogar hoje. As novidades de cada atualização ficam
+        dentro do jogo, no botão <b>!</b>.
+      </p>
+    </div>
+
+    <div class="novidades">
+      <article class="nov quadro rar-lendaria">
+        <span class="nov-tag">Novo</span>
+        <span class="nov-ico"><img src="img/itens/bicicleta-lendaria.png" alt=""></span>
+        <h3>Bicicletas</h3>
+        <p>
+          Da Comum à Lendária: de <b>+15%</b> até <b>+100%</b> de velocidade, na hunt e andando
+          pela praça de Cerulean. Tirou uma Lendária? O chat inteiro fica sabendo.
+        </p>
+      </article>
+
+      <article class="nov quadro rar-mitica">
+        <span class="nov-tag">Novo</span>
+        <span class="nov-ico"><img class="liso" src="img/itens/casa-lendaria.png" alt=""></span>
+        <h3>Casa e XP Share</h3>
+        <p>
+          A casa equipada reparte de <b>25% a 100%</b> do XP da hunt com o pokémon que você
+          registrar nela. A Lendária registra <b>dois</b> de uma vez.
+        </p>
+      </article>
+
+      <article class="nov quadro rar-rara">
+        <span class="nov-tag">Novo</span>
+        <span class="nov-ico"><img src="img/menu-ranks.png" alt=""></span>
+        <h3>PvP Ranqueado</h3>
+        <p>
+          Batalha <b>1×1</b> por fila, com equipe própria. Sete ranks, do Bronze ao
+          <b>Challenger</b>, e temporada mensal com prêmio pro topo da tabela.
+        </p>
+      </article>
+
+      <article class="nov quadro rar-incomum">
+        <span class="nov-tag">Novo</span>
+        <span class="nov-ico"><img src="img/menu-ginasio.png" alt=""></span>
+        <h3>18 ginásios</h3>
+        <p>
+          Um por tipo, e quem manda são os jogadores. Segure a coroa e leve o título e
+          <b>+25% de dano</b> com pokémon daquele tipo na hunt.
+        </p>
+      </article>
+
+      <article class="nov quadro rar-rara">
+        <span class="nov-ico"><img src="midia/menu-comunidade.png" alt=""></span>
+        <h3>Guerra de Guilds</h3>
+        <p>
+          Guild de até <b>6</b>, guerra automática todo dia às <b>22h UTC</b>. Ninguém precisa
+          estar online, e o replay roda em até 8×.
+        </p>
+      </article>
+
+      <article class="nov quadro rar-mitica">
+        <span class="nov-ico"><img src="midia/menu-bosses.png" alt=""></span>
+        <h3>25 bosses lendários</h3>
+        <p>
+          Cada vitória pode render peça de <b>TM Elemental</b> ou <b>AoE</b>, que o Professor
+          Carvalho troca por disco de golpe permanente.
+        </p>
+      </article>
+
+      <article class="nov quadro rar-lendaria">
+        <span class="nov-ico"><img src="img/itens/shiny-stone.png" alt=""></span>
+        <h3>Shiny Stone</h3>
+        <p>
+          Fragmentos que caem na Outland viram a pedra que evolui um <b>pokémon shiny</b> para a
+          evolução shiny dele.
+        </p>
+      </article>
+
+      <article class="nov quadro rar-lendaria">
+        <span class="nov-tag breve">Em breve</span>
+        <span class="nov-ico"><img src="midia/trofeu-1.png" alt=""></span>
+        <h3>Campeonato</h3>
+        <p>
+          O primeiro torneio com <b>dinheiro de verdade</b> na mesa, em eliminação dupla. Está
+          em desenvolvimento: o aviso sai no jogo e no Discord quando abrir.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════ dá pra ganhar dinheiro ══ -->
+<!-- Vem logo depois do lançamento, e não no fim da página, porque é a pergunta que mais aparece
+     e a que mais converte. Enrolar nela custa confiança. -->
+<section class="faixa" id="dinheiro">
+  <div class="limite">
+    <div class="cabecalho-secao">
+      <h2>O raro que cair <em>vale dinheiro de verdade</em></h2>
+    </div>
+
+    <div class="resposta-direta quadro">
+      <h3>O pokémon raro que você achar pode valer dinheiro de verdade.</h3>
+      <p>
+        Pokéidle é grátis pra jogar. Enquanto o seu pokémon caça, de vez em quando cai algo que
+        a comunidade paga caro, como um <b>shiny</b>, um <b>Bronze Boss Token</b>, uma
+        <b>Shiny Stone</b>, peça de TM ou até uma <b>Casa</b> ou <b>Bicicleta Lendária</b>. Você
+        anuncia no <b>Mercado da Comunidade</b> cobrando em <b>Gema</b>, a moeda do jogo com
+        lastro em <b>USDT</b> que você saca pela rede <b>Solana</b>.
+      </p>
+    </div>
+
+    <div class="economia">
+      <div class="economia-texto quadro">
+        <h3>Como isso funciona na prática</h3>
+        <p>
+          Você caça normalmente, de graça. O que vale dinheiro de verdade costuma ser o que é
+          difícil de achar: shiny, pedra, disco de TM, token de boss, fragmento de Outland ou uma
+          Casa pronta. Aí você abre o <b>Mercado da Comunidade</b>, põe o achado na vitrine e
+          escolhe se quer receber em <b>Coins</b> (a moeda de dentro do jogo) ou em <b>Gema</b>.
+          Até diamante dá pra vender pra outro jogador.
+        </p>
+        <p>
+          Quem compra é outro jogador de verdade. Recebendo em Gema, você pede o saque a partir
+          de <b>1.000 gemas</b> e o valor cai na sua carteira em USDT. A comissão do mercado é
+          de <b>10% em Coins</b> e <b>15% em Gema</b>, e o jogo avisa antes de publicar se o
+          anúncio estiver em Coins, pra ninguém vender item de gema por trocado.
+        </p>
+
+        <div class="fluxo">
+          <div class="etapa"><b>Você acha</b><span>caçando, sem clicar em nada</span></div>
+          <div class="seta">›</div>
+          <div class="etapa"><b>Você anuncia</b><span>na vitrine, em Coins ou em Gema</span></div>
+          <div class="seta">›</div>
+          <div class="etapa"><b>Você saca</b><span>a Gema vira USDT na sua carteira</span></div>
+        </div>
+
+        <p class="sem-cashar">
+          <span><b>Você não precisa pôr um centavo pra começar.</b> Dá pra criar a conta de
+          graça, caçar de graça e vender o que achar. Comprar Gema é atalho de quem quer,
+          nunca caminho obrigatório.</span>
+        </p>
+
+        <p class="aviso">
+          Negocie sempre <b>dentro do jogo</b>. Aqui tem escrow, trava de preço e caixa postal,
+          então ninguém some com o seu item nem com o seu dinheiro. Acerto por fora é
+          exatamente onde mora o golpe.
+        </p>
+
+        <p class="nota-honesta">
+          <b>Uma coisa importante, pra ficar tudo claro:</b> ninguém aqui promete quanto você
+          vai ganhar nem quando vai cair um shiny. Depende do que o seu pokémon achar e do preço
+          que outro jogador estiver disposto a pagar na hora. Isso é uma oportunidade de
+          verdade dentro de um jogo. Não é salário, não é investimento, não é promessa de renda.
+        </p>
+      </div>
+
+      <div class="vitrine vao">
+        <p style="font-size:13px;color:var(--vao-dim);text-align:center;letter-spacing:1px;text-transform:uppercase">
+          exemplos de anúncio
+        </p>
+        <div class="item shiny">
+          <img class="bicho" src="midia/sprites/shiny-dragonite.png" alt="">
+          <div class="info">
+            <div class="nome">Shiny Dragonite</div>
+            <div class="tags"><i>Nv 312</i><i>P5</i><i>IV 174</i><i>Shiny</i></div>
+          </div>
+          <div class="preco"><img src="midia/moeda-gema.png" alt="Gemas">12.400</div>
+        </div>
+        <div class="item shiny">
+          <img class="bicho" src="img/itens/bicicleta-lendaria.png" alt="">
+          <div class="info">
+            <div class="nome">Bicicleta Lendária</div>
+            <div class="tags"><i>+100% velocidade</i><i>Item raro</i></div>
+          </div>
+          <div class="preco"><img src="midia/moeda-gema.png" alt="Gemas">9.800</div>
+        </div>
+        <div class="item gold">
+          <img class="bicho" src="midia/sprites/gen4-garchomp.png" alt="">
+          <div class="info">
+            <div class="nome">Garchomp</div>
+            <div class="tags"><i>Nv 188</i><i>P4</i><i>IV 151</i></div>
+          </div>
+          <div class="preco"><img src="midia/moeda-ouro.png" alt="Coins">300 M</div>
+        </div>
+        <p style="font-size:13px;color:var(--vao-dim);text-align:center;line-height:1.45">
+          Pokémon entra na vitrine a partir do
+          <b style="color:var(--ouro)">Nv 50 com nota 3,5</b>.
+          Shiny e P5 entram em qualquer nível.
+        </p>
+
+        <!-- Os números do saque, escritos. Quem está pensando em ganhar dinheiro quer saber as
+             regras antes de acreditar, e esconder isso numa página de ajuda é o que faz o
+             leitor desconfiar. De quebra, preenche o vão que sobrava embaixo da vitrine. -->
+        <dl class="resumo-saque">
+          <div><dt>Saque a partir de</dt><dd>1.000 gemas</dd></div>
+          <div><dt>Comissão do mercado</dt><dd>10% em Coins · 15% em Gema</dd></div>
+          <div><dt>Taxa de rede do saque</dt><dd>por conta do projeto</dd></div>
+          <div><dt>Cai na sua carteira em</dt><dd>USDT, pela Solana</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════════════════════ como funciona ══ -->
+<section class="faixa" id="como">
+  <div class="limite">
+    <div class="cabecalho-secao">
+      <h2>Três decisões suas. <em>O resto é automático</em>.</h2>
+      <p class="linha-fina">
+        Durante a luta você não clica em nada. Basta deixar a aba aberta e o jogo segue
+        rodando enquanto você trabalha, estuda ou assiste série.
+      </p>
+    </div>
+
+    <div class="passos">
+      <article class="passo quadro">
+        <span class="n">1</span>
+        <h3>Escolhe onde caçar</h3>
+        <p>
+          São <b>743 hunts</b> no mapa-múndi, cada uma com nível, tipos e lista de drop
+          próprios. O <b>Hunt Analyser</b> mostra quanto de XP e de Coins por hora aquela área
+          rende <em>na sua conta</em>, antes de você ir.
+        </p>
+      </article>
+      <article class="passo quadro">
+        <span class="n">2</span>
+        <h3>Ele caça sozinho</h3>
+        <p>
+          O seu pokémon anda até o selvagem mais próximo e luta. Quando o bicho cai, o corpo
+          fica <b>30 segundos</b> no chão, que é a sua janela pra jogar a pokébola. O loot vai
+          pra bolsa e as Coins entram na hora.
+        </p>
+      </article>
+      <article class="passo quadro">
+        <span class="n">3</span>
+        <h3>Você decide o destino</h3>
+        <p>
+          Evoluir, pôr no <b>XP Share</b> da sua casa, vender pro NPC ou <b>anunciar pra outro
+          jogador</b>. Revive, poção e venda de loot ficam no automático enquanto você faz
+          outra coisa.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════ números ══ -->
+<!-- Os números são os do servidor (`content.mjs` no boot e as tabelas de bosses e ginásios).
+     O HTML já traz o valor final — quem lê sem JS, e o Google, veem o número certo; o
+     `landing.js` só faz ele subir do zero quando a fileira aparece na tela. -->
+<section class="faixa" id="mundo">
+  <div class="limite">
+    <div class="cabecalho-secao">
+      <h2>O mundo já está <em>construído</em></h2>
+      <p class="linha-fina">
+        Não é um jogo que promete conteúdo pro ano que vem. Isso aqui é o que está publicado e
+        jogável hoje, de Kanto a Paldea.
+      </p>
+    </div>
+
+    <div class="numeros">
+      <div class="numero quadro"><b data-conta="1210">1.210</b><span>espécies<br>publicadas</span></div>
+      <div class="numero quadro"><b data-conta="9">9</b><span>gerações<br>no jogo</span></div>
+      <div class="numero quadro"><b data-conta="743">743</b><span>hunts<br>jogáveis</span></div>
+      <div class="numero quadro"><b data-conta="620">620</b><span>formas<br>shiny</span></div>
+      <div class="numero quadro"><b data-conta="25">25</b><span>bosses<br>lendários</span></div>
+      <div class="numero quadro"><b data-conta="18">18</b><span>ginásios<br>de tipo</span></div>
+    </div>
+
+    <div class="geracoes" id="geracoes" style="margin-top:26px"></div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════════════════════════ pilares ══ -->
+<section class="faixa">
+  <div class="limite">
+    <div class="cabecalho-secao">
+      <h2>O que tem <em>dentro</em></h2>
+    </div>
+
+    <div class="cards">
+      <article class="card quadro">
+        <img class="ico" src="midia/menu-pokedex.png" alt="">
+        <h3>Coleção de verdade</h3>
+        <p>Equipe de <b>5</b>, Depot sem limite e uma Pokédex que guarda cada espécie que você tocou.</p>
+        <ul>
+          <li>Shiny <b>1 em 24.000</b> por encontro, <b>620 formas</b></li>
+          <li>Potência de P1 a P5 e IV em cada status</li>
+          <li>Toda captura shiny é anunciada pro servidor inteiro</li>
+        </ul>
+      </article>
+
+      <article class="card quadro">
+        <img class="ico" src="midia/menu-pvp.png" alt="">
+        <h3>PvP Ranqueado</h3>
+        <p>Batalha <b>1×1</b> automática, por fila, a partir do nível <b>80</b> e com equipe própria de até 5.</p>
+        <ul>
+          <li>Bronze, Prata, Ouro, Platina, Diamante, Mestre e Challenger</li>
+          <li>Mestre e Challenger são vagas: só o <b>top 50</b></li>
+          <li>Temporada mensal, com boost de prêmio pro topo</li>
+        </ul>
+      </article>
+
+      <article class="card quadro">
+        <img class="ico" src="midia/menu-comunidade.png" alt="">
+        <h3>Guild e guerra</h3>
+        <p>Clãs de até <b>6</b> pessoas, com brasão que você mesmo desenha: escudo, emblema e cores.</p>
+        <ul>
+          <li>Guerra automática todo dia às <b>22h UTC</b></li>
+          <li>Ninguém precisa estar online, o servidor simula</li>
+          <li>Replay com pausa, linha do tempo e 8× de velocidade</li>
+        </ul>
+      </article>
+
+      <article class="card quadro">
+        <img class="ico" src="img/itens/casa-lendaria.png" alt="">
+        <h3>Casa e XP Share</h3>
+        <p>Cinco raridades de casa, sorteadas a partir de fragmentos que caem na Outland.</p>
+        <ul>
+          <li>O registrado recebe de 25% a 100% do XP da hunt</li>
+          <li>A Lendária registra <b>dois</b> pokémon ao mesmo tempo</li>
+          <li>Várias na bolsa, uma equipada, e casa pronta se vende</li>
+        </ul>
+      </article>
+
+      <article class="card quadro">
+        <img class="ico" src="img/menu-ginasio.png" alt="">
+        <h3>Ginásios e bosses</h3>
+        <p><b>18</b> ginásios disputados entre jogadores e <b>25</b> bosses lendários com drops próprios.</p>
+        <ul>
+          <li>Ginásio a partir do nível <b>150</b>, com desafio ao líder</li>
+          <li>Repetição automática de boss enquanto houver fichas</li>
+          <li>Token de boss cai na Outland e vale o que a comunidade pagar</li>
+        </ul>
+      </article>
+
+      <article class="card quadro">
+        <img class="ico" src="midia/menu-mapa.png" alt="">
+        <h3>Um mundo pra abrir</h3>
+        <p>Cada hunt pede um nível de treinador, então o mapa cresce junto com você.</p>
+        <ul>
+          <li>Outland a partir do nível <b>150</b>, em 8 degraus de raros</li>
+          <li>Bicicleta de até <b>+100%</b> de velocidade</li>
+          <li>Eventos globais de XP e loot, alguns toda semana</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ comunidade ══ -->
+<section class="faixa">
+  <div class="limite">
+    <div class="cabecalho-secao">
+      <h2>Você não <em>sobe sozinho</em></h2>
+    </div>
+
+    <div class="duas">
+      <div class="bloco quadro">
+        <h3>Uma praça, um chat, três idiomas</h3>
+        <p>
+          O Centro Pokémon é a praça do jogo. Quem desmaia cai lá, e todo mundo se vê com o
+          pokémon de batalha andando atrás. Digitou no chat, sai um balão em cima da cabeça.
+          O jogo inteiro fala <b>português, inglês e espanhol</b>.
+        </p>
+        <div class="miolo chat">
+          <div class="chat-abas">
+            <span class="chat-aba on">Mundo</span>
+            <span class="chat-aba">Guild</span>
+            <span class="chat-aba">Negócio</span>
+          </div>
+          <div class="chat-linhas" id="chat-linhas"></div>
+        </div>
+      </div>
+
+      <div class="bloco quadro">
+        <h3>Staff que responde</h3>
+        <p>
+          Tem gente da equipe no chat e no Discord todo dia, com a tag de cargo à vista pra você
+          saber com quem está falando. Achou um bug, ficou com dúvida numa mecânica ou tem uma
+          sugestão? Chega e fala.
+        </p>
+        <div class="miolo" style="display:grid;gap:12px">
+          <div class="passo vao" style="padding:18px 20px 20px">
+            <h3 style="font-size:18px">Evento global</h3>
+            <p style="margin-top:8px">
+              A staff liga buff de <b>XP e loot</b> pro servidor inteiro, e alguns eventos já
+              voltam sozinhos toda semana. Não é sorteio nem pacote pago: vale pra todo mundo que
+              estiver online na hora.
+            </p>
+          </div>
+          <div class="passo vao" style="padding:18px 20px 20px">
+            <h3 style="font-size:18px">Lançado, e seguimos juntos</h3>
+            <p style="margin-top:8px">
+              O beta acabou em <b>7 de setembro</b> e o servidor oficial está no ar. Sai
+              atualização quase todo dia, e as novidades ficam no botão <b>!</b> dentro do jogo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════ vídeo ══ -->
+<section class="faixa" id="video">
+  <div class="limite">
+    <div class="cabecalho-secao">
+      <h2>Quarenta segundos <em>por dentro</em></h2>
+      <p class="linha-fina">
+        Sem corte de trailer. É a tela do jogo, gravada direto: hunt, mapa-múndi, Pokédex,
+        Market, Mercado da Comunidade, arena, ranking e bosses.
+      </p>
+    </div>
+
+    <figure class="quadro moldura-video">
+      <video id="video-tour" controls playsinline preload="none"
+             poster="midia/gameplay-poster.jpg"
+             data-src="midia/gameplay-tour.webm"
+             aria-label="Tour de 40 segundos pelas telas do Pokéidle.io"></video>
+      <button class="tocar" id="botao-tour" type="button">
+        <span>▶ Assistir ao tour</span>
+      </button>
+    </figure>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════════════════════════ dúvidas ══ -->
+<section class="faixa" id="duvidas">
+  <div class="limite">
+    <div class="cabecalho-secao">
+      <h2>Antes de <em>perguntar</em></h2>
+    </div>
+
+    <div class="faq">
+      <details class="quadro" open>
+        <summary>Dá pra ganhar dinheiro de verdade?</summary>
+        <div class="resposta">
+          Sim, mas o caminho é vender o que você achou caçando, não promessa de salário. Anuncie
+          no Mercado da Comunidade cobrando em <b>Gema</b> (lastro em USDT, saque pela Solana a
+          partir de 1.000 gemas). Quem paga é outro jogador de verdade que quis o seu shiny,
+          token, pedra, casa, bicicleta ou pokémon.
+          O que a gente não faz é prometer quanto você vai ganhar: depende do que cair pra você
+          e do preço que a comunidade estiver pagando na hora. É oportunidade real dentro de um
+          jogo, não renda garantida.
+        </div>
+      </details>
+
+      <details class="quadro">
+        <summary>O jogo ainda está em beta?</summary>
+        <div class="resposta">
+          Não. O <b>lançamento oficial foi em 7 de setembro de 2026</b>, e o servidor que está no
+          ar é o oficial. O reset do beta aconteceu no lançamento: <b>shinys</b>, <b>pokémon
+          P5</b>, os <b>diamantes comprados</b> e as <b>gemas compradas</b> que não tinham sido
+          sacadas atravessaram, e o resto recomeçou com todo mundo junto.
+        </div>
+      </details>
+
+      <details class="quadro">
+        <summary>Preciso investir pra começar a ganhar?</summary>
+        <div class="resposta">
+          Não. A conta é grátis, a caçada é grátis e o que você achar é seu pra vender.
+          Comprar Gema existe pra quem quer acelerar ou negociar mais rápido, mas não é um
+          passo obrigatório. Vale saber de uma regra que mantém a economia de pé:
+          <b>Gema nunca é dada de graça</b>. Ela não cai de drop nem sai de quest, então toda
+          Gema que existe no jogo foi comprada por alguém.
+        </div>
+      </details>
+
+      <details class="quadro">
+        <summary>É grátis mesmo, ou trava depois de duas horas?</summary>
+        <div class="resposta">
+          É <b>grátis pra jogar</b>, sem barra de energia, sem paywall de progressão e sem
+          anúncio no meio da luta. Existe uma loja de Diamantes com VIP, boosts e cosméticos,
+          mas nenhuma hunt, região, boss, ginásio ou fila de PvP está atrás dela.
+        </div>
+      </details>
+
+      <details class="quadro">
+        <summary>Preciso baixar ou instalar alguma coisa?</summary>
+        <div class="resposta">
+          Não. Abre <b>pokeidle.io</b>, entra e joga. Funciona no computador e no celular com a
+          <b>mesma conta</b>. No telefone a tela vira aplicativo, com a cena ocupando tudo e os
+          painéis numa gaveta que sobe do rodapé.
+        </div>
+      </details>
+
+      <details class="quadro">
+        <summary>Farmo com o jogo fechado?</summary>
+        <div class="resposta">
+          Não, e é melhor deixar isso claro do que te decepcionar depois. O jogo roda enquanto
+          a aba estiver aberta, então não existe modo offline. O que existe é <b>AFK de
+          verdade</b>: durante a luta você não clica em nada, o pokémon caça e captura sozinho e
+          as automações cuidam de revive, poção e venda de loot. Você deixa a aba num canto e
+          vai fazer outra coisa.
+        </div>
+      </details>
+
+      <details class="quadro">
+        <summary>Isso é oficial da Nintendo?</summary>
+        <div class="resposta">
+          Não. É um <b>projeto de fã</b>, sem nenhum vínculo com Nintendo, Game Freak, Creatures
+          ou The Pokémon Company. Pokémon é marca registrada delas.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════ fechamento ══ -->
+<section class="faixa">
+  <div class="limite">
+    <div class="fechamento quadro">
+      <span class="fita fita-lancamento">
+        <i class="estrela" aria-hidden="true">★</i><span>Servidor oficial no ar</span>
+      </span>
+      <h2>Abre a aba. <em>Ele começa a caçar</em>.</h2>
+      <p class="linha-fina">
+        Conta local, Google ou Discord. Você escolhe o nick, escolhe o starter e pronto,
+        já está dentro. Sem cartão, sem instalação, sem pegadinha.
+      </p>
+      <a class="cta cta-grande" href="/app" data-cta="fechamento">
+        <img src="midia/ball-poke.png" alt="">Jogar grátis
+      </a>
+      <div class="selos">
+        <span class="selo ouro">Lançado oficialmente</span>
+        <span class="selo">Grátis pra jogar</span>
+        <span class="selo">PC e celular</span>
+        <span class="selo">pt · en · es</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="limite">
+    <div class="links">
+      <a href="/app">Jogar</a>
+      <a href="/terms">Termos e privacidade</a>
+      <a href="https://discord.gg/pokeidle" rel="noopener">Discord</a>
+      <a href="#duvidas">Dúvidas</a>
+    </div>
+    <p class="legal">
+      Pokéidle.io é um projeto de fã, sem fins oficiais e sem afiliação com Nintendo, Game Freak,
+      Creatures ou The Pokémon Company. Pokémon é marca registrada de seus respectivos donos.
+      O jogo roda enquanto a aba estiver aberta. O Mercado da Comunidade é uma negociação entre
+      jogadores e o projeto não promete nenhum tipo de rendimento financeiro.
+    </p>
+  </div>
+</footer>
+
+<!-- A barra que segue o polegar. No celular a página é longa e o botão do herói sai de vista no
+     primeiro rolinho. Ela some no desktop, onde o topo pegajoso já resolve. -->
+<div class="barra-fixa">
+  <a class="cta" href="/app" data-cta="barra"><img src="midia/ball-poke.png" alt="">Jogar grátis</a>
+</div>
+
+<script src="landing.js"></script>
+</body>
+</html>

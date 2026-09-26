@@ -1,0 +1,65 @@
+{
+  "_leia": "Hunts Kanto que o espelho não tem — marcador na aba Kanto e tiles herdados da hunt-fonte. O Magikarp entrou quando a Pesca saiu: ele era o único peixe do Pescador sem hunt em lugar nenhum (os outros 25 já moram nas hunts de Hoenn, com o mesmo número de dex), e sem ele o Gyarados ficava sem a linha evolutiva que o alimenta. Nv 1, como o Poliwag ao lado.",
+  "hunts": [
+    {
+      "slug": "eevee",
+      "nome": "Eevee",
+      "pokeId": 133,
+      "nivel": 40,
+      "fonte": "weepinbell",
+      "pixel": [
+        580,
+        596
+      ],
+      "tipo": "NORMAL"
+    },
+    {
+      "slug": "vaporeon",
+      "nome": "Vaporeon",
+      "pokeId": 134,
+      "nivel": 80,
+      "fonte": "squirtle",
+      "pixel": [
+        640,
+        596
+      ],
+      "tipo": "WATER"
+    },
+    {
+      "slug": "jolteon",
+      "nome": "Jolteon",
+      "pokeId": 135,
+      "nivel": 80,
+      "fonte": "pikachu",
+      "pixel": [
+        700,
+        596
+      ],
+      "tipo": "ELECTRIC"
+    },
+    {
+      "slug": "flareon",
+      "nome": "Flareon",
+      "pokeId": 136,
+      "nivel": 80,
+      "fonte": "charmander",
+      "pixel": [
+        760,
+        596
+      ],
+      "tipo": "FIRE"
+    },
+    {
+      "slug": "magikarp",
+      "nome": "Magikarp",
+      "pokeId": 129,
+      "nivel": 1,
+      "fonte": "squirtle",
+      "pixel": [
+        795,
+        700
+      ],
+      "tipo": "WATER"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pokédex Oficial — Sprite Lab</title>
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="stylesheet" href="nomeador.css">
+<link rel="stylesheet" href="pokedex.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="dot oficial"></span>
+    <div>
+      <h1>Pokédex Oficial</h1>
+      <p>só o que está na pasta de backup · edite os PNGs direto no disco</p>
+    </div>
+  </div>
+  <nav class="lab-nav">
+    <a href="/">Nomeador</a>
+    <a href="/pokedex.html">Pokédex Lab</a>
+    <a href="/pokedex-oficial.html" class="on">Oficial</a>
+    <a href="/spawns.html">Spawns</a>
+    <a href="/mapas.html">Mapas</a>
+    <a href="/casas.html">Casas</a>
+    <a href="/ginasios.html">Ginásios</a>
+    <a href="/economia.html">Economia</a>
+    <a href="/moves.html">Moves</a>
+  </nav>
+  <div class="progresso pdx-top-actions">
+    <div class="counts" id="counts"></div>
+    <button type="button" class="btn-save btn-backup" id="btn-atualizar" title="Relê as pastas Geração 1…9 no Desktop">
+      atualizar
+    </button>
+    <button type="button" class="btn-save" id="btn-publicar" title="Backup → sprites no jogo + miniaturas do mapa mundi">
+      publicar
+    </button>
+    <span class="save-msg" id="save-msg"></span>
+  </div>
+</header>
+
+<section class="toolbar">
+  <input type="search" id="q" placeholder="buscar por nome, slug ou #dex…" autocomplete="off">
+  <div class="chips-row">
+    <span class="chips-label">Geração</span>
+    <div class="chips chips-ger" id="geracoes"></div>
+  </div>
+  <div class="ctl">
+    <label>direção</label>
+    <div class="seg" id="dirs">
+      <button data-dir="1" title="norte">N</button>
+      <button data-dir="2" title="leste">L</button>
+      <button data-dir="3" class="on" title="sul (padrão)">S</button>
+      <button data-dir="4" title="oeste">O</button>
+    </div>
+  </div>
+  <div class="ctl">
+    <label for="zoom">zoom até <b id="zoomv">4×</b></label>
+    <input type="range" id="zoom" min="1" max="8" step="1" value="4">
+  </div>
+  <label class="check"><input type="checkbox" id="anim" checked> animar</label>
+  <div class="chips chips-pdx">
+    <button type="button" class="chip" id="btn-incompletos">pares incompletos</button>
+  </div>
+</section>
+
+<p class="ajuda ajuda-oficial">
+  <b>Oficial</b> = espelho das pastas
+  <code>Desktop/Pokedex Backup/Geração N</code> ·
+  padrão <code>###_slug.png</code> e <code>###_slug_shiny.png</code> ·
+  adicionou ou renomeou no Explorer? clique <b>atualizar</b> ·
+  pronto para o jogo? clique <b>publicar</b> (ignora formas extras tipo Castform chuva/sol)
+</p>
+
+<main id="conteudo"></main>
+<div id="vazio" class="empty hidden">nada nesta pasta de backup</div>
+
+<script type="module" src="pokedex-oficial.js"></script>
+</body>
+</html>

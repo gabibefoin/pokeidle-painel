@@ -1,0 +1,32 @@
+{
+  "_leia": "Hunts Johto que o espelho não tem — marcador na aba Johto (mesmo mapa Kanto/Johto) e tiles da hunt-fonte.",
+  "hunts": [
+    {
+      "slug": "espeon",
+      "nome": "Espeon",
+      "pokeId": 196,
+      "nivel": 80,
+      "fonte": "abra",
+      "pixel": [693, 3067],
+      "tipo": "PSYCHIC"
+    },
+    {
+      "slug": "umbreon",
+      "nome": "Umbreon",
+      "pokeId": 197,
+      "nivel": 80,
+      "fonte": "houndour",
+      "pixel": [753, 3067],
+      "tipo": "DARK"
+    },
+    {
+      "slug": "smeargle",
+      "nome": "Smeargle",
+      "pokeId": 235,
+      "nivel": 30,
+      "fonte": "pidgey",
+      "pixel": [1002, 1825],
+      "tipo": "NORMAL"
+    }
+  ]
+}

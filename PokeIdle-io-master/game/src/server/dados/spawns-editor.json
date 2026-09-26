@@ -1,0 +1,5955 @@
+{
+  "_leia": "Marcadores de hunt por região — editados no Sprite Lab (spawns.html). Cada clique grava pixel [x,y] na imagem da região. O campo fonte (hunt Kanto espelho) define a geografia de tiles quando a hunt for ligada no jogo.",
+  "regioes": {
+    "hoenn": {
+      "rotulo": "Hoenn",
+      "img": "3hoenn.png",
+      "nivelGate": 500,
+      "marcadores": [
+        {
+          "slug": "treecko_hoenn",
+          "nome": "Treecko",
+          "dex": 252,
+          "pokeId": 13252,
+          "pixel": [
+            550,
+            50
+          ],
+          "tipo": "GRASS",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "grovyle_hoenn",
+          "nome": "Grovyle",
+          "dex": 253,
+          "pokeId": 13253,
+          "pixel": [
+            536,
+            118
+          ],
+          "tipo": "GRASS",
+          "nivel": 650,
+          "fonte": null
+        },
+        {
+          "slug": "torchic_hoenn",
+          "nome": "Torchic",
+          "dex": 255,
+          "pokeId": 13255,
+          "pixel": [
+            377,
+            156
+          ],
+          "tipo": "FIRE",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "combusken_hoenn",
+          "nome": "Combusken",
+          "dex": 256,
+          "pokeId": 13256,
+          "pixel": [
+            379,
+            116
+          ],
+          "tipo": "FIRE",
+          "nivel": 650,
+          "fonte": null
+        },
+        {
+          "slug": "blaziken_hoenn",
+          "nome": "Blaziken",
+          "dex": 257,
+          "pokeId": 13257,
+          "pixel": [
+            412,
+            134
+          ],
+          "tipo": "FIRE",
+          "nivel": 850,
+          "fonte": null
+        },
+        {
+          "slug": "mudkip_hoenn",
+          "nome": "Mudkip",
+          "dex": 258,
+          "pokeId": 13258,
+          "pixel": [
+            455,
+            260
+          ],
+          "tipo": "WATER",
+          "nivel": 500,
+          "fonte": "corsola"
+        },
+        {
+          "slug": "marshtomp_hoenn",
+          "nome": "Marshtomp",
+          "dex": 259,
+          "pokeId": 13259,
+          "pixel": [
+            175,
+            251
+          ],
+          "tipo": "WATER",
+          "nivel": 650,
+          "fonte": "feraligatr"
+        },
+        {
+          "slug": "swampert_hoenn",
+          "nome": "Swampert",
+          "dex": 260,
+          "pokeId": 13260,
+          "pixel": [
+            276,
+            135
+          ],
+          "tipo": "WATER",
+          "nivel": 850,
+          "fonte": "goldeen"
+        },
+        {
+          "slug": "mightyena_hoenn",
+          "nome": "Mightyena",
+          "dex": 262,
+          "pokeId": 13262,
+          "pixel": [
+            16,
+            293
+          ],
+          "tipo": "DARK",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "zigzagoon_hoenn",
+          "nome": "Zigzagoon",
+          "dex": 263,
+          "pokeId": 13263,
+          "pixel": [
+            147,
+            397
+          ],
+          "tipo": "NORMAL",
+          "nivel": 500,
+          "fonte": "lickitung"
+        },
+        {
+          "slug": "linoone_hoenn",
+          "nome": "Linoone",
+          "dex": 264,
+          "pokeId": 13264,
+          "pixel": [
+            158,
+            355
+          ],
+          "tipo": "NORMAL",
+          "nivel": 650,
+          "fonte": null
+        },
+        {
+          "slug": "wurmple_hoenn",
+          "nome": "Wurmple",
+          "dex": 265,
+          "pokeId": 13265,
+          "pixel": [
+            117,
+            364
+          ],
+          "tipo": "BUG",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "silcoon_hoenn",
+          "nome": "Silcoon",
+          "dex": 266,
+          "pokeId": 13266,
+          "pixel": [
+            99,
+            383
+          ],
+          "tipo": "BUG",
+          "nivel": 650,
+          "fonte": "scyther"
+        },
+        {
+          "slug": "beautifly_hoenn",
+          "nome": "Beautifly",
+          "dex": 267,
+          "pokeId": 13267,
+          "pixel": [
+            70,
+            368
+          ],
+          "tipo": "BUG",
+          "nivel": 850,
+          "fonte": null
+        },
+        {
+          "slug": "cascoon_hoenn",
+          "nome": "Cascoon",
+          "dex": 268,
+          "pokeId": 13268,
+          "pixel": [
+            59,
+            403
+          ],
+          "tipo": "BUG",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "dustox_hoenn",
+          "nome": "Dustox",
+          "dex": 269,
+          "pokeId": 13269,
+          "pixel": [
+            83,
+            435
+          ],
+          "tipo": "BUG",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "lotad_hoenn",
+          "nome": "Lotad",
+          "dex": 270,
+          "pokeId": 13270,
+          "pixel": [
+            144,
+            284
+          ],
+          "tipo": "WATER",
+          "nivel": 500,
+          "fonte": "wartortle"
+        },
+        {
+          "slug": "lombre_hoenn",
+          "nome": "Lombre",
+          "dex": 271,
+          "pokeId": 13271,
+          "pixel": [
+            170,
+            331
+          ],
+          "tipo": "WATER",
+          "nivel": 650,
+          "fonte": "blastoise"
+        },
+        {
+          "slug": "ludicolo_hoenn",
+          "nome": "Ludicolo",
+          "dex": 272,
+          "pokeId": 13272,
+          "pixel": [
+            141,
+            137
+          ],
+          "tipo": "WATER",
+          "nivel": 850,
+          "fonte": null
+        },
+        {
+          "slug": "seedot_hoenn",
+          "nome": "Seedot",
+          "dex": 273,
+          "pokeId": 13273,
+          "pixel": [
+            120,
+            224
+          ],
+          "tipo": "GRASS",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "nuzleaf_hoenn",
+          "nome": "Nuzleaf",
+          "dex": 274,
+          "pokeId": 13274,
+          "pixel": [
+            87,
+            169
+          ],
+          "tipo": "GRASS",
+          "nivel": 650,
+          "fonte": null
+        },
+        {
+          "slug": "shiftry_hoenn",
+          "nome": "Shiftry",
+          "dex": 275,
+          "pokeId": 13275,
+          "pixel": [
+            124,
+            189
+          ],
+          "tipo": "GRASS",
+          "nivel": 850,
+          "fonte": null
+        },
+        {
+          "slug": "taillow_hoenn",
+          "nome": "Taillow",
+          "dex": 276,
+          "pokeId": 13276,
+          "pixel": [
+            250,
+            30
+          ],
+          "tipo": "NORMAL",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "swellow_hoenn",
+          "nome": "Swellow",
+          "dex": 277,
+          "pokeId": 13277,
+          "pixel": [
+            204,
+            20
+          ],
+          "tipo": "NORMAL",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "wingull_hoenn",
+          "nome": "Wingull",
+          "dex": 278,
+          "pokeId": 13278,
+          "pixel": [
+            502,
+            276
+          ],
+          "tipo": "WATER",
+          "nivel": 500,
+          "fonte": "politoed"
+        },
+        {
+          "slug": "pelipper_hoenn",
+          "nome": "Pelipper",
+          "dex": 279,
+          "pokeId": 13279,
+          "pixel": [
+            500,
+            301
+          ],
+          "tipo": "WATER",
+          "nivel": 700,
+          "fonte": "poliwrath"
+        },
+        {
+          "slug": "ralts_hoenn",
+          "nome": "Ralts",
+          "dex": 280,
+          "pokeId": 13280,
+          "pixel": [
+            405,
+            437
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "kirlia_hoenn",
+          "nome": "Kirlia",
+          "dex": 281,
+          "pokeId": 13281,
+          "pixel": [
+            383,
+            370
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 650,
+          "fonte": null
+        },
+        {
+          "slug": "gardevoir_hoenn",
+          "nome": "Gardevoir",
+          "dex": 282,
+          "pokeId": 13282,
+          "pixel": [
+            367,
+            450
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 850,
+          "fonte": null
+        },
+        {
+          "slug": "surskit_hoenn",
+          "nome": "Surskit",
+          "dex": 283,
+          "pokeId": 13283,
+          "pixel": [
+            338,
+            385
+          ],
+          "tipo": "BUG",
+          "nivel": 500,
+          "fonte": "venonat"
+        },
+        {
+          "slug": "masquerain_hoenn",
+          "nome": "Masquerain",
+          "dex": 284,
+          "pokeId": 13284,
+          "pixel": [
+            337,
+            190
+          ],
+          "tipo": "BUG",
+          "nivel": 700,
+          "fonte": "weedle"
+        },
+        {
+          "slug": "shroomish_hoenn",
+          "nome": "Shroomish",
+          "dex": 285,
+          "pokeId": 13285,
+          "pixel": [
+            277,
+            308
+          ],
+          "tipo": "GRASS",
+          "nivel": 500,
+          "fonte": "ancient_meganium"
+        },
+        {
+          "slug": "vigoroth_hoenn",
+          "nome": "Vigoroth",
+          "dex": 288,
+          "pokeId": 13288,
+          "pixel": [
+            233,
+            274
+          ],
+          "tipo": "NORMAL",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "slaking_hoenn",
+          "nome": "Slaking",
+          "dex": 289,
+          "pokeId": 289,
+          "pixel": [
+            339,
+            307
+          ],
+          "tipo": "NORMAL",
+          "nivel": 600,
+          "fonte": null
+        },
+        {
+          "slug": "slakoth_hoenn",
+          "nome": "Slakoth",
+          "dex": 287,
+          "pokeId": 13287,
+          "pixel": [
+            471,
+            169
+          ],
+          "tipo": "NORMAL",
+          "nivel": 500,
+          "fonte": "dunsparce"
+        },
+        {
+          "slug": "breloom_hoenn",
+          "nome": "Breloom",
+          "dex": 286,
+          "pokeId": 13286,
+          "pixel": [
+            195,
+            84
+          ],
+          "tipo": "GRASS",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "ninjask_hoenn",
+          "nome": "Ninjask",
+          "dex": 291,
+          "pokeId": 13291,
+          "pixel": [
+            110,
+            326
+          ],
+          "tipo": "BUG",
+          "nivel": 700,
+          "fonte": "ledyba"
+        },
+        {
+          "slug": "shedinja_hoenn",
+          "nome": "Shedinja",
+          "dex": 292,
+          "pokeId": 13292,
+          "pixel": [
+            69,
+            302
+          ],
+          "tipo": "BUG",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "whismur_hoenn",
+          "nome": "Whismur",
+          "dex": 293,
+          "pokeId": 13293,
+          "pixel": [
+            76,
+            254
+          ],
+          "tipo": "NORMAL",
+          "nivel": 500,
+          "fonte": "miltank"
+        },
+        {
+          "slug": "loudred_hoenn",
+          "nome": "Loudred",
+          "dex": 294,
+          "pokeId": 13294,
+          "pixel": [
+            37,
+            243
+          ],
+          "tipo": "NORMAL",
+          "nivel": 650,
+          "fonte": null
+        },
+        {
+          "slug": "exploud_hoenn",
+          "nome": "Exploud",
+          "dex": 295,
+          "pokeId": 13295,
+          "pixel": [
+            66,
+            224
+          ],
+          "tipo": "NORMAL",
+          "nivel": 850,
+          "fonte": "pidgey"
+        },
+        {
+          "slug": "makuhita_hoenn",
+          "nome": "Makuhita",
+          "dex": 296,
+          "pokeId": 13296,
+          "pixel": [
+            592,
+            90
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 550,
+          "fonte": null
+        },
+        {
+          "slug": "hariyama_hoenn",
+          "nome": "Hariyama",
+          "dex": 297,
+          "pokeId": 13297,
+          "pixel": [
+            645,
+            108
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "azurill_hoenn",
+          "nome": "Azurill",
+          "dex": 298,
+          "pokeId": 13298,
+          "pixel": [
+            516,
+            170
+          ],
+          "tipo": "NORMAL",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "nosepass_hoenn",
+          "nome": "Nosepass",
+          "dex": 299,
+          "pokeId": 13299,
+          "pixel": [
+            602,
+            24
+          ],
+          "tipo": "ROCK",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "delcatty_hoenn",
+          "nome": "Delcatty",
+          "dex": 301,
+          "pokeId": 13301,
+          "pixel": [
+            314,
+            53
+          ],
+          "tipo": "NORMAL",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "sableye_hoenn",
+          "nome": "Sableye",
+          "dex": 302,
+          "pokeId": 13302,
+          "pixel": [
+            293,
+            19
+          ],
+          "tipo": "DARK",
+          "nivel": 600,
+          "fonte": "houndoom"
+        },
+        {
+          "slug": "mawile_hoenn",
+          "nome": "Mawile",
+          "dex": 303,
+          "pokeId": 13303,
+          "pixel": [
+            327,
+            31
+          ],
+          "tipo": "STEEL",
+          "nivel": 600,
+          "fonte": "brave_steelix"
+        },
+        {
+          "slug": "aron_hoenn",
+          "nome": "Aron",
+          "dex": 304,
+          "pokeId": 13304,
+          "pixel": [
+            182,
+            408
+          ],
+          "tipo": "STEEL",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "lairon_hoenn",
+          "nome": "Lairon",
+          "dex": 305,
+          "pokeId": 13305,
+          "pixel": [
+            287,
+            176
+          ],
+          "tipo": "STEEL",
+          "nivel": 650,
+          "fonte": null
+        },
+        {
+          "slug": "aggron_hoenn",
+          "nome": "Aggron",
+          "dex": 306,
+          "pokeId": 13306,
+          "pixel": [
+            228,
+            206
+          ],
+          "tipo": "STEEL",
+          "nivel": 850,
+          "fonte": null
+        },
+        {
+          "slug": "meditite_hoenn",
+          "nome": "Meditite",
+          "dex": 307,
+          "pokeId": 13307,
+          "pixel": [
+            264,
+            372
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 500,
+          "fonte": "mankey"
+        },
+        {
+          "slug": "medicham_hoenn",
+          "nome": "Medicham",
+          "dex": 308,
+          "pokeId": 13308,
+          "pixel": [
+            222,
+            338
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 700,
+          "fonte": "primeape"
+        },
+        {
+          "slug": "electrike_hoenn",
+          "nome": "Electrike",
+          "dex": 309,
+          "pokeId": 13309,
+          "pixel": [
+            220,
+            428
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "manectric_hoenn",
+          "nome": "Manectric",
+          "dex": 310,
+          "pokeId": 13310,
+          "pixel": [
+            256,
+            441
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "plusle_hoenn",
+          "nome": "Plusle",
+          "dex": 311,
+          "pokeId": 13311,
+          "pixel": [
+            155,
+            445
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 550,
+          "fonte": null
+        },
+        {
+          "slug": "minun_hoenn",
+          "nome": "Minun",
+          "dex": 312,
+          "pokeId": 13312,
+          "pixel": [
+            148,
+            501
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 550,
+          "fonte": "raichu"
+        },
+        {
+          "slug": "volbeat_hoenn",
+          "nome": "Volbeat",
+          "dex": 313,
+          "pokeId": 13313,
+          "pixel": [
+            164,
+            521
+          ],
+          "tipo": "BUG",
+          "nivel": 550,
+          "fonte": "weedle"
+        },
+        {
+          "slug": "roselia_hoenn",
+          "nome": "Roselia",
+          "dex": 315,
+          "pokeId": 13315,
+          "pixel": [
+            258,
+            527
+          ],
+          "tipo": "GRASS",
+          "nivel": 650,
+          "fonte": null
+        },
+        {
+          "slug": "illumise_hoenn",
+          "nome": "Illumise",
+          "dex": 314,
+          "pokeId": 13314,
+          "pixel": [
+            243,
+            477
+          ],
+          "tipo": "BUG",
+          "nivel": 550,
+          "fonte": "ancient_pinsir"
+        },
+        {
+          "slug": "gulpin_hoenn",
+          "nome": "Gulpin",
+          "dex": 316,
+          "pokeId": 13316,
+          "pixel": [
+            218,
+            520
+          ],
+          "tipo": "POISON",
+          "nivel": 500,
+          "fonte": "brave_nidoqueen"
+        },
+        {
+          "slug": "swalot_hoenn",
+          "nome": "Swalot",
+          "dex": 317,
+          "pokeId": 13317,
+          "pixel": [
+            114,
+            251
+          ],
+          "tipo": "POISON",
+          "nivel": 700,
+          "fonte": "crobat"
+        },
+        {
+          "slug": "carvanha_hoenn",
+          "nome": "Carvanha",
+          "dex": 318,
+          "pokeId": 13318,
+          "pixel": [
+            524,
+            221
+          ],
+          "tipo": "WATER",
+          "nivel": 500,
+          "fonte": "goldeen"
+        },
+        {
+          "slug": "sharpedo_hoenn",
+          "nome": "Sharpedo",
+          "dex": 319,
+          "pokeId": 13319,
+          "pixel": [
+            534,
+            260
+          ],
+          "tipo": "WATER",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "wailmer_hoenn",
+          "nome": "Wailmer",
+          "dex": 320,
+          "pokeId": 13320,
+          "pixel": [
+            573,
+            198
+          ],
+          "tipo": "WATER",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "wailord_hoenn",
+          "nome": "Wailord",
+          "dex": 321,
+          "pokeId": 13321,
+          "pixel": [
+            641,
+            219
+          ],
+          "tipo": "WATER",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "numel_hoenn",
+          "nome": "Numel",
+          "dex": 322,
+          "pokeId": 13322,
+          "pixel": [
+            400,
+            224
+          ],
+          "tipo": "FIRE",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "camerupt_hoenn",
+          "nome": "Camerupt",
+          "dex": 323,
+          "pokeId": 13323,
+          "pixel": [
+            430,
+            190
+          ],
+          "tipo": "FIRE",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "torkoal_hoenn",
+          "nome": "Torkoal",
+          "dex": 324,
+          "pokeId": 13324,
+          "pixel": [
+            324,
+            145
+          ],
+          "tipo": "FIRE",
+          "nivel": 600,
+          "fonte": null
+        },
+        {
+          "slug": "spoink_hoenn",
+          "nome": "Spoink",
+          "dex": 325,
+          "pokeId": 13325,
+          "pixel": [
+            451,
+            53
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "grumpig_hoenn",
+          "nome": "Grumpig",
+          "dex": 326,
+          "pokeId": 13326,
+          "pixel": [
+            458,
+            94
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "spinda_hoenn",
+          "nome": "Spinda",
+          "dex": 327,
+          "pokeId": 13327,
+          "pixel": [
+            454,
+            337
+          ],
+          "tipo": "NORMAL",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "trapinch_hoenn",
+          "nome": "Trapinch",
+          "dex": 328,
+          "pokeId": 13328,
+          "pixel": [
+            400,
+            335
+          ],
+          "tipo": "GROUND",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "vibrava_hoenn",
+          "nome": "Vibrava",
+          "dex": 329,
+          "pokeId": 13329,
+          "pixel": [
+            151,
+            87
+          ],
+          "tipo": "GROUND",
+          "nivel": 650,
+          "fonte": null
+        },
+        {
+          "slug": "flygon_hoenn",
+          "nome": "Flygon",
+          "dex": 330,
+          "pokeId": 13330,
+          "pixel": [
+            215,
+            53
+          ],
+          "tipo": "GROUND",
+          "nivel": 850,
+          "fonte": null
+        },
+        {
+          "slug": "cacnea_hoenn",
+          "nome": "Cacnea",
+          "dex": 331,
+          "pokeId": 13331,
+          "pixel": [
+            222,
+            108
+          ],
+          "tipo": "GRASS",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "cacturne_hoenn",
+          "nome": "Cacturne",
+          "dex": 332,
+          "pokeId": 13332,
+          "pixel": [
+            244,
+            66
+          ],
+          "tipo": "GRASS",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "swablu_hoenn",
+          "nome": "Swablu",
+          "dex": 333,
+          "pokeId": 13333,
+          "pixel": [
+            185,
+            119
+          ],
+          "tipo": "NORMAL",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "altaria_hoenn",
+          "nome": "Altaria",
+          "dex": 334,
+          "pokeId": 13334,
+          "pixel": [
+            196,
+            143
+          ],
+          "tipo": "DRAGON",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "zangoose_hoenn",
+          "nome": "Zangoose",
+          "dex": 335,
+          "pokeId": 13335,
+          "pixel": [
+            153,
+            211
+          ],
+          "tipo": "NORMAL",
+          "nivel": 600,
+          "fonte": null
+        },
+        {
+          "slug": "seviper_hoenn",
+          "nome": "Seviper",
+          "dex": 336,
+          "pokeId": 13336,
+          "pixel": [
+            185,
+            172
+          ],
+          "tipo": "POISON",
+          "nivel": 600,
+          "fonte": "muk"
+        },
+        {
+          "slug": "lunatone_hoenn",
+          "nome": "Lunatone",
+          "dex": 337,
+          "pokeId": 13337,
+          "pixel": [
+            473,
+            550
+          ],
+          "tipo": "ROCK",
+          "nivel": 550,
+          "fonte": "larvitar"
+        },
+        {
+          "slug": "solrock_hoenn",
+          "nome": "Solrock",
+          "dex": 338,
+          "pokeId": 13338,
+          "pixel": [
+            426,
+            515
+          ],
+          "tipo": "ROCK",
+          "nivel": 550,
+          "fonte": null
+        },
+        {
+          "slug": "barboach_hoenn",
+          "nome": "Barboach",
+          "dex": 339,
+          "pokeId": 13339,
+          "pixel": [
+            386,
+            592
+          ],
+          "tipo": "WATER",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "whiscash_hoenn",
+          "nome": "Whiscash",
+          "dex": 340,
+          "pokeId": 13340,
+          "pixel": [
+            433,
+            571
+          ],
+          "tipo": "WATER",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "corphish_hoenn",
+          "nome": "Corphish",
+          "dex": 341,
+          "pokeId": 13341,
+          "pixel": [
+            503,
+            489
+          ],
+          "tipo": "WATER",
+          "nivel": 500,
+          "fonte": "staryu"
+        },
+        {
+          "slug": "crawdaunt_hoenn",
+          "nome": "Crawdaunt",
+          "dex": 342,
+          "pokeId": 13342,
+          "pixel": [
+            457,
+            466
+          ],
+          "tipo": "WATER",
+          "nivel": 700,
+          "fonte": "tribal_feraligatr"
+        },
+        {
+          "slug": "baltoy_hoenn",
+          "nome": "Baltoy",
+          "dex": 343,
+          "pokeId": 13343,
+          "pixel": [
+            525,
+            540
+          ],
+          "tipo": "GROUND",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "claydol_hoenn",
+          "nome": "Claydol",
+          "dex": 344,
+          "pokeId": 13344,
+          "pixel": [
+            565,
+            526
+          ],
+          "tipo": "GROUND",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "lileep_hoenn",
+          "nome": "Lileep",
+          "dex": 345,
+          "pokeId": 13345,
+          "pixel": [
+            196,
+            488
+          ],
+          "tipo": "ROCK",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "cradily_hoenn",
+          "nome": "Cradily",
+          "dex": 346,
+          "pokeId": 13346,
+          "pixel": [
+            115,
+            444
+          ],
+          "tipo": "ROCK",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "anorith_hoenn",
+          "nome": "Anorith",
+          "dex": 347,
+          "pokeId": 13347,
+          "pixel": [
+            285,
+            488
+          ],
+          "tipo": "ROCK",
+          "nivel": 500,
+          "fonte": "graveler"
+        },
+        {
+          "slug": "armaldo_hoenn",
+          "nome": "Armaldo",
+          "dex": 348,
+          "pokeId": 13348,
+          "pixel": [
+            308,
+            538
+          ],
+          "tipo": "ROCK",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "feebas_hoenn",
+          "nome": "Feebas",
+          "dex": 349,
+          "pokeId": 349,
+          "pixel": [
+            349,
+            492
+          ],
+          "tipo": "WATER",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "milotic_hoenn",
+          "nome": "Milotic",
+          "dex": 350,
+          "pokeId": 350,
+          "pixel": [
+            314,
+            450
+          ],
+          "tipo": "WATER",
+          "nivel": 700,
+          "fonte": "marill"
+        },
+        {
+          "slug": "castform_fire_hoenn",
+          "nome": "Castform Fire",
+          "dex": 351,
+          "pokeId": 13351,
+          "pixel": [
+            522,
+            438
+          ],
+          "tipo": "FIRE",
+          "nivel": 550,
+          "fonte": "magcargo"
+        },
+        {
+          "slug": "kecleon_hoenn",
+          "nome": "Kecleon",
+          "dex": 352,
+          "pokeId": 13352,
+          "pixel": [
+            532,
+            409
+          ],
+          "tipo": "NORMAL",
+          "nivel": 550,
+          "fonte": "persian"
+        },
+        {
+          "slug": "shuppet_hoenn",
+          "nome": "Shuppet",
+          "dex": 353,
+          "pokeId": 13353,
+          "pixel": [
+            514,
+            648
+          ],
+          "tipo": "GHOST",
+          "nivel": 500,
+          "fonte": "misdreavus"
+        },
+        {
+          "slug": "banette_hoenn",
+          "nome": "Banette",
+          "dex": 354,
+          "pokeId": 13354,
+          "pixel": [
+            573,
+            620
+          ],
+          "tipo": "GHOST",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "duskull_hoenn",
+          "nome": "Duskull",
+          "dex": 355,
+          "pokeId": 13355,
+          "pixel": [
+            529,
+            630
+          ],
+          "tipo": "GHOST",
+          "nivel": 500,
+          "fonte": "trickmaster_gengar"
+        },
+        {
+          "slug": "dusclops_hoenn",
+          "nome": "Dusclops",
+          "dex": 356,
+          "pokeId": 13356,
+          "pixel": [
+            449,
+            620
+          ],
+          "tipo": "GHOST",
+          "nivel": 650,
+          "fonte": null
+        },
+        {
+          "slug": "tropius_hoenn",
+          "nome": "Tropius",
+          "dex": 357,
+          "pokeId": 13357,
+          "pixel": [
+            164,
+            52
+          ],
+          "tipo": "GRASS",
+          "nivel": 600,
+          "fonte": null
+        },
+        {
+          "slug": "chimecho_hoenn",
+          "nome": "Chimecho",
+          "dex": 358,
+          "pokeId": 13358,
+          "pixel": [
+            514,
+            581
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 700,
+          "fonte": "abra"
+        },
+        {
+          "slug": "absol_hoenn",
+          "nome": "Absol",
+          "dex": 359,
+          "pokeId": 13359,
+          "pixel": [
+            558,
+            580
+          ],
+          "tipo": "DARK",
+          "nivel": 600,
+          "fonte": null
+        },
+        {
+          "slug": "wynaut_hoenn",
+          "nome": "Wynaut",
+          "dex": 360,
+          "pokeId": 13360,
+          "pixel": [
+            600,
+            597
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "snorunt_hoenn",
+          "nome": "Snorunt",
+          "dex": 361,
+          "pokeId": 13361,
+          "pixel": [
+            559,
+            269
+          ],
+          "tipo": "ICE",
+          "nivel": 500,
+          "fonte": "heavy_piloswine"
+        },
+        {
+          "slug": "glalie_hoenn",
+          "nome": "Glalie",
+          "dex": 362,
+          "pokeId": 13362,
+          "pixel": [
+            592,
+            271
+          ],
+          "tipo": "ICE",
+          "nivel": 700,
+          "fonte": "jynx"
+        },
+        {
+          "slug": "spheal_hoenn",
+          "nome": "Spheal",
+          "dex": 363,
+          "pokeId": 13363,
+          "pixel": [
+            581,
+            307
+          ],
+          "tipo": "WATER",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "sealeo_hoenn",
+          "nome": "Sealeo",
+          "dex": 364,
+          "pokeId": 13364,
+          "pixel": [
+            569,
+            329
+          ],
+          "tipo": "WATER",
+          "nivel": 650,
+          "fonte": null
+        },
+        {
+          "slug": "walrein_hoenn",
+          "nome": "Walrein",
+          "dex": 365,
+          "pokeId": 13365,
+          "pixel": [
+            603,
+            313
+          ],
+          "tipo": "WATER",
+          "nivel": 850,
+          "fonte": null
+        },
+        {
+          "slug": "clamperl_hoenn",
+          "nome": "Clamperl",
+          "dex": 366,
+          "pokeId": 13366,
+          "pixel": [
+            622,
+            254
+          ],
+          "tipo": "WATER",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "huntail_hoenn",
+          "nome": "Huntail",
+          "dex": 367,
+          "pokeId": 13367,
+          "pixel": [
+            578,
+            241
+          ],
+          "tipo": "WATER",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "gorebyss_hoenn",
+          "nome": "Gorebyss",
+          "dex": 368,
+          "pokeId": 13368,
+          "pixel": [
+            537,
+            296
+          ],
+          "tipo": "WATER",
+          "nivel": 550,
+          "fonte": null
+        },
+        {
+          "slug": "relicanth_hoenn",
+          "nome": "Relicanth",
+          "dex": 369,
+          "pokeId": 13369,
+          "pixel": [
+            537,
+            359
+          ],
+          "tipo": "WATER",
+          "nivel": 550,
+          "fonte": null
+        },
+        {
+          "slug": "luvdisc_hoenn",
+          "nome": "Luvdisc",
+          "dex": 370,
+          "pokeId": 13370,
+          "pixel": [
+            622,
+            284
+          ],
+          "tipo": "WATER",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "bagon_hoenn",
+          "nome": "Bagon",
+          "dex": 371,
+          "pokeId": 13371,
+          "pixel": [
+            374,
+            89
+          ],
+          "tipo": "DRAGON",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "shelgon_hoenn",
+          "nome": "Shelgon",
+          "dex": 372,
+          "pokeId": 13372,
+          "pixel": [
+            400,
+            41
+          ],
+          "tipo": "DRAGON",
+          "nivel": 700,
+          "fonte": null
+        },
+        {
+          "slug": "salamence_hoenn",
+          "nome": "Salamence",
+          "dex": 373,
+          "pokeId": 373,
+          "pixel": [
+            423,
+            47
+          ],
+          "tipo": "DRAGON",
+          "nivel": 850,
+          "fonte": null
+        },
+        {
+          "slug": "beldum_hoenn",
+          "nome": "Beldum",
+          "dex": 374,
+          "pokeId": 13374,
+          "pixel": [
+            281,
+            90
+          ],
+          "tipo": "STEEL",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "metang_hoenn",
+          "nome": "Metang",
+          "dex": 375,
+          "pokeId": 13375,
+          "pixel": [
+            363,
+            30
+          ],
+          "tipo": "STEEL",
+          "nivel": 650,
+          "fonte": null
+        },
+        {
+          "slug": "sceptile_hoenn",
+          "nome": "Sceptile",
+          "dex": 254,
+          "pokeId": 13254,
+          "pixel": [
+            117,
+            410
+          ],
+          "tipo": "GRASS",
+          "nivel": 850,
+          "fonte": null
+        },
+        {
+          "slug": "poochyena_hoenn",
+          "nome": "Poochyena",
+          "dex": 261,
+          "pokeId": 13261,
+          "pixel": [
+            320,
+            253
+          ],
+          "tipo": "DARK",
+          "nivel": 500,
+          "fonte": null
+        },
+        {
+          "slug": "metagross_hoenn",
+          "nome": "Metagross",
+          "dex": 376,
+          "pokeId": 376,
+          "pixel": [
+            660,
+            60
+          ],
+          "tipo": "STEEL",
+          "nivel": 850,
+          "fonte": null
+        },
+        {
+          "slug": "nincada_hoenn",
+          "nome": "Nincada",
+          "dex": 290,
+          "pokeId": 13290,
+          "pixel": [
+            490,
+            75
+          ],
+          "tipo": "BUG",
+          "nivel": 500,
+          "fonte": null
+        }
+      ]
+    },
+    "sinnoh": {
+      "rotulo": "Sinnoh",
+      "img": "4sinnoh.png",
+      "nivelGate": 1750,
+      "marcadores": [
+        {
+          "slug": "shieldon_sinnoh",
+          "nome": "Shieldon",
+          "dex": 410,
+          "pokeId": 410,
+          "pixel": [
+            540,
+            108
+          ],
+          "tipo": "ROCK",
+          "nivel": 1000,
+          "fonte": "larvitar"
+        },
+        {
+          "slug": "bastiodon_sinnoh",
+          "nome": "Bastiodon",
+          "dex": 411,
+          "pokeId": 411,
+          "pixel": [
+            1061,
+            1712
+          ],
+          "tipo": "ROCK",
+          "nivel": 3000,
+          "fonte": "omanyte"
+        },
+        {
+          "slug": "vespiquen_sinnoh",
+          "nome": "Vespiquen",
+          "dex": 416,
+          "pokeId": 416,
+          "pixel": [
+            727,
+            1791
+          ],
+          "tipo": "BUG",
+          "nivel": 3000,
+          "fonte": "ariados"
+        },
+        {
+          "slug": "pachirisu_sinnoh",
+          "nome": "Pachirisu",
+          "dex": 417,
+          "pokeId": 417,
+          "pixel": [
+            553,
+            1905
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 1500,
+          "fonte": "charged_raichu"
+        },
+        {
+          "slug": "lopunny_sinnoh",
+          "nome": "Lopunny",
+          "dex": 428,
+          "pokeId": 428,
+          "pixel": [
+            432,
+            1370
+          ],
+          "tipo": "NORMAL",
+          "nivel": 3000,
+          "fonte": "stantler"
+        },
+        {
+          "slug": "lucario_sinnoh",
+          "nome": "Lucario",
+          "dex": 448,
+          "pokeId": 448,
+          "pixel": [
+            994,
+            926
+          ],
+          "tipo": "STEEL",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "riolu_sinnoh",
+          "nome": "Riolu",
+          "dex": 447,
+          "pokeId": 447,
+          "pixel": [
+            1018,
+            1026
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "rhyperior_sinnoh",
+          "nome": "Rhyperior",
+          "dex": 464,
+          "pokeId": 464,
+          "pixel": [
+            1256,
+            1496
+          ],
+          "tipo": "GROUND",
+          "nivel": 3000,
+          "fonte": "dugtrio"
+        },
+        {
+          "slug": "tangrowth_sinnoh",
+          "nome": "Tangrowth",
+          "dex": 465,
+          "pokeId": 465,
+          "pixel": [
+            1591,
+            1649
+          ],
+          "tipo": "GRASS",
+          "nivel": 3000,
+          "fonte": "gloom"
+        },
+        {
+          "slug": "electivire_sinnoh",
+          "nome": "Electivire",
+          "dex": 466,
+          "pokeId": 466,
+          "pixel": [
+            720,
+            1513
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 3000,
+          "fonte": "magnemite"
+        },
+        {
+          "slug": "magmortar_sinnoh",
+          "nome": "Magmortar",
+          "dex": 467,
+          "pokeId": 467,
+          "pixel": [
+            330,
+            1363
+          ],
+          "tipo": "FIRE",
+          "nivel": 3000,
+          "fonte": "magcargo"
+        },
+        {
+          "slug": "gliscor_sinnoh",
+          "nome": "Gliscor",
+          "dex": 472,
+          "pokeId": 472,
+          "pixel": [
+            683,
+            1286
+          ],
+          "tipo": "GROUND",
+          "nivel": 1500,
+          "fonte": "sandshrew"
+        },
+        {
+          "slug": "dusknoir_sinnoh",
+          "nome": "Dusknoir",
+          "dex": 477,
+          "pokeId": 477,
+          "pixel": [
+            814,
+            1850
+          ],
+          "tipo": "GHOST",
+          "nivel": 3000,
+          "fonte": "gastly"
+        },
+        {
+          "slug": "turtwig_sinnoh",
+          "nome": "Turtwig",
+          "dex": 387,
+          "pokeId": 387,
+          "pixel": [
+            676,
+            80
+          ],
+          "tipo": "GRASS",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "grotle_sinnoh",
+          "nome": "Grotle",
+          "dex": 388,
+          "pokeId": 388,
+          "pixel": [
+            725,
+            79
+          ],
+          "tipo": "GRASS",
+          "nivel": 1750,
+          "fonte": null
+        },
+        {
+          "slug": "torterra_sinnoh",
+          "nome": "Torterra",
+          "dex": 389,
+          "pokeId": 389,
+          "pixel": [
+            705,
+            133
+          ],
+          "tipo": "GRASS",
+          "nivel": 3500,
+          "fonte": null
+        },
+        {
+          "slug": "chimchar_sinnoh",
+          "nome": "Chimchar",
+          "dex": 390,
+          "pokeId": 390,
+          "pixel": [
+            575,
+            285
+          ],
+          "tipo": "FIRE",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "monferno_sinnoh",
+          "nome": "Monferno",
+          "dex": 391,
+          "pokeId": 391,
+          "pixel": [
+            659,
+            301
+          ],
+          "tipo": "FIRE",
+          "nivel": 1750,
+          "fonte": null
+        },
+        {
+          "slug": "infernape_sinnoh",
+          "nome": "Infernape",
+          "dex": 392,
+          "pokeId": 392,
+          "pixel": [
+            611,
+            385
+          ],
+          "tipo": "FIRE",
+          "nivel": 3500,
+          "fonte": null
+        },
+        {
+          "slug": "piplup_sinnoh",
+          "nome": "Piplup",
+          "dex": 393,
+          "pokeId": 393,
+          "pixel": [
+            322,
+            447
+          ],
+          "tipo": "WATER",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "prinplup_sinnoh",
+          "nome": "Prinplup",
+          "dex": 394,
+          "pokeId": 394,
+          "pixel": [
+            439,
+            573
+          ],
+          "tipo": "WATER",
+          "nivel": 1750,
+          "fonte": null
+        },
+        {
+          "slug": "empoleon_sinnoh",
+          "nome": "Empoleon",
+          "dex": 395,
+          "pokeId": 395,
+          "pixel": [
+            451,
+            637
+          ],
+          "tipo": "WATER",
+          "nivel": 3500,
+          "fonte": null
+        },
+        {
+          "slug": "starly_sinnoh",
+          "nome": "Starly",
+          "dex": 396,
+          "pokeId": 396,
+          "pixel": [
+            614,
+            563
+          ],
+          "tipo": "NORMAL",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "staravia_sinnoh",
+          "nome": "Staravia",
+          "dex": 397,
+          "pokeId": 397,
+          "pixel": [
+            553,
+            558
+          ],
+          "tipo": "NORMAL",
+          "nivel": 1750,
+          "fonte": null
+        },
+        {
+          "slug": "staraptor_sinnoh",
+          "nome": "Staraptor",
+          "dex": 398,
+          "pokeId": 398,
+          "pixel": [
+            283,
+            249
+          ],
+          "tipo": "NORMAL",
+          "nivel": 3500,
+          "fonte": null
+        },
+        {
+          "slug": "bidoof_sinnoh",
+          "nome": "Bidoof",
+          "dex": 399,
+          "pokeId": 399,
+          "pixel": [
+            352,
+            274
+          ],
+          "tipo": "NORMAL",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "bibarel_sinnoh",
+          "nome": "Bibarel",
+          "dex": 400,
+          "pokeId": 400,
+          "pixel": [
+            197,
+            569
+          ],
+          "tipo": "NORMAL",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "kricketot_sinnoh",
+          "nome": "Kricketot",
+          "dex": 401,
+          "pokeId": 401,
+          "pixel": [
+            217,
+            686
+          ],
+          "tipo": "BUG",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "kricketune_sinnoh",
+          "nome": "Kricketune",
+          "dex": 402,
+          "pokeId": 402,
+          "pixel": [
+            104,
+            675
+          ],
+          "tipo": "BUG",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "shinx_sinnoh",
+          "nome": "Shinx",
+          "dex": 403,
+          "pokeId": 403,
+          "pixel": [
+            1023,
+            1247
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "luxio_sinnoh",
+          "nome": "Luxio",
+          "dex": 404,
+          "pokeId": 404,
+          "pixel": [
+            997,
+            1306
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 1750,
+          "fonte": null
+        },
+        {
+          "slug": "luxray_sinnoh",
+          "nome": "Luxray",
+          "dex": 405,
+          "pokeId": 405,
+          "pixel": [
+            1068,
+            1280
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 3500,
+          "fonte": null
+        },
+        {
+          "slug": "budew_sinnoh",
+          "nome": "Budew",
+          "dex": 406,
+          "pokeId": 406,
+          "pixel": [
+            855,
+            1609
+          ],
+          "tipo": "GRASS",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "roserade_sinnoh",
+          "nome": "Roserade",
+          "dex": 407,
+          "pokeId": 407,
+          "pixel": [
+            802,
+            1613
+          ],
+          "tipo": "GRASS",
+          "nivel": 3500,
+          "fonte": null
+        },
+        {
+          "slug": "cranidos_sinnoh",
+          "nome": "Cranidos",
+          "dex": 408,
+          "pokeId": 408,
+          "pixel": [
+            900,
+            1736
+          ],
+          "tipo": "ROCK",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "rampardos_sinnoh",
+          "nome": "Rampardos",
+          "dex": 409,
+          "pokeId": 409,
+          "pixel": [
+            856,
+            1753
+          ],
+          "tipo": "ROCK",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "burmy_plant_cloak_sinnoh",
+          "nome": "Burmy",
+          "dex": 412,
+          "pokeId": 412,
+          "pixel": [
+            669,
+            1935
+          ],
+          "tipo": "BUG",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "wormadam_plant_cloak_sinnoh",
+          "nome": "Wormadam",
+          "dex": 413,
+          "pokeId": 413,
+          "pixel": [
+            716,
+            1925
+          ],
+          "tipo": "BUG",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "mothim_sinnoh",
+          "nome": "Mothim",
+          "dex": 414,
+          "pokeId": 414,
+          "pixel": [
+            1173,
+            1818
+          ],
+          "tipo": "BUG",
+          "nivel": 1250,
+          "fonte": null
+        },
+        {
+          "slug": "combee_sinnoh",
+          "nome": "Combee",
+          "dex": 415,
+          "pokeId": 415,
+          "pixel": [
+            1133,
+            1877
+          ],
+          "tipo": "BUG",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "buizel_sinnoh",
+          "nome": "Buizel",
+          "dex": 418,
+          "pokeId": 418,
+          "pixel": [
+            1369,
+            1450
+          ],
+          "tipo": "WATER",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "floatzel_sinnoh",
+          "nome": "Floatzel",
+          "dex": 419,
+          "pokeId": 419,
+          "pixel": [
+            1320,
+            1457
+          ],
+          "tipo": "WATER",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "cherubi_sinnoh",
+          "nome": "Cherubi",
+          "dex": 420,
+          "pokeId": 420,
+          "pixel": [
+            1558,
+            1688
+          ],
+          "tipo": "GRASS",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "cherrim_sinnoh",
+          "nome": "Cherrim",
+          "dex": 421,
+          "pokeId": 421,
+          "pixel": [
+            1501,
+            1700
+          ],
+          "tipo": "GRASS",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "shellos_sinnoh",
+          "nome": "Shellos",
+          "dex": 422,
+          "pokeId": 422,
+          "pixel": [
+            1128,
+            1696
+          ],
+          "tipo": "WATER",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "gastrodon_sinnoh",
+          "nome": "Gastrodon",
+          "dex": 423,
+          "pokeId": 423,
+          "pixel": [
+            1091,
+            1536
+          ],
+          "tipo": "WATER",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "ambipom_sinnoh",
+          "nome": "Ambipom",
+          "dex": 424,
+          "pokeId": 424,
+          "pixel": [
+            1035,
+            1556
+          ],
+          "tipo": "NORMAL",
+          "nivel": 1250,
+          "fonte": null
+        },
+        {
+          "slug": "drifblim_sinnoh",
+          "nome": "Drifblim",
+          "dex": 426,
+          "pokeId": 426,
+          "pixel": [
+            1139,
+            1358
+          ],
+          "tipo": "GHOST",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "drifloon_sinnoh",
+          "nome": "Drifloon",
+          "dex": 425,
+          "pokeId": 425,
+          "pixel": [
+            1069,
+            1415
+          ],
+          "tipo": "GHOST",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "buneary_sinnoh",
+          "nome": "Buneary",
+          "dex": 427,
+          "pokeId": 427,
+          "pixel": [
+            1194,
+            1434
+          ],
+          "tipo": "NORMAL",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "mismagius_sinnoh",
+          "nome": "Mismagius",
+          "dex": 429,
+          "pokeId": 429,
+          "pixel": [
+            540,
+            1834
+          ],
+          "tipo": "GHOST",
+          "nivel": 1250,
+          "fonte": null
+        },
+        {
+          "slug": "honchkrow_sinnoh",
+          "nome": "Honchkrow",
+          "dex": 430,
+          "pokeId": 430,
+          "pixel": [
+            518,
+            1785
+          ],
+          "tipo": "DARK",
+          "nivel": 1500,
+          "fonte": null
+        },
+        {
+          "slug": "glameow_sinnoh",
+          "nome": "Glameow",
+          "dex": 431,
+          "pokeId": 431,
+          "pixel": [
+            609,
+            1773
+          ],
+          "tipo": "NORMAL",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "purugly_sinnoh",
+          "nome": "Purugly",
+          "dex": 432,
+          "pokeId": 432,
+          "pixel": [
+            663,
+            1742
+          ],
+          "tipo": "NORMAL",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "chingling_sinnoh",
+          "nome": "Chingling",
+          "dex": 433,
+          "pokeId": 433,
+          "pixel": [
+            600,
+            1830
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "stunky_sinnoh",
+          "nome": "Stunky",
+          "dex": 434,
+          "pokeId": 434,
+          "pixel": [
+            464,
+            1874
+          ],
+          "tipo": "POISON",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "skuntank_sinnoh",
+          "nome": "Skuntank",
+          "dex": 435,
+          "pokeId": 435,
+          "pixel": [
+            464,
+            1819
+          ],
+          "tipo": "POISON",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "bronzor_sinnoh",
+          "nome": "Bronzor",
+          "dex": 436,
+          "pokeId": 436,
+          "pixel": [
+            696,
+            1973
+          ],
+          "tipo": "STEEL",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "bronzong_sinnoh",
+          "nome": "Bronzong",
+          "dex": 437,
+          "pokeId": 437,
+          "pixel": [
+            737,
+            1874
+          ],
+          "tipo": "STEEL",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "mime_jr_sinnoh",
+          "nome": "Mime Jr.",
+          "dex": 439,
+          "pokeId": 439,
+          "pixel": [
+            668,
+            1875
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "chatot_sinnoh",
+          "nome": "Chatot",
+          "dex": 441,
+          "pokeId": 441,
+          "pixel": [
+            645,
+            1610
+          ],
+          "tipo": "NORMAL",
+          "nivel": 1250,
+          "fonte": null
+        },
+        {
+          "slug": "spiritomb_sinnoh",
+          "nome": "Spiritomb",
+          "dex": 442,
+          "pokeId": 442,
+          "pixel": [
+            657,
+            1697
+          ],
+          "tipo": "GHOST",
+          "nivel": 1250,
+          "fonte": null
+        },
+        {
+          "slug": "gible_sinnoh",
+          "nome": "Gible",
+          "dex": 443,
+          "pokeId": 443,
+          "pixel": [
+            669,
+            1332
+          ],
+          "tipo": "DRAGON",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "gabite_sinnoh",
+          "nome": "Gabite",
+          "dex": 444,
+          "pokeId": 444,
+          "pixel": [
+            697,
+            1356
+          ],
+          "tipo": "DRAGON",
+          "nivel": 1750,
+          "fonte": null
+        },
+        {
+          "slug": "garchomp_sinnoh",
+          "nome": "Garchomp",
+          "dex": 445,
+          "pokeId": 445,
+          "pixel": [
+            748,
+            1332
+          ],
+          "tipo": "DRAGON",
+          "nivel": 3500,
+          "fonte": null
+        },
+        {
+          "slug": "munchlax_sinnoh",
+          "nome": "Munchlax",
+          "dex": 446,
+          "pokeId": 446,
+          "pixel": [
+            285,
+            1315
+          ],
+          "tipo": "NORMAL",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "hippopotas_sinnoh",
+          "nome": "Hippopotas",
+          "dex": 449,
+          "pokeId": 449,
+          "pixel": [
+            379,
+            1323
+          ],
+          "tipo": "GROUND",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "drapion_sinnoh",
+          "nome": "Drapion",
+          "dex": 452,
+          "pokeId": 452,
+          "pixel": [
+            404,
+            1427
+          ],
+          "tipo": "POISON",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "hippowdon_sinnoh",
+          "nome": "Hippowdon",
+          "dex": 450,
+          "pokeId": 450,
+          "pixel": [
+            1415,
+            1162
+          ],
+          "tipo": "GROUND",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "skorupi_sinnoh",
+          "nome": "Skorupi",
+          "dex": 451,
+          "pokeId": 451,
+          "pixel": [
+            1402,
+            1229
+          ],
+          "tipo": "POISON",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "croagunk_sinnoh",
+          "nome": "Croagunk",
+          "dex": 453,
+          "pokeId": 453,
+          "pixel": [
+            1295,
+            1551
+          ],
+          "tipo": "POISON",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "toxicroak_sinnoh",
+          "nome": "Toxicroak",
+          "dex": 454,
+          "pokeId": 454,
+          "pixel": [
+            1333,
+            1524
+          ],
+          "tipo": "POISON",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "carnivine_sinnoh",
+          "nome": "Carnivine",
+          "dex": 455,
+          "pokeId": 455,
+          "pixel": [
+            1594,
+            1601
+          ],
+          "tipo": "GRASS",
+          "nivel": 1250,
+          "fonte": null
+        },
+        {
+          "slug": "finneon_sinnoh",
+          "nome": "Finneon",
+          "dex": 456,
+          "pokeId": 456,
+          "pixel": [
+            1255,
+            1843
+          ],
+          "tipo": "WATER",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "lumineon_sinnoh",
+          "nome": "Lumineon",
+          "dex": 457,
+          "pokeId": 457,
+          "pixel": [
+            1096,
+            1654
+          ],
+          "tipo": "WATER",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "mantyke_sinnoh",
+          "nome": "Mantyke",
+          "dex": 458,
+          "pokeId": 458,
+          "pixel": [
+            910,
+            1843
+          ],
+          "tipo": "WATER",
+          "nivel": 1000,
+          "fonte": null
+        },
+        {
+          "slug": "snover_sinnoh",
+          "nome": "Snover",
+          "dex": 459,
+          "pokeId": 459,
+          "pixel": [
+            600,
+            1218
+          ],
+          "tipo": "GRASS",
+          "nivel": 1000,
+          "fonte": "heavy_piloswine"
+        },
+        {
+          "slug": "abomasnow_sinnoh",
+          "nome": "Abomasnow",
+          "dex": 460,
+          "pokeId": 460,
+          "pixel": [
+            669,
+            1093
+          ],
+          "tipo": "GRASS",
+          "nivel": 2000,
+          "fonte": "heavy_piloswine"
+        },
+        {
+          "slug": "weavile_sinnoh",
+          "nome": "Weavile",
+          "dex": 461,
+          "pokeId": 461,
+          "pixel": [
+            749,
+            1066
+          ],
+          "tipo": "DARK",
+          "nivel": 1500,
+          "fonte": null
+        },
+        {
+          "slug": "magnezone_sinnoh",
+          "nome": "Magnezone",
+          "dex": 462,
+          "pokeId": 462,
+          "pixel": [
+            491,
+            1011
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 1500,
+          "fonte": null
+        },
+        {
+          "slug": "lickilicky_sinnoh",
+          "nome": "Lickilicky",
+          "dex": 463,
+          "pokeId": 463,
+          "pixel": [
+            426,
+            1107
+          ],
+          "tipo": "NORMAL",
+          "nivel": 1500,
+          "fonte": null
+        },
+        {
+          "slug": "togekiss_sinnoh",
+          "nome": "Togekiss",
+          "dex": 468,
+          "pokeId": 468,
+          "pixel": [
+            350,
+            988
+          ],
+          "tipo": "FAIRY",
+          "nivel": 1500,
+          "fonte": null
+        },
+        {
+          "slug": "yanmega_sinnoh",
+          "nome": "Yanmega",
+          "dex": 469,
+          "pokeId": 469,
+          "pixel": [
+            324,
+            1094
+          ],
+          "tipo": "BUG",
+          "nivel": 1500,
+          "fonte": null
+        },
+        {
+          "slug": "glaceon_sinnoh",
+          "nome": "Glaceon",
+          "dex": 471,
+          "pokeId": 471,
+          "pixel": [
+            754,
+            998
+          ],
+          "tipo": "ICE",
+          "nivel": 1500,
+          "fonte": "smoochum"
+        },
+        {
+          "slug": "mamoswine_sinnoh",
+          "nome": "Mamoswine",
+          "dex": 473,
+          "pokeId": 473,
+          "pixel": [
+            636,
+            951
+          ],
+          "tipo": "ICE",
+          "nivel": 1500,
+          "fonte": "heavy_piloswine"
+        },
+        {
+          "slug": "probopass_sinnoh",
+          "nome": "Probopass",
+          "dex": 476,
+          "pokeId": 476,
+          "pixel": [
+            872,
+            913
+          ],
+          "tipo": "ROCK",
+          "nivel": 2000,
+          "fonte": null
+        },
+        {
+          "slug": "gallade_sinnoh",
+          "nome": "Gallade",
+          "dex": 475,
+          "pokeId": 475,
+          "pixel": [
+            1009,
+            1075
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 1500,
+          "fonte": null
+        },
+        {
+          "slug": "porygon_z_sinnoh",
+          "nome": "Porygon-Z",
+          "dex": 474,
+          "pokeId": 474,
+          "pixel": [
+            1001,
+            1479
+          ],
+          "tipo": "NORMAL",
+          "nivel": 1500,
+          "fonte": null
+        },
+        {
+          "slug": "leafeon_sinnoh",
+          "nome": "Leafeon",
+          "dex": 470,
+          "pokeId": 470,
+          "pixel": [
+            729,
+            1646
+          ],
+          "tipo": "GRASS",
+          "nivel": 1500,
+          "fonte": null
+        },
+        {
+          "slug": "froslass_sinnoh",
+          "nome": "Froslass",
+          "dex": 478,
+          "pokeId": 478,
+          "pixel": [
+            672,
+            1016
+          ],
+          "tipo": "ICE",
+          "nivel": 1250,
+          "fonte": "jynx"
+        },
+        {
+          "slug": "rotom_sinnoh",
+          "nome": "Rotom",
+          "dex": 479,
+          "pokeId": 479,
+          "pixel": [
+            637,
+            1514
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 1250,
+          "fonte": null
+        }
+      ]
+    },
+    "unova": {
+      "rotulo": "Unova",
+      "img": "5unova.png",
+      "nivelGate": 6400,
+      "marcadores": [
+        {
+          "slug": "throh_unova",
+          "nome": "Throh",
+          "dex": 538,
+          "pokeId": 538,
+          "pixel": [
+            857,
+            303
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 5000,
+          "fonte": "machop"
+        },
+        {
+          "slug": "sawk_unova",
+          "nome": "Sawk",
+          "dex": 539,
+          "pokeId": 539,
+          "pixel": [
+            829,
+            311
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 5000,
+          "fonte": "mankey"
+        },
+        {
+          "slug": "tirtouga_unova",
+          "nome": "Tirtouga",
+          "dex": 564,
+          "pokeId": 564,
+          "pixel": [
+            504,
+            979
+          ],
+          "tipo": "WATER",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "carracosta_unova",
+          "nome": "Carracosta",
+          "dex": 565,
+          "pokeId": 565,
+          "pixel": [
+            573,
+            956
+          ],
+          "tipo": "WATER",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "archen_unova",
+          "nome": "Archen",
+          "dex": 566,
+          "pokeId": 566,
+          "pixel": [
+            879,
+            238
+          ],
+          "tipo": "ROCK",
+          "nivel": 5000,
+          "fonte": "hard_golem"
+        },
+        {
+          "slug": "archeops_unova",
+          "nome": "Archeops",
+          "dex": 567,
+          "pokeId": 567,
+          "pixel": [
+            856,
+            259
+          ],
+          "tipo": "ROCK",
+          "nivel": 8000,
+          "fonte": "kabuto"
+        },
+        {
+          "slug": "larvesta_unova",
+          "nome": "Larvesta",
+          "dex": 636,
+          "pokeId": 636,
+          "pixel": [
+            619,
+            659
+          ],
+          "tipo": "BUG",
+          "nivel": 5000,
+          "fonte": "forretress"
+        },
+        {
+          "slug": "volcarona_unova",
+          "nome": "Volcarona",
+          "dex": 637,
+          "pokeId": 637,
+          "pixel": [
+            553,
+            685
+          ],
+          "tipo": "BUG",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "snivy_unova",
+          "nome": "Snivy",
+          "dex": 495,
+          "pokeId": 495,
+          "pixel": [
+            334,
+            457
+          ],
+          "tipo": "GRASS",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "servine_unova",
+          "nome": "Servine",
+          "dex": 496,
+          "pokeId": 496,
+          "pixel": [
+            385,
+            431
+          ],
+          "tipo": "GRASS",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "serperior_unova",
+          "nome": "Serperior",
+          "dex": 497,
+          "pokeId": 497,
+          "pixel": [
+            382,
+            372
+          ],
+          "tipo": "GRASS",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "tepig_unova",
+          "nome": "Tepig",
+          "dex": 498,
+          "pokeId": 498,
+          "pixel": [
+            549,
+            553
+          ],
+          "tipo": "FIRE",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "pignite_unova",
+          "nome": "Pignite",
+          "dex": 499,
+          "pokeId": 499,
+          "pixel": [
+            617,
+            553
+          ],
+          "tipo": "FIRE",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "emboar_unova",
+          "nome": "Emboar",
+          "dex": 500,
+          "pokeId": 500,
+          "pixel": [
+            429,
+            656
+          ],
+          "tipo": "FIRE",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "oshawott_unova",
+          "nome": "Oshawott",
+          "dex": 501,
+          "pokeId": 501,
+          "pixel": [
+            588,
+            822
+          ],
+          "tipo": "WATER",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "dewott_unova",
+          "nome": "Dewott",
+          "dex": 502,
+          "pokeId": 502,
+          "pixel": [
+            566,
+            901
+          ],
+          "tipo": "WATER",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "samurott_unova",
+          "nome": "Samurott",
+          "dex": 503,
+          "pokeId": 503,
+          "pixel": [
+            735,
+            980
+          ],
+          "tipo": "WATER",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "patrat_unova",
+          "nome": "Patrat",
+          "dex": 504,
+          "pokeId": 504,
+          "pixel": [
+            800,
+            718
+          ],
+          "tipo": "NORMAL",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "watchog_unova",
+          "nome": "Watchog",
+          "dex": 505,
+          "pokeId": 505,
+          "pixel": [
+            872,
+            764
+          ],
+          "tipo": "NORMAL",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "lillipup_unova",
+          "nome": "Lillipup",
+          "dex": 506,
+          "pokeId": 506,
+          "pixel": [
+            910,
+            714
+          ],
+          "tipo": "NORMAL",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "stoutland_unova",
+          "nome": "Stoutland",
+          "dex": 508,
+          "pokeId": 508,
+          "pixel": [
+            887,
+            661
+          ],
+          "tipo": "NORMAL",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "liepard_unova",
+          "nome": "Liepard",
+          "dex": 510,
+          "pokeId": 510,
+          "pixel": [
+            950,
+            668
+          ],
+          "tipo": "DARK",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "pansage_unova",
+          "nome": "Pansage",
+          "dex": 511,
+          "pokeId": 511,
+          "pixel": [
+            779,
+            772
+          ],
+          "tipo": "GRASS",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "simisage_unova",
+          "nome": "Simisage",
+          "dex": 512,
+          "pokeId": 512,
+          "pixel": [
+            853,
+            620
+          ],
+          "tipo": "GRASS",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "pansear_unova",
+          "nome": "Pansear",
+          "dex": 513,
+          "pokeId": 513,
+          "pixel": [
+            565,
+            621
+          ],
+          "tipo": "FIRE",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "simisear_unova",
+          "nome": "Simisear",
+          "dex": 514,
+          "pokeId": 514,
+          "pixel": [
+            322,
+            814
+          ],
+          "tipo": "FIRE",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "panpour_unova",
+          "nome": "Panpour",
+          "dex": 515,
+          "pokeId": 515,
+          "pixel": [
+            461,
+            373
+          ],
+          "tipo": "WATER",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "simipour_unova",
+          "nome": "Simipour",
+          "dex": 516,
+          "pokeId": 516,
+          "pixel": [
+            506,
+            401
+          ],
+          "tipo": "WATER",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "munna_unova",
+          "nome": "Munna",
+          "dex": 517,
+          "pokeId": 517,
+          "pixel": [
+            555,
+            454
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "musharna_unova",
+          "nome": "Musharna",
+          "dex": 518,
+          "pokeId": 518,
+          "pixel": [
+            359,
+            309
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "pidove_unova",
+          "nome": "Pidove",
+          "dex": 519,
+          "pokeId": 519,
+          "pixel": [
+            615,
+            227
+          ],
+          "tipo": "NORMAL",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "tranquill_unova",
+          "nome": "Tranquill",
+          "dex": 520,
+          "pokeId": 520,
+          "pixel": [
+            560,
+            270
+          ],
+          "tipo": "NORMAL",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "unfezant_unova",
+          "nome": "Unfezant",
+          "dex": 521,
+          "pokeId": 521,
+          "pixel": [
+            624,
+            288
+          ],
+          "tipo": "NORMAL",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "blitzle_unova",
+          "nome": "Blitzle",
+          "dex": 522,
+          "pokeId": 522,
+          "pixel": [
+            283,
+            274
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "zebstrika_unova",
+          "nome": "Zebstrika",
+          "dex": 523,
+          "pokeId": 523,
+          "pixel": [
+            349,
+            237
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "roggenrola_unova",
+          "nome": "Roggenrola",
+          "dex": 524,
+          "pokeId": 524,
+          "pixel": [
+            472,
+            315
+          ],
+          "tipo": "ROCK",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "boldore_unova",
+          "nome": "Boldore",
+          "dex": 525,
+          "pokeId": 525,
+          "pixel": [
+            434,
+            321
+          ],
+          "tipo": "ROCK",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "gigalith_unova",
+          "nome": "Gigalith",
+          "dex": 526,
+          "pokeId": 526,
+          "pixel": [
+            486,
+            346
+          ],
+          "tipo": "ROCK",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "woobat_unova",
+          "nome": "Woobat",
+          "dex": 527,
+          "pokeId": 527,
+          "pixel": [
+            864,
+            427
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "swoobat_unova",
+          "nome": "Swoobat",
+          "dex": 528,
+          "pokeId": 528,
+          "pixel": [
+            841,
+            473
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "excadrill_unova",
+          "nome": "Excadrill",
+          "dex": 530,
+          "pokeId": 530,
+          "pixel": [
+            805,
+            433
+          ],
+          "tipo": "GROUND",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "audino_unova",
+          "nome": "Audino",
+          "dex": 531,
+          "pokeId": 531,
+          "pixel": [
+            728,
+            432
+          ],
+          "tipo": "NORMAL",
+          "nivel": 5400,
+          "fonte": null
+        },
+        {
+          "slug": "timburr_unova",
+          "nome": "Timburr",
+          "dex": 532,
+          "pokeId": 532,
+          "pixel": [
+            760,
+            330
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "gurdurr_unova",
+          "nome": "Gurdurr",
+          "dex": 533,
+          "pokeId": 533,
+          "pixel": [
+            817,
+            348
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "conkeldurr_unova",
+          "nome": "Conkeldurr",
+          "dex": 534,
+          "pokeId": 534,
+          "pixel": [
+            795,
+            269
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "tympole_unova",
+          "nome": "Tympole",
+          "dex": 535,
+          "pokeId": 535,
+          "pixel": [
+            479,
+            507
+          ],
+          "tipo": "WATER",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "palpitoad_unova",
+          "nome": "Palpitoad",
+          "dex": 536,
+          "pokeId": 536,
+          "pixel": [
+            417,
+            539
+          ],
+          "tipo": "WATER",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "seismitoad_unova",
+          "nome": "Seismitoad",
+          "dex": 537,
+          "pokeId": 537,
+          "pixel": [
+            651,
+            383
+          ],
+          "tipo": "WATER",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "sewaddle_unova",
+          "nome": "Sewaddle",
+          "dex": 540,
+          "pokeId": 540,
+          "pixel": [
+            626,
+            475
+          ],
+          "tipo": "BUG",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "swadloon_unova",
+          "nome": "Swadloon",
+          "dex": 541,
+          "pokeId": 541,
+          "pixel": [
+            630,
+            434
+          ],
+          "tipo": "BUG",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "leavanny_unova",
+          "nome": "Leavanny",
+          "dex": 542,
+          "pokeId": 542,
+          "pixel": [
+            730,
+            507
+          ],
+          "tipo": "BUG",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "venipede_unova",
+          "nome": "Venipede",
+          "dex": 543,
+          "pokeId": 543,
+          "pixel": [
+            655,
+            858
+          ],
+          "tipo": "BUG",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "whirlipede_unova",
+          "nome": "Whirlipede",
+          "dex": 544,
+          "pokeId": 544,
+          "pixel": [
+            659,
+            894
+          ],
+          "tipo": "BUG",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "scolipede_unova",
+          "nome": "Scolipede",
+          "dex": 545,
+          "pokeId": 545,
+          "pixel": [
+            643,
+            943
+          ],
+          "tipo": "BUG",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "cottonee_unova",
+          "nome": "Cottonee",
+          "dex": 546,
+          "pokeId": 546,
+          "pixel": [
+            718,
+            892
+          ],
+          "tipo": "GRASS",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "whimsicott_unova",
+          "nome": "Whimsicott",
+          "dex": 547,
+          "pokeId": 547,
+          "pixel": [
+            433,
+            824
+          ],
+          "tipo": "GRASS",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "petilil_unova",
+          "nome": "Petilil",
+          "dex": 548,
+          "pokeId": 548,
+          "pixel": [
+            331,
+            509
+          ],
+          "tipo": "GRASS",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "lilligant_unova",
+          "nome": "Lilligant",
+          "dex": 549,
+          "pokeId": 549,
+          "pixel": [
+            365,
+            579
+          ],
+          "tipo": "GRASS",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "sandile_unova",
+          "nome": "Sandile",
+          "dex": 551,
+          "pokeId": 551,
+          "pixel": [
+            679,
+            573
+          ],
+          "tipo": "GROUND",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "krokorok_unova",
+          "nome": "Krokorok",
+          "dex": 552,
+          "pokeId": 552,
+          "pixel": [
+            713,
+            705
+          ],
+          "tipo": "GROUND",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "krookodile_unova",
+          "nome": "Krookodile",
+          "dex": 553,
+          "pokeId": 553,
+          "pixel": [
+            664,
+            734
+          ],
+          "tipo": "GROUND",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "darumaka_unova",
+          "nome": "Darumaka",
+          "dex": 554,
+          "pokeId": 554,
+          "pixel": [
+            367,
+            841
+          ],
+          "tipo": "FIRE",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "maractus_unova",
+          "nome": "Maractus",
+          "dex": 556,
+          "pokeId": 556,
+          "pixel": [
+            716,
+            760
+          ],
+          "tipo": "GRASS",
+          "nivel": 5400,
+          "fonte": null
+        },
+        {
+          "slug": "dwebble_unova",
+          "nome": "Dwebble",
+          "dex": 557,
+          "pokeId": 557,
+          "pixel": [
+            928,
+            614
+          ],
+          "tipo": "BUG",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "crustle_unova",
+          "nome": "Crustle",
+          "dex": 558,
+          "pokeId": 558,
+          "pixel": [
+            958,
+            554
+          ],
+          "tipo": "BUG",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "scrafty_unova",
+          "nome": "Scrafty",
+          "dex": 560,
+          "pokeId": 560,
+          "pixel": [
+            352,
+            731
+          ],
+          "tipo": "DARK",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "sigilyph_unova",
+          "nome": "Sigilyph",
+          "dex": 561,
+          "pokeId": 561,
+          "pixel": [
+            300,
+            763
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 5400,
+          "fonte": null
+        },
+        {
+          "slug": "yamask_unova",
+          "nome": "Yamask",
+          "dex": 562,
+          "pokeId": 562,
+          "pixel": [
+            336,
+            378
+          ],
+          "tipo": "GHOST",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "cofagrigus_unova",
+          "nome": "Cofagrigus",
+          "dex": 563,
+          "pokeId": 563,
+          "pixel": [
+            291,
+            330
+          ],
+          "tipo": "GHOST",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "trubbish_unova",
+          "nome": "Trubbish",
+          "dex": 568,
+          "pokeId": 568,
+          "pixel": [
+            721,
+            466
+          ],
+          "tipo": "POISON",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "garbodor_unova",
+          "nome": "Garbodor",
+          "dex": 569,
+          "pokeId": 569,
+          "pixel": [
+            739,
+            239
+          ],
+          "tipo": "POISON",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "zorua_unova",
+          "nome": "Zorua",
+          "dex": 570,
+          "pokeId": 570,
+          "pixel": [
+            601,
+            345
+          ],
+          "tipo": "DARK",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "zoroark_unova",
+          "nome": "Zoroark",
+          "dex": 571,
+          "pokeId": 571,
+          "pixel": [
+            546,
+            336
+          ],
+          "tipo": "DARK",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "minccino_unova",
+          "nome": "Minccino",
+          "dex": 572,
+          "pokeId": 572,
+          "pixel": [
+            553,
+            498
+          ],
+          "tipo": "NORMAL",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "cinccino_unova",
+          "nome": "Cinccino",
+          "dex": 573,
+          "pokeId": 573,
+          "pixel": [
+            444,
+            583
+          ],
+          "tipo": "NORMAL",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "gothita_unova",
+          "nome": "Gothita",
+          "dex": 574,
+          "pokeId": 574,
+          "pixel": [
+            1001,
+            62
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "gothorita_unova",
+          "nome": "Gothorita",
+          "dex": 575,
+          "pokeId": 575,
+          "pixel": [
+            759,
+            37
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "gothitelle_unova",
+          "nome": "Gothitelle",
+          "dex": 576,
+          "pokeId": 576,
+          "pixel": [
+            713,
+            30
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "solosis_unova",
+          "nome": "Solosis",
+          "dex": 577,
+          "pokeId": 577,
+          "pixel": [
+            696,
+            81
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "duosion_unova",
+          "nome": "Duosion",
+          "dex": 578,
+          "pokeId": 578,
+          "pixel": [
+            748,
+            82
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "reuniclus_unova",
+          "nome": "Reuniclus",
+          "dex": 579,
+          "pokeId": 579,
+          "pixel": [
+            928,
+            132
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "swanna_unova",
+          "nome": "Swanna",
+          "dex": 581,
+          "pokeId": 581,
+          "pixel": [
+            687,
+            226
+          ],
+          "tipo": "WATER",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "ducklett_unova",
+          "nome": "Ducklett",
+          "dex": 580,
+          "pokeId": 580,
+          "pixel": [
+            665,
+            334
+          ],
+          "tipo": "WATER",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "vanillite_unova",
+          "nome": "Vanillite",
+          "dex": 582,
+          "pokeId": 582,
+          "pixel": [
+            1050,
+            286
+          ],
+          "tipo": "ICE",
+          "nivel": 5000,
+          "fonte": "piloswine"
+        },
+        {
+          "slug": "vanilluxe_unova",
+          "nome": "Vanilluxe",
+          "dex": 584,
+          "pokeId": 584,
+          "pixel": [
+            1113,
+            331
+          ],
+          "tipo": "ICE",
+          "nivel": 8600,
+          "fonte": "psy_jynx"
+        },
+        {
+          "slug": "deerling_unova",
+          "nome": "Deerling",
+          "dex": 585,
+          "pokeId": 585,
+          "pixel": [
+            753,
+            585
+          ],
+          "tipo": "NORMAL",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "sawsbuck_unova",
+          "nome": "Sawsbuck",
+          "dex": 586,
+          "pokeId": 586,
+          "pixel": [
+            780,
+            668
+          ],
+          "tipo": "NORMAL",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "emolga_unova",
+          "nome": "Emolga",
+          "dex": 587,
+          "pokeId": 587,
+          "pixel": [
+            916,
+            501
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 5400,
+          "fonte": null
+        },
+        {
+          "slug": "karrablast_unova",
+          "nome": "Karrablast",
+          "dex": 588,
+          "pokeId": 588,
+          "pixel": [
+            772,
+            482
+          ],
+          "tipo": "BUG",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "escavalier_unova",
+          "nome": "Escavalier",
+          "dex": 589,
+          "pokeId": 589,
+          "pixel": [
+            896,
+            534
+          ],
+          "tipo": "BUG",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "foongus_unova",
+          "nome": "Foongus",
+          "dex": 590,
+          "pokeId": 590,
+          "pixel": [
+            683,
+            988
+          ],
+          "tipo": "GRASS",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "amoonguss_unova",
+          "nome": "Amoonguss",
+          "dex": 591,
+          "pokeId": 591,
+          "pixel": [
+            414,
+            877
+          ],
+          "tipo": "GRASS",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "jellicent_unova",
+          "nome": "Jellicent",
+          "dex": 593,
+          "pokeId": 593,
+          "pixel": [
+            297,
+            860
+          ],
+          "tipo": "WATER",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "frillish_unova",
+          "nome": "Frillish",
+          "dex": 592,
+          "pokeId": 592,
+          "pixel": [
+            420,
+            723
+          ],
+          "tipo": "WATER",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "joltik_unova",
+          "nome": "Joltik",
+          "dex": 595,
+          "pokeId": 595,
+          "pixel": [
+            520,
+            781
+          ],
+          "tipo": "BUG",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "galvantula_unova",
+          "nome": "Galvantula",
+          "dex": 596,
+          "pokeId": 596,
+          "pixel": [
+            526,
+            740
+          ],
+          "tipo": "BUG",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "ferrothorn_unova",
+          "nome": "Ferrothorn",
+          "dex": 598,
+          "pokeId": 598,
+          "pixel": [
+            334,
+            625
+          ],
+          "tipo": "GRASS",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "klink_unova",
+          "nome": "Klink",
+          "dex": 599,
+          "pokeId": 599,
+          "pixel": [
+            282,
+            302
+          ],
+          "tipo": "STEEL",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "klinklang_unova",
+          "nome": "Klinklang",
+          "dex": 601,
+          "pokeId": 601,
+          "pixel": [
+            318,
+            336
+          ],
+          "tipo": "STEEL",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "tynamo_unova",
+          "nome": "Tynamo",
+          "dex": 602,
+          "pokeId": 602,
+          "pixel": [
+            698,
+            303
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "eelektrik_unova",
+          "nome": "Eelektrik",
+          "dex": 603,
+          "pokeId": 603,
+          "pixel": [
+            742,
+            286
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "eelektross_unova",
+          "nome": "Eelektross",
+          "dex": 604,
+          "pokeId": 604,
+          "pixel": [
+            713,
+            613
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "elgyem_unova",
+          "nome": "Elgyem",
+          "dex": 605,
+          "pokeId": 605,
+          "pixel": [
+            818,
+            596
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "litwick_unova",
+          "nome": "Litwick",
+          "dex": 607,
+          "pokeId": 607,
+          "pixel": [
+            473,
+            697
+          ],
+          "tipo": "GHOST",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "lampent_unova",
+          "nome": "Lampent",
+          "dex": 608,
+          "pokeId": 608,
+          "pixel": [
+            492,
+            644
+          ],
+          "tipo": "GHOST",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "chandelure_unova",
+          "nome": "Chandelure",
+          "dex": 609,
+          "pokeId": 609,
+          "pixel": [
+            503,
+            538
+          ],
+          "tipo": "GHOST",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "axew_unova",
+          "nome": "Axew",
+          "dex": 610,
+          "pokeId": 610,
+          "pixel": [
+            972,
+            85
+          ],
+          "tipo": "DRAGON",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "fraxure_unova",
+          "nome": "Fraxure",
+          "dex": 611,
+          "pokeId": 611,
+          "pixel": [
+            928,
+            89
+          ],
+          "tipo": "DRAGON",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "haxorus_unova",
+          "nome": "Haxorus",
+          "dex": 612,
+          "pokeId": 612,
+          "pixel": [
+            992,
+            142
+          ],
+          "tipo": "DRAGON",
+          "nivel": 8600,
+          "fonte": null
+        },
+        {
+          "slug": "cubchoo_unova",
+          "nome": "Cubchoo",
+          "dex": 613,
+          "pokeId": 613,
+          "pixel": [
+            991,
+            318
+          ],
+          "tipo": "ICE",
+          "nivel": 5000,
+          "fonte": "psy_jynx"
+        },
+        {
+          "slug": "beartic_unova",
+          "nome": "Beartic",
+          "dex": 614,
+          "pokeId": 614,
+          "pixel": [
+            1004,
+            406
+          ],
+          "tipo": "ICE",
+          "nivel": 6950,
+          "fonte": "smoochum"
+        },
+        {
+          "slug": "cryogonal_unova",
+          "nome": "Cryogonal",
+          "dex": 615,
+          "pokeId": 615,
+          "pixel": [
+            1044,
+            347
+          ],
+          "tipo": "ICE",
+          "nivel": 5900,
+          "fonte": "smoochum"
+        },
+        {
+          "slug": "shelmet_unova",
+          "nome": "Shelmet",
+          "dex": 616,
+          "pokeId": 616,
+          "pixel": [
+            944,
+            461
+          ],
+          "tipo": "BUG",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "accelgor_unova",
+          "nome": "Accelgor",
+          "dex": 617,
+          "pokeId": 617,
+          "pixel": [
+            933,
+            416
+          ],
+          "tipo": "BUG",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "stunfisk_unova",
+          "nome": "Stunfisk",
+          "dex": 618,
+          "pokeId": 618,
+          "pixel": [
+            879,
+            372
+          ],
+          "tipo": "GROUND",
+          "nivel": 5400,
+          "fonte": null
+        },
+        {
+          "slug": "mienfoo_unova",
+          "nome": "Mienfoo",
+          "dex": 619,
+          "pokeId": 619,
+          "pixel": [
+            958,
+            715
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "mienshao_unova",
+          "nome": "Mienshao",
+          "dex": 620,
+          "pokeId": 620,
+          "pixel": [
+            906,
+            759
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "druddigon_unova",
+          "nome": "Druddigon",
+          "dex": 621,
+          "pokeId": 621,
+          "pixel": [
+            897,
+            281
+          ],
+          "tipo": "DRAGON",
+          "nivel": 5400,
+          "fonte": null
+        },
+        {
+          "slug": "golett_unova",
+          "nome": "Golett",
+          "dex": 622,
+          "pokeId": 622,
+          "pixel": [
+            659,
+            529
+          ],
+          "tipo": "GROUND",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "golurk_unova",
+          "nome": "Golurk",
+          "dex": 623,
+          "pokeId": 623,
+          "pixel": [
+            458,
+            449
+          ],
+          "tipo": "GROUND",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "pawniard_unova",
+          "nome": "Pawniard",
+          "dex": 624,
+          "pokeId": 624,
+          "pixel": [
+            448,
+            409
+          ],
+          "tipo": "DARK",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "bisharp_unova",
+          "nome": "Bisharp",
+          "dex": 625,
+          "pokeId": 625,
+          "pixel": [
+            515,
+            479
+          ],
+          "tipo": "DARK",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "bouffalant_unova",
+          "nome": "Bouffalant",
+          "dex": 626,
+          "pokeId": 626,
+          "pixel": [
+            735,
+            383
+          ],
+          "tipo": "NORMAL",
+          "nivel": 5400,
+          "fonte": null
+        },
+        {
+          "slug": "rufflet_unova",
+          "nome": "Rufflet",
+          "dex": 627,
+          "pokeId": 627,
+          "pixel": [
+            972,
+            369
+          ],
+          "tipo": "NORMAL",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "braviary_unova",
+          "nome": "Braviary",
+          "dex": 628,
+          "pokeId": 628,
+          "pixel": [
+            1053,
+            469
+          ],
+          "tipo": "NORMAL",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "vullaby_unova",
+          "nome": "Vullaby",
+          "dex": 629,
+          "pokeId": 629,
+          "pixel": [
+            993,
+            485
+          ],
+          "tipo": "DARK",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "mandibuzz_unova",
+          "nome": "Mandibuzz",
+          "dex": 630,
+          "pokeId": 630,
+          "pixel": [
+            922,
+            657
+          ],
+          "tipo": "DARK",
+          "nivel": 6950,
+          "fonte": null
+        },
+        {
+          "slug": "heatmor_unova",
+          "nome": "Heatmor",
+          "dex": 631,
+          "pokeId": 631,
+          "pixel": [
+            532,
+            620
+          ],
+          "tipo": "FIRE",
+          "nivel": 5400,
+          "fonte": null
+        },
+        {
+          "slug": "deino_unova",
+          "nome": "Deino",
+          "dex": 633,
+          "pokeId": 633,
+          "pixel": [
+            376,
+            797
+          ],
+          "tipo": "DARK",
+          "nivel": 5000,
+          "fonte": null
+        },
+        {
+          "slug": "zweilous_unova",
+          "nome": "Zweilous",
+          "dex": 634,
+          "pokeId": 634,
+          "pixel": [
+            504,
+            937
+          ],
+          "tipo": "DARK",
+          "nivel": 6400,
+          "fonte": null
+        },
+        {
+          "slug": "hydreigon_unova",
+          "nome": "Hydreigon",
+          "dex": 635,
+          "pokeId": 635,
+          "pixel": [
+            949,
+            269
+          ],
+          "tipo": "DARK",
+          "nivel": 8600,
+          "fonte": null
+        }
+      ]
+    },
+    "kalos": {
+      "rotulo": "Kalos",
+      "img": "7kalos.png",
+      "nivelGate": 16000,
+      "marcadores": [
+        {
+          "slug": "flabebe_kalos",
+          "nome": "Flabebe",
+          "dex": 669,
+          "pokeId": 669,
+          "pixel": [
+            940,
+            372
+          ],
+          "tipo": "FAIRY",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "florges_kalos",
+          "nome": "Florges",
+          "dex": 671,
+          "pokeId": 671,
+          "pixel": [
+            969,
+            316
+          ],
+          "tipo": "FAIRY",
+          "nivel": 21200,
+          "fonte": null
+        },
+        {
+          "slug": "pancham_kalos",
+          "nome": "Pancham",
+          "dex": 674,
+          "pokeId": 674,
+          "pixel": [
+            359,
+            570
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "pangoro_kalos",
+          "nome": "Pangoro",
+          "dex": 675,
+          "pokeId": 675,
+          "pixel": [
+            310,
+            545
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 20000,
+          "fonte": "tyrogue"
+        },
+        {
+          "slug": "skrelp_kalos",
+          "nome": "Skrelp",
+          "dex": 690,
+          "pokeId": 690,
+          "pixel": [
+            809,
+            207
+          ],
+          "tipo": "POISON",
+          "nivel": 10000,
+          "fonte": "zubat"
+        },
+        {
+          "slug": "dragalge_kalos",
+          "nome": "Dragalge",
+          "dex": 691,
+          "pokeId": 691,
+          "pixel": [
+            851,
+            253
+          ],
+          "tipo": "POISON",
+          "nivel": 20000,
+          "fonte": "arbok"
+        },
+        {
+          "slug": "chesnaught_kalos",
+          "nome": "Chesnaught",
+          "dex": 652,
+          "pokeId": 652,
+          "pixel": [
+            413,
+            421
+          ],
+          "tipo": "GRASS",
+          "nivel": 21200,
+          "fonte": null
+        },
+        {
+          "slug": "delphox_kalos",
+          "nome": "Delphox",
+          "dex": 655,
+          "pokeId": 655,
+          "pixel": [
+            471,
+            194
+          ],
+          "tipo": "FIRE",
+          "nivel": 21200,
+          "fonte": null
+        },
+        {
+          "slug": "greninja_kalos",
+          "nome": "Greninja",
+          "dex": 658,
+          "pokeId": 658,
+          "pixel": [
+            442,
+            349
+          ],
+          "tipo": "WATER",
+          "nivel": 21200,
+          "fonte": null
+        },
+        {
+          "slug": "bunnelby_kalos",
+          "nome": "Bunnelby",
+          "dex": 659,
+          "pokeId": 659,
+          "pixel": [
+            507,
+            390
+          ],
+          "tipo": "NORMAL",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "diggersby_kalos",
+          "nome": "Diggersby",
+          "dex": 660,
+          "pokeId": 660,
+          "pixel": [
+            559,
+            420
+          ],
+          "tipo": "NORMAL",
+          "nivel": 16000,
+          "fonte": null
+        },
+        {
+          "slug": "fletchling_kalos",
+          "nome": "Fletchling",
+          "dex": 661,
+          "pokeId": 661,
+          "pixel": [
+            759,
+            356
+          ],
+          "tipo": "NORMAL",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "fletchinder_kalos",
+          "nome": "Fletchinder",
+          "dex": 662,
+          "pokeId": 662,
+          "pixel": [
+            796,
+            420
+          ],
+          "tipo": "FIRE",
+          "nivel": 14350,
+          "fonte": null
+        },
+        {
+          "slug": "talonflame_kalos",
+          "nome": "Talonflame",
+          "dex": 663,
+          "pokeId": 663,
+          "pixel": [
+            752,
+            460
+          ],
+          "tipo": "FIRE",
+          "nivel": 21200,
+          "fonte": null
+        },
+        {
+          "slug": "scatterbug_kalos",
+          "nome": "Scatterbug",
+          "dex": 664,
+          "pokeId": 664,
+          "pixel": [
+            582,
+            535
+          ],
+          "tipo": "BUG",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "spewpa_kalos",
+          "nome": "Spewpa",
+          "dex": 665,
+          "pokeId": 665,
+          "pixel": [
+            478,
+            504
+          ],
+          "tipo": "BUG",
+          "nivel": 14350,
+          "fonte": null
+        },
+        {
+          "slug": "vivillon_kalos",
+          "nome": "Vivillon",
+          "dex": 666,
+          "pokeId": 666,
+          "pixel": [
+            654,
+            480
+          ],
+          "tipo": "BUG",
+          "nivel": 21200,
+          "fonte": null
+        },
+        {
+          "slug": "litleo_kalos",
+          "nome": "Litleo",
+          "dex": 667,
+          "pokeId": 667,
+          "pixel": [
+            391,
+            275
+          ],
+          "tipo": "FIRE",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "pyroar_kalos",
+          "nome": "Pyroar",
+          "dex": 668,
+          "pokeId": 668,
+          "pixel": [
+            459,
+            269
+          ],
+          "tipo": "FIRE",
+          "nivel": 16000,
+          "fonte": null
+        },
+        {
+          "slug": "floette_kalos",
+          "nome": "Floette",
+          "dex": 670,
+          "pokeId": 670,
+          "pixel": [
+            910,
+            524
+          ],
+          "tipo": "FAIRY",
+          "nivel": 14350,
+          "fonte": null
+        },
+        {
+          "slug": "espurr_kalos",
+          "nome": "Espurr",
+          "dex": 677,
+          "pokeId": 677,
+          "pixel": [
+            816,
+            589
+          ],
+          "tipo": "PSYCHIC",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "honedge_kalos",
+          "nome": "Honedge",
+          "dex": 679,
+          "pokeId": 679,
+          "pixel": [
+            812,
+            645
+          ],
+          "tipo": "STEEL",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "doublade_kalos",
+          "nome": "Doublade",
+          "dex": 680,
+          "pokeId": 680,
+          "pixel": [
+            281,
+            389
+          ],
+          "tipo": "STEEL",
+          "nivel": 14350,
+          "fonte": null
+        },
+        {
+          "slug": "aegislash_kalos",
+          "nome": "Aegislash",
+          "dex": 681,
+          "pokeId": 681,
+          "pixel": [
+            547,
+            517
+          ],
+          "tipo": "STEEL/GHOST",
+          "nivel": 16000,
+          "fonte": null
+        },
+        {
+          "slug": "aromatisse_kalos",
+          "nome": "Aromatisse",
+          "dex": 683,
+          "pokeId": 683,
+          "pixel": [
+            249,
+            209
+          ],
+          "tipo": "FAIRY",
+          "nivel": 16000,
+          "fonte": null
+        },
+        {
+          "slug": "swirlix_kalos",
+          "nome": "Swirlix",
+          "dex": 684,
+          "pokeId": 684,
+          "pixel": [
+            285,
+            150
+          ],
+          "tipo": "FAIRY",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "slurpuff_kalos",
+          "nome": "Slurpuff",
+          "dex": 685,
+          "pokeId": 685,
+          "pixel": [
+            365,
+            138
+          ],
+          "tipo": "FAIRY",
+          "nivel": 16000,
+          "fonte": null
+        },
+        {
+          "slug": "inkay_kalos",
+          "nome": "Inkay",
+          "dex": 686,
+          "pokeId": 686,
+          "pixel": [
+            504,
+            97
+          ],
+          "tipo": "DARK",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "malamar_kalos",
+          "nome": "Malamar",
+          "dex": 687,
+          "pokeId": 687,
+          "pixel": [
+            633,
+            174
+          ],
+          "tipo": "DARK",
+          "nivel": 16000,
+          "fonte": null
+        },
+        {
+          "slug": "binacle_kalos",
+          "nome": "Binacle",
+          "dex": 688,
+          "pokeId": 688,
+          "pixel": [
+            377,
+            386
+          ],
+          "tipo": "ROCK",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "barbaracle_kalos",
+          "nome": "Barbaracle",
+          "dex": 689,
+          "pokeId": 689,
+          "pixel": [
+            619,
+            259
+          ],
+          "tipo": "ROCK",
+          "nivel": 16000,
+          "fonte": null
+        },
+        {
+          "slug": "clauncher_kalos",
+          "nome": "Clauncher",
+          "dex": 692,
+          "pokeId": 692,
+          "pixel": [
+            797,
+            375
+          ],
+          "tipo": "WATER",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "clawitzer_kalos",
+          "nome": "Clawitzer",
+          "dex": 693,
+          "pokeId": 693,
+          "pixel": [
+            126,
+            396
+          ],
+          "tipo": "WATER",
+          "nivel": 16000,
+          "fonte": null
+        },
+        {
+          "slug": "helioptile_kalos",
+          "nome": "Helioptile",
+          "dex": 694,
+          "pokeId": 694,
+          "pixel": [
+            53,
+            455
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "heliolisk_kalos",
+          "nome": "Heliolisk",
+          "dex": 695,
+          "pokeId": 695,
+          "pixel": [
+            101,
+            494
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 16000,
+          "fonte": null
+        },
+        {
+          "slug": "tyrunt_kalos",
+          "nome": "Tyrunt",
+          "dex": 696,
+          "pokeId": 696,
+          "pixel": [
+            150,
+            457
+          ],
+          "tipo": "ROCK",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "amaura_kalos",
+          "nome": "Amaura",
+          "dex": 698,
+          "pokeId": 698,
+          "pixel": [
+            188,
+            99
+          ],
+          "tipo": "ROCK",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "aurorus_kalos",
+          "nome": "Aurorus",
+          "dex": 699,
+          "pokeId": 699,
+          "pixel": [
+            66,
+            144
+          ],
+          "tipo": "ROCK",
+          "nivel": 16000,
+          "fonte": null
+        },
+        {
+          "slug": "sylveon_kalos",
+          "nome": "Sylveon",
+          "dex": 700,
+          "pokeId": 700,
+          "pixel": [
+            242,
+            63
+          ],
+          "tipo": "FAIRY",
+          "nivel": 12750,
+          "fonte": null
+        },
+        {
+          "slug": "hawlucha_kalos",
+          "nome": "Hawlucha",
+          "dex": 701,
+          "pokeId": 701,
+          "pixel": [
+            353,
+            61
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 12750,
+          "fonte": null
+        },
+        {
+          "slug": "dedenne_kalos",
+          "nome": "Dedenne",
+          "dex": 702,
+          "pokeId": 702,
+          "pixel": [
+            561,
+            241
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 11250,
+          "fonte": null
+        },
+        {
+          "slug": "carbink_kalos",
+          "nome": "Carbink",
+          "dex": 703,
+          "pokeId": 703,
+          "pixel": [
+            813,
+            128
+          ],
+          "tipo": "ROCK",
+          "nivel": 12750,
+          "fonte": null
+        },
+        {
+          "slug": "goomy_kalos",
+          "nome": "Goomy",
+          "dex": 704,
+          "pokeId": 704,
+          "pixel": [
+            865,
+            96
+          ],
+          "tipo": "DRAGON",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "sliggoo_kalos",
+          "nome": "Sliggoo",
+          "dex": 705,
+          "pokeId": 705,
+          "pixel": [
+            902,
+            130
+          ],
+          "tipo": "DRAGON",
+          "nivel": 14350,
+          "fonte": null
+        },
+        {
+          "slug": "goodra_kalos",
+          "nome": "Goodra",
+          "dex": 706,
+          "pokeId": 706,
+          "pixel": [
+            927,
+            160
+          ],
+          "tipo": "DRAGON",
+          "nivel": 21200,
+          "fonte": null
+        },
+        {
+          "slug": "klefki_kalos",
+          "nome": "Klefki",
+          "dex": 707,
+          "pokeId": 707,
+          "pixel": [
+            914,
+            213
+          ],
+          "tipo": "STEEL",
+          "nivel": 11250,
+          "fonte": null
+        },
+        {
+          "slug": "phantump_kalos",
+          "nome": "Phantump",
+          "dex": 708,
+          "pokeId": 708,
+          "pixel": [
+            395,
+            508
+          ],
+          "tipo": "GHOST",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "trevenant_kalos",
+          "nome": "Trevenant",
+          "dex": 709,
+          "pokeId": 709,
+          "pixel": [
+            344,
+            462
+          ],
+          "tipo": "GHOST",
+          "nivel": 16000,
+          "fonte": null
+        },
+        {
+          "slug": "bergmite_kalos",
+          "nome": "Bergmite",
+          "dex": 712,
+          "pokeId": 712,
+          "pixel": [
+            100,
+            27
+          ],
+          "tipo": "ICE",
+          "nivel": 10000,
+          "fonte": "piloswine"
+        },
+        {
+          "slug": "avalugg_kalos",
+          "nome": "Avalugg",
+          "dex": 713,
+          "pokeId": 713,
+          "pixel": [
+            72,
+            66
+          ],
+          "tipo": "ICE",
+          "nivel": 16000,
+          "fonte": "piloswine"
+        },
+        {
+          "slug": "noibat_kalos",
+          "nome": "Noibat",
+          "dex": 714,
+          "pokeId": 714,
+          "pixel": [
+            194,
+            199
+          ],
+          "tipo": "FLYING",
+          "nivel": 10000,
+          "fonte": null
+        },
+        {
+          "slug": "noivern_kalos",
+          "nome": "Noivern",
+          "dex": 715,
+          "pokeId": 715,
+          "pixel": [
+            217,
+            244
+          ],
+          "tipo": "FLYING",
+          "nivel": 16000,
+          "fonte": null
+        }
+      ]
+    },
+    "alola": {
+      "rotulo": "Alola",
+      "img": "8alola.png",
+      "nivelGate": 114800,
+      "marcadores": [
+        {
+          "slug": "dartrix_alola",
+          "nome": "Dartrix",
+          "dex": 723,
+          "pokeId": 723,
+          "pixel": [
+            826,
+            977
+          ],
+          "tipo": "GRASS",
+          "nivel": 32000,
+          "fonte": null
+        },
+        {
+          "slug": "litten_alola",
+          "nome": "Litten",
+          "dex": 725,
+          "pokeId": 725,
+          "pixel": [
+            539,
+            1251
+          ],
+          "tipo": "FIRE",
+          "nivel": 25000,
+          "fonte": null
+        },
+        {
+          "slug": "torracat_alola",
+          "nome": "Torracat",
+          "dex": 726,
+          "pokeId": 726,
+          "pixel": [
+            585,
+            1299
+          ],
+          "tipo": "FIRE",
+          "nivel": 32000,
+          "fonte": null
+        },
+        {
+          "slug": "incineroar_alola",
+          "nome": "Incineroar",
+          "dex": 727,
+          "pokeId": 727,
+          "pixel": [
+            699,
+            1325
+          ],
+          "tipo": "FIRE",
+          "nivel": 43100,
+          "fonte": null
+        },
+        {
+          "slug": "popplio_alola",
+          "nome": "Popplio",
+          "dex": 728,
+          "pokeId": 728,
+          "pixel": [
+            407,
+            1009
+          ],
+          "tipo": "WATER",
+          "nivel": 25000,
+          "fonte": null
+        },
+        {
+          "slug": "brionne_alola",
+          "nome": "Brionne",
+          "dex": 729,
+          "pokeId": 729,
+          "pixel": [
+            657,
+            912
+          ],
+          "tipo": "WATER",
+          "nivel": 32000,
+          "fonte": null
+        },
+        {
+          "slug": "primarina_alola",
+          "nome": "Primarina",
+          "dex": 730,
+          "pokeId": 730,
+          "pixel": [
+            305,
+            815
+          ],
+          "tipo": "WATER",
+          "nivel": 43100,
+          "fonte": null
+        },
+        {
+          "slug": "pikipek_alola",
+          "nome": "Pikipek",
+          "dex": 731,
+          "pokeId": 731,
+          "pixel": [
+            828,
+            797
+          ],
+          "tipo": "NORMAL",
+          "nivel": 25000,
+          "fonte": null
+        },
+        {
+          "slug": "trumbeak_alola",
+          "nome": "Trumbeak",
+          "dex": 732,
+          "pokeId": 732,
+          "pixel": [
+            620,
+            1454
+          ],
+          "tipo": "NORMAL",
+          "nivel": 32000,
+          "fonte": null
+        },
+        {
+          "slug": "toucannon_alola",
+          "nome": "Toucannon",
+          "dex": 733,
+          "pokeId": 733,
+          "pixel": [
+            975,
+            1337
+          ],
+          "tipo": "NORMAL",
+          "nivel": 43100,
+          "fonte": null
+        },
+        {
+          "slug": "yungoos_alola",
+          "nome": "Yungoos",
+          "dex": 734,
+          "pokeId": 734,
+          "pixel": [
+            1008,
+            1374
+          ],
+          "tipo": "NORMAL",
+          "nivel": 25000,
+          "fonte": null
+        },
+        {
+          "slug": "gumshoos_alola",
+          "nome": "Gumshoos",
+          "dex": 735,
+          "pokeId": 735,
+          "pixel": [
+            1064,
+            1283
+          ],
+          "tipo": "NORMAL",
+          "nivel": 34650,
+          "fonte": null
+        },
+        {
+          "slug": "grubbin_alola",
+          "nome": "Grubbin",
+          "dex": 736,
+          "pokeId": 736,
+          "pixel": [
+            1207,
+            1297
+          ],
+          "tipo": "BUG",
+          "nivel": 25000,
+          "fonte": null
+        },
+        {
+          "slug": "charjabug_alola",
+          "nome": "Charjabug",
+          "dex": 737,
+          "pokeId": 737,
+          "pixel": [
+            1216,
+            1171
+          ],
+          "tipo": "BUG",
+          "nivel": 32000,
+          "fonte": null
+        },
+        {
+          "slug": "vikavolt_alola",
+          "nome": "Vikavolt",
+          "dex": 738,
+          "pokeId": 738,
+          "pixel": [
+            996,
+            1110
+          ],
+          "tipo": "BUG",
+          "nivel": 43100,
+          "fonte": null
+        },
+        {
+          "slug": "cutiefly_alola",
+          "nome": "Cutiefly",
+          "dex": 742,
+          "pokeId": 742,
+          "pixel": [
+            989,
+            1002
+          ],
+          "tipo": "BUG",
+          "nivel": 25000,
+          "fonte": null
+        },
+        {
+          "slug": "ribombee_alola",
+          "nome": "Ribombee",
+          "dex": 743,
+          "pokeId": 743,
+          "pixel": [
+            1046,
+            879
+          ],
+          "tipo": "BUG",
+          "nivel": 34650,
+          "fonte": null
+        },
+        {
+          "slug": "rockruff_alola",
+          "nome": "Rockruff",
+          "dex": 744,
+          "pokeId": 744,
+          "pixel": [
+            855,
+            657
+          ],
+          "tipo": "ROCK",
+          "nivel": 25000,
+          "fonte": null
+        },
+        {
+          "slug": "mudbray_alola",
+          "nome": "Mudbray",
+          "dex": 749,
+          "pokeId": 749,
+          "pixel": [
+            645,
+            642
+          ],
+          "tipo": "GROUND",
+          "nivel": 25000,
+          "fonte": null
+        },
+        {
+          "slug": "mudsdale_alola",
+          "nome": "Mudsdale",
+          "dex": 750,
+          "pokeId": 750,
+          "pixel": [
+            523,
+            613
+          ],
+          "tipo": "GROUND",
+          "nivel": 34650,
+          "fonte": null
+        },
+        {
+          "slug": "dewpider_alola",
+          "nome": "Dewpider",
+          "dex": 751,
+          "pokeId": 751,
+          "pixel": [
+            448,
+            729
+          ],
+          "tipo": "WATER",
+          "nivel": 25000,
+          "fonte": null
+        },
+        {
+          "slug": "araquanid_alola",
+          "nome": "Araquanid",
+          "dex": 752,
+          "pokeId": 752,
+          "pixel": [
+            262,
+            1023
+          ],
+          "tipo": "WATER",
+          "nivel": 34650,
+          "fonte": null
+        },
+        {
+          "slug": "morelull_alola",
+          "nome": "Morelull",
+          "dex": 755,
+          "pokeId": 755,
+          "pixel": [
+            218,
+            786
+          ],
+          "tipo": "GRASS",
+          "nivel": 25000,
+          "fonte": null
+        },
+        {
+          "slug": "shiinotic_alola",
+          "nome": "Shiinotic",
+          "dex": 756,
+          "pokeId": 756,
+          "pixel": [
+            212,
+            715
+          ],
+          "tipo": "GRASS",
+          "nivel": 34650,
+          "fonte": null
+        },
+        {
+          "slug": "salandit_alola",
+          "nome": "Salandit",
+          "dex": 757,
+          "pokeId": 757,
+          "pixel": [
+            1120,
+            679
+          ],
+          "tipo": "POISON",
+          "nivel": 25000,
+          "fonte": null
+        },
+        {
+          "slug": "stufful_alola",
+          "nome": "Stufful",
+          "dex": 759,
+          "pokeId": 759,
+          "pixel": [
+            1192,
+            813
+          ],
+          "tipo": "NORMAL",
+          "nivel": 25000,
+          "fonte": null
+        },
+        {
+          "slug": "bewear_alola",
+          "nome": "Bewear",
+          "dex": 760,
+          "pokeId": 760,
+          "pixel": [
+            1294,
+            834
+          ],
+          "tipo": "NORMAL",
+          "nivel": 34650,
+          "fonte": null
+        },
+        {
+          "slug": "bounsweet_alola",
+          "nome": "Bounsweet",
+          "dex": 761,
+          "pokeId": 761,
+          "pixel": [
+            1074,
+            1025
+          ],
+          "tipo": "GRASS",
+          "nivel": 25000,
+          "fonte": null
+        },
+        {
+          "slug": "tsareena_alola",
+          "nome": "Tsareena",
+          "dex": 763,
+          "pokeId": 763,
+          "pixel": [
+            757,
+            740
+          ],
+          "tipo": "GRASS",
+          "nivel": 43100,
+          "fonte": null
+        },
+        {
+          "slug": "steenee_alola",
+          "nome": "Steenee",
+          "dex": 762,
+          "pokeId": 762,
+          "pixel": [
+            931,
+            778
+          ],
+          "tipo": "GRASS",
+          "nivel": 32000,
+          "fonte": null
+        },
+        {
+          "slug": "passimian_alola",
+          "nome": "Passimian",
+          "dex": 766,
+          "pokeId": 766,
+          "pixel": [
+            574,
+            734
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 27050,
+          "fonte": null
+        },
+        {
+          "slug": "wimpod_alola",
+          "nome": "Wimpod",
+          "dex": 767,
+          "pokeId": 767,
+          "pixel": [
+            580,
+            1029
+          ],
+          "tipo": "BUG",
+          "nivel": 25000,
+          "fonte": null
+        },
+        {
+          "slug": "golisopod_alola",
+          "nome": "Golisopod",
+          "dex": 768,
+          "pokeId": 768,
+          "pixel": [
+            513,
+            955
+          ],
+          "tipo": "BUG",
+          "nivel": 34650,
+          "fonte": null
+        },
+        {
+          "slug": "togedemaru_alola",
+          "nome": "Togedemaru",
+          "dex": 777,
+          "pokeId": 777,
+          "pixel": [
+            337,
+            890
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 27050,
+          "fonte": null
+        },
+        {
+          "slug": "bruxish_alola",
+          "nome": "Bruxish",
+          "dex": 779,
+          "pokeId": 779,
+          "pixel": [
+            345,
+            987
+          ],
+          "tipo": "WATER",
+          "nivel": 27050,
+          "fonte": null
+        },
+        {
+          "slug": "drampa_alola",
+          "nome": "Drampa",
+          "dex": 780,
+          "pokeId": 780,
+          "pixel": [
+            169,
+            885
+          ],
+          "tipo": "NORMAL",
+          "nivel": 27050,
+          "fonte": null
+        },
+        {
+          "slug": "dhelmise_alola",
+          "nome": "Dhelmise",
+          "dex": 781,
+          "pokeId": 781,
+          "pixel": [
+            74,
+            753
+          ],
+          "tipo": "GHOST",
+          "nivel": 29450,
+          "fonte": null
+        },
+        {
+          "slug": "jangmo_o_alola",
+          "nome": "Jangmo-o",
+          "dex": 782,
+          "pokeId": 782,
+          "pixel": [
+            338,
+            589
+          ],
+          "tipo": "DRAGON",
+          "nivel": 25000,
+          "fonte": null
+        },
+        {
+          "slug": "hakamo_o_alola",
+          "nome": "Hakamo-o",
+          "dex": 783,
+          "pokeId": 783,
+          "pixel": [
+            333,
+            525
+          ],
+          "tipo": "DRAGON",
+          "nivel": 32000,
+          "fonte": null
+        },
+        {
+          "slug": "kommo_o_alola",
+          "nome": "Kommo-o",
+          "dex": 784,
+          "pokeId": 784,
+          "pixel": [
+            422,
+            482
+          ],
+          "tipo": "DRAGON",
+          "nivel": 43100,
+          "fonte": null
+        },
+        {
+          "slug": "salazzle_alola",
+          "nome": "Salazzle",
+          "dex": 758,
+          "pokeId": 758,
+          "pixel": [
+            491,
+            431
+          ],
+          "tipo": "POISON",
+          "nivel": 34650,
+          "fonte": null
+        },
+        {
+          "slug": "mareanie_alola",
+          "nome": "Mareanie",
+          "dex": 747,
+          "pokeId": 747,
+          "pixel": [
+            579,
+            441
+          ],
+          "tipo": "POISON",
+          "nivel": 25000,
+          "fonte": null
+        },
+        {
+          "slug": "toxapex_alola",
+          "nome": "Toxapex",
+          "dex": 748,
+          "pokeId": 748,
+          "pixel": [
+            868,
+            1107
+          ],
+          "tipo": "POISON",
+          "nivel": 34650,
+          "fonte": null
+        },
+        {
+          "slug": "scorbunny_alola",
+          "nome": "Scorbunny",
+          "dex": 813,
+          "pokeId": 813,
+          "pixel": [
+            1199,
+            1514
+          ],
+          "tipo": "FIRE",
+          "nivel": 50000,
+          "fonte": null
+        },
+        {
+          "slug": "raboot_alola",
+          "nome": "Raboot",
+          "dex": 814,
+          "pokeId": 814,
+          "pixel": [
+            839,
+            1588
+          ],
+          "tipo": "FIRE",
+          "nivel": 64000,
+          "fonte": null
+        },
+        {
+          "slug": "cinderace_alola",
+          "nome": "Cinderace",
+          "dex": 815,
+          "pokeId": 815,
+          "pixel": [
+            1038,
+            1517
+          ],
+          "tipo": "FIRE",
+          "nivel": 86150,
+          "fonte": null
+        },
+        {
+          "slug": "milcery_alola",
+          "nome": "Milcery",
+          "dex": 868,
+          "pokeId": 868,
+          "pixel": [
+            1029,
+            1657
+          ],
+          "tipo": "FAIRY",
+          "nivel": 50000,
+          "fonte": null
+        },
+        {
+          "slug": "alcremie_alola",
+          "nome": "Alcremie",
+          "dex": 869,
+          "pokeId": 869,
+          "pixel": [
+            775,
+            1686
+          ],
+          "tipo": "FAIRY",
+          "nivel": 69300,
+          "fonte": null
+        },
+        {
+          "slug": "dreepy_alola",
+          "nome": "Dreepy",
+          "dex": 885,
+          "pokeId": 885,
+          "pixel": [
+            1225,
+            1575
+          ],
+          "tipo": "DRAGON",
+          "nivel": 50000,
+          "fonte": null
+        },
+        {
+          "slug": "ursaluna_alola",
+          "nome": "Ursaluna",
+          "dex": 901,
+          "pokeId": 901,
+          "pixel": [
+            934,
+            1783
+          ],
+          "tipo": "GROUND",
+          "nivel": 58900,
+          "fonte": null
+        },
+        {
+          "slug": "charcadet_alola",
+          "nome": "Charcadet",
+          "dex": 935,
+          "pokeId": 935,
+          "pixel": [
+            1733,
+            1122
+          ],
+          "tipo": "FIRE",
+          "nivel": 100000,
+          "fonte": null
+        },
+        {
+          "slug": "armarouge_alola",
+          "nome": "Armarouge",
+          "dex": 936,
+          "pokeId": 936,
+          "pixel": [
+            1795,
+            1161
+          ],
+          "tipo": "FIRE",
+          "nivel": 132200,
+          "fonte": null
+        },
+        {
+          "slug": "tinkatink_alola",
+          "nome": "Tinkatink",
+          "dex": 957,
+          "pokeId": 957,
+          "pixel": [
+            1643,
+            1188
+          ],
+          "tipo": "FAIRY",
+          "nivel": 100000,
+          "fonte": null
+        },
+        {
+          "slug": "tinkatuff_alola",
+          "nome": "Tinkatuff",
+          "dex": 958,
+          "pokeId": 958,
+          "pixel": [
+            1623,
+            1257
+          ],
+          "tipo": "FAIRY",
+          "nivel": 123350,
+          "fonte": null
+        },
+        {
+          "slug": "tinkaton_alola",
+          "nome": "Tinkaton",
+          "dex": 959,
+          "pokeId": 959,
+          "pixel": [
+            1751,
+            1261
+          ],
+          "tipo": "FAIRY",
+          "nivel": 160300,
+          "fonte": null
+        },
+        {
+          "slug": "annihilape_alola",
+          "nome": "Annihilape",
+          "dex": 979,
+          "pokeId": 979,
+          "pixel": [
+            1530,
+            1024
+          ],
+          "tipo": "FIGHTING",
+          "nivel": 114800,
+          "fonte": null
+        },
+        {
+          "slug": "sandy_shocks_alola",
+          "nome": "Sandy Shocks",
+          "dex": 989,
+          "pokeId": 989,
+          "pixel": [
+            1560,
+            923
+          ],
+          "tipo": "ELECTRIC",
+          "nivel": 114800,
+          "fonte": null
+        }
+      ]
+    }
+  }
+}

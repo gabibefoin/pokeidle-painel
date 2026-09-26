@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Economia — Sprite Lab</title>
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="stylesheet" href="nomeador.css">
+<link rel="stylesheet" href="economia.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="dot"></span>
+    <div>
+      <h1>Economia</h1>
+      <p>todo item, quem dropa, com que chance e por quanto o NPC compra</p>
+    </div>
+  </div>
+  <nav class="lab-nav">
+    <a href="/">Nomeador</a>
+    <a href="/pokedex.html">Pokédex Lab</a>
+    <a href="/pokedex-oficial.html">Oficial</a>
+    <a href="/spawns.html">Spawns</a>
+    <a href="/mapas.html">Mapas</a>
+    <a href="/casas.html">Casas</a>
+    <a href="/ginasios.html">Ginásios</a>
+    <a href="/economia.html" class="on">Economia</a>
+    <a href="/moves.html">Moves</a>
+  </nav>
+  <div class="progresso">
+    <div class="counts" id="counts">carregando…</div>
+  </div>
+</header>
+
+<section class="toolbar eco-toolbar">
+  <div class="chips" id="abas">
+    <button type="button" class="chip on" data-aba="diagnostico">Diagnóstico</button>
+    <button type="button" class="chip" data-aba="autonomia">Autonomia</button>
+    <button type="button" class="chip" data-aba="bandas">Bandas</button>
+    <button type="button" class="chip" data-aba="itens">Itens</button>
+    <button type="button" class="chip" data-aba="especies">Espécies</button>
+    <button type="button" class="chip" data-aba="hunts">Hunts</button>
+  </div>
+  <input type="search" id="q" placeholder="buscar item, pokémon ou hunt…" autocomplete="off">
+  <label class="check"><input type="checkbox" id="so-conflito"> só itens embaralhados (espalhamento &gt; 10×)</label>
+</section>
+
+<main id="conteudo"></main>
+<div id="vazio" class="empty hidden">nada encontrado</div>
+
+<script type="module" src="economia.js"></script>
+</body>
+</html>

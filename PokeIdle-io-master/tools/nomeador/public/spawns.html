@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spawns — Sprite Lab</title>
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="stylesheet" href="nomeador.css">
+<link rel="stylesheet" href="spawns.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="dot"></span>
+    <div>
+      <h1>Spawns</h1>
+      <p>clique no mapa para marcar onde cada pokémon entra na hunt · Hoenn → Paldea</p>
+    </div>
+  </div>
+  <nav class="lab-nav">
+    <a href="/">Nomeador</a>
+    <a href="/pokedex.html">Pokédex Lab</a>
+    <a href="/pokedex-oficial.html">Oficial</a>
+    <a href="/spawns.html" class="on">Spawns</a>
+    <a href="/mapas.html">Mapas</a>
+    <a href="/casas.html">Casas</a>
+    <a href="/ginasios.html">Ginásios</a>
+    <a href="/economia.html">Economia</a>
+    <a href="/moves.html">Moves</a>
+  </nav>
+  <div class="progresso">
+    <button type="button" class="btn-save" id="btn-salvar">salvar região</button>
+    <span class="save-msg" id="save-msg"></span>
+  </div>
+</header>
+
+<section class="toolbar sp-toolbar">
+  <div class="chips-row">
+    <span class="chips-label">Região</span>
+    <div class="chips" id="regioes"></div>
+  </div>
+  <div class="chips-row">
+    <span class="chips-label">Geração</span>
+    <div class="chips" id="geracoes"></div>
+  </div>
+  <input type="search" id="q" placeholder="buscar pokémon…" autocomplete="off">
+  <label class="ctl">mapa
+    <select id="mapa-select"><option value="">carregando…</option></select>
+  </label>
+  <label class="ctl">nível hunt <input type="number" id="nivel" min="1" value="1000" size="6" title="Preenchido automaticamente ao escolher o pokémon"></label>
+  <label class="ctl">fonte tiles
+    <select id="fonte"><option value="">— nenhuma —</option></select>
+  </label>
+</section>
+
+<main class="sp-layout">
+  <aside class="sp-lista" id="lista">
+    <p class="sp-hint">Mesmas espécies do <b>Pokédex</b> com sprite normal (lab ou jogo), sem <b>lendários</b> (míticos entram). Clique no mapa para marcar. <strong>Shift+arrastar</strong> move o mapa. <strong>Alt+clique</strong> ou <strong>×</strong> remove. Verde = já posicionado.</p>
+    <div class="sp-contagens">
+      <div>Número de Pokémon total: <b id="sp-total">0</b></div>
+      <div>Número de Pokémon marcados no mapa: <b id="sp-marcados">0</b></div>
+      <div>Quantidade de Lendários: <b id="sp-lendarios">0</b></div>
+    </div>
+    <div id="especies"></div>
+  </aside>
+  <div class="sp-mapa-wrap" id="wrap">
+    <div class="sp-mapa" id="mapa">
+      <img id="img" alt="" draggable="false">
+      <div id="pins"></div>
+    </div>
+    <p class="sp-zoom">scroll = zoom · shift+arrastar = mover · clique = spawn · alt+clique = remover</p>
+  </div>
+</main>
+
+<script type="module" src="spawns.js"></script>
+</body>
+</html>

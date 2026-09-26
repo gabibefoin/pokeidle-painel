@@ -1,0 +1,70 @@
+# Push no master → jogo atualizado na Hetzner.
+#
+# O fluxo é deliberadamente burro: o Actions **não** constrói nada nem manda arquivo. Ele só
+# entra por SSH e chama `infra/deploy.sh`, que é o mesmo script que você roda na mão. Um único
+# caminho de deploy quer dizer que "funciona no CI mas não na mão" (e o contrário) não existe.
+#
+# Quem decide se o deploy valeu é o `deploy.sh`: ele confere o `/saude` depois de reiniciar e
+# volta para o commit anterior se o jogo não subir. O Actions só repassa o código de saída.
+
+name: deploy
+
+on:
+  push:
+    branches: [master]
+    # Mudança que não vai para a máquina não merece um deploy: documentação e material de
+    # conferência ficam de fora.
+    paths-ignore:
+      - '**.md'
+      - 'game/teste-*.png'
+  # E o botão manual, para reimplantar sem precisar de um commit vazio — inclusive para
+  # voltar a um commit específico quando algo passar pelo health check e quebrar depois.
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: 'SHA para implantar (vazio = master)'
+        required: false
+        type: string
+
+# Dois deploys ao mesmo tempo na mesma máquina se atropelam no meio do `npm ci`. A fila
+# garante um de cada vez; `cancel-in-progress: false` porque cancelar no meio deixaria a
+# máquina num estado pela metade — melhor esperar o anterior terminar.
+concurrency:
+  group: deploy-producao
+  cancel-in-progress: false
+
+jobs:
+  implantar:
+    runs-on: ubuntu-latest
+    # O ambiente permite exigir aprovação manual no GitHub sem mexer neste arquivo.
+    environment: producao
+
+    steps:
+      - name: chave de acesso
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "${{ secrets.SSH_CHAVE }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          # A impressão digital do servidor vem de um secret, e não de um
+          # `StrictHostKeyChecking=no`: sem ela, qualquer um que sequestre o DNS recebe a nossa
+          # chave privada de deploy no primeiro handshake.
+          printf '%s\n' "${{ secrets.SSH_HOST_KEY }}" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: implantar
+        env:
+          ALVO: ${{ inputs.commit }}
+        run: |
+          # `bash <script>` e não o caminho direto: se o bit de execução se perder (um
+          # `git reset --hard` restaura o modo gravado no repositório, e arquivo criado no
+          # Windows entra sem `+x`), o deploy continua funcionando em vez de morrer com
+          # "command not found" no meio da madrugada.
+          ssh -o IdentitiesOnly=yes \
+              "${{ secrets.SSH_USUARIO }}@${{ secrets.SSH_HOST }}" \
+              "bash /opt/pokeidle/infra/deploy.sh $ALVO"
+
+      - name: o que ficou no ar
+        if: always()
+        run: |
+          curl -fsS --max-time 10 "https://${{ secrets.DOMINIO }}/saude" \
+            | tee -a "$GITHUB_STEP_SUMMARY" || echo "o /saude não respondeu" >> "$GITHUB_STEP_SUMMARY"

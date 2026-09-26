@@ -1,0 +1,44 @@
+node_modules/
+
+# espelho local dos assets — regenerável com `npm run fetch`, e não é nosso pra redistribuir
+public/data/
+
+# Segredos. O .env guarda a CHAVE PRIVADA da carteira do projeto (ver game/.env.example).
+.env
+.env.*
+!.env.example
+
+# Arquivos de carteira Solana: array de 64 bytes com a chave privada dentro, do
+# `solana-keygen new --outfile` ou do `tools/gerar-carteira.mjs`. Um commit destes entrega
+# o caixa inteiro — e apagar depois não adianta, o histórico do git guarda.
+carteira*.json
+*-keypair.json
+id.json
+
+# Bytecode do Python das ferramentas (nomeador, geradores de catálogo).
+__pycache__/
+*.pyc
+
+# Rascunhos locais do editor — nunca versionar.
+*.bak
+*.wip
+
+# Config local do Claude/Cursor (agentes em .claude/agents/ ficam no repo).
+.claude/settings.json
+
+# Saídas regeneráveis das auditorias do nomeador (npm run auditar:*).
+tools/nomeador/auditoria-*.json
+tools/nomeador/relatorio-shinys-jogo.json
+
+# Artes de post. Os PNGs são saída (regeneráveis pelo HTML que está do lado), e os sprites
+# recortados vêm de `public/data/`, que já é ignorado aqui em cima justamente por não ser
+# nosso pra redistribuir — versionar cópias deles reabriria essa porta.
+divulgacao/
+
+# Rascunhos locais das ferramentas (cópias de app.js, resultados de publicação, etc.).
+tools/.cache/
+
+# Cache do PokéAPI usado por tools/gerar-creatures-novos.py: 81 MB de respostas HTTP que o
+# próprio script rebaixa quando falta. É insumo regenerável, não fonte — e o git não esquece
+# um arquivo desse tamanho depois que ele entra.
+tools/pokeapi-cache.json

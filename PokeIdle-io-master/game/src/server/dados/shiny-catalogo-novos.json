@@ -1,0 +1,4349 @@
+{
+  "_leia": "Shiny catalog — sprites do Pokedex Backup (sem LAB/Nomeador).",
+  "entries": [
+    {
+      "dexId": 1,
+      "name": "Bulbasaur",
+      "looktype": 70001,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 2,
+      "name": "Ivysaur",
+      "looktype": 70002,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 3,
+      "name": "Venusaur",
+      "looktype": 70003,
+      "tier": "B",
+      "count": 30
+    },
+    {
+      "dexId": 4,
+      "name": "Charmander",
+      "looktype": 70004,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 5,
+      "name": "Charmeleon",
+      "looktype": 70005,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 6,
+      "name": "Charizard",
+      "looktype": 70006,
+      "tier": "B",
+      "count": 200
+    },
+    {
+      "dexId": 7,
+      "name": "Squirtle",
+      "looktype": 70007,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 8,
+      "name": "Wartortle",
+      "looktype": 70008,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 9,
+      "name": "Blastoise",
+      "looktype": 70009,
+      "tier": "B",
+      "count": 36
+    },
+    {
+      "dexId": 10,
+      "name": "Caterpie",
+      "looktype": 70010,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 11,
+      "name": "Metapod",
+      "looktype": 70011,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 12,
+      "name": "Butterfree",
+      "looktype": 70012,
+      "tier": "C",
+      "count": 13
+    },
+    {
+      "dexId": 13,
+      "name": "Weedle",
+      "looktype": 70013,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 14,
+      "name": "Kakuna",
+      "looktype": 70014,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 15,
+      "name": "Beedrill",
+      "looktype": 70015,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 16,
+      "name": "Pidgey",
+      "looktype": 70016,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 17,
+      "name": "Pidgeotto",
+      "looktype": 70017,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 18,
+      "name": "Pidgeot",
+      "looktype": 70018,
+      "tier": "C",
+      "count": 29
+    },
+    {
+      "dexId": 19,
+      "name": "Rattata",
+      "looktype": 70019,
+      "tier": "C",
+      "count": 1181
+    },
+    {
+      "dexId": 20,
+      "name": "Raticate",
+      "looktype": 70020,
+      "tier": "C",
+      "count": 178
+    },
+    {
+      "dexId": 21,
+      "name": "Spearow",
+      "looktype": 70021,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 22,
+      "name": "Fearow",
+      "looktype": 70022,
+      "tier": "C",
+      "count": 7
+    },
+    {
+      "dexId": 23,
+      "name": "Ekans",
+      "looktype": 70023,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 24,
+      "name": "Arbok",
+      "looktype": 70024,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 25,
+      "name": "Pikachu",
+      "looktype": 70025,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 26,
+      "name": "Raichu",
+      "looktype": 70026,
+      "tier": "C",
+      "count": 28
+    },
+    {
+      "dexId": 27,
+      "name": "Sandshrew",
+      "looktype": 70027,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 28,
+      "name": "Sandslash",
+      "looktype": 70028,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 29,
+      "name": "Nidoran Female",
+      "looktype": 70029,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 30,
+      "name": "Nidorina",
+      "looktype": 70030,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 31,
+      "name": "Nidoqueen",
+      "looktype": 70031,
+      "tier": "B",
+      "count": 1
+    },
+    {
+      "dexId": 32,
+      "name": "Nidoran Male",
+      "looktype": 70032,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 33,
+      "name": "Nidorino",
+      "looktype": 70033,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 34,
+      "name": "Nidoking",
+      "looktype": 70034,
+      "tier": "B",
+      "count": 2
+    },
+    {
+      "dexId": 35,
+      "name": "Clefairy",
+      "looktype": 70035,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 36,
+      "name": "Clefable",
+      "looktype": 70036,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 37,
+      "name": "Vulpix",
+      "looktype": 70037,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 38,
+      "name": "Ninetales",
+      "looktype": 70038,
+      "tier": "B",
+      "count": 2
+    },
+    {
+      "dexId": 39,
+      "name": "Jigglypuff",
+      "looktype": 70039,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 40,
+      "name": "Wigglytuff",
+      "looktype": 70040,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 41,
+      "name": "Zubat",
+      "looktype": 70041,
+      "tier": "C",
+      "count": 32
+    },
+    {
+      "dexId": 42,
+      "name": "Golbat",
+      "looktype": 70042,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 43,
+      "name": "Oddish",
+      "looktype": 70043,
+      "tier": "C",
+      "count": 43
+    },
+    {
+      "dexId": 44,
+      "name": "Gloom",
+      "looktype": 70044,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 45,
+      "name": "Vileplume",
+      "looktype": 70045,
+      "tier": "C",
+      "count": 20
+    },
+    {
+      "dexId": 46,
+      "name": "Paras",
+      "looktype": 70046,
+      "tier": "C",
+      "count": 1809
+    },
+    {
+      "dexId": 47,
+      "name": "Parasect",
+      "looktype": 70047,
+      "tier": "C",
+      "count": 2900
+    },
+    {
+      "dexId": 49,
+      "name": "Venomoth",
+      "looktype": 70049,
+      "tier": "C",
+      "count": 34
+    },
+    {
+      "dexId": 50,
+      "name": "Diglett",
+      "looktype": 70050,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 51,
+      "name": "Dugtrio",
+      "looktype": 70051,
+      "tier": "C",
+      "count": 20
+    },
+    {
+      "dexId": 52,
+      "name": "Meowth",
+      "looktype": 70052,
+      "tier": "C",
+      "count": 19
+    },
+    {
+      "dexId": 53,
+      "name": "Persian",
+      "looktype": 70053,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 54,
+      "name": "Psyduck",
+      "looktype": 70054,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 55,
+      "name": "Golduck",
+      "looktype": 70055,
+      "tier": "B",
+      "count": 1
+    },
+    {
+      "dexId": 56,
+      "name": "Mankey",
+      "looktype": 70056,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 57,
+      "name": "Primeape",
+      "looktype": 70057,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 58,
+      "name": "Growlithe",
+      "looktype": 70058,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 59,
+      "name": "Arcanine",
+      "looktype": 70059,
+      "tier": "B",
+      "count": 2
+    },
+    {
+      "dexId": 60,
+      "name": "Poliwag",
+      "looktype": 70060,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 61,
+      "name": "Poliwhirl",
+      "looktype": 70061,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 62,
+      "name": "Poliwrath",
+      "looktype": 70062,
+      "tier": "B",
+      "count": 1
+    },
+    {
+      "dexId": 63,
+      "name": "Abra",
+      "looktype": 70063,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 64,
+      "name": "Kadabra",
+      "looktype": 70064,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 65,
+      "name": "Alakazam",
+      "looktype": 70065,
+      "tier": "B",
+      "count": 6
+    },
+    {
+      "dexId": 66,
+      "name": "Machop",
+      "looktype": 70066,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 67,
+      "name": "Machoke",
+      "looktype": 70067,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 68,
+      "name": "Machamp",
+      "looktype": 70068,
+      "tier": "B",
+      "count": 34
+    },
+    {
+      "dexId": 69,
+      "name": "Bellsprout",
+      "looktype": 70069,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 70,
+      "name": "Weepinbell",
+      "looktype": 70070,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 71,
+      "name": "Victreebel",
+      "looktype": 70071,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 72,
+      "name": "Tentacool",
+      "looktype": 70072,
+      "tier": "C",
+      "count": 32
+    },
+    {
+      "dexId": 73,
+      "name": "Tentacruel",
+      "looktype": 70073,
+      "tier": "B",
+      "count": 28
+    },
+    {
+      "dexId": 74,
+      "name": "Geodude",
+      "looktype": 70074,
+      "tier": "C",
+      "count": 4
+    },
+    {
+      "dexId": 75,
+      "name": "Graveler",
+      "looktype": 70075,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 76,
+      "name": "Golem",
+      "looktype": 70076,
+      "tier": "C",
+      "count": 94
+    },
+    {
+      "dexId": 77,
+      "name": "Ponyta",
+      "looktype": 70077,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 78,
+      "name": "Rapidash",
+      "looktype": 70078,
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "dexId": 79,
+      "name": "Slowpoke",
+      "looktype": 70079,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 80,
+      "name": "Slowbro",
+      "looktype": 70080,
+      "tier": "C",
+      "count": 5
+    },
+    {
+      "dexId": 81,
+      "name": "Magnemite",
+      "looktype": 70081,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 82,
+      "name": "Magneton",
+      "looktype": 70082,
+      "tier": "C",
+      "count": 26
+    },
+    {
+      "dexId": 83,
+      "name": "Farfetchd",
+      "looktype": 70083,
+      "tier": "C",
+      "count": 25
+    },
+    {
+      "dexId": 84,
+      "name": "Doduo",
+      "looktype": 70084,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 85,
+      "name": "Dodrio",
+      "looktype": 70085,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 86,
+      "name": "Seel",
+      "looktype": 70086,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 87,
+      "name": "Dewgong",
+      "looktype": 70087,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 88,
+      "name": "Grimer",
+      "looktype": 70088,
+      "tier": "C",
+      "count": 21
+    },
+    {
+      "dexId": 89,
+      "name": "Muk",
+      "looktype": 70089,
+      "tier": "B",
+      "count": 19
+    },
+    {
+      "dexId": 90,
+      "name": "Shellder",
+      "looktype": 70090,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 91,
+      "name": "Cloyster",
+      "looktype": 70091,
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "dexId": 92,
+      "name": "Gastly",
+      "looktype": 70092,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 93,
+      "name": "Haunter",
+      "looktype": 70093,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 94,
+      "name": "Gengar",
+      "looktype": 70094,
+      "tier": "B",
+      "count": 10
+    },
+    {
+      "dexId": 95,
+      "name": "Onix",
+      "looktype": 70095,
+      "tier": "C",
+      "count": 33
+    },
+    {
+      "dexId": 96,
+      "name": "Drowzee",
+      "looktype": 70096,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 97,
+      "name": "Hypno",
+      "looktype": 70097,
+      "tier": "C",
+      "count": 9
+    },
+    {
+      "dexId": 98,
+      "name": "Krabby",
+      "looktype": 70098,
+      "tier": "C",
+      "count": 11
+    },
+    {
+      "dexId": 99,
+      "name": "Kingler",
+      "looktype": 70099,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 100,
+      "name": "Voltorb",
+      "looktype": 70100,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 101,
+      "name": "Electrode",
+      "looktype": 70101,
+      "tier": "C",
+      "count": 5
+    },
+    {
+      "dexId": 102,
+      "name": "Exeggcute",
+      "looktype": 70102,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 103,
+      "name": "Exeggutor",
+      "looktype": 70103,
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "dexId": 104,
+      "name": "Cubone",
+      "looktype": 70104,
+      "tier": "C",
+      "count": 31
+    },
+    {
+      "dexId": 105,
+      "name": "Marowak",
+      "looktype": 70105,
+      "tier": "C",
+      "count": 34
+    },
+    {
+      "dexId": 106,
+      "name": "Hitmonlee",
+      "looktype": 70106,
+      "tier": "C",
+      "count": 4
+    },
+    {
+      "dexId": 107,
+      "name": "Hitmonchan",
+      "looktype": 70107,
+      "tier": "C",
+      "count": 4
+    },
+    {
+      "dexId": 108,
+      "name": "Lickitung",
+      "looktype": 70108,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 109,
+      "name": "Koffing",
+      "looktype": 70109,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 110,
+      "name": "Weezing",
+      "looktype": 70110,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 111,
+      "name": "Rhyhorn",
+      "looktype": 70111,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 112,
+      "name": "Rhydon",
+      "looktype": 70112,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 113,
+      "name": "Chansey",
+      "looktype": 70113,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 114,
+      "name": "Tangela",
+      "looktype": 70114,
+      "tier": "C",
+      "count": 20
+    },
+    {
+      "dexId": 115,
+      "name": "Kangaskhan",
+      "looktype": 70115,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 116,
+      "name": "Horsea",
+      "looktype": 70116,
+      "tier": "C",
+      "count": 19
+    },
+    {
+      "dexId": 117,
+      "name": "Seadra",
+      "looktype": 70117,
+      "tier": "C",
+      "count": 24
+    },
+    {
+      "dexId": 118,
+      "name": "Goldeen",
+      "looktype": 70118,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 119,
+      "name": "Seaking",
+      "looktype": 70119,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 120,
+      "name": "Staryu",
+      "looktype": 70120,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 121,
+      "name": "Starmie",
+      "looktype": 70121,
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "dexId": 122,
+      "name": "Mr. Mime",
+      "looktype": 70122,
+      "tier": "C",
+      "count": 20
+    },
+    {
+      "dexId": 123,
+      "name": "Scyther",
+      "looktype": 70123,
+      "tier": "B",
+      "count": 58
+    },
+    {
+      "dexId": 124,
+      "name": "Jynx",
+      "looktype": 70124,
+      "tier": "C",
+      "count": 21
+    },
+    {
+      "dexId": 125,
+      "name": "Electabuzz",
+      "looktype": 70125,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 126,
+      "name": "Magmar",
+      "looktype": 70126,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 127,
+      "name": "Pinsir",
+      "looktype": 70127,
+      "tier": "B",
+      "count": 27
+    },
+    {
+      "dexId": 128,
+      "name": "Tauros",
+      "looktype": 70128,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 129,
+      "name": "Magikarp",
+      "looktype": 70129,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 130,
+      "name": "Gyarados",
+      "looktype": 70130,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 131,
+      "name": "Lapras",
+      "looktype": 70131,
+      "tier": "B",
+      "count": 1
+    },
+    {
+      "dexId": 132,
+      "name": "Ditto",
+      "looktype": 70132,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 133,
+      "name": "Eevee",
+      "looktype": 70133,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 134,
+      "name": "Vaporeon",
+      "looktype": 70134,
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "dexId": 135,
+      "name": "Jolteon",
+      "looktype": 70135,
+      "tier": "B",
+      "count": 2
+    },
+    {
+      "dexId": 136,
+      "name": "Flareon",
+      "looktype": 70136,
+      "tier": "B",
+      "count": 2
+    },
+    {
+      "dexId": 137,
+      "name": "Porygon",
+      "looktype": 70137,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 138,
+      "name": "Omanyte",
+      "looktype": 70138,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 139,
+      "name": "Omastar",
+      "looktype": 70139,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 141,
+      "name": "Kabutops",
+      "looktype": 70141,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 142,
+      "name": "Aerodactyl",
+      "looktype": 70142,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 143,
+      "name": "Snorlax",
+      "looktype": 70143,
+      "tier": "B",
+      "count": 7
+    },
+    {
+      "dexId": 147,
+      "name": "Dratini",
+      "looktype": 70147,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 148,
+      "name": "Dragonair",
+      "looktype": 70148,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 149,
+      "name": "Dragonite",
+      "looktype": 70149,
+      "tier": "A",
+      "count": 3
+    },
+    {
+      "dexId": 152,
+      "name": "Chikorita",
+      "looktype": 70152,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 153,
+      "name": "Bayleef",
+      "looktype": 70153,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 154,
+      "name": "Meganium",
+      "looktype": 70154,
+      "tier": "B",
+      "count": 1
+    },
+    {
+      "dexId": 155,
+      "name": "Cyndaquil",
+      "looktype": 70155,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 156,
+      "name": "Quilava",
+      "looktype": 70156,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 157,
+      "name": "Typhlosion",
+      "looktype": 70157,
+      "tier": "B",
+      "count": 19
+    },
+    {
+      "dexId": 158,
+      "name": "Totodile",
+      "looktype": 70158,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 159,
+      "name": "Croconaw",
+      "looktype": 70159,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 160,
+      "name": "Feraligatr",
+      "looktype": 70160,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 161,
+      "name": "Sentret",
+      "looktype": 70161,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 162,
+      "name": "Furret",
+      "looktype": 70162,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 163,
+      "name": "Hoothoot",
+      "looktype": 70163,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 164,
+      "name": "Noctowl",
+      "looktype": 70164,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 165,
+      "name": "Ledyba",
+      "looktype": 70165,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 166,
+      "name": "Ledian",
+      "looktype": 70166,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 167,
+      "name": "Spinarak",
+      "looktype": 70167,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 168,
+      "name": "Ariados",
+      "looktype": 70168,
+      "tier": "C",
+      "count": 4
+    },
+    {
+      "dexId": 169,
+      "name": "Crobat",
+      "looktype": 70169,
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "dexId": 170,
+      "name": "Chinchou",
+      "looktype": 70170,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 171,
+      "name": "Lanturn",
+      "looktype": 70171,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 172,
+      "name": "Pichu",
+      "looktype": 70172,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 173,
+      "name": "Cleffa",
+      "looktype": 70173,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 174,
+      "name": "Igglybuff",
+      "looktype": 70174,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 175,
+      "name": "Togepi",
+      "looktype": 70175,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 176,
+      "name": "Togetic",
+      "looktype": 70176,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 177,
+      "name": "Natu",
+      "looktype": 70177,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 178,
+      "name": "Xatu",
+      "looktype": 70178,
+      "tier": "C",
+      "count": 21
+    },
+    {
+      "dexId": 179,
+      "name": "Mareep",
+      "looktype": 70179,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 180,
+      "name": "Flaaffy",
+      "looktype": 70180,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 181,
+      "name": "Ampharos",
+      "looktype": 70181,
+      "tier": "B",
+      "count": 21
+    },
+    {
+      "dexId": 182,
+      "name": "Bellossom",
+      "looktype": 70182,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 183,
+      "name": "Marill",
+      "looktype": 70183,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 184,
+      "name": "Azumarill",
+      "looktype": 70184,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 185,
+      "name": "Sudowoodo",
+      "looktype": 70185,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 186,
+      "name": "Politoed",
+      "looktype": 70186,
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "dexId": 187,
+      "name": "Hoppip",
+      "looktype": 70187,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 188,
+      "name": "Skiploom",
+      "looktype": 70188,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 189,
+      "name": "Jumpluff",
+      "looktype": 70189,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 190,
+      "name": "Aipom",
+      "looktype": 70190,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 191,
+      "name": "Sunkern",
+      "looktype": 70191,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 192,
+      "name": "Sunflora",
+      "looktype": 70192,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 193,
+      "name": "Yanma",
+      "looktype": 70193,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 194,
+      "name": "Wooper",
+      "looktype": 70194,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 195,
+      "name": "Quagsire",
+      "looktype": 70195,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 196,
+      "name": "Espeon",
+      "looktype": 70196,
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "dexId": 197,
+      "name": "Umbreon",
+      "looktype": 70197,
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "dexId": 198,
+      "name": "Murkrow",
+      "looktype": 70198,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 199,
+      "name": "Slowking",
+      "looktype": 70199,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 200,
+      "name": "Misdreavus",
+      "looktype": 70200,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 202,
+      "name": "Wobbuffet",
+      "looktype": 70202,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 204,
+      "name": "Pineco",
+      "looktype": 70204,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 205,
+      "name": "Forretress",
+      "looktype": 70205,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 206,
+      "name": "Dunsparce",
+      "looktype": 70206,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 207,
+      "name": "Gligar",
+      "looktype": 70207,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 208,
+      "name": "Steelix",
+      "looktype": 70208,
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "dexId": 209,
+      "name": "Snubbull",
+      "looktype": 70209,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 210,
+      "name": "Granbull",
+      "looktype": 70210,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 211,
+      "name": "Qwilfish",
+      "looktype": 70211,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 212,
+      "name": "Scizor",
+      "looktype": 70212,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 213,
+      "name": "Shuckle",
+      "looktype": 70213,
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "dexId": 214,
+      "name": "Heracross",
+      "looktype": 70214,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 215,
+      "name": "Sneasel",
+      "looktype": 70215,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 216,
+      "name": "Teddiursa",
+      "looktype": 70216,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 217,
+      "name": "Ursaring",
+      "looktype": 70217,
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "dexId": 218,
+      "name": "Slugma",
+      "looktype": 70218,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 219,
+      "name": "Magcargo",
+      "looktype": 70219,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 220,
+      "name": "Swinub",
+      "looktype": 70220,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 221,
+      "name": "Piloswine",
+      "looktype": 70221,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 222,
+      "name": "Corsola",
+      "looktype": 70222,
+      "tier": "C",
+      "count": 4
+    },
+    {
+      "dexId": 223,
+      "name": "Remoraid",
+      "looktype": 70223,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 224,
+      "name": "Octillery",
+      "looktype": 70224,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 225,
+      "name": "Delibird",
+      "looktype": 70225,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 226,
+      "name": "Mantine",
+      "looktype": 70226,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 227,
+      "name": "Skarmory",
+      "looktype": 70227,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 228,
+      "name": "Houndour",
+      "looktype": 70228,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 229,
+      "name": "Houndoom",
+      "looktype": 70229,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 230,
+      "name": "Kingdra",
+      "looktype": 70230,
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "dexId": 231,
+      "name": "Phanpy",
+      "looktype": 70231,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 232,
+      "name": "Donphan",
+      "looktype": 70232,
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "dexId": 233,
+      "name": "Porygon2",
+      "looktype": 70233,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 234,
+      "name": "Stantler",
+      "looktype": 70234,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 235,
+      "name": "Smeargle",
+      "looktype": 70235,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 236,
+      "name": "Tyrogue",
+      "looktype": 70236,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 237,
+      "name": "Hitmontop",
+      "looktype": 70237,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 238,
+      "name": "Smoochum",
+      "looktype": 70238,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 239,
+      "name": "Elekid",
+      "looktype": 70239,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 240,
+      "name": "Magby",
+      "looktype": 70240,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 241,
+      "name": "Miltank",
+      "looktype": 70241,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 242,
+      "name": "Blissey",
+      "looktype": 70242,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 246,
+      "name": "Larvitar",
+      "looktype": 70246,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 247,
+      "name": "Pupitar",
+      "looktype": 70247,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 248,
+      "name": "Tyranitar",
+      "looktype": 70248,
+      "tier": "A",
+      "count": 0
+    },
+    {
+      "dexId": 251,
+      "name": "Celebi",
+      "looktype": 70251,
+      "tier": "A",
+      "count": 3
+    },
+    {
+      "dexId": 252,
+      "name": "Treecko",
+      "looktype": 70252,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 253,
+      "name": "Grovyle",
+      "looktype": 70253,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 254,
+      "name": "Sceptile",
+      "looktype": 70254,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 255,
+      "name": "Torchic",
+      "looktype": 70255,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 256,
+      "name": "Combusken",
+      "looktype": 70256,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 257,
+      "name": "Blaziken",
+      "looktype": 70257,
+      "tier": "B",
+      "count": 1
+    },
+    {
+      "dexId": 258,
+      "name": "Mudkip",
+      "looktype": 70258,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 259,
+      "name": "Marshtomp",
+      "looktype": 70259,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 260,
+      "name": "Swampert",
+      "looktype": 70260,
+      "tier": "B",
+      "count": 0
+    },
+    {
+      "dexId": 262,
+      "name": "Mightyena",
+      "looktype": 70262,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 263,
+      "name": "Zigzagoon",
+      "looktype": 70263,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 264,
+      "name": "Linoone",
+      "looktype": 70264,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 265,
+      "name": "Wurmple",
+      "looktype": 70265,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 266,
+      "name": "Silcoon",
+      "looktype": 70266,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 267,
+      "name": "Beautifly",
+      "looktype": 70267,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 268,
+      "name": "Cascoon",
+      "looktype": 70268,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 269,
+      "name": "Dustox",
+      "looktype": 70269,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 270,
+      "name": "Lotad",
+      "looktype": 70270,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 271,
+      "name": "Lombre",
+      "looktype": 70271,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 272,
+      "name": "Ludicolo",
+      "looktype": 70272,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 273,
+      "name": "Seedot",
+      "looktype": 70273,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 274,
+      "name": "Nuzleaf",
+      "looktype": 70274,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 275,
+      "name": "Shiftry",
+      "looktype": 70275,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 276,
+      "name": "Taillow",
+      "looktype": 70276,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 277,
+      "name": "Swellow",
+      "looktype": 70277,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 278,
+      "name": "Wingull",
+      "looktype": 70278,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 279,
+      "name": "Pelipper",
+      "looktype": 70279,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 280,
+      "name": "Ralts",
+      "looktype": 70280,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 281,
+      "name": "Kirlia",
+      "looktype": 70281,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 282,
+      "name": "Gardevoir",
+      "looktype": 70282,
+      "tier": "B",
+      "count": 1
+    },
+    {
+      "dexId": 283,
+      "name": "Surskit",
+      "looktype": 70283,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 284,
+      "name": "Masquerain",
+      "looktype": 70284,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 285,
+      "name": "Shroomish",
+      "looktype": 70285,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 286,
+      "name": "Breloom",
+      "looktype": 70286,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 287,
+      "name": "Slakoth",
+      "looktype": 70287,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 288,
+      "name": "Vigoroth",
+      "looktype": 70288,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 289,
+      "name": "Slaking",
+      "looktype": 70289,
+      "tier": "A",
+      "count": 3
+    },
+    {
+      "dexId": 290,
+      "name": "Nincada",
+      "looktype": 70290,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 291,
+      "name": "Ninjask",
+      "looktype": 70291,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 292,
+      "name": "Shedinja",
+      "looktype": 70292,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 293,
+      "name": "Whismur",
+      "looktype": 70293,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 294,
+      "name": "Loudred",
+      "looktype": 70294,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 295,
+      "name": "Exploud",
+      "looktype": 70295,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 296,
+      "name": "Makuhita",
+      "looktype": 70296,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 297,
+      "name": "Hariyama",
+      "looktype": 70297,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 298,
+      "name": "Azurill",
+      "looktype": 70298,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 299,
+      "name": "Nosepass",
+      "looktype": 70299,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 300,
+      "name": "Skitty",
+      "looktype": 70300,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 301,
+      "name": "Delcatty",
+      "looktype": 70301,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 302,
+      "name": "Sableye",
+      "looktype": 70302,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 303,
+      "name": "Mawile",
+      "looktype": 70303,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 304,
+      "name": "Aron",
+      "looktype": 70304,
+      "tier": "C",
+      "count": 2
+    },
+    {
+      "dexId": 305,
+      "name": "Lairon",
+      "looktype": 70305,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 306,
+      "name": "Aggron",
+      "looktype": 70306,
+      "tier": "B",
+      "count": 1
+    },
+    {
+      "dexId": 307,
+      "name": "Meditite",
+      "looktype": 70307,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 308,
+      "name": "Medicham",
+      "looktype": 70308,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 309,
+      "name": "Electrike",
+      "looktype": 70309,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 310,
+      "name": "Manectric",
+      "looktype": 70310,
+      "tier": "C",
+      "count": 0
+    },
+    {
+      "dexId": 311,
+      "name": "Plusle",
+      "looktype": 70311,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 312,
+      "name": "Minun",
+      "looktype": 70312,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 313,
+      "name": "Volbeat",
+      "looktype": 70313,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 314,
+      "name": "Illumise",
+      "looktype": 70314,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 315,
+      "name": "Roselia",
+      "looktype": 70315,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 316,
+      "name": "Gulpin",
+      "looktype": 70316,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 317,
+      "name": "Swalot",
+      "looktype": 70317,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 318,
+      "name": "Carvanha",
+      "looktype": 70318,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 319,
+      "name": "Sharpedo",
+      "looktype": 70319,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 320,
+      "name": "Wailmer",
+      "looktype": 70320,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 321,
+      "name": "Wailord",
+      "looktype": 70321,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 322,
+      "name": "Numel",
+      "looktype": 70322,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 323,
+      "name": "Camerupt",
+      "looktype": 70323,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 324,
+      "name": "Torkoal",
+      "looktype": 70324,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 325,
+      "name": "Spoink",
+      "looktype": 70325,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 326,
+      "name": "Grumpig",
+      "looktype": 70326,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 327,
+      "name": "Spinda",
+      "looktype": 70327,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 328,
+      "name": "Trapinch",
+      "looktype": 70328,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 329,
+      "name": "Vibrava",
+      "looktype": 70329,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 330,
+      "name": "Flygon",
+      "looktype": 70330,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 331,
+      "name": "Cacnea",
+      "looktype": 70331,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 332,
+      "name": "Cacturne",
+      "looktype": 70332,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 333,
+      "name": "Swablu",
+      "looktype": 70333,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 334,
+      "name": "Altaria",
+      "looktype": 70334,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 335,
+      "name": "Zangoose",
+      "looktype": 70335,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 336,
+      "name": "Seviper",
+      "looktype": 70336,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 337,
+      "name": "Lunatone",
+      "looktype": 70337,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 338,
+      "name": "Solrock",
+      "looktype": 70338,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 339,
+      "name": "Barboach",
+      "looktype": 70339,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 340,
+      "name": "Whiscash",
+      "looktype": 70340,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 341,
+      "name": "Corphish",
+      "looktype": 70341,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 342,
+      "name": "Crawdaunt",
+      "looktype": 70342,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 343,
+      "name": "Baltoy",
+      "looktype": 70343,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 344,
+      "name": "Claydol",
+      "looktype": 70344,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 345,
+      "name": "Lileep",
+      "looktype": 70345,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 346,
+      "name": "Cradily",
+      "looktype": 70346,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 347,
+      "name": "Anorith",
+      "looktype": 70347,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 348,
+      "name": "Armaldo",
+      "looktype": 70348,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 349,
+      "name": "Feebas",
+      "looktype": 70349,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 350,
+      "name": "Milotic",
+      "looktype": 70350,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 352,
+      "name": "Kecleon",
+      "looktype": 70352,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 353,
+      "name": "Shuppet",
+      "looktype": 70353,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 354,
+      "name": "Banette",
+      "looktype": 70354,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 355,
+      "name": "Duskull",
+      "looktype": 70355,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 356,
+      "name": "Dusclops",
+      "looktype": 70356,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 357,
+      "name": "Tropius",
+      "looktype": 70357,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 358,
+      "name": "Chimecho",
+      "looktype": 70358,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 359,
+      "name": "Absol",
+      "looktype": 70359,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 360,
+      "name": "Wynaut",
+      "looktype": 70360,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 361,
+      "name": "Snorunt",
+      "looktype": 70361,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 362,
+      "name": "Glalie",
+      "looktype": 70362,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 363,
+      "name": "Spheal",
+      "looktype": 70363,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 364,
+      "name": "Sealeo",
+      "looktype": 70364,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 365,
+      "name": "Walrein",
+      "looktype": 70365,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 366,
+      "name": "Clamperl",
+      "looktype": 70366,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 367,
+      "name": "Huntail",
+      "looktype": 70367,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 368,
+      "name": "Gorebyss",
+      "looktype": 70368,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 369,
+      "name": "Relicanth",
+      "looktype": 70369,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 370,
+      "name": "Luvdisc",
+      "looktype": 70370,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 371,
+      "name": "Bagon",
+      "looktype": 70371,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 372,
+      "name": "Shelgon",
+      "looktype": 70372,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 373,
+      "name": "Salamence",
+      "looktype": 70373,
+      "tier": "A",
+      "count": 3
+    },
+    {
+      "dexId": 374,
+      "name": "Beldum",
+      "looktype": 70374,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 375,
+      "name": "Metang",
+      "looktype": 70375,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 376,
+      "name": "Metagross",
+      "looktype": 70376,
+      "tier": "A",
+      "count": 3
+    },
+    {
+      "dexId": 385,
+      "name": "Jirachi",
+      "looktype": 70385,
+      "tier": "A",
+      "count": 3
+    },
+    {
+      "dexId": 387,
+      "name": "Turtwig",
+      "looktype": 70387,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 388,
+      "name": "Grotle",
+      "looktype": 70388,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 389,
+      "name": "Torterra",
+      "looktype": 70389,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 390,
+      "name": "Chimchar",
+      "looktype": 70390,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 391,
+      "name": "Monferno",
+      "looktype": 70391,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 392,
+      "name": "Infernape",
+      "looktype": 70392,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 393,
+      "name": "Piplup",
+      "looktype": 70393,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 394,
+      "name": "Prinplup",
+      "looktype": 70394,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 395,
+      "name": "Empoleon",
+      "looktype": 70395,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 396,
+      "name": "Starly",
+      "looktype": 70396,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 397,
+      "name": "Staravia",
+      "looktype": 70397,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 398,
+      "name": "Staraptor",
+      "looktype": 70398,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 399,
+      "name": "Bidoof",
+      "looktype": 70399,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 400,
+      "name": "Bibarel",
+      "looktype": 70400,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 401,
+      "name": "Kricketot",
+      "looktype": 70401,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 402,
+      "name": "Kricketune",
+      "looktype": 70402,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 403,
+      "name": "Shinx",
+      "looktype": 70403,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 404,
+      "name": "Luxio",
+      "looktype": 70404,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 405,
+      "name": "Luxray",
+      "looktype": 70405,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 406,
+      "name": "Budew",
+      "looktype": 70406,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 407,
+      "name": "Roserade",
+      "looktype": 70407,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 408,
+      "name": "Cranidos",
+      "looktype": 70408,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 411,
+      "name": "Bastiodon",
+      "looktype": 70411,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 412,
+      "name": "Burmy",
+      "looktype": 70412,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 413,
+      "name": "Wormadam",
+      "looktype": 70413,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 414,
+      "name": "Mothim",
+      "looktype": 70414,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 415,
+      "name": "Combee",
+      "looktype": 70415,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 416,
+      "name": "Vespiquen",
+      "looktype": 70416,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 417,
+      "name": "Pachirisu",
+      "looktype": 70417,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 418,
+      "name": "Buizel",
+      "looktype": 70418,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 419,
+      "name": "Floatzel",
+      "looktype": 70419,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 420,
+      "name": "Cherubi",
+      "looktype": 70420,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 421,
+      "name": "Cherrim",
+      "looktype": 70421,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 422,
+      "name": "Shellos",
+      "looktype": 70422,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 423,
+      "name": "Gastrodon",
+      "looktype": 70423,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 424,
+      "name": "Ambipom",
+      "looktype": 70424,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 426,
+      "name": "Drifblim",
+      "looktype": 70426,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 428,
+      "name": "Lopunny",
+      "looktype": 70428,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 429,
+      "name": "Mismagius",
+      "looktype": 70429,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 430,
+      "name": "Honchkrow",
+      "looktype": 70430,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 431,
+      "name": "Glameow",
+      "looktype": 70431,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 432,
+      "name": "Purugly",
+      "looktype": 70432,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 433,
+      "name": "Chingling",
+      "looktype": 70433,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 435,
+      "name": "Skuntank",
+      "looktype": 70435,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 437,
+      "name": "Bronzong",
+      "looktype": 70437,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 442,
+      "name": "Spiritomb",
+      "looktype": 70442,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 444,
+      "name": "Gabite",
+      "looktype": 70444,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 445,
+      "name": "Garchomp",
+      "looktype": 70445,
+      "tier": "A",
+      "count": 3
+    },
+    {
+      "dexId": 447,
+      "name": "Riolu",
+      "looktype": 70447,
+      "tier": "C",
+      "count": 1
+    },
+    {
+      "dexId": 448,
+      "name": "Lucario",
+      "looktype": 70448,
+      "tier": "B",
+      "count": 2
+    },
+    {
+      "dexId": 450,
+      "name": "Hippowdon",
+      "looktype": 70450,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 452,
+      "name": "Drapion",
+      "looktype": 70452,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 453,
+      "name": "Croagunk",
+      "looktype": 70453,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 454,
+      "name": "Toxicroak",
+      "looktype": 70454,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 455,
+      "name": "Carnivine",
+      "looktype": 70455,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 460,
+      "name": "Abomasnow",
+      "looktype": 70460,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 461,
+      "name": "Weavile",
+      "looktype": 70461,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 462,
+      "name": "Magnezone",
+      "looktype": 70462,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 464,
+      "name": "Rhyperior",
+      "looktype": 70464,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 465,
+      "name": "Tangrowth",
+      "looktype": 70465,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 466,
+      "name": "Electivire",
+      "looktype": 70466,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 467,
+      "name": "Magmortar",
+      "looktype": 70467,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 468,
+      "name": "Togekiss",
+      "looktype": 70468,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 469,
+      "name": "Yanmega",
+      "looktype": 70469,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 470,
+      "name": "Leafeon",
+      "looktype": 70470,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 471,
+      "name": "Glaceon",
+      "looktype": 70471,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 472,
+      "name": "Gliscor",
+      "looktype": 70472,
+      "tier": "B",
+      "count": 1
+    },
+    {
+      "dexId": 473,
+      "name": "Mamoswine",
+      "looktype": 70473,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 474,
+      "name": "Porygon-Z",
+      "looktype": 70474,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 475,
+      "name": "Gallade",
+      "looktype": 70475,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 476,
+      "name": "Probopass",
+      "looktype": 70476,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 477,
+      "name": "Dusknoir",
+      "looktype": 70477,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 478,
+      "name": "Froslass",
+      "looktype": 70478,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 479,
+      "name": "Rotom",
+      "looktype": 70479,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 490,
+      "name": "Manaphy",
+      "looktype": 70490,
+      "tier": "A",
+      "count": 3
+    },
+    {
+      "dexId": 491,
+      "name": "Darkrai",
+      "looktype": 70491,
+      "tier": "A",
+      "count": 3
+    },
+    {
+      "dexId": 495,
+      "name": "Snivy",
+      "looktype": 70495,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 496,
+      "name": "Servine",
+      "looktype": 70496,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 497,
+      "name": "Serperior",
+      "looktype": 70497,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 498,
+      "name": "Tepig",
+      "looktype": 70498,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 499,
+      "name": "Pignite",
+      "looktype": 70499,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 500,
+      "name": "Emboar",
+      "looktype": 70500,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 501,
+      "name": "Oshawott",
+      "looktype": 70501,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 502,
+      "name": "Dewott",
+      "looktype": 70502,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 503,
+      "name": "Samurott",
+      "looktype": 70503,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 504,
+      "name": "Patrat",
+      "looktype": 70504,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 505,
+      "name": "Watchog",
+      "looktype": 70505,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 508,
+      "name": "Stoutland",
+      "looktype": 70508,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 510,
+      "name": "Liepard",
+      "looktype": 70510,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 511,
+      "name": "Pansage",
+      "looktype": 70511,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 512,
+      "name": "Simisage",
+      "looktype": 70512,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 513,
+      "name": "Pansear",
+      "looktype": 70513,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 514,
+      "name": "Simisear",
+      "looktype": 70514,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 515,
+      "name": "Panpour",
+      "looktype": 70515,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 516,
+      "name": "Simipour",
+      "looktype": 70516,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 517,
+      "name": "Munna",
+      "looktype": 70517,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 518,
+      "name": "Musharna",
+      "looktype": 70518,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 519,
+      "name": "Pidove",
+      "looktype": 70519,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 520,
+      "name": "Tranquill",
+      "looktype": 70520,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 521,
+      "name": "Unfezant",
+      "looktype": 70521,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 523,
+      "name": "Zebstrika",
+      "looktype": 70523,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 526,
+      "name": "Gigalith",
+      "looktype": 70526,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 528,
+      "name": "Swoobat",
+      "looktype": 70528,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 530,
+      "name": "Excadrill",
+      "looktype": 70530,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 531,
+      "name": "Audino",
+      "looktype": 70531,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 534,
+      "name": "Conkeldurr",
+      "looktype": 70534,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 537,
+      "name": "Seismitoad",
+      "looktype": 70537,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 538,
+      "name": "Throh",
+      "looktype": 70538,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 539,
+      "name": "Sawk",
+      "looktype": 70539,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 542,
+      "name": "Leavanny",
+      "looktype": 70542,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 545,
+      "name": "Scolipede",
+      "looktype": 70545,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 547,
+      "name": "Whimsicott",
+      "looktype": 70547,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 549,
+      "name": "Lilligant",
+      "looktype": 70549,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 553,
+      "name": "Krookodile",
+      "looktype": 70553,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 556,
+      "name": "Maractus",
+      "looktype": 70556,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 558,
+      "name": "Crustle",
+      "looktype": 70558,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 561,
+      "name": "Sigilyph",
+      "looktype": 70561,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 563,
+      "name": "Cofagrigus",
+      "looktype": 70563,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 565,
+      "name": "Carracosta",
+      "looktype": 70565,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 567,
+      "name": "Archeops",
+      "looktype": 70567,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 569,
+      "name": "Garbodor",
+      "looktype": 70569,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 570,
+      "name": "Zorua",
+      "looktype": 70570,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 571,
+      "name": "Zoroark",
+      "looktype": 70571,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 572,
+      "name": "Minccino",
+      "looktype": 70572,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 573,
+      "name": "Cinccino",
+      "looktype": 70573,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 576,
+      "name": "Gothitelle",
+      "looktype": 70576,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 579,
+      "name": "Reuniclus",
+      "looktype": 70579,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 581,
+      "name": "Swanna",
+      "looktype": 70581,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 584,
+      "name": "Vanilluxe",
+      "looktype": 70584,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 585,
+      "name": "Deerling",
+      "looktype": 70585,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 586,
+      "name": "Sawsbuck",
+      "looktype": 70586,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 587,
+      "name": "Emolga",
+      "looktype": 70587,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 589,
+      "name": "Escavalier",
+      "looktype": 70589,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 591,
+      "name": "Amoonguss",
+      "looktype": 70591,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 592,
+      "name": "Frillish",
+      "looktype": 70592,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 593,
+      "name": "Jellicent",
+      "looktype": 70593,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 596,
+      "name": "Galvantula",
+      "looktype": 70596,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 598,
+      "name": "Ferrothorn",
+      "looktype": 70598,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 604,
+      "name": "Eelektross",
+      "looktype": 70604,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 609,
+      "name": "Chandelure",
+      "looktype": 70609,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 610,
+      "name": "Axew",
+      "looktype": 70610,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 611,
+      "name": "Fraxure",
+      "looktype": 70611,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 612,
+      "name": "Haxorus",
+      "looktype": 70612,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 613,
+      "name": "Cubchoo",
+      "looktype": 70613,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 614,
+      "name": "Beartic",
+      "looktype": 70614,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 615,
+      "name": "Cryogonal",
+      "looktype": 70615,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 617,
+      "name": "Accelgor",
+      "looktype": 70617,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 618,
+      "name": "Stunfisk",
+      "looktype": 70618,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 620,
+      "name": "Mienshao",
+      "looktype": 70620,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 621,
+      "name": "Druddigon",
+      "looktype": 70621,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 623,
+      "name": "Golurk",
+      "looktype": 70623,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 625,
+      "name": "Bisharp",
+      "looktype": 70625,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 626,
+      "name": "Bouffalant",
+      "looktype": 70626,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 627,
+      "name": "Rufflet",
+      "looktype": 70627,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 628,
+      "name": "Braviary",
+      "looktype": 70628,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 629,
+      "name": "Vullaby",
+      "looktype": 70629,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 630,
+      "name": "Mandibuzz",
+      "looktype": 70630,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 631,
+      "name": "Heatmor",
+      "looktype": 70631,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 635,
+      "name": "Hydreigon",
+      "looktype": 70635,
+      "tier": "A",
+      "count": 3
+    },
+    {
+      "dexId": 637,
+      "name": "Volcarona",
+      "looktype": 70637,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 655,
+      "name": "Delphox",
+      "looktype": 70655,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 658,
+      "name": "Greninja",
+      "looktype": 70658,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 659,
+      "name": "Bunnelby",
+      "looktype": 70659,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 660,
+      "name": "Diggersby",
+      "looktype": 70660,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 661,
+      "name": "Fletchling",
+      "looktype": 70661,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 662,
+      "name": "Fletchinder",
+      "looktype": 70662,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 663,
+      "name": "Talonflame",
+      "looktype": 70663,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 666,
+      "name": "Vivillon",
+      "looktype": 70666,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 667,
+      "name": "Litleo",
+      "looktype": 70667,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 668,
+      "name": "Pyroar",
+      "looktype": 70668,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 669,
+      "name": "Flabebe",
+      "looktype": 70669,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 671,
+      "name": "Florges",
+      "looktype": 70671,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 675,
+      "name": "Pangoro",
+      "looktype": 70675,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 681,
+      "name": "Aegislash",
+      "looktype": 70681,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 686,
+      "name": "Inkay",
+      "looktype": 70686,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 687,
+      "name": "Malamar",
+      "looktype": 70687,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 688,
+      "name": "Binacle",
+      "looktype": 70688,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 689,
+      "name": "Barbaracle",
+      "looktype": 70689,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 691,
+      "name": "Dragalge",
+      "looktype": 70691,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 692,
+      "name": "Clauncher",
+      "looktype": 70692,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 693,
+      "name": "Clawitzer",
+      "looktype": 70693,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 694,
+      "name": "Helioptile",
+      "looktype": 70694,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 695,
+      "name": "Heliolisk",
+      "looktype": 70695,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 696,
+      "name": "Tyrunt",
+      "looktype": 70696,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 698,
+      "name": "Amaura",
+      "looktype": 70698,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 699,
+      "name": "Aurorus",
+      "looktype": 70699,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 700,
+      "name": "Sylveon",
+      "looktype": 70700,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 701,
+      "name": "Hawlucha",
+      "looktype": 70701,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 702,
+      "name": "Dedenne",
+      "looktype": 70702,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 704,
+      "name": "Goomy",
+      "looktype": 70704,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 705,
+      "name": "Sliggoo",
+      "looktype": 70705,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 706,
+      "name": "Goodra",
+      "looktype": 70706,
+      "tier": "A",
+      "count": 3
+    },
+    {
+      "dexId": 707,
+      "name": "Klefki",
+      "looktype": 70707,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 708,
+      "name": "Phantump",
+      "looktype": 70708,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 709,
+      "name": "Trevenant",
+      "looktype": 70709,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 712,
+      "name": "Bergmite",
+      "looktype": 70712,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 713,
+      "name": "Avalugg",
+      "looktype": 70713,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 715,
+      "name": "Noivern",
+      "looktype": 70715,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 723,
+      "name": "Dartrix",
+      "looktype": 70723,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 725,
+      "name": "Litten",
+      "looktype": 70725,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 726,
+      "name": "Torracat",
+      "looktype": 70726,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 727,
+      "name": "Incineroar",
+      "looktype": 70727,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 728,
+      "name": "Popplio",
+      "looktype": 70728,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 729,
+      "name": "Brionne",
+      "looktype": 70729,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 730,
+      "name": "Primarina",
+      "looktype": 70730,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 731,
+      "name": "Pikipek",
+      "looktype": 70731,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 732,
+      "name": "Trumbeak",
+      "looktype": 70732,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 733,
+      "name": "Toucannon",
+      "looktype": 70733,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 734,
+      "name": "Yungoos",
+      "looktype": 70734,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 735,
+      "name": "Gumshoos",
+      "looktype": 70735,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 736,
+      "name": "Grubbin",
+      "looktype": 70736,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 737,
+      "name": "Charjabug",
+      "looktype": 70737,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 738,
+      "name": "Vikavolt",
+      "looktype": 70738,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 742,
+      "name": "Cutiefly",
+      "looktype": 70742,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 743,
+      "name": "Ribombee",
+      "looktype": 70743,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 744,
+      "name": "Rockruff",
+      "looktype": 70744,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 747,
+      "name": "Mareanie",
+      "looktype": 70747,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 748,
+      "name": "Toxapex",
+      "looktype": 70748,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 749,
+      "name": "Mudbray",
+      "looktype": 70749,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 750,
+      "name": "Mudsdale",
+      "looktype": 70750,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 751,
+      "name": "Dewpider",
+      "looktype": 70751,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 752,
+      "name": "Araquanid",
+      "looktype": 70752,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 755,
+      "name": "Morelull",
+      "looktype": 70755,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 756,
+      "name": "Shiinotic",
+      "looktype": 70756,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 757,
+      "name": "Salandit",
+      "looktype": 70757,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 758,
+      "name": "Salazzle",
+      "looktype": 70758,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 759,
+      "name": "Stufful",
+      "looktype": 70759,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 760,
+      "name": "Bewear",
+      "looktype": 70760,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 761,
+      "name": "Bounsweet",
+      "looktype": 70761,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 762,
+      "name": "Steenee",
+      "looktype": 70762,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 763,
+      "name": "Tsareena",
+      "looktype": 70763,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 766,
+      "name": "Passimian",
+      "looktype": 70766,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 767,
+      "name": "Wimpod",
+      "looktype": 70767,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 768,
+      "name": "Golisopod",
+      "looktype": 70768,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 777,
+      "name": "Togedemaru",
+      "looktype": 70777,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 779,
+      "name": "Bruxish",
+      "looktype": 70779,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 780,
+      "name": "Drampa",
+      "looktype": 70780,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 781,
+      "name": "Dhelmise",
+      "looktype": 70781,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 782,
+      "name": "Jangmo-o",
+      "looktype": 70782,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 783,
+      "name": "Hakamo-o",
+      "looktype": 70783,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 784,
+      "name": "Kommo-o",
+      "looktype": 70784,
+      "tier": "A",
+      "count": 3
+    },
+    {
+      "dexId": 798,
+      "name": "Kartana",
+      "looktype": 70798,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 799,
+      "name": "Guzzlord",
+      "looktype": 70799,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 803,
+      "name": "Poipole",
+      "looktype": 70803,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 804,
+      "name": "Naganadel",
+      "looktype": 70804,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 813,
+      "name": "Scorbunny",
+      "looktype": 70813,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 814,
+      "name": "Raboot",
+      "looktype": 70814,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 815,
+      "name": "Cinderace",
+      "looktype": 70815,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 868,
+      "name": "Milcery",
+      "looktype": 70868,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 869,
+      "name": "Alcremie",
+      "looktype": 70869,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 885,
+      "name": "Dreepy",
+      "looktype": 70885,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 901,
+      "name": "Ursaluna",
+      "looktype": 70901,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 935,
+      "name": "Charcadet",
+      "looktype": 70935,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 936,
+      "name": "Armarouge",
+      "looktype": 70936,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 957,
+      "name": "Tinkatink",
+      "looktype": 70957,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 958,
+      "name": "Tinkatuff",
+      "looktype": 70958,
+      "tier": "C",
+      "count": 3
+    },
+    {
+      "dexId": 959,
+      "name": "Tinkaton",
+      "looktype": 70959,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 979,
+      "name": "Annihilape",
+      "looktype": 70979,
+      "tier": "B",
+      "count": 3
+    },
+    {
+      "dexId": 989,
+      "name": "Sandy Shocks",
+      "looktype": 70989,
+      "tier": "B",
+      "count": 3
+    }
+  ],
+  "_stats": {
+    "total": 620,
+    "comManifest": 620
+  }
+}

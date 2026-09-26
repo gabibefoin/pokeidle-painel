@@ -1,0 +1,186 @@
+.mp-toolbar { align-items: center; }
+.mp-stats { margin-left: auto; font-size: 12px; color: var(--dim, #888); }
+
+.mp-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  gap: 12px;
+  padding: 12px;
+  min-height: calc(100vh - 140px);
+}
+
+.mp-lista {
+  overflow: auto;
+  max-height: calc(100vh - 150px);
+  border: 1px solid var(--borda, #333);
+  border-radius: 8px;
+  background: var(--painel, #1a1a1a);
+}
+
+.mp-lista-vazia,
+.mp-grid-vazia {
+  padding: 16px;
+  margin: 0;
+  font-size: 13px;
+  color: var(--dim, #888);
+  text-align: center;
+}
+
+.mp-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-bottom: 1px solid var(--borda, #2a2a2a);
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.mp-item:hover { background: rgba(255,255,255,0.04); }
+.mp-item.on { background: rgba(120,80,200,0.18); }
+.mp-item-nome { flex: 1; font-size: 13px; }
+.mp-item-map {
+  font-size: 11px;
+  color: #9f7aea;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mp-item.sem-mapa .mp-item-map { color: #a66; }
+
+.mp-mapas { overflow: auto; }
+.mp-mapas-head { margin-bottom: 10px; }
+.mp-hint { margin: 0 0 8px; font-size: 13px; color: var(--dim, #888); }
+
+.mp-tipos-row {
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--borda, #2a2a2a);
+}
+
+.chip.mp-tipo {
+  border-color: color-mix(in srgb, var(--tipo-cor, #888) 55%, #333);
+}
+.chip.mp-tipo.on {
+  background: var(--tipo-cor, var(--accent));
+  border-color: var(--tipo-cor, var(--accent));
+  color: #111;
+}
+
+.mp-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+.mp-filtros input[type="search"] {
+  flex: 1;
+  min-width: 180px;
+}
+.mp-btn-padrao { margin-left: auto; }
+
+.mp-pool-resumo {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--dim, #888);
+}
+
+.mp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: 10px;
+}
+
+.mp-card {
+  border: 2px solid var(--borda, #333);
+  border-radius: 8px;
+  padding: 6px;
+  background: var(--painel, #1a1a1a);
+  cursor: pointer;
+  transition: border-color 0.15s;
+  text-align: center;
+}
+.mp-card:hover { border-color: #666; }
+.mp-card.on { border-color: #9f7aea; box-shadow: 0 0 0 1px #9f7aea; }
+
+.mp-preview-grande {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid var(--borda, #333);
+  border-radius: 8px;
+  background: #0d0d0d;
+}
+.mp-preview-grande canvas {
+  width: min(420px, 100%);
+  height: 220px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  background: #050505;
+  border-radius: 4px;
+  flex: none;
+}
+.mp-preview-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--dim, #888);
+}
+.mp-preview-meta strong { color: #eee; font-size: 15px; }
+.mp-preview-status { font-size: 11px; color: #9f7aea; }
+
+.mp-thumb-host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  background: #050505;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.mp-thumb-host canvas {
+  display: block;
+  max-width: 100%;
+  max-height: 100px;
+  image-rendering: pixelated;
+}
+.mp-thumb-host.mp-thumb-loading { opacity: 0.6; }
+.mp-thumb-host.mp-thumb-erro {
+  background: repeating-linear-gradient(45deg, #1a1010, #1a1010 6px, #221414 6px, #221414 12px);
+}
+.mp-thumb-msg { font-size: 10px; color: var(--dim, #666); }
+
+.mp-card-nome {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.mp-card-slug {
+  display: block;
+  margin-top: 2px;
+  font-size: 10px;
+  color: var(--dim, #888);
+}
+.mp-card-assign {
+  display: block;
+  margin-top: 6px;
+  font-size: 10px;
+  line-height: 1.35;
+  color: #b794f4;
+  min-height: 2.7em;
+}
+.mp-card-assign.vazio { color: #666; font-style: italic; }
+
+@media (max-width: 900px) {
+  .mp-layout { grid-template-columns: 1fr; }
+}

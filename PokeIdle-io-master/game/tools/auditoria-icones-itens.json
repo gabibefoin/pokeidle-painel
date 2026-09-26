@@ -1,0 +1,408 @@
+{
+  "gerado": "2026-09-02T16:00:03.304Z",
+  "catalogo": 359,
+  "resumo": {
+    "arquivo_ausente": 0,
+    "sem_mapeamento": 0,
+    "placeholder": 2,
+    "arquivo_minuscule": 12,
+    "drop_sem_catalogo": 97
+  },
+  "arquivo_ausente": [],
+  "sem_mapeamento": [],
+  "placeholder": [
+    {
+      "id": 30,
+      "name": "Dark Gem",
+      "category": "loot",
+      "icon": "_loot_placeholder.png",
+      "path": "site/assets/items/dark_gem.png"
+    },
+    {
+      "id": 63,
+      "name": "Goggles",
+      "category": "loot",
+      "icon": "_loot_placeholder.png",
+      "path": "site/assets/items/goggles.png"
+    }
+  ],
+  "arquivo_minuscule": [
+    {
+      "id": 59249,
+      "name": "cat ear",
+      "category": "loot",
+      "path": "site/assets/items/cat_ear.png",
+      "bytes": 193
+    },
+    {
+      "id": 30,
+      "name": "Dark Gem",
+      "category": "loot",
+      "path": "site/assets/items/dark_gem.png",
+      "bytes": 215
+    },
+    {
+      "id": 36,
+      "name": "Dragon Scale",
+      "category": "loot",
+      "path": "site/assets/items/dragon_scale.png",
+      "bytes": 240
+    },
+    {
+      "id": 5041,
+      "name": "Farfetch'd Stick",
+      "category": "loot",
+      "path": "site/assets/items/farfetchd_stick.png",
+      "bytes": 217
+    },
+    {
+      "id": 47,
+      "name": "Farfetchd Stick",
+      "category": "loot",
+      "path": "site/assets/items/farfetchd_stick.png",
+      "bytes": 217
+    },
+    {
+      "id": 73,
+      "name": "Kanga Ear",
+      "category": "loot",
+      "path": "site/assets/items/kanga_ear.png",
+      "bytes": 228
+    },
+    {
+      "id": 70011,
+      "name": "Key Fragment",
+      "category": "key-item",
+      "path": "img/itens/fragmento-chave.png",
+      "bytes": 236
+    },
+    {
+      "id": 77,
+      "name": "Leaves",
+      "category": "loot",
+      "path": "site/assets/items/leaves.png",
+      "bytes": 236
+    },
+    {
+      "id": 95,
+      "name": "Piece of Diglett",
+      "category": "loot",
+      "path": "site/assets/items/piece_of_diglett.png",
+      "bytes": 208
+    },
+    {
+      "id": 111,
+      "name": "Ruby",
+      "category": "loot",
+      "path": "site/assets/items/ruby.png",
+      "bytes": 140
+    },
+    {
+      "id": 122,
+      "name": "Snow Skis",
+      "category": "loot",
+      "path": "site/assets/items/snow_skis.png",
+      "bytes": 233
+    },
+    {
+      "id": 130,
+      "name": "Strange Thing",
+      "category": "loot",
+      "path": "site/assets/items/strange_thing.png",
+      "bytes": 227
+    }
+  ],
+  "drop_sem_catalogo": [
+    {
+      "name": "Armor Fossil"
+    },
+    {
+      "name": "Bear Arm"
+    },
+    {
+      "name": "Bear Paw"
+    },
+    {
+      "name": "Beautiful Scales"
+    },
+    {
+      "name": "Blaze Topknot"
+    },
+    {
+      "name": "Bloody Wing"
+    },
+    {
+      "name": "Blue Ball"
+    },
+    {
+      "name": "Bone Shield"
+    },
+    {
+      "name": "Branch of Stone"
+    },
+    {
+      "name": "Brush"
+    },
+    {
+      "name": "Bucket of Honey"
+    },
+    {
+      "name": "Corrupted Scizor Claw"
+    },
+    {
+      "name": "Cow Tail"
+    },
+    {
+      "name": "Dark Beak"
+    },
+    {
+      "name": "Dark Ear"
+    },
+    {
+      "name": "Dog Ear"
+    },
+    {
+      "name": "Eevee Bag"
+    },
+    {
+      "name": "Eevee Valentine's Card"
+    },
+    {
+      "name": "Eggshell"
+    },
+    {
+      "name": "Elephant Foot"
+    },
+    {
+      "name": "Espeon Bag"
+    },
+    {
+      "name": "Fire Ear"
+    },
+    {
+      "name": "Flareon Bag"
+    },
+    {
+      "name": "Flareon Cream"
+    },
+    {
+      "name": "Flareon Valentine's Card"
+    },
+    {
+      "name": "Gardestrike Backpack"
+    },
+    {
+      "name": "Gardestrike Essence"
+    },
+    {
+      "name": "Gem Star"
+    },
+    {
+      "name": "Giant Bat Wing"
+    },
+    {
+      "name": "Gift Bag"
+    },
+    {
+      "name": "Glaceon Bag"
+    },
+    {
+      "name": "Gligar Claw"
+    },
+    {
+      "name": "Great Petal"
+    },
+    {
+      "name": "Helicopter Leaves"
+    },
+    {
+      "name": "Hot Fur"
+    },
+    {
+      "name": "Ice Bra"
+    },
+    {
+      "name": "Insect Claw"
+    },
+    {
+      "name": "Insect Tail"
+    },
+    {
+      "name": "Ironhard Backpack"
+    },
+    {
+      "name": "Jolteon Bag"
+    },
+    {
+      "name": "Jolteon Valentine's Card"
+    },
+    {
+      "name": "Kermes Shard"
+    },
+    {
+      "name": "Ladybug Wing"
+    },
+    {
+      "name": "Leafeon Bag"
+    },
+    {
+      "name": "Leather"
+    },
+    {
+      "name": "Lizard Tail"
+    },
+    {
+      "name": "Lovely Topknot"
+    },
+    {
+      "name": "Massive Vines"
+    },
+    {
+      "name": "Max Volt Paw"
+    },
+    {
+      "name": "Miss Trace"
+    },
+    {
+      "name": "Monkey Paw"
+    },
+    {
+      "name": "Mystic Flower"
+    },
+    {
+      "name": "Mystic Petal"
+    },
+    {
+      "name": "Noble Cloak"
+    },
+    {
+      "name": "Owl Feather"
+    },
+    {
+      "name": "Piece Of Coral"
+    },
+    {
+      "name": "Piece Of Shell"
+    },
+    {
+      "name": "Pizza"
+    },
+    {
+      "name": "Point Of Light"
+    },
+    {
+      "name": "Power Banana"
+    },
+    {
+      "name": "Psychic Ear"
+    },
+    {
+      "name": "Psycraft Backpack"
+    },
+    {
+      "name": "Rabbit Ear"
+    },
+    {
+      "name": "Rabbit Eyebrows"
+    },
+    {
+      "name": "Rabbit Fur"
+    },
+    {
+      "name": "Red Scale"
+    },
+    {
+      "name": "Reindeer Horn"
+    },
+    {
+      "name": "Scary Smile"
+    },
+    {
+      "name": "Scizor Claw"
+    },
+    {
+      "name": "Seavell Backpack"
+    },
+    {
+      "name": "Sheep Wool"
+    },
+    {
+      "name": "Small Shell"
+    },
+    {
+      "name": "Small Tail"
+    },
+    {
+      "name": "Small Wing"
+    },
+    {
+      "name": "Solid Rock Paw"
+    },
+    {
+      "name": "Spider Leg"
+    },
+    {
+      "name": "Spin Machine"
+    },
+    {
+      "name": "Squirrel Tail"
+    },
+    {
+      "name": "Steel Wing"
+    },
+    {
+      "name": "Steelix Tail"
+    },
+    {
+      "name": "Strange Antenna"
+    },
+    {
+      "name": "Strange Bone"
+    },
+    {
+      "name": "Strange Tail"
+    },
+    {
+      "name": "Strange Wing"
+    },
+    {
+      "name": "Streak Tail"
+    },
+    {
+      "name": "Sylveon Bag"
+    },
+    {
+      "name": "Talon"
+    },
+    {
+      "name": "Tentacle"
+    },
+    {
+      "name": "Tusk"
+    },
+    {
+      "name": "Umbreon Bag"
+    },
+    {
+      "name": "Vaporeon Bag"
+    },
+    {
+      "name": "Vaporeon Cream"
+    },
+    {
+      "name": "Vaporeon Valentine's Card"
+    },
+    {
+      "name": "Virtual Tail"
+    },
+    {
+      "name": "Wingeon Backpack"
+    },
+    {
+      "name": "Wooper Horn"
+    },
+    {
+      "name": "Yellow Flower"
+    }
+  ]
+}

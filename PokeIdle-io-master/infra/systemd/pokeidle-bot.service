@@ -1,0 +1,36 @@
+[Unit]
+Description=Pokeidle.io — bot do Discord (convites + radares de shiny, saque e deposito)
+Documentation=https://github.com/pedrofasi/PokeIdle-io/blob/master/game/src/bot/index.mjs
+# Precisa do Postgres (que sobe no docker) e da internet para o Gateway do Discord. NÃO depende
+# do jogo: o bot só escreve em duas tabelas, e o gateway do jogo pode estar fora do ar que ele
+# continua contando quem entra no servidor.
+After=network-online.target docker.service
+Wants=network-online.target
+Requires=docker.service
+
+[Service]
+Type=simple
+User=__USUARIO__
+Group=__USUARIO__
+WorkingDirectory=__DESTINO__/game
+EnvironmentFile=-__DESTINO__/game/.env
+ExecStart=/usr/bin/node src/bot/index.mjs
+# `Restart=always` e não `on-failure`: o bot SAI com código 1 quando o Discord recusa a conexão
+# por token inválido ou intent não liberado (ver `CODIGOS_FATAIS` em `src/bot/discord.mjs`), e
+# nesse caso reiniciar em laço não adianta — mas o `RestartSec` de 15 s deixa o log legível em
+# vez de virar mil linhas por minuto, e cobre o caso real de o Discord ficar fora do ar.
+Restart=always
+RestartSec=15
+KillSignal=SIGTERM
+TimeoutStopSec=15
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=__DESTINO__
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=pokeidle-bot
+
+[Install]
+WantedBy=multi-user.target

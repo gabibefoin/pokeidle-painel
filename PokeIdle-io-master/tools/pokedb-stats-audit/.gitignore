@@ -1,0 +1,8 @@
+# Gerados por build-worklist.mjs a partir dos catálogos — não versionar.
+worklist.json
+fora-de-escopo.json
+cache/
+# Intermediários do scraper.
+cache-scraped.txt
+cache-hand-backup.txt
+scrape.log

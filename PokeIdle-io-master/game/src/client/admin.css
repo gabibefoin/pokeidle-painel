@@ -1,0 +1,436 @@
+/* O painel de lucro. Herda a moldura de `terms.css`; aqui só o que é específico de NÚMERO.
+ *
+ * A regra visual: o que é dinheiro do jogador e o que é dinheiro do projeto nunca têm a mesma
+ * cor. Passivo em rosa (é dívida), sobra em verde (é seu). Num painel em que um clique move
+ * USDT, confundir as duas colunas é o erro que custa caro.
+ */
+
+.adm-quem { font-size: 12px; color: var(--sobre-mad-dim); }
+
+/* Mais largo que o quadro dos termos — tabelas de usuários/referrals não cabem em 1060px. */
+.pagina-admin .doc-quadro {
+  max-width: min(98vw, 1520px);
+  width: 100%;
+}
+
+.adm-layout {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 0;
+  min-height: 420px;
+}
+@media (max-width: 760px) {
+  .adm-layout { grid-template-columns: 1fr; }
+  .adm-nav { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 16px 0 !important; border-right: 0 !important; border-bottom: 2px solid var(--mad-linha); }
+  .adm-nav-btn { flex: 1 1 auto; min-width: 120px; }
+}
+
+.adm-nav {
+  padding: 16px 10px;
+  border-right: 2px solid var(--mad-linha);
+  background: var(--vao2);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.adm-nav-btn {
+  display: block; width: 100%; text-align: left;
+  padding: 10px 12px; border: 0; border-radius: 6px; cursor: pointer;
+  font-family: Tahoma, Verdana, "Segoe UI", sans-serif;
+  font-size: 13px; font-weight: 700; color: var(--sobre-mad);
+  background: transparent;
+  box-shadow: inset 0 0 0 2px transparent;
+}
+.adm-nav-btn:hover { background: var(--vao); filter: brightness(1.05); }
+.adm-nav-btn.ativo {
+  color: #fff;
+  background: var(--vao);
+  box-shadow: inset 0 0 0 2px var(--mad-linha), inset 3px 0 0 var(--rx-clr);
+  text-shadow: -1px -1px 0 var(--mad-base), 1px -1px 0 var(--mad-base),
+               -1px 1px 0 var(--mad-base), 1px 1px 0 var(--mad-base);
+}
+
+.adm-corpo { padding: 16px 24px 8px; min-width: 0; overflow-x: auto; }
+.adm-carregando { color: var(--sobre-mad-dim); font-size: 14px; }
+.adm-erro {
+  padding: 14px 16px; border-radius: 6px; font-size: 14px; line-height: 1.6;
+  background: var(--vao2); box-shadow: inset 0 0 0 2px var(--mad-linha), inset 4px 0 0 var(--vermelho);
+  color: var(--sobre-mad);
+}
+
+.adm-secao { margin-bottom: 22px; }
+.adm-secao > h2 {
+  margin: 0 0 10px; font-family: Tahoma, Verdana, "Segoe UI", sans-serif;
+  font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #fff;
+  text-shadow: -1px -1px 0 var(--mad-base), 1px -1px 0 var(--mad-base),
+               -1px 1px 0 var(--mad-base), 1px 1px 0 var(--mad-base);
+}
+.adm-legenda {
+  margin: 0; font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--sobre-mad-dim);
+}
+
+/* Os números grandes. `auto-fit` para caber 4 numa tela larga e 2 no celular sem media query. */
+.adm-blocos { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.adm-bloco {
+  padding: 12px 14px; border-radius: 6px;
+  background: var(--vao); box-shadow: inset 0 0 0 2px var(--mad-linha), 0 1px 0 var(--mad-luz2);
+}
+.adm-bloco b {
+  display: block; font-family: Tahoma, Verdana, "Segoe UI", sans-serif;
+  font-size: 21px; color: #fff; line-height: 1.2;
+}
+.adm-bloco span {
+  display: block; margin-top: 3px; font-size: 10.5px; text-transform: uppercase;
+  letter-spacing: .7px; color: var(--vao-dim);
+}
+.adm-bloco em { display: block; margin-top: 4px; font-style: normal; font-size: 11px; color: var(--sobre-mad-dim); }
+.adm-bloco.passivo b { color: var(--rx-rosa); }
+.adm-bloco.sobra b { color: var(--verde); }
+
+.adm-tabela { width: 100%; border-collapse: collapse; font-size: 13px; }
+.adm-secao:has(.adm-tabela) {
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.adm-tabela th, .adm-tabela td { padding: 7px 10px; text-align: left; vertical-align: middle; }
+.adm-tabela td:first-child { white-space: nowrap; }
+.adm-tabela th {
+  font-family: Tahoma, Verdana, "Segoe UI", sans-serif; font-size: 10.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .6px; color: var(--sobre-mad-dim); background: var(--vao2);
+}
+.adm-tabela tr + tr td { box-shadow: inset 0 2px 0 #00000033; }
+.adm-tabela td.n { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* --- a colheita --- */
+
+.adm-colher {
+  padding: 14px 16px; border-radius: 6px;
+  background: var(--vao); box-shadow: inset 0 0 0 2px var(--mad-linha), 0 1px 0 var(--mad-luz2);
+}
+.adm-linha { display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap; }
+.adm-campo { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 180px; }
+label.adm-campo {
+  font-family: Tahoma, Verdana, "Segoe UI", sans-serif; font-size: 10.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .7px; color: var(--sobre-mad-dim);
+}
+.adm-campo label {
+  font-family: Tahoma, Verdana, "Segoe UI", sans-serif; font-size: 10.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .7px; color: var(--sobre-mad-dim);
+}
+.adm-campo select, .adm-campo input {
+  height: 36px; padding: 0 10px; border: 0; border-radius: 6px;
+  font-family: inherit; font-size: 14px; color: var(--sobre-mad);
+  background: var(--vao2); box-shadow: inset 0 0 0 2px var(--mad-linha);
+}
+.adm-campo textarea {
+  min-height: 140px; padding: 8px 10px; border: 0; border-radius: 6px; resize: vertical;
+  font-family: inherit; font-size: 14px; line-height: 1.5; color: var(--sobre-mad);
+  background: var(--vao2); box-shadow: inset 0 0 0 2px var(--mad-linha);
+}
+.adm-campo input { font-variant-numeric: tabular-nums; }
+
+.adm-botao {
+  height: 36px; padding: 0 20px; border: 0; border-radius: 6px; cursor: pointer;
+  font-family: Tahoma, Verdana, "Segoe UI", sans-serif; font-weight: 700; font-size: 13px;
+  color: #fff;
+  text-shadow: -1px -1px 0 var(--rx-esc), 1px -1px 0 var(--rx-esc),
+               -1px 1px 0 var(--rx-esc), 1px 1px 0 var(--rx-esc);
+  background: linear-gradient(180deg, var(--rx-clr) 0 45%, var(--rx) 45% 100%);
+  box-shadow: inset 0 0 0 2px var(--mad-linha), 0 2px 0 var(--mad-base);
+}
+.adm-botao:hover:not(:disabled) { filter: brightness(1.1); }
+.adm-botao:active:not(:disabled) { transform: translateY(2px); box-shadow: inset 0 0 0 2px var(--mad-linha); }
+.adm-botao:disabled { opacity: .45; cursor: default; filter: grayscale(.5); }
+/* O passo de confirmação muda a COR do botão: quem chegou aqui está a um clique de mover
+   dinheiro de verdade, e o botão não pode parecer o mesmo de antes. */
+.adm-botao.confirmar { background: linear-gradient(180deg, #ff8a5c 0 45%, #e2542a 45% 100%); }
+
+.adm-aviso { margin: 10px 0 0; font-size: 12.5px; line-height: 1.6; color: var(--sobre-mad-dim); }
+.adm-aviso.ruim { color: #ffd0c6; }
+.adm-aviso.bom { color: var(--verde); }
+.adm-aviso a { color: #7fd4ff; }
+
+.adm-tag {
+  display: inline-block; padding: 2px 8px; border-radius: 4px;
+  font-family: Tahoma, Verdana, "Segoe UI", sans-serif; font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .4px;
+}
+.adm-tag-moderador { color: #4dff88; background: #4dff8822; box-shadow: inset 0 0 0 1px #4dff8866; }
+.adm-tag-helper { color: #ffb6c8; background: #ffb6c822; box-shadow: inset 0 0 0 1px #ffb6c866; }
+.adm-tag-streamer { color: #b47dff; background: #b47dff22; box-shadow: inset 0 0 0 1px #b47dff66; }
+
+.adm-botao-mini {
+  height: 28px; padding: 0 12px; border: 0; border-radius: 5px; cursor: pointer;
+  font-family: Tahoma, Verdana, "Segoe UI", sans-serif; font-size: 11px; font-weight: 700;
+  color: var(--sobre-mad); background: var(--vao2);
+  box-shadow: inset 0 0 0 2px var(--mad-linha);
+}
+.adm-botao-mini:hover { filter: brightness(1.15); }
+
+/* Eventos automáticos: os sete dias da semana como chips que ligam e desligam.
+   Não são `input[type=checkbox]` porque o `estilo.css` transforma todo checkbox no
+   interruptor de 46×24 da casa — sete daqueles ocupariam a largura da seção inteira. */
+.adm-dias { display: flex; flex-wrap: wrap; gap: 6px; }
+.adm-dia {
+  height: 30px; min-width: 48px; padding: 0 10px; border: 0; border-radius: 5px; cursor: pointer;
+  font-family: Tahoma, Verdana, "Segoe UI", sans-serif; font-size: 11.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .4px;
+  color: var(--vao-dim); background: var(--vao2);
+  box-shadow: inset 0 0 0 2px var(--mad-linha);
+}
+.adm-dia:hover { filter: brightness(1.15); }
+.adm-dia[aria-pressed="true"] {
+  color: #fff; background: linear-gradient(180deg, var(--rx-clr) 0 45%, var(--rx) 45% 100%);
+  box-shadow: inset 0 0 0 2px var(--mad-linha), 0 2px 0 var(--mad-base);
+}
+/* Regra pausada: continua legível (ela vai voltar), mas não disputa atenção com as que valem. */
+.adm-agenda-off td { opacity: .55; }
+
+/* Multi-contas: os nicks de uma origem, em grupos por estado (de pé, banidas, apagadas).
+   Envolvidos numa linha própria para que 33 nicks numa célula ainda se leiam como três
+   blocos, e não como um parágrafo de botões. */
+.adm-mc-grupo { display: flex; flex-wrap: wrap; gap: 4px; margin: 2px 0; }
+.adm-mc-grupo .adm-botao-mini { height: 24px; padding: 0 8px; }
+/* Apagada não é botão: não há ficha para abrir. Riscado é como se lê "não existe mais". */
+.adm-mc-nick {
+  display: inline-block; padding: 3px 8px; border-radius: 5px;
+  font-size: 11px; font-weight: 700; color: var(--vao-dim); background: #ffffff0d;
+}
+.adm-mc-nick.apagado { text-decoration: line-through; }
+/* O nick buscado, destacado dentro dos grupos (busca por nick em Multi-contas). */
+.adm-mc-grupo .adm-mc-alvo { box-shadow: inset 0 0 0 2px #ffd166; font-weight: 700; }
+
+/* Os subtítulos da seção. Estavam no default do navegador (h3 serifado e grande demais),
+   o que já destoava com duas tabelas; agora que a seção tem cinco, a diferença aparecia. */
+.adm-secao h3, .adm-secao h4 {
+  margin: 18px 0 8px; font-family: Tahoma, Verdana, "Segoe UI", sans-serif;
+  font-size: 12.5px; text-transform: uppercase; letter-spacing: .8px; color: #fff;
+}
+.adm-secao h4 { margin: 14px 0 6px; font-size: 11px; color: var(--sobre-mad-dim); }
+
+/* O teto de cadastro e a prévia da faxina: dois painéis embutidos na seção. O recuo à
+   esquerda é o que os separa das tabelas soltas — eles são assunto próprio, não continuação. */
+.adm-mc-teto, .adm-mc-plano {
+  margin: 14px 0; padding: 12px 14px; border-radius: 6px;
+  background: var(--vao); box-shadow: inset 0 0 0 2px var(--mad-linha), 0 1px 0 var(--mad-luz2);
+}
+.adm-mc-teto > h3:first-child, .adm-mc-plano > h3:first-child { margin-top: 0; }
+/* A prévia é destrutiva: a tarja vermelha na borda é o aviso que não depende de ler o texto. */
+.adm-mc-plano { box-shadow: inset 0 0 0 2px var(--mad-linha), inset 4px 0 0 var(--vermelho); }
+.adm-mc-plano.bom { box-shadow: inset 0 0 0 2px var(--mad-linha), inset 4px 0 0 var(--verde); }
+
+/* A etiqueta de destino de cada conta na prévia (fica / recebe / ban soft / admin). */
+.adm-mc-tag {
+  display: inline-block; min-width: 62px; margin-right: 6px; padding: 2px 6px; border-radius: 4px;
+  font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px;
+  text-align: center; color: var(--sobre-mad-dim);
+  background: #ffffff11; box-shadow: inset 0 0 0 1px #ffffff22;
+}
+.adm-mc-tag.bom { color: var(--verde); background: #4dff8822; box-shadow: inset 0 0 0 1px #4dff8866; }
+.adm-mc-tag.ruim { color: #ffd0c6; background: #ff444422; box-shadow: inset 0 0 0 1px #ff444466; }
+/* Origem isenta do teto: continua na lista (ela é o aglomerado que existe), só não é mais
+   candidata a bloqueio — e a linha apagada diz isso sem precisar de uma coluna. */
+.adm-mc-isento td { opacity: .7; }
+
+/* O título da tabela por IP divide a linha com o botão da FAXINA GERAL — é a ação sobre a
+   tabela inteira, e fica colada a ela. */
+.adm-mc-geral { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.adm-mc-geral h3 { margin: 18px 0 6px; }
+/* A prévia geral pode ter dezenas de IPs: a tabela rola dentro do painel, e os botões de
+   confirmar ficam à vista sem descer a página inteira. */
+.adm-mc-rolagem { max-height: 440px; overflow: auto; }
+
+.adm-badge {
+  display: inline-block; padding: 2px 7px; border-radius: 4px;
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px;
+}
+.adm-badge-ok { color: var(--verde); background: #4dff8822; box-shadow: inset 0 0 0 1px #4dff8866; }
+.adm-badge-off { color: var(--sobre-mad-dim); background: #ffffff11; box-shadow: inset 0 0 0 1px #ffffff22; }
+.adm-badge-ban { color: #ffd0c6; background: #ff444422; box-shadow: inset 0 0 0 1px #ff444466; }
+.adm-badge-ban-soft { color: #ffe8a8; background: #ffb02022; box-shadow: inset 0 0 0 1px #ffb02066; }
+.adm-badge-gema { color: #c8b6ff; background: #9b7bff22; box-shadow: inset 0 0 0 1px #9b7bff66; }
+.adm-badge-dia { color: #b6e8ff; background: #4db8ff22; box-shadow: inset 0 0 0 1px #4db8ff66; }
+.adm-badge-coin { color: #ffe8a8; background: #ffd16622; box-shadow: inset 0 0 0 1px #ffd16666; }
+.adm-badge-jogo { color: #b6ffb8; background: #4dff8822; box-shadow: inset 0 0 0 1px #4dff8866; }
+.adm-badge-on { color: #7fd4ff; background: #7fd4ff22; box-shadow: inset 0 0 0 1px #7fd4ff66; }
+
+.adm-busca {
+  display: flex; gap: 8px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 12px;
+}
+.adm-busca .adm-campo { min-width: 220px; flex: 1; max-width: 360px; }
+.adm-busca select {
+  width: 100%; padding: 7px 9px; border-radius: 4px;
+  background: var(--vao2); color: var(--sobre-mad);
+  box-shadow: inset 0 0 0 2px var(--mad-linha);
+  font: inherit;
+}
+.adm-paginacao {
+  display: flex; gap: 8px; align-items: center; justify-content: flex-end;
+  margin-top: 12px; font-size: 12px; color: var(--sobre-mad-dim);
+}
+.adm-botao.perigo { background: linear-gradient(180deg, #ff6b6b 0 45%, #c62828 45% 100%); }
+.adm-botao.perigo.confirmar { background: linear-gradient(180deg, #ff8a5c 0 45%, #e2542a 45% 100%); }
+.adm-botao.aviso {
+  color: var(--sobre-mad);
+  background: linear-gradient(180deg, #ffc857 0 45%, #c88719 45% 100%);
+}
+.adm-botao.aviso.confirmar { background: linear-gradient(180deg, #ffd97a 0 45%, #d99a2a 45% 100%); }
+.adm-botao.neutro {
+  color: var(--sobre-mad);
+  background: var(--vao2);
+  box-shadow: inset 0 0 0 2px var(--mad-linha), 0 2px 0 var(--mad-base);
+  text-shadow: none;
+}
+.adm-botao.neutro.confirmar {
+  background: var(--vao);
+  box-shadow: inset 0 0 0 2px var(--amarelo, #ffc857), 0 2px 0 var(--mad-base);
+}
+.adm-acoes { display: flex; gap: 6px; flex-wrap: wrap; }
+.adm-abas { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 4px; }
+.adm-abas .adm-nav-btn { width: auto; flex: 0 0 auto; min-width: 120px; }
+.adm-botao-mini.adm-ok { color: var(--verde); box-shadow: inset 0 0 0 2px #4dff8866; }
+/* O segundo clique de um botão pequeno que apaga de vez (guild, hoje). Muda de COR, e não só
+   de texto: na varredura de uma tabela inteira, cor é o que a mão vê antes de clicar. */
+.adm-botao-mini.confirmar {
+  color: #fff; background: linear-gradient(180deg, #ff8a5c 0 45%, #e2542a 45% 100%);
+  box-shadow: inset 0 0 0 2px var(--mad-linha);
+}
+.adm-botao-mini.perigo { color: #ffd0c6; box-shadow: inset 0 0 0 2px #ff444466; }
+
+.adm-email-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.2fr);
+  gap: 14px;
+  margin-top: 12px;
+}
+@media (max-width: 900px) {
+  .adm-email-layout { grid-template-columns: 1fr; }
+}
+.adm-email-lista { min-width: 0; }
+.adm-email-lista tr[data-email-id] { cursor: pointer; }
+.adm-email-lista tr.adm-email-ativo { background: #ffffff0a; }
+.adm-email-detalhe {
+  min-width: 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--vao2);
+  box-shadow: inset 0 0 0 2px var(--mad-linha);
+}
+.adm-email-meta {
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--sobre-mad-dim);
+  word-break: break-word;
+}
+.adm-email-meta b { color: var(--sobre-mad); }
+.adm-email-corpo {
+  margin: 10px 0 14px;
+  padding: 10px;
+  max-height: 280px;
+  overflow: auto;
+  border-radius: 6px;
+  background: #1a1218;
+  box-shadow: inset 0 0 0 1px var(--mad-linha);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--sobre-mad);
+  white-space: pre-wrap;
+}
+.adm-email-corpo iframe {
+  width: 100%;
+  min-height: 220px;
+  border: 0;
+  background: #fff;
+  border-radius: 4px;
+}
+.adm-email-vazio {
+  padding: 24px 12px;
+  text-align: center;
+  color: var(--sobre-mad-dim);
+  font-size: 13px;
+}
+
+/* Custos e Ganhos — planilha */
+.adm-subtit {
+  margin: 18px 0 8px;
+  font-family: Tahoma, Verdana, "Segoe UI", sans-serif;
+  font-size: 12px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .7px; color: var(--sobre-mad-dim);
+}
+.adm-pl-planilha td:first-child { width: 42%; }
+.adm-pl-extra { font-size: 10px; color: var(--vao-dim); text-transform: none; letter-spacing: 0; }
+.adm-pl-destaque td { color: #fff; font-weight: 700; }
+.adm-pl-destaque td.n { color: var(--rx-rosa); font-size: 14px; }
+.adm-fin-config, .adm-fin-add {
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; margin-top: 10px;
+}
+.adm-fin-config .adm-campo { flex: 1 1 200px; min-width: 0; }
+.adm-fin-add .adm-campo { flex: 1 1 140px; min-width: 0; }
+.adm-fin-add .adm-campo:first-child { flex: 2 1 240px; }
+.adm-fin-add .adm-botao, .adm-fin-config .adm-botao { flex: none; align-self: flex-end; }
+.adm-pl-tabela { margin-top: 6px; }
+
+/* --- contagem online (acréscimos) --- */
+
+.adm-oc-topo {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; margin-top: 18px; margin-bottom: 0;
+}
+.adm-oc-topo h2 { margin: 0; }
+
+.adm-oc-cards {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px;
+}
+.adm-oc-card {
+  display: flex; flex-direction: column; gap: 6px; min-width: 140px; max-width: 220px;
+  padding: 12px 14px; border-radius: 6px;
+  background: var(--vao); box-shadow: inset 0 0 0 2px var(--mad-linha), 0 1px 0 var(--mad-luz2);
+}
+.adm-oc-card b {
+  font-family: Tahoma, Verdana, "Segoe UI", sans-serif;
+  font-size: 21px; color: var(--verde); line-height: 1.2;
+}
+.adm-oc-card span {
+  font-size: 10px; letter-spacing: .04em; color: var(--sobre-mad-dim); line-height: 1.35;
+}
+
+/* --- referral especial --- */
+/* Caixa de marcar em linha com os campos. O `.adm-linha` alinha por `flex-end`, e um label solto
+   ali encostaria no topo dos inputs vizinhos — daí o alinhamento e o respiro próprios.
+   NÃO redimensione o `input`: o `estilo.css` (que o admin.html carrega antes deste) transforma
+   TODO `input[type=checkbox]` no interruptor de 46×24 da casa, com a manopla desenhada num
+   `::before` absoluto de 16 px. Espremer o trilho para 15 px não encolhe a manopla — ela
+   transborda e cobre o texto do label. O interruptor já é o padrão do projeto; use como está. */
+.adm-check {
+  display: flex; align-items: center; gap: 9px;
+  font-size: 12.5px; color: var(--sobre-mad); cursor: pointer;
+  padding-bottom: 4px; line-height: 1.3;
+}
+.adm-secao code {
+  font-family: Consolas, "Courier New", monospace; font-size: 12px;
+  padding: 1px 5px; border-radius: 4px;
+  background: #00000033; color: var(--sobre-mad);
+}
+
+/* --- documentos para MED --- */
+.adm-med-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.adm-med-form .adm-campo { min-width: 0; }
+/* A prévia é o documento em papel: fundo claro de propósito, e alta o bastante para ler uma
+   tabela inteira sem rolar a página do painel. */
+.adm-med-previa {
+  display: block; width: 100%; height: 78vh; min-height: 520px; margin-top: 12px;
+  border: 0; border-radius: 6px; background: #dfe3e9; box-shadow: inset 0 0 0 2px var(--mad-linha);
+}
+.adm-mc-plano .adm-tabela code, .adm-secao td code { word-break: break-all; }
+
+/* CONVITES DO DISCORD — a aba do Convide & Ganhe.
+   O id do Discord fica embaixo do nome, miudinho: ele e' 18 digitos e ninguem le, mas e' o que
+   se copia para achar a pessoa no servidor. */
+.adm-mini { font-size: 10.5px; opacity: .65; }
+/* `pendente` na coluna do premio: o caso raro em que o codigo foi carimbado e o premio nao
+   chegou a ser gravado. Nao e' erro de dinheiro, e o proximo login resolve — mas quem esta
+   olhando a tabela precisa ver que aquela linha esta a meio caminho. */
+.adm-alerta { color: var(--laranja); }

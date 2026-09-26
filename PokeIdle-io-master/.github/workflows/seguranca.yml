@@ -1,0 +1,52 @@
+# Varredura de dependências. NÃO implanta nada — só olha e reclama.
+#
+# Roda em PR e em push no master porque é aí que uma dependência nova entra, e toda
+# segunda-feira porque a maior parte das vulnerabilidades não chega junto com um commit nosso:
+# ela é PUBLICADA depois, sobre um pacote que já estava lá parado há meses. Sem o agendamento,
+# um projeto que fica duas semanas sem commit fica duas semanas sem saber.
+#
+# Quem decide o que é falha é `game/tools/auditar-dependencias.mjs`, e não o `npm audit` cru —
+# leia o cabeçalho de lá antes de mexer nos critérios.
+
+name: seguranca
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'game/package.json'
+      - 'game/package-lock.json'
+      - '.github/workflows/seguranca.yml'
+  pull_request:
+    paths:
+      - 'game/package.json'
+      - 'game/package-lock.json'
+  schedule:
+    # Segunda, 12:00 UTC (09:00 em Brasília).
+    - cron: '0 12 * * 1'
+  workflow_dispatch:
+
+# Só leitura: este fluxo não escreve no repositório, não publica e não toca no servidor.
+permissions:
+  contents: read
+
+jobs:
+  dependencias:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # `--ignore-scripts`: a auditoria só precisa da ÁRVORE, não de compilar addon nativo
+      # (o `bigint-buffer` roda `node-gyp` no install). Menos coisa executando num runner que
+      # baixa código de terceiros é menos superfície, e de quebra o passo fica bem mais rápido.
+      - name: instalar (sem scripts)
+        working-directory: game
+        run: npm ci --ignore-scripts
+
+      - name: auditar dependências
+        working-directory: game
+        run: npm run audit

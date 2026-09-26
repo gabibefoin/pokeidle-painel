@@ -1,0 +1,52 @@
+[Unit]
+Description=Pokeidle.io — gateway + simulação
+Documentation=https://github.com/pedrofasi/PokeIdle-io
+# O jogo não sobe sem Postgres e Redis, que vivem em containers.
+After=network-online.target docker.service
+Wants=network-online.target
+Requires=docker.service
+
+[Service]
+Type=simple
+User=__USUARIO__
+Group=__USUARIO__
+WorkingDirectory=__DESTINO__/game
+ExecStart=/usr/bin/node src/server/index.mjs
+
+# Reinício sempre, com respiro entre tentativas.
+#
+# `StartLimitBurst=0` desliga o "desiste depois de N falhas" do systemd de propósito: um jogo
+# que caiu às 3 da manhã porque o Postgres demorou a subir precisa continuar tentando, não
+# ficar em `failed` esperando alguém acordar.
+Restart=always
+RestartSec=3
+StartLimitBurst=0
+
+# ---- a parte que importa num deploy ----
+#
+# O systemd manda SIGTERM e o `sim.mjs` responde despejando todos os jogadores no banco e
+# soltando a trava de posse no Redis (ver `sairLimpo`). Os 30 s são folga larga: o flush de
+# 2000 jogadores leva menos de um segundo, mas se o Postgres estiver lento é melhor esperar do
+# que ser morto no meio da transação.
+KillSignal=SIGTERM
+TimeoutStopSec=30
+KillMode=mixed
+
+# ---- isolamento ----
+# Se um dia alguém escapar do processo Node, que ache o mínimo possível de sistema do lado de fora.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=__DESTINO__
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+
+# O Node já escreve com carimbo próprio; o journal cuida da rotação.
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=pokeidle
+
+[Install]
+WantedBy=multi-user.target

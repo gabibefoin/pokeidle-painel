@@ -1,0 +1,43 @@
+{
+  "geradoEm": "2026-08-26T15:24:42.059Z",
+  "regioes": {
+    "kanto": {
+      "total": 271,
+      "comShinyPossivel": 269,
+      "pct": 99,
+      "spriteLabSemCatalogo": []
+    },
+    "hoenn": {
+      "total": 125,
+      "comShinyPossivel": 123,
+      "pct": 98,
+      "spriteLabSemCatalogo": []
+    },
+    "sinnoh": {
+      "total": 108,
+      "comShinyPossivel": 87,
+      "pct": 81,
+      "spriteLabSemCatalogo": []
+    },
+    "unova": {
+      "total": 133,
+      "comShinyPossivel": 85,
+      "pct": 64,
+      "spriteLabSemCatalogo": []
+    },
+    "kalos": {
+      "total": 50,
+      "comShinyPossivel": 36,
+      "pct": 72,
+      "spriteLabSemCatalogo": []
+    },
+    "alola": {
+      "total": 58,
+      "comShinyPossivel": 58,
+      "pct": 100,
+      "spriteLabSemCatalogo": []
+    }
+  },
+  "gapsTotal": 0,
+  "gaps": []
+}

@@ -1,0 +1,11 @@
+# Script de shell e unidade de systemd SEMPRE em LF, em qualquer máquina.
+#
+# `core.autocrlf=true` (o padrão de quem clona no Windows) reescreve estes arquivos com CRLF na
+# árvore de trabalho. No Linux o `\r` no fim de cada linha não é enfeite: o bash o trata como
+# parte do comando e o script morre com `$'\r': command not found`, e uma unidade de systemd com
+# CRLF pode falhar a leitura de valor. O deploy da VPS não sente (git no Linux entrega LF), mas
+# QUALQUER cópia direta da árvore Windows — um `scp` de emergência, um rsync, um arquivo anexado
+# — leva o CRLF junto. Esta linha remove essa classe de erro do mapa.
+*.sh    text eol=lf
+*.service text eol=lf
+*.timer   text eol=lf

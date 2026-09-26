@@ -1,0 +1,84 @@
+# Produção SEM docker-proxy: Postgres e Redis na rede do HOST, presos ao loopback.
+#
+# Só vale na VPS. Liga pelo `.env` do projeto (o `docker compose` lê a variável de lá):
+#
+#     COMPOSE_FILE=docker-compose.yml:docker-compose.host.yml
+#
+# Quem escreve essa linha é `infra/tirar-docker-proxy.sh`, com o jogo parado. Na máquina de dev
+# (Windows/Docker Desktop) nada muda: sem a linha, o compose continua só com o `docker-compose.yml`
+# e as portas publicadas de sempre.
+#
+# ### Por que existe
+#
+# Com `ports:` publicado, cada conexão do jogo em `localhost:5433` / `localhost:6380` atravessa o
+# `docker-proxy` — um processo em espaço de usuário que copia byte a byte entre o host e o
+# container. O jogo roda no HOST e fala com o Redis milhares de vezes por segundo (é o barramento
+# gateway ↔ sims). Medido em produção em 14/09/2026, com ~1.370 jogadores nos sims: o
+# `docker-proxy` do Redis gastava 34% de um núcleo e o do Postgres 9% — mais CPU do que o próprio
+# Redis (15%). Na rede do host não há proxy nem NAT: o jogo fala direto com o processo.
+#
+# ### O que continua igual
+#
+# - **As portas que o jogo usa.** Postgres em 5433 e Redis em 6380, as mesmas do `.env`
+#   (`DATABASE_URL`, `REDIS_URL`) — nenhuma variável do jogo muda.
+# - **A tranca do loopback.** Os dois só escutam em 127.0.0.1 e ::1, como o `ports` do
+#   `docker-compose.yml` fazia. Na rede do host, sem `listen_addresses`/`--bind`, o Postgres e o
+#   Redis escutariam em TODAS as interfaces — por isso essas linhas não são opcionais, e o script
+#   de aplicação confere que ninguém ficou ouvindo fora do loopback antes de subir o jogo.
+# - **Os volumes.** `pgdata` e `redisdata` são os mesmos: trocar de modo recria o container, não os dados.
+#
+# ### O que muda para quem opera
+#
+# - Dentro do container o Postgres passa a ouvir na 5433. `PGPORT` faz `psql`, `pg_dump` e
+#   `pg_isready` acharem sozinhos — o `backup-drive.sh` não precisa mudar.
+# - O Redis passa a ouvir na 6380 também dentro do container: `redis-cli` precisa de `-p 6380`
+#   (o `infra/diagnostico.sh` descobre a porta sozinho).
+services:
+  postgres:
+    # Sobe sozinho depois de um reboot. Em 15/09/2026 o upgrade da VPS (4 → 16 vCPU) reiniciou a
+    # máquina, os containers ficaram parados (a política padrão do compose é `no`) e o jogo subiu
+    # sem banco, em laço de restart, até alguém rodar `docker compose up -d` na mão.
+    restart: unless-stopped
+    network_mode: host
+    ports: !reset []
+    environment:
+      PGPORT: '5433'
+    # O banco inteiro (~500 MB em 09/2026) cabe no cache: 128 MB era o padrão da imagem, e com
+    # ele cada consulta de ranking/mercado ia ao disco. 1 GB cabe na VPS de 8 GB de hoje e folga
+    # na de 32 GB. `max_wal_size` maior espaça os checkpoints do flush de 5 em 5 s.
+    command:
+      - postgres
+      - -c
+      - listen_addresses=127.0.0.1,::1
+      - -c
+      - shared_buffers=1GB
+      - -c
+      - effective_cache_size=3GB
+      - -c
+      - max_wal_size=4GB
+    # `shared_buffers` grande + consultas paralelas pedem mais que os 64 MB de /dev/shm padrão.
+    shm_size: 1g
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -h 127.0.0.1 -p 5433 -U poke -d pokeidle']
+
+  redis:
+    restart: unless-stopped
+    network_mode: host
+    ports: !reset []
+    # `-::1`: o hífen torna o endereço IPv6 opcional — numa máquina sem IPv6 o Redis sobe só no
+    # 127.0.0.1 em vez de recusar a subida inteira.
+    command:
+      - redis-server
+      - --appendonly
+      - 'yes'
+      - --maxmemory-policy
+      - noeviction
+      - --bind
+      - 127.0.0.1
+      - '-::1'
+      - --port
+      - '6380'
+      - --protected-mode
+      - 'yes'
+    healthcheck:
+      test: ['CMD', 'redis-cli', '-p', '6380', 'ping']

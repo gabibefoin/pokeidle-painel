@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<script>
+  try {
+    if (localStorage.getItem('cfg-night') === '1') document.documentElement.classList.add('night-mode');
+  } catch (_) {}
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel · Pokéidle.io</title>
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<!-- `estilo.css` vem primeiro porque é ele que define as variáveis de cor no `:root` — as
+     outras duas folhas são só `var(--mad)`, `var(--vao)` e companhia. Sem ele a página carrega,
+     o layout monta, e os números somem: `color: #fff` sobre fundo branco.
+
+     O que fica de fora aqui é o `app.js` — a página não carrega o jogo. Menos código nesta
+     página é menos superfície por onde um XSS alcançaria o botão que move dinheiro. -->
+<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="terms.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body class="pagina-doc pagina-admin">
+
+<div class="doc-quadro">
+  <header class="doc-topo">
+    <a class="doc-marca" href="/">Pokéidle.io</a>
+    <span class="adm-quem" id="adm-quem"></span>
+  </header>
+
+  <div class="adm-layout">
+    <nav class="adm-nav" id="adm-nav" hidden></nav>
+    <div class="adm-corpo" id="adm-corpo">
+      <p class="adm-carregando">carregando…</p>
+    </div>
+  </div>
+
+  <footer class="doc-rodape">
+    <a href="/">← Voltar ao jogo</a>
+    <span id="adm-atualizado"></span>
+  </footer>
+</div>
+
+<script type="module" src="admin.mjs"></script>
+</body>
+</html>

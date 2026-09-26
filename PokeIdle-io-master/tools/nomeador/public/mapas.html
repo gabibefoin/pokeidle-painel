@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapas — Sprite Lab</title>
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="stylesheet" href="nomeador.css">
+<link rel="stylesheet" href="mapas.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="dot"></span>
+    <div>
+      <h1>Mapas de batalha</h1>
+      <p>pool por tipo primário · sorteio Hoenn+ · posição regional no Spawns</p>
+    </div>
+  </div>
+  <nav class="lab-nav">
+    <a href="/">Nomeador</a>
+    <a href="/pokedex.html">Pokédex Lab</a>
+    <a href="/pokedex-oficial.html">Oficial</a>
+    <a href="/spawns.html">Spawns</a>
+    <a href="/mapas.html" class="on">Mapas</a>
+    <a href="/casas.html">Casas</a>
+    <a href="/ginasios.html">Ginásios</a>
+    <a href="/economia.html">Economia</a>
+    <a href="/moves.html">Moves</a>
+  </nav>
+  <div class="progresso">
+    <button type="button" class="btn-save" id="btn-salvar">salvar</button>
+    <span class="save-msg" id="save-msg"></span>
+  </div>
+</header>
+
+<section class="toolbar mp-toolbar">
+  <div class="chips-row">
+    <span class="chips-label">Geração</span>
+    <div class="chips" id="geracoes"></div>
+  </div>
+  <input type="search" id="q" placeholder="buscar pokémon…" autocomplete="off">
+  <span class="mp-stats" id="stats"></span>
+</section>
+
+<main class="mp-layout">
+  <aside class="mp-lista" id="lista"></aside>
+  <section class="mp-mapas">
+    <div class="mp-mapas-head">
+      <p class="mp-hint" id="hint">Clique num tipo primário para ver a pool de mapas sorteados.</p>
+      <div class="chips-row mp-tipos-row">
+        <span class="chips-label">Tipo primário</span>
+        <div class="chips" id="tipos"></div>
+      </div>
+      <div class="mp-preview-grande" id="preview-grande" hidden>
+        <canvas id="preview-canvas"></canvas>
+        <div class="mp-preview-meta">
+          <strong id="preview-nome"></strong>
+          <span id="preview-slug"></span>
+          <span class="mp-preview-status" id="preview-status"></span>
+        </div>
+      </div>
+      <div class="mp-filtros">
+        <input type="search" id="q-hunt" placeholder="buscar mapa neste tipo…" autocomplete="off">
+        <button type="button" class="chip mp-btn-padrao" id="btn-padrao" hidden>usar padrão</button>
+      </div>
+      <p class="mp-pool-resumo" id="pool-resumo"></p>
+    </div>
+    <div class="mp-grid" id="grid-mapas"></div>
+  </section>
+</main>
+
+<script type="module" src="mapas.js"></script>
+</body>
+</html>

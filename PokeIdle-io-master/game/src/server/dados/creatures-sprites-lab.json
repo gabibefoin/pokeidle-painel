@@ -1,0 +1,4721 @@
+{
+  "_leia": "Looktypes publicados a partir do Pokedex Backup (60000+dex normal, 70000+dex shiny).",
+  "fonte": "C:\\Users\\pedro\\Desktop\\Pokedex Backup",
+  "patches": [
+    {
+      "pokeId": 1,
+      "looktype": 60001,
+      "name": "Bulbasaur"
+    },
+    {
+      "pokeId": 2,
+      "looktype": 60002,
+      "name": "Ivysaur"
+    },
+    {
+      "pokeId": 3,
+      "looktype": 60003,
+      "name": "Venusaur"
+    },
+    {
+      "pokeId": 4,
+      "looktype": 60004,
+      "name": "Charmander"
+    },
+    {
+      "pokeId": 5,
+      "looktype": 60005,
+      "name": "Charmeleon"
+    },
+    {
+      "pokeId": 6,
+      "looktype": 60006,
+      "name": "Charizard"
+    },
+    {
+      "pokeId": 7,
+      "looktype": 60007,
+      "name": "Squirtle"
+    },
+    {
+      "pokeId": 8,
+      "looktype": 60008,
+      "name": "Wartortle"
+    },
+    {
+      "pokeId": 9,
+      "looktype": 60009,
+      "name": "Blastoise"
+    },
+    {
+      "pokeId": 10,
+      "looktype": 60010,
+      "name": "Caterpie"
+    },
+    {
+      "pokeId": 11,
+      "looktype": 60011,
+      "name": "Metapod"
+    },
+    {
+      "pokeId": 12,
+      "looktype": 60012,
+      "name": "Butterfree"
+    },
+    {
+      "pokeId": 13,
+      "looktype": 60013,
+      "name": "Weedle"
+    },
+    {
+      "pokeId": 14,
+      "looktype": 60014,
+      "name": "Kakuna"
+    },
+    {
+      "pokeId": 15,
+      "looktype": 60015,
+      "name": "Beedrill"
+    },
+    {
+      "pokeId": 16,
+      "looktype": 60016,
+      "name": "Pidgey"
+    },
+    {
+      "pokeId": 17,
+      "looktype": 60017,
+      "name": "Pidgeotto"
+    },
+    {
+      "pokeId": 18,
+      "looktype": 60018,
+      "name": "Pidgeot"
+    },
+    {
+      "pokeId": 19,
+      "looktype": 60019,
+      "name": "Rattata"
+    },
+    {
+      "pokeId": 20,
+      "looktype": 60020,
+      "name": "Raticate"
+    },
+    {
+      "pokeId": 21,
+      "looktype": 60021,
+      "name": "Spearow"
+    },
+    {
+      "pokeId": 22,
+      "looktype": 60022,
+      "name": "Fearow"
+    },
+    {
+      "pokeId": 23,
+      "looktype": 60023,
+      "name": "Ekans"
+    },
+    {
+      "pokeId": 24,
+      "looktype": 60024,
+      "name": "Arbok"
+    },
+    {
+      "pokeId": 25,
+      "looktype": 60025,
+      "name": "Pikachu"
+    },
+    {
+      "pokeId": 26,
+      "looktype": 60026,
+      "name": "Raichu"
+    },
+    {
+      "pokeId": 27,
+      "looktype": 60027,
+      "name": "Sandshrew"
+    },
+    {
+      "pokeId": 28,
+      "looktype": 60028,
+      "name": "Sandslash"
+    },
+    {
+      "pokeId": 29,
+      "looktype": 60029,
+      "name": "Nidoran Female"
+    },
+    {
+      "pokeId": 30,
+      "looktype": 60030,
+      "name": "Nidorina"
+    },
+    {
+      "pokeId": 31,
+      "looktype": 60031,
+      "name": "Nidoqueen"
+    },
+    {
+      "pokeId": 32,
+      "looktype": 60032,
+      "name": "Nidoran Male"
+    },
+    {
+      "pokeId": 33,
+      "looktype": 60033,
+      "name": "Nidorino"
+    },
+    {
+      "pokeId": 34,
+      "looktype": 60034,
+      "name": "Nidoking"
+    },
+    {
+      "pokeId": 35,
+      "looktype": 60035,
+      "name": "Clefairy"
+    },
+    {
+      "pokeId": 36,
+      "looktype": 60036,
+      "name": "Clefable"
+    },
+    {
+      "pokeId": 37,
+      "looktype": 60037,
+      "name": "Vulpix"
+    },
+    {
+      "pokeId": 38,
+      "looktype": 60038,
+      "name": "Ninetales"
+    },
+    {
+      "pokeId": 39,
+      "looktype": 60039,
+      "name": "Jigglypuff"
+    },
+    {
+      "pokeId": 40,
+      "looktype": 60040,
+      "name": "Wigglytuff"
+    },
+    {
+      "pokeId": 41,
+      "looktype": 60041,
+      "name": "Zubat"
+    },
+    {
+      "pokeId": 42,
+      "looktype": 60042,
+      "name": "Golbat"
+    },
+    {
+      "pokeId": 43,
+      "looktype": 60043,
+      "name": "Oddish"
+    },
+    {
+      "pokeId": 44,
+      "looktype": 60044,
+      "name": "Gloom"
+    },
+    {
+      "pokeId": 45,
+      "looktype": 60045,
+      "name": "Vileplume"
+    },
+    {
+      "pokeId": 46,
+      "looktype": 60046,
+      "name": "Paras"
+    },
+    {
+      "pokeId": 47,
+      "looktype": 60047,
+      "name": "Parasect"
+    },
+    {
+      "pokeId": 48,
+      "looktype": 60048,
+      "name": "Venonat"
+    },
+    {
+      "pokeId": 49,
+      "looktype": 60049,
+      "name": "Venomoth"
+    },
+    {
+      "pokeId": 50,
+      "looktype": 60050,
+      "name": "Diglett"
+    },
+    {
+      "pokeId": 51,
+      "looktype": 60051,
+      "name": "Dugtrio"
+    },
+    {
+      "pokeId": 52,
+      "looktype": 60052,
+      "name": "Meowth"
+    },
+    {
+      "pokeId": 53,
+      "looktype": 60053,
+      "name": "Persian"
+    },
+    {
+      "pokeId": 54,
+      "looktype": 60054,
+      "name": "Psyduck"
+    },
+    {
+      "pokeId": 55,
+      "looktype": 60055,
+      "name": "Golduck"
+    },
+    {
+      "pokeId": 56,
+      "looktype": 60056,
+      "name": "Mankey"
+    },
+    {
+      "pokeId": 57,
+      "looktype": 60057,
+      "name": "Primeape"
+    },
+    {
+      "pokeId": 58,
+      "looktype": 60058,
+      "name": "Growlithe"
+    },
+    {
+      "pokeId": 59,
+      "looktype": 60059,
+      "name": "Arcanine"
+    },
+    {
+      "pokeId": 60,
+      "looktype": 60060,
+      "name": "Poliwag"
+    },
+    {
+      "pokeId": 61,
+      "looktype": 60061,
+      "name": "Poliwhirl"
+    },
+    {
+      "pokeId": 62,
+      "looktype": 60062,
+      "name": "Poliwrath"
+    },
+    {
+      "pokeId": 63,
+      "looktype": 60063,
+      "name": "Abra"
+    },
+    {
+      "pokeId": 64,
+      "looktype": 60064,
+      "name": "Kadabra"
+    },
+    {
+      "pokeId": 65,
+      "looktype": 60065,
+      "name": "Alakazam"
+    },
+    {
+      "pokeId": 66,
+      "looktype": 60066,
+      "name": "Machop"
+    },
+    {
+      "pokeId": 67,
+      "looktype": 60067,
+      "name": "Machoke"
+    },
+    {
+      "pokeId": 68,
+      "looktype": 60068,
+      "name": "Machamp"
+    },
+    {
+      "pokeId": 69,
+      "looktype": 60069,
+      "name": "Bellsprout"
+    },
+    {
+      "pokeId": 70,
+      "looktype": 60070,
+      "name": "Weepinbell"
+    },
+    {
+      "pokeId": 71,
+      "looktype": 60071,
+      "name": "Victreebel"
+    },
+    {
+      "pokeId": 72,
+      "looktype": 60072,
+      "name": "Tentacool"
+    },
+    {
+      "pokeId": 73,
+      "looktype": 60073,
+      "name": "Tentacruel"
+    },
+    {
+      "pokeId": 74,
+      "looktype": 60074,
+      "name": "Geodude"
+    },
+    {
+      "pokeId": 75,
+      "looktype": 60075,
+      "name": "Graveler"
+    },
+    {
+      "pokeId": 76,
+      "looktype": 60076,
+      "name": "Golem"
+    },
+    {
+      "pokeId": 77,
+      "looktype": 60077,
+      "name": "Ponyta"
+    },
+    {
+      "pokeId": 78,
+      "looktype": 60078,
+      "name": "Rapidash"
+    },
+    {
+      "pokeId": 79,
+      "looktype": 60079,
+      "name": "Slowpoke"
+    },
+    {
+      "pokeId": 80,
+      "looktype": 60080,
+      "name": "Slowbro"
+    },
+    {
+      "pokeId": 81,
+      "looktype": 60081,
+      "name": "Magnemite"
+    },
+    {
+      "pokeId": 82,
+      "looktype": 60082,
+      "name": "Magneton"
+    },
+    {
+      "pokeId": 83,
+      "looktype": 60083,
+      "name": "Farfetchd"
+    },
+    {
+      "pokeId": 84,
+      "looktype": 60084,
+      "name": "Doduo"
+    },
+    {
+      "pokeId": 85,
+      "looktype": 60085,
+      "name": "Dodrio"
+    },
+    {
+      "pokeId": 86,
+      "looktype": 60086,
+      "name": "Seel"
+    },
+    {
+      "pokeId": 87,
+      "looktype": 60087,
+      "name": "Dewgong"
+    },
+    {
+      "pokeId": 88,
+      "looktype": 60088,
+      "name": "Grimer"
+    },
+    {
+      "pokeId": 89,
+      "looktype": 60089,
+      "name": "Muk"
+    },
+    {
+      "pokeId": 90,
+      "looktype": 60090,
+      "name": "Shellder"
+    },
+    {
+      "pokeId": 91,
+      "looktype": 60091,
+      "name": "Cloyster"
+    },
+    {
+      "pokeId": 92,
+      "looktype": 60092,
+      "name": "Gastly"
+    },
+    {
+      "pokeId": 93,
+      "looktype": 60093,
+      "name": "Haunter"
+    },
+    {
+      "pokeId": 94,
+      "looktype": 60094,
+      "name": "Gengar"
+    },
+    {
+      "pokeId": 95,
+      "looktype": 60095,
+      "name": "Onix"
+    },
+    {
+      "pokeId": 96,
+      "looktype": 60096,
+      "name": "Drowzee"
+    },
+    {
+      "pokeId": 97,
+      "looktype": 60097,
+      "name": "Hypno"
+    },
+    {
+      "pokeId": 98,
+      "looktype": 60098,
+      "name": "Krabby"
+    },
+    {
+      "pokeId": 99,
+      "looktype": 60099,
+      "name": "Kingler"
+    },
+    {
+      "pokeId": 100,
+      "looktype": 60100,
+      "name": "Voltorb"
+    },
+    {
+      "pokeId": 101,
+      "looktype": 60101,
+      "name": "Electrode"
+    },
+    {
+      "pokeId": 102,
+      "looktype": 60102,
+      "name": "Exeggcute"
+    },
+    {
+      "pokeId": 103,
+      "looktype": 60103,
+      "name": "Exeggutor"
+    },
+    {
+      "pokeId": 104,
+      "looktype": 60104,
+      "name": "Cubone"
+    },
+    {
+      "pokeId": 105,
+      "looktype": 60105,
+      "name": "Marowak"
+    },
+    {
+      "pokeId": 106,
+      "looktype": 60106,
+      "name": "Hitmonlee"
+    },
+    {
+      "pokeId": 107,
+      "looktype": 60107,
+      "name": "Hitmonchan"
+    },
+    {
+      "pokeId": 108,
+      "looktype": 60108,
+      "name": "Lickitung"
+    },
+    {
+      "pokeId": 109,
+      "looktype": 60109,
+      "name": "Koffing"
+    },
+    {
+      "pokeId": 110,
+      "looktype": 60110,
+      "name": "Weezing"
+    },
+    {
+      "pokeId": 111,
+      "looktype": 60111,
+      "name": "Rhyhorn"
+    },
+    {
+      "pokeId": 112,
+      "looktype": 60112,
+      "name": "Rhydon"
+    },
+    {
+      "pokeId": 113,
+      "looktype": 60113,
+      "name": "Chansey"
+    },
+    {
+      "pokeId": 114,
+      "looktype": 60114,
+      "name": "Tangela"
+    },
+    {
+      "pokeId": 115,
+      "looktype": 60115,
+      "name": "Kangaskhan"
+    },
+    {
+      "pokeId": 116,
+      "looktype": 60116,
+      "name": "Horsea"
+    },
+    {
+      "pokeId": 117,
+      "looktype": 60117,
+      "name": "Seadra"
+    },
+    {
+      "pokeId": 118,
+      "looktype": 60118,
+      "name": "Goldeen"
+    },
+    {
+      "pokeId": 119,
+      "looktype": 60119,
+      "name": "Seaking"
+    },
+    {
+      "pokeId": 120,
+      "looktype": 60120,
+      "name": "Staryu"
+    },
+    {
+      "pokeId": 121,
+      "looktype": 60121,
+      "name": "Starmie"
+    },
+    {
+      "pokeId": 122,
+      "looktype": 60122,
+      "name": "Mr. Mime"
+    },
+    {
+      "pokeId": 123,
+      "looktype": 60123,
+      "name": "Scyther"
+    },
+    {
+      "pokeId": 124,
+      "looktype": 60124,
+      "name": "Jynx"
+    },
+    {
+      "pokeId": 125,
+      "looktype": 60125,
+      "name": "Electabuzz"
+    },
+    {
+      "pokeId": 126,
+      "looktype": 60126,
+      "name": "Magmar"
+    },
+    {
+      "pokeId": 127,
+      "looktype": 60127,
+      "name": "Pinsir"
+    },
+    {
+      "pokeId": 128,
+      "looktype": 60128,
+      "name": "Tauros"
+    },
+    {
+      "pokeId": 129,
+      "looktype": 60129,
+      "name": "Magikarp"
+    },
+    {
+      "pokeId": 130,
+      "looktype": 60130,
+      "name": "Gyarados"
+    },
+    {
+      "pokeId": 131,
+      "looktype": 60131,
+      "name": "Lapras"
+    },
+    {
+      "pokeId": 132,
+      "looktype": 60132,
+      "name": "Ditto"
+    },
+    {
+      "pokeId": 133,
+      "looktype": 60133,
+      "name": "Eevee"
+    },
+    {
+      "pokeId": 134,
+      "looktype": 60134,
+      "name": "Vaporeon"
+    },
+    {
+      "pokeId": 135,
+      "looktype": 60135,
+      "name": "Jolteon"
+    },
+    {
+      "pokeId": 136,
+      "looktype": 60136,
+      "name": "Flareon"
+    },
+    {
+      "pokeId": 137,
+      "looktype": 60137,
+      "name": "Porygon"
+    },
+    {
+      "pokeId": 138,
+      "looktype": 60138,
+      "name": "Omanyte"
+    },
+    {
+      "pokeId": 139,
+      "looktype": 60139,
+      "name": "Omastar"
+    },
+    {
+      "pokeId": 140,
+      "looktype": 60140,
+      "name": "Kabuto"
+    },
+    {
+      "pokeId": 141,
+      "looktype": 60141,
+      "name": "Kabutops"
+    },
+    {
+      "pokeId": 142,
+      "looktype": 60142,
+      "name": "Aerodactyl"
+    },
+    {
+      "pokeId": 143,
+      "looktype": 60143,
+      "name": "Snorlax"
+    },
+    {
+      "pokeId": 144,
+      "looktype": 60144,
+      "name": "Articuno"
+    },
+    {
+      "pokeId": 145,
+      "looktype": 60145,
+      "name": "Zapdos"
+    },
+    {
+      "pokeId": 146,
+      "looktype": 60146,
+      "name": "Moltres"
+    },
+    {
+      "pokeId": 147,
+      "looktype": 60147,
+      "name": "Dratini"
+    },
+    {
+      "pokeId": 148,
+      "looktype": 60148,
+      "name": "Dragonair"
+    },
+    {
+      "pokeId": 149,
+      "looktype": 60149,
+      "name": "Dragonite"
+    },
+    {
+      "pokeId": 150,
+      "looktype": 60150,
+      "name": "Mewtwo"
+    },
+    {
+      "pokeId": 151,
+      "looktype": 60151,
+      "name": "Mew"
+    },
+    {
+      "pokeId": 152,
+      "looktype": 60152,
+      "name": "Chikorita"
+    },
+    {
+      "pokeId": 153,
+      "looktype": 60153,
+      "name": "Bayleef"
+    },
+    {
+      "pokeId": 154,
+      "looktype": 60154,
+      "name": "Meganium"
+    },
+    {
+      "pokeId": 155,
+      "looktype": 60155,
+      "name": "Cyndaquil"
+    },
+    {
+      "pokeId": 157,
+      "looktype": 60157,
+      "name": "Typhlosion"
+    },
+    {
+      "pokeId": 158,
+      "looktype": 60158,
+      "name": "Totodile"
+    },
+    {
+      "pokeId": 159,
+      "looktype": 60159,
+      "name": "Croconaw"
+    },
+    {
+      "pokeId": 160,
+      "looktype": 60160,
+      "name": "Feraligatr"
+    },
+    {
+      "pokeId": 161,
+      "looktype": 60161,
+      "name": "Sentret"
+    },
+    {
+      "pokeId": 162,
+      "looktype": 60162,
+      "name": "Furret"
+    },
+    {
+      "pokeId": 163,
+      "looktype": 60163,
+      "name": "Hoothoot"
+    },
+    {
+      "pokeId": 164,
+      "looktype": 60164,
+      "name": "Noctowl"
+    },
+    {
+      "pokeId": 165,
+      "looktype": 60165,
+      "name": "Ledyba"
+    },
+    {
+      "pokeId": 166,
+      "looktype": 60166,
+      "name": "Ledian"
+    },
+    {
+      "pokeId": 167,
+      "looktype": 60167,
+      "name": "Spinarak"
+    },
+    {
+      "pokeId": 168,
+      "looktype": 60168,
+      "name": "Ariados"
+    },
+    {
+      "pokeId": 169,
+      "looktype": 60169,
+      "name": "Crobat"
+    },
+    {
+      "pokeId": 170,
+      "looktype": 60170,
+      "name": "Chinchou"
+    },
+    {
+      "pokeId": 171,
+      "looktype": 60171,
+      "name": "Lanturn"
+    },
+    {
+      "pokeId": 172,
+      "looktype": 60172,
+      "name": "Pichu"
+    },
+    {
+      "pokeId": 173,
+      "looktype": 60173,
+      "name": "Cleffa"
+    },
+    {
+      "pokeId": 174,
+      "looktype": 60174,
+      "name": "Igglybuff"
+    },
+    {
+      "pokeId": 175,
+      "looktype": 60175,
+      "name": "Togepi"
+    },
+    {
+      "pokeId": 176,
+      "looktype": 60176,
+      "name": "Togetic"
+    },
+    {
+      "pokeId": 177,
+      "looktype": 60177,
+      "name": "Natu"
+    },
+    {
+      "pokeId": 178,
+      "looktype": 60178,
+      "name": "Xatu"
+    },
+    {
+      "pokeId": 179,
+      "looktype": 60179,
+      "name": "Mareep"
+    },
+    {
+      "pokeId": 180,
+      "looktype": 60180,
+      "name": "Flaaffy"
+    },
+    {
+      "pokeId": 181,
+      "looktype": 60181,
+      "name": "Ampharos"
+    },
+    {
+      "pokeId": 182,
+      "looktype": 60182,
+      "name": "Bellossom"
+    },
+    {
+      "pokeId": 183,
+      "looktype": 60183,
+      "name": "Marill"
+    },
+    {
+      "pokeId": 184,
+      "looktype": 60184,
+      "name": "Azumarill"
+    },
+    {
+      "pokeId": 185,
+      "looktype": 60185,
+      "name": "Sudowoodo"
+    },
+    {
+      "pokeId": 186,
+      "looktype": 60186,
+      "name": "Politoed"
+    },
+    {
+      "pokeId": 187,
+      "looktype": 60187,
+      "name": "Hoppip"
+    },
+    {
+      "pokeId": 188,
+      "looktype": 60188,
+      "name": "Skiploom"
+    },
+    {
+      "pokeId": 189,
+      "looktype": 60189,
+      "name": "Jumpluff"
+    },
+    {
+      "pokeId": 190,
+      "looktype": 60190,
+      "name": "Aipom"
+    },
+    {
+      "pokeId": 191,
+      "looktype": 60191,
+      "name": "Sunkern"
+    },
+    {
+      "pokeId": 192,
+      "looktype": 60192,
+      "name": "Sunflora"
+    },
+    {
+      "pokeId": 193,
+      "looktype": 60193,
+      "name": "Yanma"
+    },
+    {
+      "pokeId": 194,
+      "looktype": 60194,
+      "name": "Wooper"
+    },
+    {
+      "pokeId": 195,
+      "looktype": 60195,
+      "name": "Quagsire"
+    },
+    {
+      "pokeId": 196,
+      "looktype": 60196,
+      "name": "Espeon"
+    },
+    {
+      "pokeId": 197,
+      "looktype": 60197,
+      "name": "Umbreon"
+    },
+    {
+      "pokeId": 198,
+      "looktype": 60198,
+      "name": "Murkrow"
+    },
+    {
+      "pokeId": 199,
+      "looktype": 60199,
+      "name": "Slowking"
+    },
+    {
+      "pokeId": 200,
+      "looktype": 60200,
+      "name": "Misdreavus"
+    },
+    {
+      "pokeId": 201,
+      "looktype": 60201,
+      "name": "Unown"
+    },
+    {
+      "pokeId": 202,
+      "looktype": 60202,
+      "name": "Wobbuffet"
+    },
+    {
+      "pokeId": 203,
+      "looktype": 60203,
+      "name": "Girafarig"
+    },
+    {
+      "pokeId": 204,
+      "looktype": 60204,
+      "name": "Pineco"
+    },
+    {
+      "pokeId": 205,
+      "looktype": 60205,
+      "name": "Forretress"
+    },
+    {
+      "pokeId": 206,
+      "looktype": 60206,
+      "name": "Dunsparce"
+    },
+    {
+      "pokeId": 207,
+      "looktype": 60207,
+      "name": "Gligar"
+    },
+    {
+      "pokeId": 208,
+      "looktype": 60208,
+      "name": "Steelix"
+    },
+    {
+      "pokeId": 209,
+      "looktype": 60209,
+      "name": "Snubbull"
+    },
+    {
+      "pokeId": 210,
+      "looktype": 60210,
+      "name": "Granbull"
+    },
+    {
+      "pokeId": 211,
+      "looktype": 60211,
+      "name": "Qwilfish"
+    },
+    {
+      "pokeId": 212,
+      "looktype": 60212,
+      "name": "Scizor"
+    },
+    {
+      "pokeId": 213,
+      "looktype": 60213,
+      "name": "Shuckle"
+    },
+    {
+      "pokeId": 214,
+      "looktype": 60214,
+      "name": "Heracross"
+    },
+    {
+      "pokeId": 215,
+      "looktype": 60215,
+      "name": "Sneasel"
+    },
+    {
+      "pokeId": 216,
+      "looktype": 60216,
+      "name": "Teddiursa"
+    },
+    {
+      "pokeId": 217,
+      "looktype": 60217,
+      "name": "Ursaring"
+    },
+    {
+      "pokeId": 218,
+      "looktype": 60218,
+      "name": "Slugma"
+    },
+    {
+      "pokeId": 219,
+      "looktype": 60219,
+      "name": "Magcargo"
+    },
+    {
+      "pokeId": 220,
+      "looktype": 60220,
+      "name": "Swinub"
+    },
+    {
+      "pokeId": 221,
+      "looktype": 60221,
+      "name": "Piloswine"
+    },
+    {
+      "pokeId": 222,
+      "looktype": 60222,
+      "name": "Corsola"
+    },
+    {
+      "pokeId": 223,
+      "looktype": 60223,
+      "name": "Remoraid"
+    },
+    {
+      "pokeId": 224,
+      "looktype": 60224,
+      "name": "Octillery"
+    },
+    {
+      "pokeId": 225,
+      "looktype": 60225,
+      "name": "Delibird"
+    },
+    {
+      "pokeId": 226,
+      "looktype": 60226,
+      "name": "Mantine"
+    },
+    {
+      "pokeId": 227,
+      "looktype": 60227,
+      "name": "Skarmory"
+    },
+    {
+      "pokeId": 228,
+      "looktype": 60228,
+      "name": "Houndour"
+    },
+    {
+      "pokeId": 229,
+      "looktype": 60229,
+      "name": "Houndoom"
+    },
+    {
+      "pokeId": 230,
+      "looktype": 60230,
+      "name": "Kingdra"
+    },
+    {
+      "pokeId": 231,
+      "looktype": 60231,
+      "name": "Phanpy"
+    },
+    {
+      "pokeId": 232,
+      "looktype": 60232,
+      "name": "Donphan"
+    },
+    {
+      "pokeId": 233,
+      "looktype": 60233,
+      "name": "Porygon2"
+    },
+    {
+      "pokeId": 234,
+      "looktype": 60234,
+      "name": "Stantler"
+    },
+    {
+      "pokeId": 235,
+      "looktype": 60235,
+      "name": "Smeargle"
+    },
+    {
+      "pokeId": 236,
+      "looktype": 60236,
+      "name": "Tyrogue"
+    },
+    {
+      "pokeId": 237,
+      "looktype": 60237,
+      "name": "Hitmontop"
+    },
+    {
+      "pokeId": 238,
+      "looktype": 60238,
+      "name": "Smoochum"
+    },
+    {
+      "pokeId": 239,
+      "looktype": 60239,
+      "name": "Elekid"
+    },
+    {
+      "pokeId": 240,
+      "looktype": 60240,
+      "name": "Magby"
+    },
+    {
+      "pokeId": 241,
+      "looktype": 60241,
+      "name": "Miltank"
+    },
+    {
+      "pokeId": 242,
+      "looktype": 60242,
+      "name": "Blissey"
+    },
+    {
+      "pokeId": 243,
+      "looktype": 60243,
+      "name": "Raikou"
+    },
+    {
+      "pokeId": 244,
+      "looktype": 60244,
+      "name": "Entei"
+    },
+    {
+      "pokeId": 245,
+      "looktype": 60245,
+      "name": "Suicune"
+    },
+    {
+      "pokeId": 246,
+      "looktype": 60246,
+      "name": "Larvitar"
+    },
+    {
+      "pokeId": 248,
+      "looktype": 60248,
+      "name": "Tyranitar"
+    },
+    {
+      "pokeId": 250,
+      "looktype": 60250,
+      "name": "Ho-oh"
+    },
+    {
+      "pokeId": 251,
+      "looktype": 60251,
+      "name": "Celebi"
+    },
+    {
+      "pokeId": 252,
+      "looktype": 60252,
+      "name": "Treecko"
+    },
+    {
+      "pokeId": 253,
+      "looktype": 60253,
+      "name": "Grovyle"
+    },
+    {
+      "pokeId": 254,
+      "looktype": 60254,
+      "name": "Sceptile"
+    },
+    {
+      "pokeId": 255,
+      "looktype": 60255,
+      "name": "Torchic"
+    },
+    {
+      "pokeId": 256,
+      "looktype": 60256,
+      "name": "Combusken"
+    },
+    {
+      "pokeId": 257,
+      "looktype": 60257,
+      "name": "Blaziken"
+    },
+    {
+      "pokeId": 258,
+      "looktype": 60258,
+      "name": "Mudkip"
+    },
+    {
+      "pokeId": 259,
+      "looktype": 60259,
+      "name": "Marshtomp"
+    },
+    {
+      "pokeId": 260,
+      "looktype": 60260,
+      "name": "Swampert"
+    },
+    {
+      "pokeId": 262,
+      "looktype": 60262,
+      "name": "Mightyena"
+    },
+    {
+      "pokeId": 263,
+      "looktype": 60263,
+      "name": "Zigzagoon"
+    },
+    {
+      "pokeId": 264,
+      "looktype": 60264,
+      "name": "Linoone"
+    },
+    {
+      "pokeId": 265,
+      "looktype": 60265,
+      "name": "Wurmple"
+    },
+    {
+      "pokeId": 266,
+      "looktype": 60266,
+      "name": "Silcoon"
+    },
+    {
+      "pokeId": 267,
+      "looktype": 60267,
+      "name": "Beautifly"
+    },
+    {
+      "pokeId": 268,
+      "looktype": 60268,
+      "name": "Cascoon"
+    },
+    {
+      "pokeId": 269,
+      "looktype": 60269,
+      "name": "Dustox"
+    },
+    {
+      "pokeId": 270,
+      "looktype": 60270,
+      "name": "Lotad"
+    },
+    {
+      "pokeId": 271,
+      "looktype": 60271,
+      "name": "Lombre"
+    },
+    {
+      "pokeId": 272,
+      "looktype": 60272,
+      "name": "Ludicolo"
+    },
+    {
+      "pokeId": 273,
+      "looktype": 60273,
+      "name": "Seedot"
+    },
+    {
+      "pokeId": 274,
+      "looktype": 60274,
+      "name": "Nuzleaf"
+    },
+    {
+      "pokeId": 275,
+      "looktype": 60275,
+      "name": "Shiftry"
+    },
+    {
+      "pokeId": 276,
+      "looktype": 60276,
+      "name": "Taillow"
+    },
+    {
+      "pokeId": 277,
+      "looktype": 60277,
+      "name": "Swellow"
+    },
+    {
+      "pokeId": 278,
+      "looktype": 60278,
+      "name": "Wingull"
+    },
+    {
+      "pokeId": 279,
+      "looktype": 60279,
+      "name": "Pelipper"
+    },
+    {
+      "pokeId": 280,
+      "looktype": 60280,
+      "name": "Ralts"
+    },
+    {
+      "pokeId": 281,
+      "looktype": 60281,
+      "name": "Kirlia"
+    },
+    {
+      "pokeId": 282,
+      "looktype": 60282,
+      "name": "Gardevoir"
+    },
+    {
+      "pokeId": 283,
+      "looktype": 60283,
+      "name": "Surskit"
+    },
+    {
+      "pokeId": 284,
+      "looktype": 60284,
+      "name": "Masquerain"
+    },
+    {
+      "pokeId": 285,
+      "looktype": 60285,
+      "name": "Shroomish"
+    },
+    {
+      "pokeId": 286,
+      "looktype": 60286,
+      "name": "Breloom"
+    },
+    {
+      "pokeId": 287,
+      "looktype": 60287,
+      "name": "Slakoth"
+    },
+    {
+      "pokeId": 288,
+      "looktype": 60288,
+      "name": "Vigoroth"
+    },
+    {
+      "pokeId": 289,
+      "looktype": 60289,
+      "name": "Slaking"
+    },
+    {
+      "pokeId": 290,
+      "looktype": 60290,
+      "name": "Nincada"
+    },
+    {
+      "pokeId": 291,
+      "looktype": 60291,
+      "name": "Ninjask"
+    },
+    {
+      "pokeId": 292,
+      "looktype": 60292,
+      "name": "Shedinja"
+    },
+    {
+      "pokeId": 293,
+      "looktype": 60293,
+      "name": "Whismur"
+    },
+    {
+      "pokeId": 294,
+      "looktype": 60294,
+      "name": "Loudred"
+    },
+    {
+      "pokeId": 295,
+      "looktype": 60295,
+      "name": "Exploud"
+    },
+    {
+      "pokeId": 296,
+      "looktype": 60296,
+      "name": "Makuhita"
+    },
+    {
+      "pokeId": 297,
+      "looktype": 60297,
+      "name": "Hariyama"
+    },
+    {
+      "pokeId": 298,
+      "looktype": 60298,
+      "name": "Azurill"
+    },
+    {
+      "pokeId": 299,
+      "looktype": 60299,
+      "name": "Nosepass"
+    },
+    {
+      "pokeId": 300,
+      "looktype": 60300,
+      "name": "Skitty"
+    },
+    {
+      "pokeId": 301,
+      "looktype": 60301,
+      "name": "Delcatty"
+    },
+    {
+      "pokeId": 302,
+      "looktype": 60302,
+      "name": "Sableye"
+    },
+    {
+      "pokeId": 303,
+      "looktype": 60303,
+      "name": "Mawile"
+    },
+    {
+      "pokeId": 304,
+      "looktype": 60304,
+      "name": "Aron"
+    },
+    {
+      "pokeId": 305,
+      "looktype": 60305,
+      "name": "Lairon"
+    },
+    {
+      "pokeId": 306,
+      "looktype": 60306,
+      "name": "Aggron"
+    },
+    {
+      "pokeId": 307,
+      "looktype": 60307,
+      "name": "Meditite"
+    },
+    {
+      "pokeId": 308,
+      "looktype": 60308,
+      "name": "Medicham"
+    },
+    {
+      "pokeId": 309,
+      "looktype": 60309,
+      "name": "Electrike"
+    },
+    {
+      "pokeId": 310,
+      "looktype": 60310,
+      "name": "Manectric"
+    },
+    {
+      "pokeId": 311,
+      "looktype": 60311,
+      "name": "Plusle"
+    },
+    {
+      "pokeId": 312,
+      "looktype": 60312,
+      "name": "Minun"
+    },
+    {
+      "pokeId": 313,
+      "looktype": 60313,
+      "name": "Volbeat"
+    },
+    {
+      "pokeId": 314,
+      "looktype": 60314,
+      "name": "Illumise"
+    },
+    {
+      "pokeId": 315,
+      "looktype": 60315,
+      "name": "Roselia"
+    },
+    {
+      "pokeId": 316,
+      "looktype": 60316,
+      "name": "Gulpin"
+    },
+    {
+      "pokeId": 317,
+      "looktype": 60317,
+      "name": "Swalot"
+    },
+    {
+      "pokeId": 318,
+      "looktype": 60318,
+      "name": "Carvanha"
+    },
+    {
+      "pokeId": 319,
+      "looktype": 60319,
+      "name": "Sharpedo"
+    },
+    {
+      "pokeId": 320,
+      "looktype": 60320,
+      "name": "Wailmer"
+    },
+    {
+      "pokeId": 321,
+      "looktype": 60321,
+      "name": "Wailord"
+    },
+    {
+      "pokeId": 322,
+      "looktype": 60322,
+      "name": "Numel"
+    },
+    {
+      "pokeId": 323,
+      "looktype": 60323,
+      "name": "Camerupt"
+    },
+    {
+      "pokeId": 324,
+      "looktype": 60324,
+      "name": "Torkoal"
+    },
+    {
+      "pokeId": 325,
+      "looktype": 60325,
+      "name": "Spoink"
+    },
+    {
+      "pokeId": 326,
+      "looktype": 60326,
+      "name": "Grumpig"
+    },
+    {
+      "pokeId": 327,
+      "looktype": 60327,
+      "name": "Spinda"
+    },
+    {
+      "pokeId": 328,
+      "looktype": 60328,
+      "name": "Trapinch"
+    },
+    {
+      "pokeId": 329,
+      "looktype": 60329,
+      "name": "Vibrava"
+    },
+    {
+      "pokeId": 330,
+      "looktype": 60330,
+      "name": "Flygon"
+    },
+    {
+      "pokeId": 331,
+      "looktype": 60331,
+      "name": "Cacnea"
+    },
+    {
+      "pokeId": 332,
+      "looktype": 60332,
+      "name": "Cacturne"
+    },
+    {
+      "pokeId": 333,
+      "looktype": 60333,
+      "name": "Swablu"
+    },
+    {
+      "pokeId": 334,
+      "looktype": 60334,
+      "name": "Altaria"
+    },
+    {
+      "pokeId": 335,
+      "looktype": 60335,
+      "name": "Zangoose"
+    },
+    {
+      "pokeId": 336,
+      "looktype": 60336,
+      "name": "Seviper"
+    },
+    {
+      "pokeId": 337,
+      "looktype": 60337,
+      "name": "Lunatone"
+    },
+    {
+      "pokeId": 338,
+      "looktype": 60338,
+      "name": "Solrock"
+    },
+    {
+      "pokeId": 339,
+      "looktype": 60339,
+      "name": "Barboach"
+    },
+    {
+      "pokeId": 340,
+      "looktype": 60340,
+      "name": "Whiscash"
+    },
+    {
+      "pokeId": 341,
+      "looktype": 60341,
+      "name": "Corphish"
+    },
+    {
+      "pokeId": 342,
+      "looktype": 60342,
+      "name": "Crawdaunt"
+    },
+    {
+      "pokeId": 343,
+      "looktype": 60343,
+      "name": "Baltoy"
+    },
+    {
+      "pokeId": 344,
+      "looktype": 60344,
+      "name": "Claydol"
+    },
+    {
+      "pokeId": 345,
+      "looktype": 60345,
+      "name": "Lileep"
+    },
+    {
+      "pokeId": 346,
+      "looktype": 60346,
+      "name": "Cradily"
+    },
+    {
+      "pokeId": 347,
+      "looktype": 60347,
+      "name": "Anorith"
+    },
+    {
+      "pokeId": 348,
+      "looktype": 60348,
+      "name": "Armaldo"
+    },
+    {
+      "pokeId": 349,
+      "looktype": 60349,
+      "name": "Feebas"
+    },
+    {
+      "pokeId": 350,
+      "looktype": 60350,
+      "name": "Milotic"
+    },
+    {
+      "pokeId": 351,
+      "looktype": 60351,
+      "name": "Castform"
+    },
+    {
+      "pokeId": 352,
+      "looktype": 60352,
+      "name": "Kecleon"
+    },
+    {
+      "pokeId": 353,
+      "looktype": 60353,
+      "name": "Shuppet"
+    },
+    {
+      "pokeId": 354,
+      "looktype": 60354,
+      "name": "Banette"
+    },
+    {
+      "pokeId": 355,
+      "looktype": 60355,
+      "name": "Duskull"
+    },
+    {
+      "pokeId": 356,
+      "looktype": 60356,
+      "name": "Dusclops"
+    },
+    {
+      "pokeId": 357,
+      "looktype": 60357,
+      "name": "Tropius"
+    },
+    {
+      "pokeId": 358,
+      "looktype": 60358,
+      "name": "Chimecho"
+    },
+    {
+      "pokeId": 359,
+      "looktype": 60359,
+      "name": "Absol"
+    },
+    {
+      "pokeId": 360,
+      "looktype": 60360,
+      "name": "Wynaut"
+    },
+    {
+      "pokeId": 361,
+      "looktype": 60361,
+      "name": "Snorunt"
+    },
+    {
+      "pokeId": 362,
+      "looktype": 60362,
+      "name": "Glalie"
+    },
+    {
+      "pokeId": 363,
+      "looktype": 60363,
+      "name": "Spheal"
+    },
+    {
+      "pokeId": 364,
+      "looktype": 60364,
+      "name": "Sealeo"
+    },
+    {
+      "pokeId": 365,
+      "looktype": 60365,
+      "name": "Walrein"
+    },
+    {
+      "pokeId": 366,
+      "looktype": 60366,
+      "name": "Clamperl"
+    },
+    {
+      "pokeId": 367,
+      "looktype": 60367,
+      "name": "Huntail"
+    },
+    {
+      "pokeId": 368,
+      "looktype": 60368,
+      "name": "Gorebyss"
+    },
+    {
+      "pokeId": 369,
+      "looktype": 60369,
+      "name": "Relicanth"
+    },
+    {
+      "pokeId": 370,
+      "looktype": 60370,
+      "name": "Luvdisc"
+    },
+    {
+      "pokeId": 371,
+      "looktype": 60371,
+      "name": "Bagon"
+    },
+    {
+      "pokeId": 372,
+      "looktype": 60372,
+      "name": "Shelgon"
+    },
+    {
+      "pokeId": 373,
+      "looktype": 60373,
+      "name": "Salamence"
+    },
+    {
+      "pokeId": 374,
+      "looktype": 60374,
+      "name": "Beldum"
+    },
+    {
+      "pokeId": 375,
+      "looktype": 60375,
+      "name": "Metang"
+    },
+    {
+      "pokeId": 376,
+      "looktype": 60376,
+      "name": "Metagross"
+    },
+    {
+      "pokeId": 377,
+      "looktype": 60377,
+      "name": "Regirock"
+    },
+    {
+      "pokeId": 378,
+      "looktype": 60378,
+      "name": "Regice"
+    },
+    {
+      "pokeId": 379,
+      "looktype": 60379,
+      "name": "Registeel"
+    },
+    {
+      "pokeId": 382,
+      "looktype": 60382,
+      "name": "Kyogre"
+    },
+    {
+      "pokeId": 383,
+      "looktype": 60383,
+      "name": "Groudon"
+    },
+    {
+      "pokeId": 384,
+      "looktype": 60384,
+      "name": "Rayquaza"
+    },
+    {
+      "pokeId": 385,
+      "looktype": 60385,
+      "name": "Jirachi"
+    },
+    {
+      "pokeId": 387,
+      "looktype": 60387,
+      "name": "Turtwig"
+    },
+    {
+      "pokeId": 388,
+      "looktype": 60388,
+      "name": "Grotle"
+    },
+    {
+      "pokeId": 389,
+      "looktype": 60389,
+      "name": "Torterra"
+    },
+    {
+      "pokeId": 390,
+      "looktype": 60390,
+      "name": "Chimchar"
+    },
+    {
+      "pokeId": 391,
+      "looktype": 60391,
+      "name": "Monferno"
+    },
+    {
+      "pokeId": 392,
+      "looktype": 60392,
+      "name": "Infernape"
+    },
+    {
+      "pokeId": 393,
+      "looktype": 60393,
+      "name": "Piplup"
+    },
+    {
+      "pokeId": 394,
+      "looktype": 60394,
+      "name": "Prinplup"
+    },
+    {
+      "pokeId": 395,
+      "looktype": 60395,
+      "name": "Empoleon"
+    },
+    {
+      "pokeId": 396,
+      "looktype": 60396,
+      "name": "Starly"
+    },
+    {
+      "pokeId": 397,
+      "looktype": 60397,
+      "name": "Staravia"
+    },
+    {
+      "pokeId": 398,
+      "looktype": 60398,
+      "name": "Staraptor"
+    },
+    {
+      "pokeId": 399,
+      "looktype": 60399,
+      "name": "Bidoof"
+    },
+    {
+      "pokeId": 400,
+      "looktype": 60400,
+      "name": "Bibarel"
+    },
+    {
+      "pokeId": 401,
+      "looktype": 60401,
+      "name": "Kricketot"
+    },
+    {
+      "pokeId": 402,
+      "looktype": 60402,
+      "name": "Kricketune"
+    },
+    {
+      "pokeId": 403,
+      "looktype": 60403,
+      "name": "Shinx"
+    },
+    {
+      "pokeId": 404,
+      "looktype": 60404,
+      "name": "Luxio"
+    },
+    {
+      "pokeId": 405,
+      "looktype": 60405,
+      "name": "Luxray"
+    },
+    {
+      "pokeId": 406,
+      "looktype": 60406,
+      "name": "Budew"
+    },
+    {
+      "pokeId": 407,
+      "looktype": 60407,
+      "name": "Roserade"
+    },
+    {
+      "pokeId": 408,
+      "looktype": 60408,
+      "name": "Cranidos"
+    },
+    {
+      "pokeId": 409,
+      "looktype": 60409,
+      "name": "Rampardos"
+    },
+    {
+      "pokeId": 410,
+      "looktype": 60410,
+      "name": "Shieldon"
+    },
+    {
+      "pokeId": 411,
+      "looktype": 60411,
+      "name": "Bastiodon"
+    },
+    {
+      "pokeId": 412,
+      "looktype": 60412,
+      "name": "Burmy"
+    },
+    {
+      "pokeId": 413,
+      "looktype": 60413,
+      "name": "Wormadam"
+    },
+    {
+      "pokeId": 414,
+      "looktype": 60414,
+      "name": "Mothim"
+    },
+    {
+      "pokeId": 415,
+      "looktype": 60415,
+      "name": "Combee"
+    },
+    {
+      "pokeId": 416,
+      "looktype": 60416,
+      "name": "Vespiquen"
+    },
+    {
+      "pokeId": 417,
+      "looktype": 60417,
+      "name": "Pachirisu"
+    },
+    {
+      "pokeId": 418,
+      "looktype": 60418,
+      "name": "Buizel"
+    },
+    {
+      "pokeId": 419,
+      "looktype": 60419,
+      "name": "Floatzel"
+    },
+    {
+      "pokeId": 420,
+      "looktype": 60420,
+      "name": "Cherubi"
+    },
+    {
+      "pokeId": 421,
+      "looktype": 60421,
+      "name": "Cherrim"
+    },
+    {
+      "pokeId": 422,
+      "looktype": 60422,
+      "name": "Shellos"
+    },
+    {
+      "pokeId": 423,
+      "looktype": 60423,
+      "name": "Gastrodon"
+    },
+    {
+      "pokeId": 424,
+      "looktype": 60424,
+      "name": "Ambipom"
+    },
+    {
+      "pokeId": 425,
+      "looktype": 60425,
+      "name": "Drifloon"
+    },
+    {
+      "pokeId": 426,
+      "looktype": 60426,
+      "name": "Drifblim"
+    },
+    {
+      "pokeId": 427,
+      "looktype": 60427,
+      "name": "Buneary"
+    },
+    {
+      "pokeId": 428,
+      "looktype": 60428,
+      "name": "Lopunny"
+    },
+    {
+      "pokeId": 429,
+      "looktype": 60429,
+      "name": "Mismagius"
+    },
+    {
+      "pokeId": 430,
+      "looktype": 60430,
+      "name": "Honchkrow"
+    },
+    {
+      "pokeId": 431,
+      "looktype": 60431,
+      "name": "Glameow"
+    },
+    {
+      "pokeId": 432,
+      "looktype": 60432,
+      "name": "Purugly"
+    },
+    {
+      "pokeId": 433,
+      "looktype": 60433,
+      "name": "Chingling"
+    },
+    {
+      "pokeId": 434,
+      "looktype": 60434,
+      "name": "Stunky"
+    },
+    {
+      "pokeId": 435,
+      "looktype": 60435,
+      "name": "Skuntank"
+    },
+    {
+      "pokeId": 436,
+      "looktype": 60436,
+      "name": "Bronzor"
+    },
+    {
+      "pokeId": 437,
+      "looktype": 60437,
+      "name": "Bronzong"
+    },
+    {
+      "pokeId": 439,
+      "looktype": 60439,
+      "name": "Mime Jr."
+    },
+    {
+      "pokeId": 441,
+      "looktype": 60441,
+      "name": "Chatot"
+    },
+    {
+      "pokeId": 442,
+      "looktype": 60442,
+      "name": "Spiritomb"
+    },
+    {
+      "pokeId": 443,
+      "looktype": 60443,
+      "name": "Gible"
+    },
+    {
+      "pokeId": 444,
+      "looktype": 60444,
+      "name": "Gabite"
+    },
+    {
+      "pokeId": 445,
+      "looktype": 60445,
+      "name": "Garchomp"
+    },
+    {
+      "pokeId": 446,
+      "looktype": 60446,
+      "name": "Munchlax"
+    },
+    {
+      "pokeId": 447,
+      "looktype": 60447,
+      "name": "Riolu"
+    },
+    {
+      "pokeId": 448,
+      "looktype": 60448,
+      "name": "Lucario"
+    },
+    {
+      "pokeId": 449,
+      "looktype": 60449,
+      "name": "Hippopotas"
+    },
+    {
+      "pokeId": 450,
+      "looktype": 60450,
+      "name": "Hippowdon"
+    },
+    {
+      "pokeId": 451,
+      "looktype": 60451,
+      "name": "Skorupi"
+    },
+    {
+      "pokeId": 452,
+      "looktype": 60452,
+      "name": "Drapion"
+    },
+    {
+      "pokeId": 453,
+      "looktype": 60453,
+      "name": "Croagunk"
+    },
+    {
+      "pokeId": 454,
+      "looktype": 60454,
+      "name": "Toxicroak"
+    },
+    {
+      "pokeId": 455,
+      "looktype": 60455,
+      "name": "Carnivine"
+    },
+    {
+      "pokeId": 456,
+      "looktype": 60456,
+      "name": "Finneon"
+    },
+    {
+      "pokeId": 457,
+      "looktype": 60457,
+      "name": "Lumineon"
+    },
+    {
+      "pokeId": 458,
+      "looktype": 60458,
+      "name": "Mantyke"
+    },
+    {
+      "pokeId": 459,
+      "looktype": 60459,
+      "name": "Snover"
+    },
+    {
+      "pokeId": 460,
+      "looktype": 60460,
+      "name": "Abomasnow"
+    },
+    {
+      "pokeId": 461,
+      "looktype": 60461,
+      "name": "Weavile"
+    },
+    {
+      "pokeId": 462,
+      "looktype": 60462,
+      "name": "Magnezone"
+    },
+    {
+      "pokeId": 463,
+      "looktype": 60463,
+      "name": "Lickilicky"
+    },
+    {
+      "pokeId": 464,
+      "looktype": 60464,
+      "name": "Rhyperior"
+    },
+    {
+      "pokeId": 465,
+      "looktype": 60465,
+      "name": "Tangrowth"
+    },
+    {
+      "pokeId": 466,
+      "looktype": 60466,
+      "name": "Electivire"
+    },
+    {
+      "pokeId": 467,
+      "looktype": 60467,
+      "name": "Magmortar"
+    },
+    {
+      "pokeId": 468,
+      "looktype": 60468,
+      "name": "Togekiss"
+    },
+    {
+      "pokeId": 469,
+      "looktype": 60469,
+      "name": "Yanmega"
+    },
+    {
+      "pokeId": 470,
+      "looktype": 60470,
+      "name": "Leafeon"
+    },
+    {
+      "pokeId": 471,
+      "looktype": 60471,
+      "name": "Glaceon"
+    },
+    {
+      "pokeId": 472,
+      "looktype": 60472,
+      "name": "Gliscor"
+    },
+    {
+      "pokeId": 473,
+      "looktype": 60473,
+      "name": "Mamoswine"
+    },
+    {
+      "pokeId": 474,
+      "looktype": 60474,
+      "name": "Porygon-Z"
+    },
+    {
+      "pokeId": 475,
+      "looktype": 60475,
+      "name": "Gallade"
+    },
+    {
+      "pokeId": 476,
+      "looktype": 60476,
+      "name": "Probopass"
+    },
+    {
+      "pokeId": 477,
+      "looktype": 60477,
+      "name": "Dusknoir"
+    },
+    {
+      "pokeId": 478,
+      "looktype": 60478,
+      "name": "Froslass"
+    },
+    {
+      "pokeId": 479,
+      "looktype": 60479,
+      "name": "Rotom"
+    },
+    {
+      "pokeId": 480,
+      "looktype": 60480,
+      "name": "Uxie"
+    },
+    {
+      "pokeId": 481,
+      "looktype": 60481,
+      "name": "Mesprit"
+    },
+    {
+      "pokeId": 482,
+      "looktype": 60482,
+      "name": "Azelf"
+    },
+    {
+      "pokeId": 483,
+      "looktype": 60483,
+      "name": "Dialga"
+    },
+    {
+      "pokeId": 484,
+      "looktype": 60484,
+      "name": "Palkia"
+    },
+    {
+      "pokeId": 485,
+      "looktype": 60485,
+      "name": "Heatran"
+    },
+    {
+      "pokeId": 486,
+      "looktype": 60486,
+      "name": "Regigigas"
+    },
+    {
+      "pokeId": 487,
+      "looktype": 60487,
+      "name": "Giratina"
+    },
+    {
+      "pokeId": 488,
+      "looktype": 60488,
+      "name": "Cresselia"
+    },
+    {
+      "pokeId": 489,
+      "looktype": 60489,
+      "name": "Phione"
+    },
+    {
+      "pokeId": 490,
+      "looktype": 60490,
+      "name": "Manaphy"
+    },
+    {
+      "pokeId": 491,
+      "looktype": 60491,
+      "name": "Darkrai"
+    },
+    {
+      "pokeId": 494,
+      "looktype": 60494,
+      "name": "Victini"
+    },
+    {
+      "pokeId": 495,
+      "looktype": 60495,
+      "name": "Snivy"
+    },
+    {
+      "pokeId": 496,
+      "looktype": 60496,
+      "name": "Servine"
+    },
+    {
+      "pokeId": 497,
+      "looktype": 60497,
+      "name": "Serperior"
+    },
+    {
+      "pokeId": 498,
+      "looktype": 60498,
+      "name": "Tepig"
+    },
+    {
+      "pokeId": 499,
+      "looktype": 60499,
+      "name": "Pignite"
+    },
+    {
+      "pokeId": 500,
+      "looktype": 60500,
+      "name": "Emboar"
+    },
+    {
+      "pokeId": 501,
+      "looktype": 60501,
+      "name": "Oshawott"
+    },
+    {
+      "pokeId": 502,
+      "looktype": 60502,
+      "name": "Dewott"
+    },
+    {
+      "pokeId": 503,
+      "looktype": 60503,
+      "name": "Samurott"
+    },
+    {
+      "pokeId": 504,
+      "looktype": 60504,
+      "name": "Patrat"
+    },
+    {
+      "pokeId": 505,
+      "looktype": 60505,
+      "name": "Watchog"
+    },
+    {
+      "pokeId": 506,
+      "looktype": 60506,
+      "name": "Lillipup"
+    },
+    {
+      "pokeId": 508,
+      "looktype": 60508,
+      "name": "Stoutland"
+    },
+    {
+      "pokeId": 510,
+      "looktype": 60510,
+      "name": "Liepard"
+    },
+    {
+      "pokeId": 511,
+      "looktype": 60511,
+      "name": "Pansage"
+    },
+    {
+      "pokeId": 512,
+      "looktype": 60512,
+      "name": "Simisage"
+    },
+    {
+      "pokeId": 513,
+      "looktype": 60513,
+      "name": "Pansear"
+    },
+    {
+      "pokeId": 514,
+      "looktype": 60514,
+      "name": "Simisear"
+    },
+    {
+      "pokeId": 515,
+      "looktype": 60515,
+      "name": "Panpour"
+    },
+    {
+      "pokeId": 516,
+      "looktype": 60516,
+      "name": "Simipour"
+    },
+    {
+      "pokeId": 517,
+      "looktype": 60517,
+      "name": "Munna"
+    },
+    {
+      "pokeId": 518,
+      "looktype": 60518,
+      "name": "Musharna"
+    },
+    {
+      "pokeId": 519,
+      "looktype": 60519,
+      "name": "Pidove"
+    },
+    {
+      "pokeId": 520,
+      "looktype": 60520,
+      "name": "Tranquill"
+    },
+    {
+      "pokeId": 521,
+      "looktype": 60521,
+      "name": "Unfezant"
+    },
+    {
+      "pokeId": 522,
+      "looktype": 60522,
+      "name": "Blitzle"
+    },
+    {
+      "pokeId": 523,
+      "looktype": 60523,
+      "name": "Zebstrika"
+    },
+    {
+      "pokeId": 524,
+      "looktype": 60524,
+      "name": "Roggenrola"
+    },
+    {
+      "pokeId": 525,
+      "looktype": 60525,
+      "name": "Boldore"
+    },
+    {
+      "pokeId": 526,
+      "looktype": 60526,
+      "name": "Gigalith"
+    },
+    {
+      "pokeId": 527,
+      "looktype": 60527,
+      "name": "Woobat"
+    },
+    {
+      "pokeId": 528,
+      "looktype": 60528,
+      "name": "Swoobat"
+    },
+    {
+      "pokeId": 530,
+      "looktype": 60530,
+      "name": "Excadrill"
+    },
+    {
+      "pokeId": 531,
+      "looktype": 60531,
+      "name": "Audino"
+    },
+    {
+      "pokeId": 532,
+      "looktype": 60532,
+      "name": "Timburr"
+    },
+    {
+      "pokeId": 533,
+      "looktype": 60533,
+      "name": "Gurdurr"
+    },
+    {
+      "pokeId": 534,
+      "looktype": 60534,
+      "name": "Conkeldurr"
+    },
+    {
+      "pokeId": 535,
+      "looktype": 60535,
+      "name": "Tympole"
+    },
+    {
+      "pokeId": 536,
+      "looktype": 60536,
+      "name": "Palpitoad"
+    },
+    {
+      "pokeId": 537,
+      "looktype": 60537,
+      "name": "Seismitoad"
+    },
+    {
+      "pokeId": 538,
+      "looktype": 60538,
+      "name": "Throh"
+    },
+    {
+      "pokeId": 539,
+      "looktype": 60539,
+      "name": "Sawk"
+    },
+    {
+      "pokeId": 540,
+      "looktype": 60540,
+      "name": "Sewaddle"
+    },
+    {
+      "pokeId": 541,
+      "looktype": 60541,
+      "name": "Swadloon"
+    },
+    {
+      "pokeId": 542,
+      "looktype": 60542,
+      "name": "Leavanny"
+    },
+    {
+      "pokeId": 543,
+      "looktype": 60543,
+      "name": "Venipede"
+    },
+    {
+      "pokeId": 544,
+      "looktype": 60544,
+      "name": "Whirlipede"
+    },
+    {
+      "pokeId": 545,
+      "looktype": 60545,
+      "name": "Scolipede"
+    },
+    {
+      "pokeId": 546,
+      "looktype": 60546,
+      "name": "Cottonee"
+    },
+    {
+      "pokeId": 547,
+      "looktype": 60547,
+      "name": "Whimsicott"
+    },
+    {
+      "pokeId": 548,
+      "looktype": 60548,
+      "name": "Petilil"
+    },
+    {
+      "pokeId": 549,
+      "looktype": 60549,
+      "name": "Lilligant"
+    },
+    {
+      "pokeId": 551,
+      "looktype": 60551,
+      "name": "Sandile"
+    },
+    {
+      "pokeId": 552,
+      "looktype": 60552,
+      "name": "Krokorok"
+    },
+    {
+      "pokeId": 553,
+      "looktype": 60553,
+      "name": "Krookodile"
+    },
+    {
+      "pokeId": 554,
+      "looktype": 60554,
+      "name": "Darumaka"
+    },
+    {
+      "pokeId": 556,
+      "looktype": 60556,
+      "name": "Maractus"
+    },
+    {
+      "pokeId": 557,
+      "looktype": 60557,
+      "name": "Dwebble"
+    },
+    {
+      "pokeId": 558,
+      "looktype": 60558,
+      "name": "Crustle"
+    },
+    {
+      "pokeId": 560,
+      "looktype": 60560,
+      "name": "Scrafty"
+    },
+    {
+      "pokeId": 561,
+      "looktype": 60561,
+      "name": "Sigilyph"
+    },
+    {
+      "pokeId": 562,
+      "looktype": 60562,
+      "name": "Yamask"
+    },
+    {
+      "pokeId": 563,
+      "looktype": 60563,
+      "name": "Cofagrigus"
+    },
+    {
+      "pokeId": 564,
+      "looktype": 60564,
+      "name": "Tirtouga"
+    },
+    {
+      "pokeId": 565,
+      "looktype": 60565,
+      "name": "Carracosta"
+    },
+    {
+      "pokeId": 566,
+      "looktype": 60566,
+      "name": "Archen"
+    },
+    {
+      "pokeId": 567,
+      "looktype": 60567,
+      "name": "Archeops"
+    },
+    {
+      "pokeId": 568,
+      "looktype": 60568,
+      "name": "Trubbish"
+    },
+    {
+      "pokeId": 569,
+      "looktype": 60569,
+      "name": "Garbodor"
+    },
+    {
+      "pokeId": 570,
+      "looktype": 60570,
+      "name": "Zorua"
+    },
+    {
+      "pokeId": 571,
+      "looktype": 60571,
+      "name": "Zoroark"
+    },
+    {
+      "pokeId": 572,
+      "looktype": 60572,
+      "name": "Minccino"
+    },
+    {
+      "pokeId": 573,
+      "looktype": 60573,
+      "name": "Cinccino"
+    },
+    {
+      "pokeId": 574,
+      "looktype": 60574,
+      "name": "Gothita"
+    },
+    {
+      "pokeId": 575,
+      "looktype": 60575,
+      "name": "Gothorita"
+    },
+    {
+      "pokeId": 576,
+      "looktype": 60576,
+      "name": "Gothitelle"
+    },
+    {
+      "pokeId": 577,
+      "looktype": 60577,
+      "name": "Solosis"
+    },
+    {
+      "pokeId": 578,
+      "looktype": 60578,
+      "name": "Duosion"
+    },
+    {
+      "pokeId": 579,
+      "looktype": 60579,
+      "name": "Reuniclus"
+    },
+    {
+      "pokeId": 580,
+      "looktype": 60580,
+      "name": "Ducklett"
+    },
+    {
+      "pokeId": 581,
+      "looktype": 60581,
+      "name": "Swanna"
+    },
+    {
+      "pokeId": 582,
+      "looktype": 60582,
+      "name": "Vanillite"
+    },
+    {
+      "pokeId": 584,
+      "looktype": 60584,
+      "name": "Vanilluxe"
+    },
+    {
+      "pokeId": 585,
+      "looktype": 60585,
+      "name": "Deerling"
+    },
+    {
+      "pokeId": 586,
+      "looktype": 60586,
+      "name": "Sawsbuck"
+    },
+    {
+      "pokeId": 587,
+      "looktype": 60587,
+      "name": "Emolga"
+    },
+    {
+      "pokeId": 588,
+      "looktype": 60588,
+      "name": "Karrablast"
+    },
+    {
+      "pokeId": 589,
+      "looktype": 60589,
+      "name": "Escavalier"
+    },
+    {
+      "pokeId": 590,
+      "looktype": 60590,
+      "name": "Foongus"
+    },
+    {
+      "pokeId": 591,
+      "looktype": 60591,
+      "name": "Amoonguss"
+    },
+    {
+      "pokeId": 592,
+      "looktype": 60592,
+      "name": "Frillish"
+    },
+    {
+      "pokeId": 593,
+      "looktype": 60593,
+      "name": "Jellicent"
+    },
+    {
+      "pokeId": 595,
+      "looktype": 60595,
+      "name": "Joltik"
+    },
+    {
+      "pokeId": 596,
+      "looktype": 60596,
+      "name": "Galvantula"
+    },
+    {
+      "pokeId": 597,
+      "looktype": 60597,
+      "name": "Ferroseed"
+    },
+    {
+      "pokeId": 598,
+      "looktype": 60598,
+      "name": "Ferrothorn"
+    },
+    {
+      "pokeId": 599,
+      "looktype": 60599,
+      "name": "Klink"
+    },
+    {
+      "pokeId": 601,
+      "looktype": 60601,
+      "name": "Klinklang"
+    },
+    {
+      "pokeId": 602,
+      "looktype": 60602,
+      "name": "Tynamo"
+    },
+    {
+      "pokeId": 603,
+      "looktype": 60603,
+      "name": "Eelektrik"
+    },
+    {
+      "pokeId": 604,
+      "looktype": 60604,
+      "name": "Eelektross"
+    },
+    {
+      "pokeId": 605,
+      "looktype": 60605,
+      "name": "Elgyem"
+    },
+    {
+      "pokeId": 607,
+      "looktype": 60607,
+      "name": "Litwick"
+    },
+    {
+      "pokeId": 608,
+      "looktype": 60608,
+      "name": "Lampent"
+    },
+    {
+      "pokeId": 609,
+      "looktype": 60609,
+      "name": "Chandelure"
+    },
+    {
+      "pokeId": 610,
+      "looktype": 60610,
+      "name": "Axew"
+    },
+    {
+      "pokeId": 611,
+      "looktype": 60611,
+      "name": "Fraxure"
+    },
+    {
+      "pokeId": 612,
+      "looktype": 60612,
+      "name": "Haxorus"
+    },
+    {
+      "pokeId": 613,
+      "looktype": 60613,
+      "name": "Cubchoo"
+    },
+    {
+      "pokeId": 614,
+      "looktype": 60614,
+      "name": "Beartic"
+    },
+    {
+      "pokeId": 615,
+      "looktype": 60615,
+      "name": "Cryogonal"
+    },
+    {
+      "pokeId": 616,
+      "looktype": 60616,
+      "name": "Shelmet"
+    },
+    {
+      "pokeId": 617,
+      "looktype": 60617,
+      "name": "Accelgor"
+    },
+    {
+      "pokeId": 618,
+      "looktype": 60618,
+      "name": "Stunfisk"
+    },
+    {
+      "pokeId": 619,
+      "looktype": 60619,
+      "name": "Mienfoo"
+    },
+    {
+      "pokeId": 620,
+      "looktype": 60620,
+      "name": "Mienshao"
+    },
+    {
+      "pokeId": 621,
+      "looktype": 60621,
+      "name": "Druddigon"
+    },
+    {
+      "pokeId": 622,
+      "looktype": 60622,
+      "name": "Golett"
+    },
+    {
+      "pokeId": 623,
+      "looktype": 60623,
+      "name": "Golurk"
+    },
+    {
+      "pokeId": 624,
+      "looktype": 60624,
+      "name": "Pawniard"
+    },
+    {
+      "pokeId": 625,
+      "looktype": 60625,
+      "name": "Bisharp"
+    },
+    {
+      "pokeId": 626,
+      "looktype": 60626,
+      "name": "Bouffalant"
+    },
+    {
+      "pokeId": 627,
+      "looktype": 60627,
+      "name": "Rufflet"
+    },
+    {
+      "pokeId": 628,
+      "looktype": 60628,
+      "name": "Braviary"
+    },
+    {
+      "pokeId": 629,
+      "looktype": 60629,
+      "name": "Vullaby"
+    },
+    {
+      "pokeId": 630,
+      "looktype": 60630,
+      "name": "Mandibuzz"
+    },
+    {
+      "pokeId": 631,
+      "looktype": 60631,
+      "name": "Heatmor"
+    },
+    {
+      "pokeId": 633,
+      "looktype": 60633,
+      "name": "Deino"
+    },
+    {
+      "pokeId": 634,
+      "looktype": 60634,
+      "name": "Zweilous"
+    },
+    {
+      "pokeId": 635,
+      "looktype": 60635,
+      "name": "Hydreigon"
+    },
+    {
+      "pokeId": 636,
+      "looktype": 60636,
+      "name": "Larvesta"
+    },
+    {
+      "pokeId": 637,
+      "looktype": 60637,
+      "name": "Volcarona"
+    },
+    {
+      "pokeId": 638,
+      "looktype": 60638,
+      "name": "Cobalion"
+    },
+    {
+      "pokeId": 639,
+      "looktype": 60639,
+      "name": "Terrakion"
+    },
+    {
+      "pokeId": 640,
+      "looktype": 60640,
+      "name": "Virizion"
+    },
+    {
+      "pokeId": 643,
+      "looktype": 60643,
+      "name": "Reshiram"
+    },
+    {
+      "pokeId": 644,
+      "looktype": 60644,
+      "name": "Zekrom"
+    },
+    {
+      "pokeId": 646,
+      "looktype": 60646,
+      "name": "Kyurem"
+    },
+    {
+      "pokeId": 648,
+      "looktype": 60648,
+      "name": "Meloetta"
+    },
+    {
+      "pokeId": 649,
+      "looktype": 60649,
+      "name": "Genesect"
+    },
+    {
+      "pokeId": 652,
+      "looktype": 60652,
+      "name": "Chesnaught"
+    },
+    {
+      "pokeId": 655,
+      "looktype": 60655,
+      "name": "Delphox"
+    },
+    {
+      "pokeId": 658,
+      "looktype": 60658,
+      "name": "Greninja"
+    },
+    {
+      "pokeId": 659,
+      "looktype": 60659,
+      "name": "Bunnelby"
+    },
+    {
+      "pokeId": 660,
+      "looktype": 60660,
+      "name": "Diggersby"
+    },
+    {
+      "pokeId": 661,
+      "looktype": 60661,
+      "name": "Fletchling"
+    },
+    {
+      "pokeId": 662,
+      "looktype": 60662,
+      "name": "Fletchinder"
+    },
+    {
+      "pokeId": 663,
+      "looktype": 60663,
+      "name": "Talonflame"
+    },
+    {
+      "pokeId": 664,
+      "looktype": 60664,
+      "name": "Scatterbug"
+    },
+    {
+      "pokeId": 665,
+      "looktype": 60665,
+      "name": "Spewpa"
+    },
+    {
+      "pokeId": 666,
+      "looktype": 60666,
+      "name": "Vivillon"
+    },
+    {
+      "pokeId": 667,
+      "looktype": 60667,
+      "name": "Litleo"
+    },
+    {
+      "pokeId": 668,
+      "looktype": 60668,
+      "name": "Pyroar"
+    },
+    {
+      "pokeId": 669,
+      "looktype": 60669,
+      "name": "Flabebe"
+    },
+    {
+      "pokeId": 671,
+      "looktype": 60671,
+      "name": "Florges"
+    },
+    {
+      "pokeId": 674,
+      "looktype": 60674,
+      "name": "Pancham"
+    },
+    {
+      "pokeId": 675,
+      "looktype": 60675,
+      "name": "Pangoro"
+    },
+    {
+      "pokeId": 677,
+      "looktype": 60677,
+      "name": "Espurr"
+    },
+    {
+      "pokeId": 678,
+      "looktype": 60678,
+      "name": "Meowstic"
+    },
+    {
+      "pokeId": 679,
+      "looktype": 60679,
+      "name": "Honedge"
+    },
+    {
+      "pokeId": 680,
+      "looktype": 60680,
+      "name": "Doublade"
+    },
+    {
+      "pokeId": 681,
+      "looktype": 60681,
+      "name": "Aegislash"
+    },
+    {
+      "pokeId": 682,
+      "looktype": 60682,
+      "name": "Spritzee"
+    },
+    {
+      "pokeId": 683,
+      "looktype": 60683,
+      "name": "Aromatisse"
+    },
+    {
+      "pokeId": 684,
+      "looktype": 60684,
+      "name": "Swirlix"
+    },
+    {
+      "pokeId": 685,
+      "looktype": 60685,
+      "name": "Slurpuff"
+    },
+    {
+      "pokeId": 686,
+      "looktype": 60686,
+      "name": "Inkay"
+    },
+    {
+      "pokeId": 687,
+      "looktype": 60687,
+      "name": "Malamar"
+    },
+    {
+      "pokeId": 688,
+      "looktype": 60688,
+      "name": "Binacle"
+    },
+    {
+      "pokeId": 689,
+      "looktype": 60689,
+      "name": "Barbaracle"
+    },
+    {
+      "pokeId": 690,
+      "looktype": 60690,
+      "name": "Skrelp"
+    },
+    {
+      "pokeId": 691,
+      "looktype": 60691,
+      "name": "Dragalge"
+    },
+    {
+      "pokeId": 692,
+      "looktype": 60692,
+      "name": "Clauncher"
+    },
+    {
+      "pokeId": 693,
+      "looktype": 60693,
+      "name": "Clawitzer"
+    },
+    {
+      "pokeId": 694,
+      "looktype": 60694,
+      "name": "Helioptile"
+    },
+    {
+      "pokeId": 695,
+      "looktype": 60695,
+      "name": "Heliolisk"
+    },
+    {
+      "pokeId": 696,
+      "looktype": 60696,
+      "name": "Tyrunt"
+    },
+    {
+      "pokeId": 698,
+      "looktype": 60698,
+      "name": "Amaura"
+    },
+    {
+      "pokeId": 699,
+      "looktype": 60699,
+      "name": "Aurorus"
+    },
+    {
+      "pokeId": 700,
+      "looktype": 60700,
+      "name": "Sylveon"
+    },
+    {
+      "pokeId": 701,
+      "looktype": 60701,
+      "name": "Hawlucha"
+    },
+    {
+      "pokeId": 702,
+      "looktype": 60702,
+      "name": "Dedenne"
+    },
+    {
+      "pokeId": 703,
+      "looktype": 60703,
+      "name": "Carbink"
+    },
+    {
+      "pokeId": 704,
+      "looktype": 60704,
+      "name": "Goomy"
+    },
+    {
+      "pokeId": 705,
+      "looktype": 60705,
+      "name": "Sliggoo"
+    },
+    {
+      "pokeId": 706,
+      "looktype": 60706,
+      "name": "Goodra"
+    },
+    {
+      "pokeId": 707,
+      "looktype": 60707,
+      "name": "Klefki"
+    },
+    {
+      "pokeId": 708,
+      "looktype": 60708,
+      "name": "Phantump"
+    },
+    {
+      "pokeId": 709,
+      "looktype": 60709,
+      "name": "Trevenant"
+    },
+    {
+      "pokeId": 712,
+      "looktype": 60712,
+      "name": "Bergmite"
+    },
+    {
+      "pokeId": 713,
+      "looktype": 60713,
+      "name": "Avalugg"
+    },
+    {
+      "pokeId": 714,
+      "looktype": 60714,
+      "name": "Noibat"
+    },
+    {
+      "pokeId": 715,
+      "looktype": 60715,
+      "name": "Noivern"
+    },
+    {
+      "pokeId": 723,
+      "looktype": 60723,
+      "name": "Dartrix"
+    },
+    {
+      "pokeId": 725,
+      "looktype": 60725,
+      "name": "Litten"
+    },
+    {
+      "pokeId": 726,
+      "looktype": 60726,
+      "name": "Torracat"
+    },
+    {
+      "pokeId": 727,
+      "looktype": 60727,
+      "name": "Incineroar"
+    },
+    {
+      "pokeId": 728,
+      "looktype": 60728,
+      "name": "Popplio"
+    },
+    {
+      "pokeId": 729,
+      "looktype": 60729,
+      "name": "Brionne"
+    },
+    {
+      "pokeId": 730,
+      "looktype": 60730,
+      "name": "Primarina"
+    },
+    {
+      "pokeId": 731,
+      "looktype": 60731,
+      "name": "Pikipek"
+    },
+    {
+      "pokeId": 732,
+      "looktype": 60732,
+      "name": "Trumbeak"
+    },
+    {
+      "pokeId": 733,
+      "looktype": 60733,
+      "name": "Toucannon"
+    },
+    {
+      "pokeId": 734,
+      "looktype": 60734,
+      "name": "Yungoos"
+    },
+    {
+      "pokeId": 735,
+      "looktype": 60735,
+      "name": "Gumshoos"
+    },
+    {
+      "pokeId": 736,
+      "looktype": 60736,
+      "name": "Grubbin"
+    },
+    {
+      "pokeId": 737,
+      "looktype": 60737,
+      "name": "Charjabug"
+    },
+    {
+      "pokeId": 738,
+      "looktype": 60738,
+      "name": "Vikavolt"
+    },
+    {
+      "pokeId": 742,
+      "looktype": 60742,
+      "name": "Cutiefly"
+    },
+    {
+      "pokeId": 743,
+      "looktype": 60743,
+      "name": "Ribombee"
+    },
+    {
+      "pokeId": 744,
+      "looktype": 60744,
+      "name": "Rockruff"
+    },
+    {
+      "pokeId": 747,
+      "looktype": 60747,
+      "name": "Mareanie"
+    },
+    {
+      "pokeId": 748,
+      "looktype": 60748,
+      "name": "Toxapex"
+    },
+    {
+      "pokeId": 749,
+      "looktype": 60749,
+      "name": "Mudbray"
+    },
+    {
+      "pokeId": 750,
+      "looktype": 60750,
+      "name": "Mudsdale"
+    },
+    {
+      "pokeId": 751,
+      "looktype": 60751,
+      "name": "Dewpider"
+    },
+    {
+      "pokeId": 752,
+      "looktype": 60752,
+      "name": "Araquanid"
+    },
+    {
+      "pokeId": 755,
+      "looktype": 60755,
+      "name": "Morelull"
+    },
+    {
+      "pokeId": 756,
+      "looktype": 60756,
+      "name": "Shiinotic"
+    },
+    {
+      "pokeId": 757,
+      "looktype": 60757,
+      "name": "Salandit"
+    },
+    {
+      "pokeId": 758,
+      "looktype": 60758,
+      "name": "Salazzle"
+    },
+    {
+      "pokeId": 759,
+      "looktype": 60759,
+      "name": "Stufful"
+    },
+    {
+      "pokeId": 760,
+      "looktype": 60760,
+      "name": "Bewear"
+    },
+    {
+      "pokeId": 761,
+      "looktype": 60761,
+      "name": "Bounsweet"
+    },
+    {
+      "pokeId": 762,
+      "looktype": 60762,
+      "name": "Steenee"
+    },
+    {
+      "pokeId": 763,
+      "looktype": 60763,
+      "name": "Tsareena"
+    },
+    {
+      "pokeId": 766,
+      "looktype": 60766,
+      "name": "Passimian"
+    },
+    {
+      "pokeId": 767,
+      "looktype": 60767,
+      "name": "Wimpod"
+    },
+    {
+      "pokeId": 768,
+      "looktype": 60768,
+      "name": "Golisopod"
+    },
+    {
+      "pokeId": 777,
+      "looktype": 60777,
+      "name": "Togedemaru"
+    },
+    {
+      "pokeId": 779,
+      "looktype": 60779,
+      "name": "Bruxish"
+    },
+    {
+      "pokeId": 780,
+      "looktype": 60780,
+      "name": "Drampa"
+    },
+    {
+      "pokeId": 781,
+      "looktype": 60781,
+      "name": "Dhelmise"
+    },
+    {
+      "pokeId": 782,
+      "looktype": 60782,
+      "name": "Jangmo-o"
+    },
+    {
+      "pokeId": 783,
+      "looktype": 60783,
+      "name": "Hakamo-o"
+    },
+    {
+      "pokeId": 784,
+      "looktype": 60784,
+      "name": "Kommo-o"
+    },
+    {
+      "pokeId": 798,
+      "looktype": 60798,
+      "name": "Kartana"
+    },
+    {
+      "pokeId": 799,
+      "looktype": 60799,
+      "name": "Guzzlord"
+    },
+    {
+      "pokeId": 803,
+      "looktype": 60803,
+      "name": "Poipole"
+    },
+    {
+      "pokeId": 804,
+      "looktype": 60804,
+      "name": "Naganadel"
+    },
+    {
+      "pokeId": 813,
+      "looktype": 60813,
+      "name": "Scorbunny"
+    },
+    {
+      "pokeId": 814,
+      "looktype": 60814,
+      "name": "Raboot"
+    },
+    {
+      "pokeId": 815,
+      "looktype": 60815,
+      "name": "Cinderace"
+    },
+    {
+      "pokeId": 868,
+      "looktype": 60868,
+      "name": "Milcery"
+    },
+    {
+      "pokeId": 869,
+      "looktype": 60869,
+      "name": "Alcremie"
+    },
+    {
+      "pokeId": 885,
+      "looktype": 60885,
+      "name": "Dreepy"
+    },
+    {
+      "pokeId": 901,
+      "looktype": 60901,
+      "name": "Ursaluna"
+    },
+    {
+      "pokeId": 935,
+      "looktype": 60935,
+      "name": "Charcadet"
+    },
+    {
+      "pokeId": 936,
+      "looktype": 60936,
+      "name": "Armarouge"
+    },
+    {
+      "pokeId": 957,
+      "looktype": 60957,
+      "name": "Tinkatink"
+    },
+    {
+      "pokeId": 958,
+      "looktype": 60958,
+      "name": "Tinkatuff"
+    },
+    {
+      "pokeId": 959,
+      "looktype": 60959,
+      "name": "Tinkaton"
+    },
+    {
+      "pokeId": 979,
+      "looktype": 60979,
+      "name": "Annihilape"
+    },
+    {
+      "pokeId": 989,
+      "looktype": 60989,
+      "name": "Sandy Shocks"
+    },
+    {
+      "pokeId": 1001,
+      "looktype": 60001,
+      "name": "Wo-Chien"
+    },
+    {
+      "pokeId": 1002,
+      "looktype": 60002,
+      "name": "Chien-Pao"
+    },
+    {
+      "pokeId": 1003,
+      "looktype": 60003,
+      "name": "Ting-Lu"
+    },
+    {
+      "pokeId": 1004,
+      "looktype": 60004,
+      "name": "Chi-Yu"
+    },
+    {
+      "pokeId": 1005,
+      "looktype": 60005,
+      "name": "Roaring Moon"
+    },
+    {
+      "pokeId": 1006,
+      "looktype": 60006,
+      "name": "Iron Valiant"
+    },
+    {
+      "pokeId": 1007,
+      "looktype": 60007,
+      "name": "Koraidon"
+    },
+    {
+      "pokeId": 1008,
+      "looktype": 60008,
+      "name": "Miraidon"
+    },
+    {
+      "pokeId": 1009,
+      "looktype": 60009,
+      "name": "Walking Wake"
+    },
+    {
+      "pokeId": 1010,
+      "looktype": 60010,
+      "name": "Iron Leaves"
+    },
+    {
+      "pokeId": 1011,
+      "looktype": 60011,
+      "name": "Dipplin"
+    },
+    {
+      "pokeId": 1012,
+      "looktype": 60012,
+      "name": "Poltchageist"
+    },
+    {
+      "pokeId": 1013,
+      "looktype": 60013,
+      "name": "Sinistcha"
+    },
+    {
+      "pokeId": 1014,
+      "looktype": 60014,
+      "name": "Okidogi"
+    },
+    {
+      "pokeId": 1015,
+      "looktype": 60015,
+      "name": "Munkidori"
+    },
+    {
+      "pokeId": 1016,
+      "looktype": 60016,
+      "name": "Fezandipiti"
+    },
+    {
+      "pokeId": 1017,
+      "looktype": 60017,
+      "name": "Ogerpon"
+    },
+    {
+      "pokeId": 1018,
+      "looktype": 60018,
+      "name": "Archaludon"
+    },
+    {
+      "pokeId": 1019,
+      "looktype": 60019,
+      "name": "Hydrapple"
+    },
+    {
+      "pokeId": 1020,
+      "looktype": 60020,
+      "name": "Gouging Fire"
+    },
+    {
+      "pokeId": 1021,
+      "looktype": 60021,
+      "name": "Raging Bolt"
+    },
+    {
+      "pokeId": 1022,
+      "looktype": 60022,
+      "name": "Iron Boulder"
+    },
+    {
+      "pokeId": 1023,
+      "looktype": 60023,
+      "name": "Iron Crown"
+    },
+    {
+      "pokeId": 1024,
+      "looktype": 60024,
+      "name": "Terapagos"
+    },
+    {
+      "pokeId": 1025,
+      "looktype": 60025,
+      "name": "Pecharunt"
+    },
+    {
+      "pokeId": 2001,
+      "looktype": 60009,
+      "name": "Brave Blastoise"
+    },
+    {
+      "pokeId": 2002,
+      "looktype": 60160,
+      "name": "Tribal Feraligatr"
+    },
+    {
+      "pokeId": 2003,
+      "looktype": 60154,
+      "name": "Ancient Meganium"
+    },
+    {
+      "pokeId": 2004,
+      "looktype": 60003,
+      "name": "Brave Venusaur"
+    },
+    {
+      "pokeId": 2005,
+      "looktype": 60214,
+      "name": "War Heracross"
+    },
+    {
+      "pokeId": 2006,
+      "looktype": 60123,
+      "name": "Furious Scyther"
+    },
+    {
+      "pokeId": 2007,
+      "looktype": 60203,
+      "name": "Enigmatic Girafarig"
+    },
+    {
+      "pokeId": 2008,
+      "looktype": 60026,
+      "name": "Charged Raichu"
+    },
+    {
+      "pokeId": 2009,
+      "looktype": 60181,
+      "name": "Furious Ampharos"
+    },
+    {
+      "pokeId": 2010,
+      "looktype": 60125,
+      "name": "Magnetic Electabuzz"
+    },
+    {
+      "pokeId": 2011,
+      "looktype": 60148,
+      "name": "Ancient Dragonair"
+    },
+    {
+      "pokeId": 2012,
+      "looktype": 60091,
+      "name": "Evil Cloyster"
+    },
+    {
+      "pokeId": 2013,
+      "looktype": 60087,
+      "name": "Freezing Dewgong"
+    },
+    {
+      "pokeId": 2014,
+      "looktype": 60124,
+      "name": "Psy Jynx"
+    },
+    {
+      "pokeId": 2015,
+      "looktype": 60221,
+      "name": "Heavy Piloswine"
+    },
+    {
+      "pokeId": 2016,
+      "looktype": 60241,
+      "name": "Milch-Miltank"
+    },
+    {
+      "pokeId": 2017,
+      "looktype": 60232,
+      "name": "Roll Donphan"
+    },
+    {
+      "pokeId": 2018,
+      "looktype": 60028,
+      "name": "Furious Sandslash"
+    },
+    {
+      "pokeId": 2019,
+      "looktype": 60076,
+      "name": "Hard Golem"
+    },
+    {
+      "pokeId": 2020,
+      "looktype": 60112,
+      "name": "Brute Rhydon"
+    },
+    {
+      "pokeId": 2021,
+      "looktype": 60006,
+      "name": "Brave Charizard"
+    },
+    {
+      "pokeId": 2022,
+      "looktype": 60157,
+      "name": "Enraged Typhlosion"
+    },
+    {
+      "pokeId": 2023,
+      "looktype": 60034,
+      "name": "Brave Nidoking"
+    },
+    {
+      "pokeId": 2024,
+      "looktype": 60031,
+      "name": "Brave Nidoqueen"
+    },
+    {
+      "pokeId": 2025,
+      "looktype": 60169,
+      "name": "Dark Crobat"
+    },
+    {
+      "pokeId": 2026,
+      "looktype": 60094,
+      "name": "Trickmaster Gengar"
+    },
+    {
+      "pokeId": 2027,
+      "looktype": 60200,
+      "name": "Banshee Misdreavus"
+    },
+    {
+      "pokeId": 2028,
+      "looktype": 60107,
+      "name": "Taekwondo Hitmonchan"
+    },
+    {
+      "pokeId": 2029,
+      "looktype": 60106,
+      "name": "Taekwondo Hitmonlee"
+    },
+    {
+      "pokeId": 2030,
+      "looktype": 60237,
+      "name": "Taekwondo Hitmontop"
+    },
+    {
+      "pokeId": 2031,
+      "looktype": 60059,
+      "name": "Brave Arcanine"
+    },
+    {
+      "pokeId": 2032,
+      "looktype": 60126,
+      "name": "Furious Magmar"
+    },
+    {
+      "pokeId": 2034,
+      "looktype": 60208,
+      "name": "Brave Steelix"
+    },
+    {
+      "pokeId": 2035,
+      "looktype": 60040,
+      "name": "Furious Wigglytuff"
+    },
+    {
+      "pokeId": 2036,
+      "looktype": 60178,
+      "name": "Ancient Xatu"
+    },
+    {
+      "pokeId": 2037,
+      "looktype": 60065,
+      "name": "Brave Alakazam"
+    },
+    {
+      "pokeId": 2038,
+      "looktype": 60097,
+      "name": "Ancient Hypno"
+    },
+    {
+      "pokeId": 2039,
+      "looktype": 60130,
+      "name": "Furious Gyarados"
+    },
+    {
+      "pokeId": 2040,
+      "looktype": 60226,
+      "name": "Brave Mantine"
+    },
+    {
+      "pokeId": 2041,
+      "looktype": 60127,
+      "name": "Ancient Pinsir"
+    },
+    {
+      "pokeId": 2042,
+      "looktype": 60036,
+      "name": "Brave Clefable"
+    },
+    {
+      "pokeId": 2043,
+      "looktype": 60210,
+      "name": "Ancient Granbull"
+    },
+    {
+      "pokeId": 2044,
+      "looktype": 60227,
+      "name": "Furious Skarmory"
+    },
+    {
+      "pokeId": 2045,
+      "looktype": 60164,
+      "name": "Brave Noctowl"
+    },
+    {
+      "pokeId": 2046,
+      "looktype": 60018,
+      "name": "Furious Pidgeot"
+    },
+    {
+      "pokeId": 2047,
+      "looktype": 60105,
+      "name": "Ancient Marowak"
+    },
+    {
+      "pokeId": 13252,
+      "looktype": 60252,
+      "name": "Treecko"
+    },
+    {
+      "pokeId": 13253,
+      "looktype": 60253,
+      "name": "Grovyle"
+    },
+    {
+      "pokeId": 13254,
+      "looktype": 60254,
+      "name": "Sceptile"
+    },
+    {
+      "pokeId": 13255,
+      "looktype": 60255,
+      "name": "Torchic"
+    },
+    {
+      "pokeId": 13256,
+      "looktype": 60256,
+      "name": "Combusken"
+    },
+    {
+      "pokeId": 13257,
+      "looktype": 60257,
+      "name": "Blaziken"
+    },
+    {
+      "pokeId": 13258,
+      "looktype": 60258,
+      "name": "Mudkip"
+    },
+    {
+      "pokeId": 13259,
+      "looktype": 60259,
+      "name": "Marshtomp"
+    },
+    {
+      "pokeId": 13260,
+      "looktype": 60260,
+      "name": "Swampert"
+    },
+    {
+      "pokeId": 13262,
+      "looktype": 60262,
+      "name": "Mightyena"
+    },
+    {
+      "pokeId": 13263,
+      "looktype": 60263,
+      "name": "Zigzagoon"
+    },
+    {
+      "pokeId": 13264,
+      "looktype": 60264,
+      "name": "Linoone"
+    },
+    {
+      "pokeId": 13265,
+      "looktype": 60265,
+      "name": "Wurmple"
+    },
+    {
+      "pokeId": 13266,
+      "looktype": 60266,
+      "name": "Silcoon"
+    },
+    {
+      "pokeId": 13267,
+      "looktype": 60267,
+      "name": "Beautifly"
+    },
+    {
+      "pokeId": 13268,
+      "looktype": 60268,
+      "name": "Cascoon"
+    },
+    {
+      "pokeId": 13269,
+      "looktype": 60269,
+      "name": "Dustox"
+    },
+    {
+      "pokeId": 13270,
+      "looktype": 60270,
+      "name": "Lotad"
+    },
+    {
+      "pokeId": 13271,
+      "looktype": 60271,
+      "name": "Lombre"
+    },
+    {
+      "pokeId": 13272,
+      "looktype": 60272,
+      "name": "Ludicolo"
+    },
+    {
+      "pokeId": 13273,
+      "looktype": 60273,
+      "name": "Seedot"
+    },
+    {
+      "pokeId": 13274,
+      "looktype": 60274,
+      "name": "Nuzleaf"
+    },
+    {
+      "pokeId": 13275,
+      "looktype": 60275,
+      "name": "Shiftry"
+    },
+    {
+      "pokeId": 13276,
+      "looktype": 60276,
+      "name": "Taillow"
+    },
+    {
+      "pokeId": 13277,
+      "looktype": 60277,
+      "name": "Swellow"
+    },
+    {
+      "pokeId": 13278,
+      "looktype": 60278,
+      "name": "Wingull"
+    },
+    {
+      "pokeId": 13279,
+      "looktype": 60279,
+      "name": "Pelipper"
+    },
+    {
+      "pokeId": 13280,
+      "looktype": 60280,
+      "name": "Ralts"
+    },
+    {
+      "pokeId": 13281,
+      "looktype": 60281,
+      "name": "Kirlia"
+    },
+    {
+      "pokeId": 13282,
+      "looktype": 60282,
+      "name": "Gardevoir"
+    },
+    {
+      "pokeId": 13283,
+      "looktype": 60283,
+      "name": "Surskit"
+    },
+    {
+      "pokeId": 13284,
+      "looktype": 60284,
+      "name": "Masquerain"
+    },
+    {
+      "pokeId": 13285,
+      "looktype": 60285,
+      "name": "Shroomish"
+    },
+    {
+      "pokeId": 13286,
+      "looktype": 60286,
+      "name": "Breloom"
+    },
+    {
+      "pokeId": 13287,
+      "looktype": 60287,
+      "name": "Slakoth"
+    },
+    {
+      "pokeId": 13288,
+      "looktype": 60288,
+      "name": "Vigoroth"
+    },
+    {
+      "pokeId": 13290,
+      "looktype": 60290,
+      "name": "Nincada"
+    },
+    {
+      "pokeId": 13291,
+      "looktype": 60291,
+      "name": "Ninjask"
+    },
+    {
+      "pokeId": 13292,
+      "looktype": 60292,
+      "name": "Shedinja"
+    },
+    {
+      "pokeId": 13293,
+      "looktype": 60293,
+      "name": "Whismur"
+    },
+    {
+      "pokeId": 13294,
+      "looktype": 60294,
+      "name": "Loudred"
+    },
+    {
+      "pokeId": 13295,
+      "looktype": 60295,
+      "name": "Exploud"
+    },
+    {
+      "pokeId": 13296,
+      "looktype": 60296,
+      "name": "Makuhita"
+    },
+    {
+      "pokeId": 13297,
+      "looktype": 60297,
+      "name": "Hariyama"
+    },
+    {
+      "pokeId": 13298,
+      "looktype": 60298,
+      "name": "Azurill"
+    },
+    {
+      "pokeId": 13299,
+      "looktype": 60299,
+      "name": "Nosepass"
+    },
+    {
+      "pokeId": 13300,
+      "looktype": 60300,
+      "name": "Skitty"
+    },
+    {
+      "pokeId": 13301,
+      "looktype": 60301,
+      "name": "Delcatty"
+    },
+    {
+      "pokeId": 13302,
+      "looktype": 60302,
+      "name": "Sableye"
+    },
+    {
+      "pokeId": 13303,
+      "looktype": 60303,
+      "name": "Mawile"
+    },
+    {
+      "pokeId": 13304,
+      "looktype": 60304,
+      "name": "Aron"
+    },
+    {
+      "pokeId": 13305,
+      "looktype": 60305,
+      "name": "Lairon"
+    },
+    {
+      "pokeId": 13306,
+      "looktype": 60306,
+      "name": "Aggron"
+    },
+    {
+      "pokeId": 13307,
+      "looktype": 60307,
+      "name": "Meditite"
+    },
+    {
+      "pokeId": 13308,
+      "looktype": 60308,
+      "name": "Medicham"
+    },
+    {
+      "pokeId": 13309,
+      "looktype": 60309,
+      "name": "Electrike"
+    },
+    {
+      "pokeId": 13310,
+      "looktype": 60310,
+      "name": "Manectric"
+    },
+    {
+      "pokeId": 13311,
+      "looktype": 60311,
+      "name": "Plusle"
+    },
+    {
+      "pokeId": 13312,
+      "looktype": 60312,
+      "name": "Minun"
+    },
+    {
+      "pokeId": 13313,
+      "looktype": 60313,
+      "name": "Volbeat"
+    },
+    {
+      "pokeId": 13314,
+      "looktype": 60314,
+      "name": "Illumise"
+    },
+    {
+      "pokeId": 13315,
+      "looktype": 60315,
+      "name": "Roselia"
+    },
+    {
+      "pokeId": 13316,
+      "looktype": 60316,
+      "name": "Gulpin"
+    },
+    {
+      "pokeId": 13317,
+      "looktype": 60317,
+      "name": "Swalot"
+    },
+    {
+      "pokeId": 13318,
+      "looktype": 60318,
+      "name": "Carvanha"
+    },
+    {
+      "pokeId": 13319,
+      "looktype": 60319,
+      "name": "Sharpedo"
+    },
+    {
+      "pokeId": 13320,
+      "looktype": 60320,
+      "name": "Wailmer"
+    },
+    {
+      "pokeId": 13321,
+      "looktype": 60321,
+      "name": "Wailord"
+    },
+    {
+      "pokeId": 13322,
+      "looktype": 60322,
+      "name": "Numel"
+    },
+    {
+      "pokeId": 13323,
+      "looktype": 60323,
+      "name": "Camerupt"
+    },
+    {
+      "pokeId": 13324,
+      "looktype": 60324,
+      "name": "Torkoal"
+    },
+    {
+      "pokeId": 13325,
+      "looktype": 60325,
+      "name": "Spoink"
+    },
+    {
+      "pokeId": 13326,
+      "looktype": 60326,
+      "name": "Grumpig"
+    },
+    {
+      "pokeId": 13327,
+      "looktype": 60327,
+      "name": "Spinda"
+    },
+    {
+      "pokeId": 13328,
+      "looktype": 60328,
+      "name": "Trapinch"
+    },
+    {
+      "pokeId": 13329,
+      "looktype": 60329,
+      "name": "Vibrava"
+    },
+    {
+      "pokeId": 13330,
+      "looktype": 60330,
+      "name": "Flygon"
+    },
+    {
+      "pokeId": 13331,
+      "looktype": 60331,
+      "name": "Cacnea"
+    },
+    {
+      "pokeId": 13332,
+      "looktype": 60332,
+      "name": "Cacturne"
+    },
+    {
+      "pokeId": 13333,
+      "looktype": 60333,
+      "name": "Swablu"
+    },
+    {
+      "pokeId": 13334,
+      "looktype": 60334,
+      "name": "Altaria"
+    },
+    {
+      "pokeId": 13335,
+      "looktype": 60335,
+      "name": "Zangoose"
+    },
+    {
+      "pokeId": 13336,
+      "looktype": 60336,
+      "name": "Seviper"
+    },
+    {
+      "pokeId": 13337,
+      "looktype": 60337,
+      "name": "Lunatone"
+    },
+    {
+      "pokeId": 13338,
+      "looktype": 60338,
+      "name": "Solrock"
+    },
+    {
+      "pokeId": 13339,
+      "looktype": 60339,
+      "name": "Barboach"
+    },
+    {
+      "pokeId": 13340,
+      "looktype": 60340,
+      "name": "Whiscash"
+    },
+    {
+      "pokeId": 13341,
+      "looktype": 60341,
+      "name": "Corphish"
+    },
+    {
+      "pokeId": 13342,
+      "looktype": 60342,
+      "name": "Crawdaunt"
+    },
+    {
+      "pokeId": 13343,
+      "looktype": 60343,
+      "name": "Baltoy"
+    },
+    {
+      "pokeId": 13344,
+      "looktype": 60344,
+      "name": "Claydol"
+    },
+    {
+      "pokeId": 13345,
+      "looktype": 60345,
+      "name": "Lileep"
+    },
+    {
+      "pokeId": 13346,
+      "looktype": 60346,
+      "name": "Cradily"
+    },
+    {
+      "pokeId": 13347,
+      "looktype": 60347,
+      "name": "Anorith"
+    },
+    {
+      "pokeId": 13348,
+      "looktype": 60348,
+      "name": "Armaldo"
+    },
+    {
+      "pokeId": 13351,
+      "looktype": 60351,
+      "name": "Castform"
+    },
+    {
+      "pokeId": 13352,
+      "looktype": 60352,
+      "name": "Kecleon"
+    },
+    {
+      "pokeId": 13353,
+      "looktype": 60353,
+      "name": "Shuppet"
+    },
+    {
+      "pokeId": 13354,
+      "looktype": 60354,
+      "name": "Banette"
+    },
+    {
+      "pokeId": 13355,
+      "looktype": 60355,
+      "name": "Duskull"
+    },
+    {
+      "pokeId": 13356,
+      "looktype": 60356,
+      "name": "Dusclops"
+    },
+    {
+      "pokeId": 13357,
+      "looktype": 60357,
+      "name": "Tropius"
+    },
+    {
+      "pokeId": 13358,
+      "looktype": 60358,
+      "name": "Chimecho"
+    },
+    {
+      "pokeId": 13359,
+      "looktype": 60359,
+      "name": "Absol"
+    },
+    {
+      "pokeId": 13360,
+      "looktype": 60360,
+      "name": "Wynaut"
+    },
+    {
+      "pokeId": 13361,
+      "looktype": 60361,
+      "name": "Snorunt"
+    },
+    {
+      "pokeId": 13362,
+      "looktype": 60362,
+      "name": "Glalie"
+    },
+    {
+      "pokeId": 13363,
+      "looktype": 60363,
+      "name": "Spheal"
+    },
+    {
+      "pokeId": 13364,
+      "looktype": 60364,
+      "name": "Sealeo"
+    },
+    {
+      "pokeId": 13365,
+      "looktype": 60365,
+      "name": "Walrein"
+    },
+    {
+      "pokeId": 13366,
+      "looktype": 60366,
+      "name": "Clamperl"
+    },
+    {
+      "pokeId": 13367,
+      "looktype": 60367,
+      "name": "Huntail"
+    },
+    {
+      "pokeId": 13368,
+      "looktype": 60368,
+      "name": "Gorebyss"
+    },
+    {
+      "pokeId": 13369,
+      "looktype": 60369,
+      "name": "Relicanth"
+    },
+    {
+      "pokeId": 13370,
+      "looktype": 60370,
+      "name": "Luvdisc"
+    },
+    {
+      "pokeId": 13371,
+      "looktype": 60371,
+      "name": "Bagon"
+    },
+    {
+      "pokeId": 13372,
+      "looktype": 60372,
+      "name": "Shelgon"
+    },
+    {
+      "pokeId": 13374,
+      "looktype": 60374,
+      "name": "Beldum"
+    },
+    {
+      "pokeId": 13375,
+      "looktype": 60375,
+      "name": "Metang"
+    },
+    {
+      "pokeId": 13377,
+      "looktype": 60377,
+      "name": "Regirock"
+    },
+    {
+      "pokeId": 13378,
+      "looktype": 60378,
+      "name": "Regice"
+    },
+    {
+      "pokeId": 13379,
+      "looktype": 60379,
+      "name": "Registeel"
+    },
+    {
+      "pokeId": 13382,
+      "looktype": 60382,
+      "name": "Kyogre"
+    },
+    {
+      "pokeId": 13383,
+      "looktype": 60383,
+      "name": "Groudon"
+    },
+    {
+      "pokeId": 13384,
+      "looktype": 60384,
+      "name": "Rayquaza"
+    },
+    {
+      "pokeId": 13385,
+      "looktype": 60385,
+      "name": "Jirachi"
+    },
+    {
+      "pokeId": 13447,
+      "looktype": 60447,
+      "name": "Riolu"
+    },
+    {
+      "pokeId": 13448,
+      "looktype": 60448,
+      "name": "Lucario"
+    },
+    {
+      "pokeId": 14009,
+      "looktype": 60009,
+      "name": "Mega Blastoise"
+    },
+    {
+      "pokeId": 14065,
+      "looktype": 60065,
+      "name": "Mega Alakazam"
+    },
+    {
+      "pokeId": 14282,
+      "looktype": 60282,
+      "name": "Mega Gardevoir"
+    },
+    {
+      "pokeId": 14302,
+      "looktype": 60302,
+      "name": "Mega Sableye"
+    },
+    {
+      "pokeId": 14334,
+      "looktype": 60334,
+      "name": "Mega Altaria"
+    },
+    {
+      "pokeId": 14351,
+      "looktype": 60351,
+      "name": "Castform Fire"
+    },
+    {
+      "pokeId": 14448,
+      "looktype": 60448,
+      "name": "Mega Lucario"
+    }
+  ]
+}

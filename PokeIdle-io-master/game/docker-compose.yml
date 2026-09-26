@@ -1,0 +1,66 @@
+# Infra do jogo. `docker compose up -d` e o servidor já acha tudo pelo .env padrão.
+#
+# ### Por que todo `ports` começa com `127.0.0.1:`
+#
+# Sem o prefixo, o Docker publica em `0.0.0.0` — e publicar não é a mesma coisa que "liberar no
+# firewall": o Docker escreve as próprias regras na chain `DOCKER`, consultada ANTES do `ufw`
+# para tráfego com DNAT. O resultado é um `ufw status` dizendo "só 22/80/443" com o Postgres e
+# o Redis atendendo o mundo inteiro assim mesmo. Foi exatamente o que aconteceu em produção:
+# um `redis-cli -h <ip do servidor> -p 6380 PING` de qualquer lugar respondia `PONG`, sem senha,
+# no barramento em que o jogo publica as mensagens do sim.
+#
+# O jogo conecta em `localhost` nos dois (`DATABASE_URL`, `REDIS_URL`) e o processo roda no
+# HOST, fora do Docker — então prender ao loopback não muda nada para ele. O `pg_dump` do
+# backup também não sente: ele roda `docker compose exec` DENTRO do container.
+#
+# Isto é a primeira tranca, não a única: senha continua valendo, porque o dia em que alguém
+# acrescentar um container ao mesmo compose, ele enxerga estas portas pela rede interna.
+#
+# ### Por que os DOIS loopbacks, e não só o 127.0.0.1
+#
+# `DATABASE_URL` e `REDIS_URL` dizem `localhost`, e no Ubuntu o `/etc/hosts` resolve esse nome
+# para 127.0.0.1 E para ::1. Prendendo só ao IPv4, bastaria o `dns.lookup` do Node preferir o
+# ::1 uma vez para o jogo inteiro não achar mais o banco — e isso é o tipo de coisa que se
+# descobre com o servidor fora do ar. Publicar nos dois custa uma linha e tira a pergunta.
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: poke
+      # ATENÇÃO: esta variável só vale na PRIMEIRA subida, quando o volume está vazio — é o
+      # `initdb` que a lê. Num banco que já existe, mudar esta linha não muda senha nenhuma;
+      # quem muda é `ALTER USER ... WITH PASSWORD` dentro do container, e o `DATABASE_URL` do
+      # `.env` tem de acompanhar na mesma janela.
+      POSTGRES_PASSWORD: ${POSTGRES_SENHA:-poke}
+      POSTGRES_DB: pokeidle
+    ports:
+      - '127.0.0.1:5433:5432'
+      - '[::1]:5433:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U poke -d pokeidle']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    # appendonly ligado só para o estado quente sobreviver a um restart do container;
+    # a fonte de verdade é o Postgres, então perder o Redis não perde progresso.
+    command: ['redis-server', '--appendonly', 'yes', '--maxmemory-policy', 'noeviction']
+    ports:
+      - '127.0.0.1:6380:6379'
+      - '[::1]:6380:6379'
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  pgdata:
+  redisdata:

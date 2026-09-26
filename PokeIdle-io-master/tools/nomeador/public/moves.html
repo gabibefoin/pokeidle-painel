@@ -1,0 +1,159 @@
+<!doctype html>
+
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Moves — Sprite Lab</title>
+
+<link rel="icon" href="/favicon.png" type="image/png">
+
+<link rel="stylesheet" href="nomeador.css">
+
+<link rel="stylesheet" href="moves.css">
+
+</head>
+
+<body>
+
+
+
+<header class="topbar">
+
+  <div class="brand">
+
+    <span class="dot"></span>
+
+    <div>
+
+      <h1>Moves</h1>
+
+      <p>efeitos visuais de golpe — jogo, biblioteca Trampar e TM Elemental</p>
+
+    </div>
+
+  </div>
+
+  <nav class="lab-nav">
+
+    <a href="/">Nomeador</a>
+
+    <a href="/pokedex.html">Pokédex Lab</a>
+
+    <a href="/pokedex-oficial.html">Oficial</a>
+
+    <a href="/spawns.html">Spawns</a>
+
+    <a href="/mapas.html">Mapas</a>
+
+    <a href="/casas.html">Casas</a>
+    <a href="/ginasios.html">Ginásios</a>
+
+    <a href="/economia.html">Economia</a>
+
+    <a href="/moves.html" class="on">Moves</a>
+
+  </nav>
+
+  <div class="progresso">
+
+    <div class="counts" id="counts">carregando…</div>
+
+  </div>
+
+</header>
+
+
+
+<section class="mv-tabs" id="tabs">
+
+  <button type="button" class="mv-tab on" data-tab="jogo">Jogo (80)</button>
+
+  <button type="button" class="mv-tab" data-tab="trampar">Biblioteca Trampar</button>
+
+  <button type="button" class="mv-tab" data-tab="tm">TM Elemental</button>
+
+</section>
+
+
+
+<section class="toolbar mv-toolbar" id="toolbar-jogo">
+
+  <div class="chips" id="categorias">
+
+    <button type="button" class="chip on" data-cat="all">todos</button>
+
+    <button type="button" class="chip" data-cat="tipo">tipos (18)</button>
+
+    <button type="button" class="chip" data-cat="golpe">golpes nomeados</button>
+
+    <button type="button" class="chip" data-cat="fx">FX genéricos</button>
+
+    <button type="button" class="chip" data-cat="outro">outros</button>
+
+  </div>
+
+  <input type="search" id="q" placeholder="buscar efeito, arquivo ou golpe…" autocomplete="off">
+
+  <label class="check"><input type="checkbox" id="anim" checked> animar</label>
+
+</section>
+
+
+
+<section class="toolbar mv-toolbar hidden" id="toolbar-trampar">
+
+  <input type="search" id="q-trampar" placeholder="buscar efeito Trampar (id ou arquivo)…" autocomplete="off">
+
+  <label class="check"><input type="checkbox" id="anim-trampar" checked> animar</label>
+
+  <div class="mv-pag" id="pag-trampar"></div>
+
+</section>
+
+
+
+<section class="toolbar mv-toolbar hidden" id="toolbar-tm">
+
+  <p class="mv-tm-hint">
+
+    Escolha um efeito da biblioteca Trampar para cada TM Elemental (golpe <b>2800</b> de dano, CD 60s, área 3×3).
+
+    Ao salvar, os PNGs vão para <code>public/data/effects/tm-elemental/</code> e passam a valer no combate.
+
+  </p>
+
+  <input type="search" id="q-tm" placeholder="filtrar opções dos selects…" autocomplete="off">
+
+  <button type="button" class="btn-save" id="salvar-tm">Salvar TM Elemental</button>
+
+  <span class="mv-status" id="status-tm"></span>
+
+</section>
+
+
+
+<main id="grid" class="mv-grid"></main>
+
+<main id="grid-trampar" class="mv-grid hidden"></main>
+
+<main id="grid-tm" class="mv-grid-tm hidden"></main>
+
+
+
+<div id="vazio" class="empty hidden">nenhum efeito encontrado</div>
+
+<div id="vazio-trampar" class="empty hidden">nenhum efeito Trampar encontrado</div>
+
+
+
+<script type="module" src="moves.js?v=3"></script>
+
+</body>
+
+</html>
+
