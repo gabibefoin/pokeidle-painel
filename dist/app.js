@@ -23,7 +23,8 @@ const dexState = {
   huntLvlMax: null,
   f4Filter: '',
   f2Filter: '',
-  resistFilter: '',
+  r05Filter: '',
+  r025Filter: '',
   imuneFilter: '',
   xpBoost: false,
 
@@ -208,14 +209,13 @@ function applyFiltersAndRender() {
         if (f2Filter === 'has_any') { if (!(s.f2_types || []).length) return false; }
         else { if (!(s.f2_types || []).includes(f2Filter)) return false; }
       }
-      if (resistFilter) {
-        if (resistFilter === 'has_any') {
-          if (!(s.r05_types || []).length && !(s.r025_types || []).length) return false;
-        } else {
-          const has05 = (s.r05_types || []).includes(resistFilter);
-          const has025 = (s.r025_types || []).includes(resistFilter);
-          if (!has05 && !has025) return false;
-        }
+      if (r05Filter) {
+        if (r05Filter === 'has_any') { if (!(s.r05_types || []).length) return false; }
+        else { if (!(s.r05_types || []).includes(r05Filter)) return false; }
+      }
+      if (r025Filter) {
+        if (r025Filter === 'has_any') { if (!(s.r025_types || []).length) return false; }
+        else { if (!(s.r025_types || []).includes(r025Filter)) return false; }
       }
       if (imuneFilter) {
         if (imuneFilter === 'has_any') { if (!(s.imune_types || []).length) return false; }
@@ -521,7 +521,8 @@ function filterBar(mode) {
         </div>
         <select class="control dropdown" id="filter-f4">${typeMatchupOpts('Fraqueza 4x')}</select>
         <select class="control dropdown" id="filter-f2">${typeMatchupOpts('Fraqueza 2x')}</select>
-        <select class="control dropdown" id="filter-resist">${typeMatchupOpts('Resistência')}</select>
+        <select class="control dropdown" id="filter-r05">${typeMatchupOpts('Resistência 0,5x')}</select>
+        <select class="control dropdown" id="filter-r025">${typeMatchupOpts('Resistência 0,25x')}</select>
         <select class="control dropdown" id="filter-imune">${typeMatchupOpts('Imunidade')}</select>
         <button class="control check ${dexState.xpBoost ? 'selected' : ''}" id="dex-xp-boost">⚡ XP Boost (+50%)</button>
       </div>
@@ -797,7 +798,8 @@ function attachDexListeners(mode) {
   setVal('dex-regiao', dexState.regiao);
   setVal('filter-f4', dexState.f4Filter);
   setVal('filter-f2', dexState.f2Filter);
-  setVal('filter-resist', dexState.resistFilter);
+  setVal('filter-r05', dexState.r05Filter);
+  setVal('filter-r025', dexState.r025Filter);
   setVal('filter-imune', dexState.imuneFilter);
 
   // Seletor visual de tipos — clique em tag seleciona tipo 1 (roxo) ou tipo 2 (amarelo)
@@ -887,8 +889,12 @@ function attachDexListeners(mode) {
     dexState.f2Filter = e.target.value;
     applyFiltersAndRender();
   });
-  document.getElementById('filter-resist')?.addEventListener('change', e => {
-    dexState.resistFilter = e.target.value;
+  document.getElementById('filter-r05')?.addEventListener('change', e => {
+    dexState.r05Filter = e.target.value;
+    applyFiltersAndRender();
+  });
+  document.getElementById('filter-r025')?.addEventListener('change', e => {
+    dexState.r025Filter = e.target.value;
     applyFiltersAndRender();
   });
   document.getElementById('filter-imune')?.addEventListener('change', e => {
