@@ -687,9 +687,12 @@ function colToggleHTML() {
     </label>`;
   }).join('');
 
-  return `<div class="cols-toggle-container">
-    <button class="control" id="cols-toggle-btn" style="display:inline-flex;align-items:center;gap:6px;">
-      <span>👁️</span> Colunas
+  return `<div class="cols-toggle-container" style="margin-left:auto;flex-shrink:0;">
+    <button class="control" id="cols-toggle-btn" title="Exibir / Ocultar Colunas" aria-label="Exibir Colunas" style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;min-width:36px;padding:0;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;color:#d5d7dc;">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+        <circle cx="12" cy="12" r="3"></circle>
+      </svg>
     </button>
     <div class="cols-popover" id="cols-popover">
       <div class="cols-popover-title">
@@ -712,10 +715,10 @@ function filterBar(mode) {
 
   if (mode === 'shiny') {
     return `<div class="filter-groups" style="display:flex;flex-direction:column;gap:10px;width:100%;">
-      <div class="filter-row-top" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;width:100%;">
+      <div class="filter-row-top" style="display:flex;flex-wrap:nowrap;align-items:center;gap:6px;width:100%;overflow-x:auto;">
         ${globalFilters}
         <button class="control ${dexState.apenasShiny ? 'selected' : ''}" id="dex-apenas-shiny">✨ Apenas Shiny</button>
-        <div class="ball-group" style="display:inline-flex;align-items:center;gap:6px;">
+        <div class="ball-group" style="display:inline-flex;align-items:center;gap:4px;flex-shrink:0;">
           <span class="group-label">POKÉBOLA</span>
           <button class="control ball ${dexState.ball === 'poke' ? 'selected' : ''}" data-ball="poke">Poké Ball (x1)</button>
           <button class="control ball ${dexState.ball === 'great' ? 'selected' : ''}" data-ball="great">Great Ball</button>
@@ -723,7 +726,7 @@ function filterBar(mode) {
           <button class="control ball ${dexState.ball === 'ultra' ? 'selected' : ''}" data-ball="ultra">Ultra Ball</button>
           <button class="control ball ${dexState.ball === 'beast' ? 'selected' : ''}" data-ball="beast">Beast Ball</button>
         </div>
-        <div class="boost-options" style="display:inline-flex;align-items:center;gap:6px;">
+        <div class="boost-options" style="display:inline-flex;align-items:center;gap:4px;flex-shrink:0;">
           <span class="group-label">BOOSTS ATIVOS</span>
           <button class="control check ${dexState.captureBoost ? 'selected' : ''}" id="dex-boost-capture">Capture Boost</button>
           <button class="control check ${dexState.shinyLure ? 'selected' : ''}" id="dex-boost-lure">Shiny Lure</button>
@@ -738,9 +741,9 @@ function filterBar(mode) {
 
   if (mode === 'hunt') {
     return `<div class="filter-groups" style="display:flex;flex-direction:column;gap:10px;width:100%;">
-      <div class="filter-row-top" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;width:100%;">
+      <div class="filter-row-top" style="display:flex;flex-wrap:nowrap;align-items:center;gap:6px;width:100%;overflow-x:auto;">
         ${globalFilters}
-        <div style="display:inline-flex;align-items:center;gap:4px;">
+        <div style="display:inline-flex;align-items:center;gap:4px;flex-shrink:0;">
           <input class="control" id="hunt-nv-min" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.huntLvlMin ?? ''}">
           <span style="color:#858b95;font-size:11px;">a</span>
           <input class="control" id="hunt-nv-max" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.huntLvlMax ?? ''}">
@@ -760,9 +763,9 @@ function filterBar(mode) {
 
   if (mode === 'loot') {
     return `<div class="filter-groups" style="display:flex;flex-direction:column;gap:10px;width:100%;">
-      <div class="filter-row-top" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;width:100%;">
+      <div class="filter-row-top" style="display:flex;flex-wrap:nowrap;align-items:center;gap:6px;width:100%;overflow-x:auto;">
         ${globalFilters}
-        <div style="display:inline-flex;align-items:center;gap:4px;">
+        <div style="display:inline-flex;align-items:center;gap:4px;flex-shrink:0;">
           <input class="control" id="gold-nv-min" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.goldLvlMin ?? ''}">
           <span style="color:#858b95;font-size:11px;">a</span>
           <input class="control" id="gold-nv-max" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.goldLvlMax ?? ''}">
@@ -779,9 +782,9 @@ function filterBar(mode) {
 
   if (mode === 'strong') {
     return `<div class="filter-groups" style="display:flex;flex-direction:column;gap:10px;width:100%;">
-      <div class="filter-row-top" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;width:100%;">
+      <div class="filter-row-top" style="display:flex;flex-wrap:nowrap;align-items:center;gap:6px;width:100%;overflow-x:auto;">
         ${globalFilters}
-        <div style="display:inline-flex;align-items:center;gap:4px;">
+        <div style="display:inline-flex;align-items:center;gap:4px;flex-shrink:0;">
           <input class="control" id="fortes-nv-min" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.fortesLvlMin ?? ''}">
           <span style="color:#858b95;font-size:11px;">a</span>
           <input class="control" id="fortes-nv-max" placeholder="Nv M" type="number" style="width:70px;" value="${dexState.fortesLvlMax ?? ''}">
