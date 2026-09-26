@@ -30,7 +30,15 @@
   white-space: nowrap !important;
 }
 
-/* Barra de Filtros alinhada em linha única */
+/* Barra de Filtros e Espaçamento */
+.tabbar {
+  margin-bottom: 8px !important;
+}
+
+.filter-groups {
+  margin-top: 14px !important;
+}
+
 .filter-row-top {
   display: flex !important;
   flex-wrap: nowrap !important;
@@ -38,15 +46,27 @@
   gap: 6px !important;
   width: 100% !important;
   overflow-x: auto !important;
-  padding-bottom: 2px !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  padding: 4px 0 !important;
 }
+
+.filter-row-top::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
 .boost-options, .ball-group, .filter-group {
   display: inline-flex !important;
   align-items: center !important;
   gap: 4px !important;
   height: 36px !important;
   flex-shrink: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
+
 .group-label {
   display: inline-flex !important;
   align-items: center !important;
@@ -57,8 +77,10 @@
   letter-spacing: .04em !important;
   white-space: nowrap !important;
   margin: 0 4px 0 6px !important;
-  line-height: 1 !important;
+  line-height: 36px !important;
+  vertical-align: middle !important;
 }
+
 .cols-toggle-container {
   margin-left: auto !important;
   flex-shrink: 0 !important;
