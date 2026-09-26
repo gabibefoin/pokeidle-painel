@@ -231,7 +231,18 @@ async function loadPokemonData() {
       if (item.shiny && item.shiny.file) spriteMetadataMap.set(item.shiny.file, item.shiny);
     });
 
-    dexState.allSpecies = res.filter(p => p.is_cacavel);
+    const speciesMap = new Map();
+    (res || []).filter(p => p.is_cacavel).forEach(p => {
+      const key = String(p.dex) + '_' + String(p.nome).toLowerCase();
+      const existing = speciesMap.get(key);
+      if (!existing) {
+        speciesMap.set(key, p);
+      } else if (p.registro === 'clone_hunt' && existing.registro !== 'clone_hunt') {
+        speciesMap.set(key, p);
+      }
+    });
+
+    dexState.allSpecies = Array.from(speciesMap.values());
     dexState.allSpecies.forEach(p => {
       p.tipos = [p.tipo1, p.tipo2].filter(Boolean);
     });
