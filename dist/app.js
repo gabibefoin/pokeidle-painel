@@ -1174,30 +1174,43 @@ function attachDexListeners(mode) {
   const popover = document.getElementById('cols-popover');
   if (toggleBtn && popover) {
     toggleBtn.addEventListener('click', e => {
+      e.preventDefault();
       e.stopPropagation();
       popover.classList.toggle('open');
     });
+
     popover.addEventListener('click', e => {
       e.stopPropagation();
-      const chk = e.target.closest('[data-col-toggle]');
-      if (chk) {
-        const colId = chk.dataset.colToggle;
-        if (chk.checked) {
-          dexState.hiddenCols = dexState.hiddenCols.filter(c => c !== colId);
-        } else {
-          if (!dexState.hiddenCols.includes(colId)) dexState.hiddenCols.push(colId);
-        }
-        document.querySelectorAll(`.data-table [data-col="${colId}"]`).forEach(el => {
-          el.classList.toggle('col-hidden', !chk.checked);
-        });
-      }
-      if (e.target.id === 'cols-reset-btn') {
+      if (e.target.id === 'cols-reset-btn' || e.target.closest('#cols-reset-btn')) {
         dexState.hiddenCols = [];
-        renderDex();
+        popover.querySelectorAll('input[type="checkbox"]').forEach(input => {
+          input.checked = true;
+        });
+        document.querySelectorAll('.data-table [data-col]').forEach(el => {
+          el.classList.remove('col-hidden');
+        });
+        applyFiltersAndRender();
       }
     });
-    document.addEventListener('click', () => {
-      popover.classList.remove('open');
+
+    popover.addEventListener('change', e => {
+      const input = e.target.closest('input[data-col-toggle]');
+      if (!input) return;
+      const colId = input.dataset.colToggle;
+      if (input.checked) {
+        dexState.hiddenCols = dexState.hiddenCols.filter(c => c !== colId);
+      } else {
+        if (!dexState.hiddenCols.includes(colId)) dexState.hiddenCols.push(colId);
+      }
+      document.querySelectorAll(`.data-table [data-col="${colId}"]`).forEach(el => {
+        el.classList.toggle('col-hidden', !input.checked);
+      });
+    });
+
+    document.addEventListener('click', e => {
+      if (!popover.contains(e.target) && e.target !== toggleBtn && !toggleBtn.contains(e.target)) {
+        popover.classList.remove('open');
+      }
     });
   }
 
