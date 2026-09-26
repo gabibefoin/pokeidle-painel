@@ -319,6 +319,15 @@ function renderResistBadges(r) {
   return `<span class="type-row">${b05}${b025}</span>`;
 }
 
+function renderStatMeter(val, maxVal, suffix = '', fillColor = '#83ebbc') {
+  const num = parseFloat(val) || 0;
+  if (num <= 0) return '—';
+  const pct = Math.min(100, Math.max(0, (num / maxVal) * 100));
+  const fillWidth = Math.round((pct / 100) * 42);
+  const formatted = num.toLocaleString('pt-BR') + suffix;
+  return `<div><span>${formatted}</span><div style="width:42px;height:4px;margin-top:3px;position:relative;overflow:hidden;"><i style="position:absolute;left:0;top:0;width:42px;border-bottom:2px dashed #2f343f;display:block;"></i><i style="position:absolute;left:0;top:0;width:${fillWidth}px;border-bottom:2px dashed ${fillColor};display:block;"></i></div></div>`;
+}
+
 function renderTable(xpBoost, lootBoost) {
   const tbody = document.querySelector('.data-table tbody');
   if (!tbody) return;
@@ -347,10 +356,9 @@ function renderTable(xpBoost, lootBoost) {
         ${cell('nome', mon(r))}
         ${cell('tipo', `<span class="type-row">${r.tipos.map(type).join('')}</span>`)}
         ${cell('hunt', huntText)}
-        ${cell('captura', `${bd.pct}<i class="meter"></i>`, 'stat-positive')}
+        ${cell('captura', renderStatMeter(bd.numPct, 100, '%', '#30d9d3'), 'stat-positive')}
         ${cell('derrotas', bd.derrotas)}
         ${cell('shiny', shinyText)}
-        ${cell('acoes', `<button class="detail" onclick="openDetailsModal('${r.dex}')">Detalhes</button>`)}
       </tr>`;
     }
 
@@ -366,11 +374,10 @@ function renderTable(xpBoost, lootBoost) {
         ${cell('f2', renderTypeBadges(r.f2_types), 'col-matchup')}
         ${cell('resist', renderResistBadges(r), 'col-matchup')}
         ${cell('imune', renderTypeBadges(r.imune_types), 'col-matchup')}
-        ${cell('def', r.def_num || r.def || '—')}
-        ${cell('spdef', r.spdef_num || r.spdef || '—')}
-        ${cell('hp', r.hp_num || r.hp || '—')}
+        ${cell('def', renderStatMeter(r.def_num || r.def, 230))}
+        ${cell('spdef', renderStatMeter(r.spdef_num || r.spdef, 230))}
+        ${cell('hp', renderStatMeter(r.hp_num || r.hp, 255))}
         ${cell('xp', `${xpText}${xpBoost ? ' <span class="badge update">+50%</span>' : ''}`, 'stat-green')}
-        ${cell('acoes', `<button class="detail" onclick="openDetailsModal('${r.dex}')">Detalhes</button>`)}
       </tr>`;
     }
 
@@ -391,7 +398,6 @@ function renderTable(xpBoost, lootBoost) {
         ${cell('hunt', huntText)}
         ${cell('gold', goldNum > 0 ? goldNum.toLocaleString('pt-BR') + ' Gold' : '—', 'stat-gold')}
         ${cell('drops', dropsHtml)}
-        ${cell('acoes', `<button class="detail" onclick="openDetailsModal('${r.dex}')">Detalhes</button>`)}
       </tr>`;
     }
 
@@ -402,15 +408,14 @@ function renderTable(xpBoost, lootBoost) {
         ${cell('nome', mon(r))}
         ${cell('tipo', `<span class="type-row">${r.tipos.map(type).join('')}</span>`)}
         ${cell('hunt', huntText)}
-        ${cell('bst', r.bst_num || r.total_stats || '—', 'stat-positive')}
-        ${cell('atk', r.atk_num || r.atk || '—')}
-        ${cell('def', r.def_num || r.def || '—')}
-        ${cell('spatk', r.spatk_num || r.spatk || '—')}
-        ${cell('spdef', r.spdef_num || r.spdef || '—')}
-        ${cell('spd', r.spd_num || r.spd || '—')}
+        ${cell('bst', renderStatMeter(r.bst_num || r.total_stats, 670, '', '#f4af25'), 'stat-positive')}
+        ${cell('atk', renderStatMeter(r.atk_num || r.atk, 165))}
+        ${cell('def', renderStatMeter(r.def_num || r.def, 230))}
+        ${cell('spatk', renderStatMeter(r.spatk_num || r.spatk, 145))}
+        ${cell('spdef', renderStatMeter(r.spdef_num || r.spdef, 230))}
+        ${cell('spd', renderStatMeter(r.spd_num || r.spd, 160))}
         ${cell('estagio', `<span class="badge update">Estágio ${r.estagio_num || r.estagio_evolutivo || 1}</span>`)}
         ${cell('evolucao', evoText)}
-        ${cell('acoes', `<button class="detail" onclick="openDetailsModal('${r.dex}')">Detalhes</button>`)}
       </tr>`;
     }
 
@@ -465,7 +470,6 @@ function tableHeader(mode) {
     return `<tr>
       ${th('#ID', 'dex')}${th('POKÉMON', 'nome')}${th('TIPOS', 'tipo')}${th('HUNT', 'hunt')}
       ${th('% CAPTURA', 'captura')}${th('DERROTAS (MÉDIA)', 'derrotas')}${th('SHINY (1 EM)', 'shiny')}
-      ${thNoSort('AÇÕES', 'acoes')}
     </tr>`;
   }
   if (mode === 'hunt') {
@@ -474,21 +478,19 @@ function tableHeader(mode) {
       ${th('FRAQUEZA 4X', 'f4', '', 'col-matchup')}${th('FRAQUEZA 2X', 'f2', '', 'col-matchup')}
       ${th('RESISTÊNCIA', 'resist', '', 'col-matchup')}${th('IMUNE', 'imune', '', 'col-matchup')}
       ${th('DEF', 'def')}${th('SP.DEF', 'spdef')}${th('HP', 'hp')}${th('XP', 'xp')}
-      ${thNoSort('AÇÕES', 'acoes')}
     </tr>`;
   }
   if (mode === 'loot') {
     return `<tr>
       ${th('#ID', 'dex')}${th('POKÉMON', 'nome')}${th('TIPOS', 'tipo')}${th('HUNT / LOCAL', 'hunt')}
       ${th('GOLD NPC', 'gold')}${th('DROPS & CHANCES', 'drops')}
-      ${thNoSort('AÇÕES', 'acoes')}
     </tr>`;
   }
   if (mode === 'strong') {
     return `<tr>
       ${th('#ID', 'dex')}${th('POKÉMON', 'nome')}${th('TIPOS', 'tipo')}${th('HUNT / LOCAL', 'hunt')}
       ${th('BST TOTAL', 'bst')}${th('ATK', 'atk')}${th('DEF', 'def')}${th('SP.ATK', 'spatk')}${th('SP.DEF', 'spdef')}${th('SPEED', 'spd')}
-      ${th('ESTÁGIO', 'estagio')}${thNoSort('EVOLUÇÃO', 'evolucao')}${thNoSort('AÇÕES', 'acoes')}
+      ${th('ESTÁGIO', 'estagio')}${thNoSort('EVOLUÇÃO', 'evolucao')}
     </tr>`;
   }
   return '<tr></tr>';
