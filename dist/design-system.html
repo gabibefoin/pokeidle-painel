@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokéIdle Design System — Portal Oficial</title>
+  <link rel="stylesheet" href="css/design-system.css?v=20260919_3">
+  <link rel="stylesheet" href="css/styles.css?v=20260919_3">
+  <style>
+    /* Estilos específicos para o catálogo do Design System */
+    .ds-page {
+      width: 100%;
+      max-width: 1760px;
+      margin: 0 auto;
+      padding: 32px 32px 80px;
+      box-sizing: border-box;
+    }
+
+    .ds-header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--border-default);
+      padding-bottom: 20px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .ds-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .ds-brand img {
+      height: 38px;
+    }
+
+    .ds-theme-toggle-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-surface-elevated);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-default);
+    }
+
+    .ds-section {
+      margin-bottom: 48px;
+    }
+
+    .ds-section-title {
+      font-family: var(--font-game);
+      font-size: 18px;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 4px solid var(--purple-primary);
+      padding-left: 10px;
+    }
+
+    .ds-section-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .ds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .ds-color-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      font-size: 12px;
+    }
+
+    .ds-color-swatch {
+      height: 64px;
+      width: 100%;
+    }
+
+    .ds-color-info {
+      padding: 10px 12px;
+    }
+
+    .ds-color-name {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .ds-color-token {
+      color: var(--text-muted);
+      font-family: monospace;
+      font-size: 11px;
+    }
+
+    .ds-component-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .ds-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .ds-label-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .ds-label-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .ds-asset-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 12px;
+    }
+
+    .ds-asset-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 12px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-secondary);
+    }
+
+    .ds-asset-card:hover {
+      border-color: var(--border-purple);
+    }
+
+    .ds-asset-card img {
+      max-height: 40px;
+      max-width: 40px;
+      object-fit: contain;
+    }
+
+    /* Simulação de foco para demonstração de estados */
+    .ds-btn.state-focus {
+      outline: 2px solid var(--border-purple);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="ds-page">
+    
+    <!-- HEADER DO DESIGN SYSTEM -->
+    <header class="ds-header-top">
+      <div class="ds-brand">
+        <img src="assets/site/assets/ui/menu-pokedex.png" alt="Pokédex Oficial" class="icon-asset">
+        <div>
+          <h1 class="ds-h1">PokéIdle Design System</h1>
+          <p class="ds-body-sm">Identidade PokéIdle Oficial · Usabilidade Web Moderna (80/20) · Tokens Dark & Light</p>
+        </div>
+      </div>
+      <div class="ds-theme-toggle-bar">
+        <span class="ds-label">Tema:</span>
+        <button id="btn-theme-dark" class="ds-btn ds-btn-sm ds-btn-primary" onclick="setTheme('dark')">Dark (Azul Noturno)</button>
+        <button id="btn-theme-light" class="ds-btn ds-btn-sm ds-btn-secondary" onclick="setTheme('light')">Light (Creme, Laranja e Roxo)</button>
+        <a href="/#pokedex" class="ds-btn ds-btn-sm ds-btn-secondary" style="margin-left: 12px;">Ir para Pokédex</a>
+      </div>
+    </header>
+
+    <!-- 1. CORES DARK & LIGHT -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">1. Paleta de Cores & Superfícies (Tokens)</h2>
+      <p class="ds-section-desc">Superfícies de leitura em azul noturno no dark mode e creme no light mode; comandos usam laranja ou roxo com contraste reforçado.</p>
+      
+      <div class="ds-grid">
+        <div class="ds-color-card">
+          <div class="ds-color-swatch" style="background: var(--bg-canvas); border-bottom: 1px solid var(--border-default);"></div>
+          <div class="ds-color-info">
+            <div class="ds-color-name">Canvas / Fundo</div>
+            <div class="ds-color-token">--bg-canvas</div>
+          </div>
+        </div>
+
+        <div class="ds-color-card">
+          <div class="ds-color-swatch" style="background: var(--bg-surface); border-bottom: 1px solid var(--border-default);"></div>
+          <div class="ds-color-info">
+            <div class="ds-color-name">Surface (Azul Profundo)</div>
+            <div class="ds-color-token">--bg-surface</div>
+          </div>
+        </div>
+
+        <div class="ds-color-card">
+          <div class="ds-color-swatch" style="background: var(--bg-surface-elevated); border-bottom: 1px solid var(--border-default);"></div>
+          <div class="ds-color-info">
+            <div class="ds-color-name">Surface Elevated</div>
+            <div class="ds-color-token">--bg-surface-elevated</div>
+          </div>
+        </div>
+
+        <div class="ds-color-card">
+          <div class="ds-color-swatch" style="background: var(--bg-cavity); border-bottom: 1px solid var(--border-default);"></div>
+          <div class="ds-color-info">
+            <div class="ds-color-name">Cavidade / Vão</div>
+            <div class="ds-color-token">--bg-cavity</div>
+          </div>
+        </div>
+
+        <div class="ds-color-card">
+          <div class="ds-color-swatch" style="background: var(--purple-primary);"></div>
+          <div class="ds-color-info">
+            <div class="ds-color-name">Roxo Primário (Ação)</div>
+            <div class="ds-color-token">--purple-primary</div>
+          </div>
+        </div>
+
+        <div class="ds-color-card">
+          <div class="ds-color-swatch" style="background: var(--purple-active);"></div>
+          <div class="ds-color-info">
+            <div class="ds-color-name">Roxo Ativo / Seleção</div>
+            <div class="ds-color-token">--purple-active</div>
+          </div>
+        </div>
+
+        <div class="ds-color-card">
+          <div class="ds-color-swatch" style="background: var(--pink-accent);"></div>
+          <div class="ds-color-info">
+            <div class="ds-color-name">Rosa Destaque (Shiny)</div>
+            <div class="ds-color-token">--pink-accent</div>
+          </div>
+        </div>
+
+        <div class="ds-color-card">
+          <div class="ds-color-swatch" style="background: var(--gold-accent);"></div>
+          <div class="ds-color-info">
+            <div class="ds-color-name">Dourado (Gold/Moedas)</div>
+            <div class="ds-color-token">--gold-accent</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. TIPOGRAFIA & TABULAR NUMBERS -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">2. Tipografia & Números Tabulares</h2>
+      <p class="ds-section-desc">Fonte legível web (Inter/Segoe UI) para tabelas e dados, Tahoma Bold para títulos oficiais e tabs.</p>
+      
+      <div class="ds-component-box">
+        <div>
+          <span class="ds-label-sub">Heading 1 — Tahoma Bold (Título de Tela / Hero)</span>
+          <h1 class="ds-h1">POKÉDEX NACIONAL · 870 POKÉMON</h1>
+        </div>
+        <div>
+          <span class="ds-label-sub">Heading 2 — Tahoma Bold (Subtítulo / Seção)</span>
+          <h2 class="ds-h2">TAXAS DE CAPTURA & SPAWNS DE HUNT</h2>
+        </div>
+        <div>
+          <span class="ds-label-sub">Heading 3 — Inter Bold (Títulos de Card / Tabela)</span>
+          <h3 class="ds-h3">Métricas de Rendimento por Hora</h3>
+        </div>
+        <div>
+          <span class="ds-label-sub">Heading 4 — Inter Semi-Bold (Campos e Labels)</span>
+          <h4 class="ds-h4">Filtro Avançado de Fraquezas Elementais</h4>
+        </div>
+        <div>
+          <span class="ds-label-sub">Body Regular & Body Small</span>
+          <p class="ds-body">Os valores calculados usam a fórmula exata do PokéIdle. Consulte as chances com Pokéball, Greatball, Superball e Ultraball.</p>
+          <p class="ds-body-sm" style="margin-top: 4px;">Informações sincronizadas com o banco de dados oficial do servidor.</p>
+        </div>
+        <div>
+          <span class="ds-label-sub">Números Tabulares (font-variant-numeric: tabular-nums) — Perfeito alinhamento vertical</span>
+          <div class="ds-row" style="font-size: 16px; font-weight: 700;">
+            <span class="tabular-nums">151.350.689 XP</span> ·
+            <span class="tabular-nums cell-gold">2.467.871.436 Gold</span> ·
+            <span class="tabular-nums cell-highlight">1 : 4.096 Shiny</span> ·
+            <span class="tabular-nums">98.45% Catch</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. BOTÕES & ESTADOS -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">3. Botões & Todos os Estados Interativos</h2>
+      <p class="ds-section-desc">Estados: default, hover, active/pressed, selected, focus e disabled.</p>
+      
+      <div class="ds-component-box">
+        <span class="ds-label-sub">Botão Primário (Laranja no Light, Vinho no Dark)</span>
+        <div class="ds-row">
+          <div class="ds-label-group">
+            <span class="ds-caption">Default</span>
+            <button class="ds-btn ds-btn-primary">
+              <img src="assets/site/assets/ui/menu-pokedex.png" class="ds-asset-icon ds-asset-icon-sm" alt="">
+              Filtrar Pokédex
+            </button>
+          </div>
+
+          <div class="ds-label-group">
+            <span class="ds-caption">Hover (Luminosidade)</span>
+            <button class="ds-btn ds-btn-primary" style="background: var(--button-primary-hover);">
+              <img src="assets/site/assets/ui/menu-pokedex.png" class="ds-asset-icon ds-asset-icon-sm" alt="">
+              Filtrar Pokédex
+            </button>
+          </div>
+
+          <div class="ds-label-group">
+            <span class="ds-caption">Active / Pressed</span>
+            <button class="ds-btn ds-btn-primary" style="transform: translateY(1px); background: var(--button-primary-active);">
+              <img src="assets/site/assets/ui/menu-pokedex.png" class="ds-asset-icon ds-asset-icon-sm" alt="">
+              Filtrar Pokédex
+            </button>
+          </div>
+
+          <div class="ds-label-group">
+            <span class="ds-caption">Focus</span>
+            <button class="ds-btn ds-btn-primary state-focus">
+              <img src="assets/site/assets/ui/menu-pokedex.png" class="ds-asset-icon ds-asset-icon-sm" alt="">
+              Filtrar Pokédex
+            </button>
+          </div>
+
+          <div class="ds-label-group">
+            <span class="ds-caption">Disabled</span>
+            <button class="ds-btn ds-btn-primary" disabled>
+              <img src="assets/site/assets/ui/menu-pokedex.png" class="ds-asset-icon ds-asset-icon-sm" alt="">
+              Filtrar Pokédex
+            </button>
+          </div>
+        </div>
+
+        <span class="ds-label-sub" style="margin-top: 10px;">Botão Secundário (Roxo no Light, Vinho Profundo no Dark)</span>
+        <div class="ds-row">
+          <div class="ds-label-group">
+            <span class="ds-caption">Default</span>
+            <button class="ds-btn ds-btn-secondary">Exportar CSV</button>
+          </div>
+          <div class="ds-label-group">
+            <span class="ds-caption">Hover</span>
+            <button class="ds-btn ds-btn-secondary" style="border-color: var(--border-strong);">Exportar CSV</button>
+          </div>
+          <div class="ds-label-group">
+            <span class="ds-caption">Compacto (Sm)</span>
+            <button class="ds-btn ds-btn-secondary ds-btn-sm">Limpar Filtros</button>
+          </div>
+          <div class="ds-label-group">
+            <span class="ds-caption">Disabled</span>
+            <button class="ds-btn ds-btn-secondary" disabled>Indisponível</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ABAS DE NAVEGAÇÃO -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">4. Abas de Navegação (Tabs Oficiais com Assets)</h2>
+      <p class="ds-section-desc">Roxo e rosa para o estado ativo selecionado. Ícones transparentes oficiais sem emojis.</p>
+      
+      <div class="ds-component-box">
+        <div class="ds-tabs">
+          <button class="ds-tab-btn active">
+            <img src="assets/site/assets/ui/ball-poke.png" class="ds-asset-icon ds-asset-icon-sm" alt="">
+            Captura e Shiny
+            <span class="ds-tab-badge">870</span>
+          </button>
+          <button class="ds-tab-btn">
+            <img src="assets/site/assets/ui/menu-mapa.png" class="ds-asset-icon ds-asset-icon-sm" alt="">
+            Hunting & Spawns
+          </button>
+          <button class="ds-tab-btn">
+            <img src="assets/site/assets/ui/moeda-ouro.png" class="ds-asset-icon ds-asset-icon-sm" alt="">
+            Gold e Loot
+          </button>
+          <button class="ds-tab-btn">
+            <img src="assets/site/assets/ui/trofeu-1.png" class="ds-asset-icon ds-asset-icon-sm" alt="">
+            Pokémons Fortes
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FORM CONTROLS: INPUTS, BUSCA, SELECT, SWITCH -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">5. Controles de Formulário (Inputs, Busca, Selects, Switches)</h2>
+      <p class="ds-section-desc">Design limpo de cavidade escura, sem bordas pesadas duplicadas. Foco com anel roxo nítido.</p>
+      
+      <div class="ds-component-box">
+        <div class="ds-row" style="align-items: flex-end;">
+          <div class="ds-field" style="flex: 2; min-width: 240px;">
+            <label class="ds-label">Busca Rápida de Pokémon</label>
+            <div class="ds-search-box">
+              <img src="assets/site/assets/ui/menu-pokepedia.png" class="ds-search-icon ds-asset-icon ds-asset-icon-sm" alt="">
+              <input type="text" class="ds-search-input" placeholder="Buscar por nome, #ID ou golpe...">
+            </div>
+          </div>
+
+          <div class="ds-field" style="flex: 1; min-width: 150px;">
+            <label class="ds-label">Região / Geração</label>
+            <select class="ds-select">
+              <option>Todas as Regiões</option>
+              <option>Kanto (Geração 1)</option>
+              <option>Johto (Geração 2)</option>
+              <option>Hoenn (Geração 3)</option>
+              <option>Sinnoh (Geração 4)</option>
+            </select>
+          </div>
+
+          <div class="ds-field" style="flex: 1; min-width: 150px;">
+            <label class="ds-label">Pokébola Padrão</label>
+            <select class="ds-select">
+              <option>Pokéball (x1.0)</option>
+              <option>Greatball (x1.5)</option>
+              <option>Superball (x2.0)</option>
+              <option>Ultraball (x2.5)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="ds-row">
+          <label class="ds-switch">
+            <input type="checkbox" checked>
+            <span>
+              <img src="assets/site/assets/loja/catch.png" class="ds-asset-icon ds-asset-icon-sm" alt="">
+              Capture Boost (+10%)
+            </span>
+          </label>
+
+          <label class="ds-switch">
+            <input type="checkbox">
+            <span>
+              <img src="assets/site/assets/loja/shinysecretlure.png" class="ds-asset-icon ds-asset-icon-sm" alt="">
+              Isca Shiny (+25%)
+            </span>
+          </label>
+
+          <label class="ds-switch">
+            <input type="checkbox">
+            <span>Ocultar sem Hunt no Mapa</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. BADGES & BADGES DE TIPOS -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">6. Badges & Tipos Oficiais (Inglês Oficial do PokéIdle)</h2>
+      <p class="ds-section-desc">Identificação de tipos e raridades sem emojis.</p>
+      
+      <div class="ds-component-box">
+        <div class="ds-row">
+          <span class="type-badge normal">NORMAL</span>
+          <span class="type-badge fire">FIRE</span>
+          <span class="type-badge water">WATER</span>
+          <span class="type-badge grass">GRASS</span>
+          <span class="type-badge electric">ELECTRIC</span>
+          <span class="type-badge ice">ICE</span>
+          <span class="type-badge fighting">FIGHTING</span>
+          <span class="type-badge poison">POISON</span>
+          <span class="type-badge ground">GROUND</span>
+          <span class="type-badge flying">FLYING</span>
+          <span class="type-badge psychic">PSYCHIC</span>
+          <span class="type-badge bug">BUG</span>
+          <span class="type-badge rock">ROCK</span>
+          <span class="type-badge ghost">GHOST</span>
+          <span class="type-badge dragon">DRAGON</span>
+          <span class="type-badge dark">DARK</span>
+          <span class="type-badge steel">STEEL</span>
+          <span class="type-badge fairy">FAIRY</span>
+        </div>
+
+        <div class="ds-row" style="margin-top: 10px;">
+          <span class="ds-badge ds-badge-purple">SHINY 1:4096</span>
+          <span class="ds-badge ds-badge-gold">TROPHY #1</span>
+          <span class="ds-badge ds-badge-subtle">KANTO · GEN 1</span>
+          <span class="ds-badge ds-badge-subtle">HUNT LV 45</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. DATA TABLE (DEMONSTRAÇÃO REAL) -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">7. Data Table de Alta Densidade (A Principal Validação)</h2>
+      <p class="ds-section-desc">Sem molduras de madeira nas células, cabeçalho sticky, separadores horizontais discretos, 100% de largura.</p>
+      
+      <div class="ds-table-container">
+        <table class="ds-table">
+          <thead>
+            <tr>
+              <th style="width: 70px;">#ID</th>
+              <th>Pokémon</th>
+              <th>Tipos</th>
+              <th>Hunt / Local</th>
+              <th class="num-col sortable sorted-desc">Catch Rate</th>
+              <th class="num-col">Média Derrotas</th>
+              <th class="num-col">Shiny Odds</th>
+              <th class="center-col">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tabular-nums cell-muted">#001</td>
+              <td>
+                <div class="cell-name">
+                  <img src="assets/sprites-pokemon/normal/1-bulbasaur.png" class="ds-poke-sprite-sm" alt="Bulbasaur">
+                  Bulbasaur
+                </div>
+              </td>
+              <td>
+                <span class="type-badge grass">GRASS</span>
+                <span class="type-badge poison">POISON</span>
+              </td>
+              <td>Floresta de Kanto (Lv 5-12)</td>
+              <td class="num-col tabular-nums cell-highlight">45.0%</td>
+              <td class="num-col tabular-nums">2.2 derrotas</td>
+              <td class="num-col tabular-nums cell-muted">1 : 4.096</td>
+              <td class="center-col">
+                <button class="ds-btn ds-btn-sm ds-btn-secondary">Detalhes</button>
+              </td>
+            </tr>
+
+            <!-- Linha Selecionada para demonstração -->
+            <tr class="selected">
+              <td class="tabular-nums cell-muted">#006</td>
+              <td>
+                <div class="cell-name">
+                  <img src="assets/sprites-pokemon/normal/6-charizard.png" class="ds-poke-sprite-sm" alt="Charizard">
+                  <strong>Charizard</strong>
+                  <span class="ds-badge ds-badge-purple" style="font-size: 9px; padding: 1px 4px;">Ativo</span>
+                </div>
+              </td>
+              <td>
+                <span class="type-badge fire">FIRE</span>
+                <span class="type-badge flying">FLYING</span>
+              </td>
+              <td>Vulcão Cinnabar (Lv 70-85)</td>
+              <td class="num-col tabular-nums cell-highlight">11.8%</td>
+              <td class="num-col tabular-nums">8.5 derrotas</td>
+              <td class="num-col tabular-nums cell-muted">1 : 4.096</td>
+              <td class="center-col">
+                <button class="ds-btn ds-btn-sm ds-btn-primary">Detalhes</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="tabular-nums cell-muted">#009</td>
+              <td>
+                <div class="cell-name">
+                  <img src="assets/sprites-pokemon/normal/9-blastoise.png" class="ds-poke-sprite-sm" alt="Blastoise">
+                  Blastoise
+                </div>
+              </td>
+              <td>
+                <span class="type-badge water">WATER</span>
+              </td>
+              <td>Ilhas Espuma (Lv 70-85)</td>
+              <td class="num-col tabular-nums cell-highlight">11.8%</td>
+              <td class="num-col tabular-nums">8.5 derrotas</td>
+              <td class="num-col tabular-nums cell-muted">1 : 4.096</td>
+              <td class="center-col">
+                <button class="ds-btn ds-btn-sm ds-btn-secondary">Detalhes</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="tabular-nums cell-muted">#094</td>
+              <td>
+                <div class="cell-name">
+                  <img src="assets/sprites-pokemon/normal/94-gengar.png" class="ds-poke-sprite-sm" alt="Gengar">
+                  Gengar
+                </div>
+              </td>
+              <td>
+                <span class="type-badge ghost">GHOST</span>
+                <span class="type-badge poison">POISON</span>
+              </td>
+              <td>Torre Pokémon (Lv 60-75)</td>
+              <td class="num-col tabular-nums cell-highlight">11.8%</td>
+              <td class="num-col tabular-nums">8.5 derrotas</td>
+              <td class="num-col tabular-nums cell-muted">1 : 4.096</td>
+              <td class="center-col">
+                <button class="ds-btn ds-btn-sm ds-btn-secondary">Detalhes</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Paginação da Tabela -->
+        <div class="ds-pagination">
+          <span>Mostrando <strong>1 - 4</strong> de <strong>870</strong> Pokémon</span>
+          <div class="ds-page-buttons">
+            <button class="ds-page-btn" disabled>«</button>
+            <button class="ds-page-btn active">1</button>
+            <button class="ds-page-btn">2</button>
+            <button class="ds-page-btn">3</button>
+            <button class="ds-page-btn">...</button>
+            <button class="ds-page-btn">87</button>
+            <button class="ds-page-btn">»</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. GALERIA DE ASSETS OFICIAIS DO JOGO (100% PNG OFICIAIS) -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">8. Galeria de Assets Oficiais do PokéIdle</h2>
+      <p class="ds-section-desc">Todos os ícones e sprites utilizados são assets extraídos do próprio jogo. Regra absoluta: sem emojis.</p>
+      
+      <h3 class="ds-h4" style="margin-bottom: 12px;">Pokébolas & Captura</h3>
+      <div class="ds-asset-grid" style="margin-bottom: 24px;">
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/ui/ball-poke.png" alt="Pokéball">
+          <span>Pokéball</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/ui/ball-great.png" alt="Greatball">
+          <span>Greatball</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/ui/ball-super.png" alt="Superball">
+          <span>Superball</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/ui/ball-ultra.png" alt="Ultraball">
+          <span>Ultraball</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/ui/ball-beast.png" alt="Beastball">
+          <span>Beastball</span>
+        </div>
+      </div>
+
+      <h3 class="ds-h4" style="margin-bottom: 12px;">Navegação & UI</h3>
+      <div class="ds-asset-grid" style="margin-bottom: 24px;">
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/ui/menu-pokedex.png" alt="Pokédex">
+          <span>Pokédex</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/ui/menu-mapa.png" alt="Mapa">
+          <span>Mapa</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/ui/menu-market.png" alt="Market">
+          <span>Market</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/ui/menu-ranking.png" alt="Ranking">
+          <span>Ranking</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/ui/menu-pvp.png" alt="PvP">
+          <span>PvP</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/ui/menu-bosses.png" alt="Bosses">
+          <span>Bosses</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/ui/menu-comunidade.png" alt="Comunidade">
+          <span>Comunidade</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/ui/moeda-ouro.png" alt="Gold">
+          <span>Gold Coin</span>
+        </div>
+      </div>
+
+      <h3 class="ds-h4" style="margin-bottom: 12px;">Loja, Boosts & Troféus</h3>
+      <div class="ds-asset-grid">
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/loja/catch.png" alt="Catch Boost">
+          <span>Catch Boost</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/loja/shinysecretlure.png" alt="Shiny Lure">
+          <span>Shiny Lure</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/loja/exp.png" alt="Exp Boost">
+          <span>Exp Boost</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/loja/loot.png" alt="Loot Boost">
+          <span>Loot Boost</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/ui/trofeu-1.png" alt="1º Lugar">
+          <span>Troféu 1º</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/ui/trofeu-2.png" alt="2º Lugar">
+          <span>Troféu 2º</span>
+        </div>
+        <div class="ds-asset-card">
+          <img src="assets/site/assets/ui/trofeu-3.png" alt="3º Lugar">
+          <span>Troféu 3º</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. ESTADOS: EMPTY & LOADING -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">9. Empty States & Loading States</h2>
+      <p class="ds-section-desc">Feedback visual limpo e sem poluição quando não há resultados ou durante carregamentos.</p>
+      
+      <div class="ds-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="ds-card ds-empty-state">
+          <img src="assets/site/assets/ui/menu-pokedex.png" class="ds-empty-icon" alt="">
+          <div class="ds-empty-title">Nenhum Pokémon Encontrado</div>
+          <p class="ds-body-sm">Tente ajustar seus filtros de tipo, região ou termo de busca.</p>
+          <button class="ds-btn ds-btn-secondary ds-btn-sm" style="margin-top: 14px;">Redefinir Filtros</button>
+        </div>
+
+        <div class="ds-card ds-empty-state">
+          <div class="ds-spinner"></div>
+          <div class="ds-empty-title" style="margin-top: 14px;">Sincronizando Pokédex...</div>
+          <p class="ds-body-sm">Carregando taxas de captura, hunts e multiplicadores elementais.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      document.getElementById('btn-theme-dark').className = theme === 'dark' ? 'ds-btn ds-btn-sm ds-btn-primary' : 'ds-btn ds-btn-sm ds-btn-secondary';
+      document.getElementById('btn-theme-light').className = theme === 'light' ? 'ds-btn ds-btn-sm ds-btn-primary' : 'ds-btn ds-btn-sm ds-btn-secondary';
+      try {
+        localStorage.setItem('pokeidle_portal_theme', theme);
+      } catch (e) {}
+    }
+
+    // Carregar tema salvo
+    try {
+      const saved = localStorage.getItem('pokeidle_portal_theme');
+      if (saved) setTheme(saved);
+    } catch (e) {}
+  </script>
+</body>
+</html>

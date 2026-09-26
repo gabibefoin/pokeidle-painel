@@ -1,0 +1,1365 @@
+/* ==========================================================================
+   POKÉIDLE DESIGN SYSTEM (DS)
+   "PokéIdle na Identidade. Web App na Usabilidade."
+   80% Estrutura/UX de Web Application — 20% Linguagem Visual de Game UI
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Tahoma:wght@700&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. TOKENS & VARIÁVEIS (DARK & LIGHT)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Atlas Design System Tokens (Dark Mode) */
+  --ink:        #eef1fb;
+  --ink-soft:   #b7c0e0;
+  --muted:      #7f8ab0;
+  --line:       #262f5c;
+  --paper:      #0b0f28;
+  --surface:    #141a3a;
+  --accent:     #3f6bff;
+  --accent-2:   #57a6ff;
+  --accent-soft:#1b2454;
+  --accent-ink: #9fc2ff;
+  --gold:       #e0a83a;
+  --gold-ink:   #f2c874;
+  --tier-s:     #e0a83a;
+  --tier-a:     #3f6bff;
+  --tier-b:     #57a6ff;
+  --tier-c:     #7f8ab0;
+  --ok-bg:      #123a24;
+  --ok-ink:     #4ade80;
+  --draft-bg:   #3a2a12;
+  --draft-ink:  #e0a83a;
+
+  /* Canvas & Superfícies */
+  --bg-canvas: #0b0f28;
+  --bg-surface: #141a3a;
+  --bg-surface-elevated: #1a224a;
+  --bg-surface-subtle: #10142c;
+  --bg-cavity: #0a0d22;
+
+  /* Bordas */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-default: #262f5c;
+  --border-strong: rgba(232, 216, 204, 0.42);
+  --border-wood: #401820;
+  --border-purple: #5a3038;
+  --border-glow-purple: rgba(90, 48, 56, 0.55);
+
+  /* Texto & Legibilidade */
+  --text-primary: #eef1fb;
+  --text-secondary: #b7c0e0;
+  --text-muted: #7f8ab0;
+  --text-inverse: #0b0f28;
+
+  /* Acento PokéIdle: Roxo Primário */
+  --purple-primary: #5a3038;
+  --purple-hover: #6b3b45;
+  --purple-active: #401820;
+  --purple-bg-subtle: rgba(90, 48, 56, 0.24);
+  --purple-bg-active: rgba(90, 48, 56, 0.42);
+
+  --button-primary: #5a3038;
+  --button-primary-hover: #6b3b45;
+  --button-primary-active: #401820;
+  --button-secondary: #401820;
+  --button-secondary-hover: #5a3038;
+  --button-text: #ffffff;
+
+  /* Acentos Oficiais: Rosa & Dourado */
+  --pink-accent: #ffa7d7;
+  --pink-subtle: rgba(255, 167, 215, 0.14);
+  --gold-accent: #f5b041;
+  --gold-glow: #ffe07a;
+  --gold-subtle: rgba(245, 176, 65, 0.14);
+
+  /* Estados de Sucesso, Aviso e Perigo */
+  --success: #34d399;
+  --success-subtle: rgba(52, 211, 153, 0.12);
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --danger-subtle: rgba(248, 113, 113, 0.12);
+
+  /* Fontes */
+  --font-read: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Sora', 'Inter', -apple-system, sans-serif;
+  --font-game: 'Tahoma', sans-serif;
+
+  /* Header "Dynamic Island" — sempre azul escuro independente do tema */
+  --header-from:    #060c2e;
+  --header-mid:     #132fa8;
+  --header-to:      #1c53e8;
+  --header-shadow:  rgba(19, 47, 168, 0.45);
+  --header-gold-line: rgba(224, 168, 58, 0.5);
+  --header-text:    #c9d6f7;
+  --header-text-on: #ffffff;
+  --header-dot:     rgba(255, 255, 255, 0.09);
+  --header-nav-bg:  rgba(255, 255, 255, 0.04);
+  --header-nav-bdr: rgba(255, 255, 255, 0.12);
+  --header-nav-active: linear-gradient(135deg, #2a5df0, #1e8ef5);
+  --header-search-bg:  rgba(255, 255, 255, 0.10);
+  --header-search-bdr: rgba(255, 255, 255, 0.16);
+  --header-avatar-ring: #e0a83a;
+
+  /* Sombras Sutis (Sem exagero SaaS) */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+
+  /* Geometria: Radius controlado (sem border-radius 24px genérico) */
+  --radius-xs: 3px;
+  --radius-sm: 5px;
+  --radius-md: 7px;
+  --radius-lg: 10px;
+
+  /* Transição suave */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. LIGHT MODE (Creme Quente / Terracota Suave / Ameixa / Roxo)
+   -------------------------------------------------------------------------- */
+[data-theme="light"], body.modo-claro, html[data-theme="light"] {
+  /* Atlas Design System Tokens (Light Mode - Companion) */
+  --ink:        #241c2e;
+  --ink-soft:   #544b60;
+  --muted:      #8a8071;
+  --line:       #eadfc7;
+  --paper:      #faf5e9;
+  --surface:    #ffffff;
+  --accent:     #1c3fd6;
+  --accent-2:   #1e8ef5;
+  --accent-soft:#e3edfd;
+  --accent-ink: #132fa8;
+  --gold:       #e0a83a;
+  --gold-ink:   #8a5c0f;
+  --tier-s:     #e0a83a;
+  --tier-a:     #1c3fd6;
+  --tier-b:     #1e8ef5;
+  --tier-c:     #8a8071;
+  --ok-bg:      #e6f7ed;
+  --ok-ink:     #137333;
+  --draft-bg:   #fef7e0;
+  --draft-ink:  #b06000;
+
+  --bg-canvas: #faf5e9;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-surface-subtle: #faf5e9;
+  --bg-cavity: #f4ecdc;
+
+  --border-subtle: rgba(36, 28, 46, 0.08);
+  --border-default: #eadfc7;
+  --border-strong: #d5c8ad;
+  --border-wood: #722c3f;
+  --border-purple: #ba5ad1;
+  --border-glow-purple: rgba(186, 90, 209, 0.35);
+
+  --text-primary: #241c2e;
+  --text-secondary: #544b60;
+  --text-muted: #8a8071;
+  --text-inverse: #ffffff;
+
+  --purple-primary: #ba5ad1;
+  --purple-hover: #c970dd;
+  --purple-active: #9349aa;
+  --purple-bg-subtle: rgba(186, 90, 209, 0.12);
+  --purple-bg-active: rgba(186, 90, 209, 0.22);
+
+  --button-primary: #df824c;
+  --button-primary-hover: #eb9867;
+  --button-primary-active: #b85f38;
+  --button-secondary: #ba5ad1;
+  --button-secondary-hover: #c970dd;
+  --button-text: #290d19;
+
+  --pink-accent: #c02673;
+  --pink-subtle: rgba(192, 38, 115, 0.12);
+  --gold-accent: #b45309;
+  --gold-glow: #d97706;
+  --gold-subtle: rgba(180, 83, 9, 0.12);
+
+  --success: #059669;
+  --success-subtle: rgba(5, 150, 105, 0.12);
+  --warning: #d97706;
+  --danger: #dc2626;
+  --danger-subtle: rgba(220, 38, 38, 0.12);
+
+  --shadow-sm: 0 1px 2px rgba(72, 14, 30, 0.08);
+  --shadow-md: 0 4px 12px rgba(72, 14, 30, 0.12);
+  --shadow-lg: 0 8px 24px rgba(72, 14, 30, 0.18);
+}
+
+/* --------------------------------------------------------------------------
+   3. RESET & BASE
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-read);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: var(--bg-canvas);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Números tabulares para tabelas, odds, XP, moedas */
+.tabular-nums, td, .stat-value, .metric, .num {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* Imagens e Sprites */
+img.pixelated, .sprite, .icon-asset {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+/* --------------------------------------------------------------------------
+   4. TIPOGRAFIA
+   -------------------------------------------------------------------------- */
+.ds-h1 {
+  font-family: var(--font-game);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.ds-h2 {
+  font-family: var(--font-game);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.ds-h3 {
+  font-family: var(--font-read);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.ds-h4 {
+  font-family: var(--font-read);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.ds-body {
+  font-family: var(--font-read);
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.ds-body-sm {
+  font-family: var(--font-read);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.ds-caption {
+  font-family: var(--font-read);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   5. BOTÕES (POKÉIDLE ACTIONS)
+   -------------------------------------------------------------------------- */
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 14px;
+  font-family: var(--font-read);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-default);
+  background: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+  user-select: none;
+}
+
+.ds-btn:hover {
+  background: var(--bg-surface);
+  border-color: var(--border-strong);
+}
+
+.ds-btn:active {
+  transform: translateY(1px);
+}
+
+.ds-btn:focus-visible {
+  outline: 2px solid var(--border-purple);
+  outline-offset: 2px;
+}
+
+.ds-btn:disabled, .ds-btn[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Ação principal: terracota no claro, vinho físico no escuro. */
+.ds-btn-primary {
+  background: linear-gradient(180deg, var(--button-primary-hover) 0%, var(--button-primary) 100%);
+  border: 1px solid var(--button-primary-active);
+  color: var(--button-text);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), var(--shadow-sm);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.ds-btn-primary:hover {
+  background: linear-gradient(180deg, var(--button-primary-hover) 0%, var(--button-primary) 100%);
+  border-color: var(--button-primary);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), var(--shadow-sm);
+  color: var(--button-text);
+}
+
+.ds-btn-primary:active {
+  background: var(--button-primary-active);
+  transform: translateY(1px);
+}
+
+/* Botão Secundário / Sutil */
+.ds-btn-secondary {
+  background: var(--button-secondary);
+  border: 1px solid var(--button-primary-active);
+  color: var(--button-text);
+}
+
+.ds-btn-secondary:hover {
+  background: var(--button-secondary-hover);
+  border-color: var(--button-primary);
+  color: var(--text-primary);
+}
+
+/* Botão Compacto */
+.ds-btn-sm {
+  padding: 5px 9px;
+  font-size: 12px;
+  gap: 5px;
+}
+
+/* --------------------------------------------------------------------------
+   6. ABAS DE NAVEGAÇÃO & SUBTABS
+   -------------------------------------------------------------------------- */
+.ds-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px solid var(--border-default);
+  padding-bottom: 0;
+  overflow-x: auto;
+}
+
+.ds-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 15px;
+  font-family: var(--font-read);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+  border-top-left-radius: var(--radius-sm);
+  border-top-right-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.ds-tab-btn:hover {
+  color: var(--text-primary);
+  background: var(--purple-bg-subtle);
+}
+
+.ds-tab-btn.active {
+  color: #ffffff;
+  background: linear-gradient(180deg, var(--purple-primary) 0%, var(--purple-active) 100%);
+  border-bottom: 2px solid var(--pink-accent);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+[data-theme="light"] .ds-tab-btn.active {
+  color: #ffffff;
+  background: linear-gradient(180deg, var(--purple-primary) 0%, var(--purple-active) 100%);
+  border-bottom: 2px solid #ffffff;
+}
+
+.ds-tab-btn .ds-tab-badge {
+  padding: 1px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--text-secondary);
+}
+
+.ds-tab-btn.active .ds-tab-badge {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   7. INPUTS, SEARCH & SELECTS
+   -------------------------------------------------------------------------- */
+.ds-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ds-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.ds-input, .ds-select {
+  height: 36px;
+  padding: 0 11px;
+  font-family: var(--font-read);
+  font-size: 13px;
+  color: var(--text-primary);
+  background-color: var(--bg-cavity);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  width: 100%;
+}
+
+.ds-input:focus, .ds-select:focus {
+  border-color: var(--border-purple);
+  box-shadow: 0 0 0 2px var(--border-glow-purple);
+}
+
+.ds-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Barra de busca integrada */
+.ds-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-cavity);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.ds-search-box:focus-within {
+  border-color: var(--border-purple);
+  box-shadow: 0 0 0 2px var(--border-glow-purple);
+}
+
+.ds-search-icon {
+  position: absolute;
+  left: 10px;
+  width: 16px;
+  height: 16px;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.ds-search-input {
+  height: 36px;
+  width: 100%;
+  padding-left: 33px;
+  padding-right: 28px;
+  font-family: var(--font-read);
+  font-size: 13px;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.ds-search-clear {
+  position: absolute;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px;
+  display: none;
+}
+
+.ds-search-box.has-text .ds-search-clear {
+  display: block;
+}
+
+/* Checkbox Tátil (Interruptor PokéIdle) */
+.ds-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.ds-switch input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 38px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: var(--bg-cavity);
+  border: 1px solid var(--border-default);
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.ds-switch input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.ds-switch input[type="checkbox"]:checked {
+  background-color: var(--purple-active);
+  border-color: var(--border-purple);
+}
+
+.ds-switch input[type="checkbox"]:checked::after {
+  transform: translateX(18px);
+  background: #ffffff;
+  box-shadow: 0 0 5px var(--border-purple);
+}
+
+/* --------------------------------------------------------------------------
+   8. BADGES & TIPOS POKÉMON
+   -------------------------------------------------------------------------- */
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: var(--radius-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.ds-badge-subtle {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+}
+
+.ds-badge-purple {
+  background: var(--purple-bg-subtle);
+  border: 1px solid var(--border-purple);
+  color: var(--pink-accent);
+}
+
+.ds-badge-gold {
+  background: var(--gold-subtle);
+  border: 1px solid var(--gold-accent);
+  color: var(--gold-accent);
+}
+
+/* Tipos Oficiais (Inglês oficial do jogo) */
+.type-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 3px;
+  color: #ffffff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  white-space: nowrap;
+}
+
+.type-badge.normal   { background: #929da3; }
+.type-badge.fire     { background: #e76137; }
+.type-badge.water    { background: #3b82f6; }
+.type-badge.grass    { background: #3fa129; }
+.type-badge.electric { background: #eab308; color: #160815; text-shadow: none; }
+.type-badge.ice      { background: #38bdf8; color: #160815; text-shadow: none; }
+.type-badge.fighting { background: #b91c1c; }
+.type-badge.poison   { background: #9333ea; }
+.type-badge.ground   { background: #c2883e; }
+.type-badge.flying   { background: #60a5fa; }
+.type-badge.psychic  { background: #ec4899; }
+.type-badge.bug      { background: #84cc16; color: #160815; text-shadow: none; }
+.type-badge.rock     { background: #78716c; }
+.type-badge.ghost    { background: #6b21a8; }
+.type-badge.dragon   { background: #4f46e5; }
+.type-badge.dark     { background: #3f3f46; }
+.type-badge.steel    { background: #64748b; }
+.type-badge.fairy    { background: #f472b6; }
+
+/* --------------------------------------------------------------------------
+   9. DATA TABLE (ALTA DENSIDADE, MODERNA & CONFORTÁVEL)
+   -------------------------------------------------------------------------- */
+.ds-table-container {
+  width: 100%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  position: relative;
+}
+
+.ds-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.ds-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg-surface-elevated);
+  border-bottom: 2px solid var(--border-default);
+}
+
+.ds-table th {
+  padding: 10px 12px;
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  user-select: none;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.ds-table th.sortable {
+  cursor: pointer;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.ds-table th.sortable:hover {
+  color: var(--text-primary);
+  background: var(--purple-bg-subtle);
+}
+
+.ds-table th.sorted-asc::after {
+  content: " ▲";
+  color: var(--purple-primary);
+}
+
+.ds-table th.sorted-desc::after {
+  content: " ▼";
+  color: var(--purple-primary);
+}
+
+.ds-table tbody tr {
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background-color var(--transition-fast);
+}
+
+.ds-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.ds-table tbody tr:hover {
+  background-color: var(--bg-surface-elevated);
+}
+
+.ds-table tbody tr.selected {
+  background-color: var(--purple-bg-active);
+  border-color: var(--border-purple);
+}
+
+.ds-table td {
+  padding: 8px 12px;
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+/* Céluas com dados numéricos alinhadas à direita */
+.ds-table th.num-col, .ds-table td.num-col {
+  text-align: right;
+}
+
+/* Céluas centralizadas */
+.ds-table th.center-col, .ds-table td.center-col {
+  text-align: center;
+}
+
+/* Destaques semânticos de tabela */
+.ds-table .cell-name {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.ds-table .cell-highlight {
+  color: var(--pink-accent);
+  font-weight: 600;
+}
+
+.ds-table .cell-gold {
+  color: var(--gold-accent);
+  font-weight: 600;
+}
+
+.ds-table .cell-muted {
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   10. CARDS & SUPERFÍCIES
+   -------------------------------------------------------------------------- */
+.ds-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.ds-card:hover {
+  border-color: var(--border-strong);
+}
+
+.ds-card-elevated {
+  background: var(--bg-surface-elevated);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Card com hover glow (usa --glow definido inline por card) */
+.ds-card-hover {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 14px;
+  padding: 18px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.ds-card-hover:hover {
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px -6px var(--glow, rgba(90, 48, 56, 0.35));
+}
+
+/* --------------------------------------------------------------------------
+   15. TIPOGRAFIA DISPLAY (Sora) + PADRÕES DE PÁGINA
+   -------------------------------------------------------------------------- */
+
+/* Eyebrow label acima de títulos de seção */
+.ds-eyebrow {
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pink-accent);
+}
+
+[data-theme="light"] .ds-eyebrow {
+  color: var(--purple-primary);
+}
+
+/* Título de página principal com Sora */
+.ds-page-title {
+  font-family: var(--font-display);
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin: 2px 0 0;
+}
+
+.ds-page-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Header de página com eyebrow + title */
+.ds-page-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
+.ds-page-header-left { display: flex; flex-direction: column; gap: 2px; }
+
+/* Feature banner (gradiente azul com CTA dourado) */
+.ds-feature-banner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 18px;
+  padding: 22px 26px;
+  margin-bottom: 24px;
+  background: linear-gradient(120deg, #050a30, var(--header-mid) 45%, var(--header-to) 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.ds-feature-banner::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.16), transparent 70%);
+  pointer-events: none;
+}
+
+.ds-feature-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1.3px, transparent 1.3px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.ds-feature-ic {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.ds-feature-ic img { width: 30px; height: 30px; object-fit: contain; }
+
+.ds-feature-body { flex: 1; position: relative; z-index: 1; }
+.ds-feature-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #f3c86a; }
+.ds-feature-title { font-family: var(--font-display); font-size: 19px; font-weight: 800; margin: 2px 0 4px; }
+.ds-feature-desc { font-size: 12.5px; color: rgba(255,255,255,0.8); max-width: 520px; margin: 0; }
+
+.ds-feature-cta {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #5c3a05;
+  padding: 12px 22px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  letter-spacing: 0.01em;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  background: linear-gradient(180deg, #ffe07a, #e8a800);
+  box-shadow: 0 6px 16px -4px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.5);
+  border: none;
+  white-space: nowrap;
+}
+
+/* Pill de categoria colorida */
+.ds-pill {
+  display: inline-block;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 8px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* Chip de filtro (Todos / Iniciante / Avançado etc.) */
+.ds-chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: 11px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.ds-chip:hover {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.ds-chip.active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--header-mid), var(--header-to));
+  border-color: transparent;
+  box-shadow: 0 3px 10px rgba(63, 107, 255, 0.35);
+}
+
+/* Rail lateral de navegação (Wiki, Admin) */
+.ds-rail {
+  width: 230px;
+  flex-shrink: 0;
+  padding: 20px 12px;
+  overflow-y: auto;
+  border-right: 1px solid var(--border-default);
+}
+
+.ds-rail-title {
+  font-family: var(--font-display);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  padding: 0 10px 10px;
+}
+
+.ds-rail-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  margin-bottom: 3px;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  user-select: none;
+}
+
+.ds-rail-item:hover {
+  background: var(--bg-surface-elevated);
+  color: var(--text-primary);
+}
+
+.ds-rail-item.active {
+  color: #fff;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--header-mid), var(--header-to));
+  box-shadow: 0 3px 10px rgba(63, 107, 255, 0.30);
+}
+
+.ds-rail-ic {
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  background: var(--bg-cavity);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.ds-rail-ic img { width: 14px; height: 14px; object-fit: contain; }
+.ds-rail-item.active .ds-rail-ic { background: rgba(255, 255, 255, 0.25); }
+
+/* Textura de pontos sutil (overlay) */
+.ds-dot-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.045) 1.4px, transparent 1.4px);
+  background-size: 22px 22px;
+  z-index: 0;
+}
+
+/* Shell com rail + main (Wiki, Admin) */
+.ds-shell {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.ds-shell-main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 26px 36px 36px;
+}
+
+/* Grid de cards de conteúdo */
+.ds-content-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.ds-content-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.ds-content-grid-4 { grid-template-columns: repeat(4, 1fr); }
+.ds-content-grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+@media (max-width: 1200px) {
+  .ds-content-grid-4 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .ds-content-grid-3, .ds-content-grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Card de guia/artigo com thumb de cor */
+.ds-guide-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.ds-guide-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px -6px var(--glow, rgba(90, 48, 56, 0.35));
+}
+
+.ds-guide-thumb {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ds-guide-thumb img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.ds-guide-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.ds-guide-title {
+  font-family: var(--font-display);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.ds-guide-desc {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+.ds-guide-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: auto;
+}
+
+/* Layout split para calculadoras */
+.ds-calc-layout {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  min-height: 0;
+}
+
+.ds-calc-panel {
+  width: 440px;
+  flex-shrink: 0;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+}
+
+.ds-calc-results {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+.ds-calc-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-default);
+  margin-bottom: 4px;
+}
+
+.ds-boost-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ds-boost-row:last-child { border-bottom: none; }
+
+.ds-progress-bar {
+  height: 12px;
+  background: var(--bg-cavity);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-default);
+}
+
+.ds-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--header-mid), var(--header-to));
+  border-radius: 8px;
+  transition: width 0.4s ease;
+}
+
+.ds-stat-big b {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  display: block;
+  color: var(--pink-accent);
+}
+
+.ds-stat-big span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   11. ASSETS & SPRITES HELPERS
+   -------------------------------------------------------------------------- */
+.ds-asset-icon {
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+.ds-asset-icon-sm { width: 16px; height: 16px; }
+.ds-asset-icon-md { width: 20px; height: 20px; }
+.ds-asset-icon-lg { width: 28px; height: 28px; }
+
+.ds-poke-sprite-sm {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  object-position: 0 0;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+.ds-poke-sprite-md {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  object-position: 0 0;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+.ds-poke-sprite-lg {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  object-position: 0 0;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   12. TOOLTIP & MODAIS LIMPOS
+   -------------------------------------------------------------------------- */
+.ds-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 2, 9, 0.78);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.ds-modal {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-width: 680px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.ds-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: var(--bg-surface-elevated);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.ds-modal-body {
+  padding: 18px;
+  overflow-y: auto;
+}
+
+/* --------------------------------------------------------------------------
+   13. PAGINAÇÃO MODERNA
+   -------------------------------------------------------------------------- */
+.ds-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--bg-surface-elevated);
+  border-top: 1px solid var(--border-default);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.ds-page-buttons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ds-page-btn {
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-default);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.ds-page-btn:hover {
+  background: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.ds-page-btn.active {
+  background: var(--purple-primary);
+  color: #ffffff;
+  border-color: var(--purple-primary);
+}
+
+/* --------------------------------------------------------------------------
+   14. EMPTY & LOADING STATES
+   -------------------------------------------------------------------------- */
+.ds-empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--text-secondary);
+}
+
+.ds-empty-icon {
+  width: 48px;
+  height: 48px;
+  opacity: 0.5;
+  margin-bottom: 12px;
+}
+
+.ds-empty-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.ds-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--border-default);
+  border-top-color: var(--purple-primary);
+  border-radius: 50%;
+  animation: ds-spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes ds-spin {
+  to { transform: rotate(360deg); }
+}

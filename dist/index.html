@@ -1,24 +1,1839 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#0e1015">
-  <title>PokéIdle Hub</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2315181e'/%3E%3Cpath d='M6 16h20M16 6a10 10 0 1 0 0 20 5 5 0 0 0 0-10' fill='none' stroke='%23f4af25' stroke-width='3'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="app.css">
-  <link rel="stylesheet" href="overrides.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokéIdle Hub — Portal Oficial, Pokédex Inteligente, Calculadoras e Wiki</title>
+  <meta name="description" content="Portal definitivo do MMO PokéIdle. Pokédex com calculadora de facilidade de shiny, simulador de pokébolas e boosts, calculadora de XP e refino, guia de hunts e wiki completa.">
+  
+  <link rel="stylesheet" href="css/design-system.css?v=20260923_atlas_3">
+  <link rel="stylesheet" href="css/styles.css?v=20260923_atlas_3">
 </head>
 <body>
-  <header class="global-header">
-    <a href="#home" class="wordmark" data-route="home"><span class="wordmark-mark">ϟ</span><b>POKÉIDLE</b></a>
-    <nav class="product-nav" aria-label="Navegação principal">
-      <a href="#home" data-route="home">Home</a><a href="#pokedex" data-route="pokedex">Pokédex</a><a href="#tier" data-route="tier">Tier List</a><a href="#xp" data-route="xp">Calculadora de XP</a><a href="#guides" data-route="guides">Guias</a><a href="#wiki" data-route="wiki">Wiki</a><a href="#admin" data-route="admin">Painel Admin</a>
+  <div class="texture"></div>
+
+  <!-- SITE HEADER — "Dynamic Island" Flutuante -->
+  <header class="site-header top">
+    <a class="brand" href="#home" onclick="window.switchView('view-home'); return false;">
+      <img src="assets/atlas/logo-atlas.png" alt="Pokéidle Atlas">
+    </a>
+
+    <!-- Main Navigation (Wiki & Guias ocultos para versão Beta) -->
+    <nav class="nav">
+      <a class="nav-tab-btn on active" data-view="view-home"><img src="assets/atlas/pokeidle-atlas-icones/home.png" alt="">Início</a>
+      <a class="nav-tab-btn" data-view="view-pokedex"><img src="assets/atlas/pokeidle-atlas-icones/pokebola.png" alt="">Pokédex</a>
+      <a class="nav-tab-btn" data-view="view-calculators"><img src="assets/atlas/pokeidle-atlas-icones/calculadora-xp.png" alt="">Ferramentas ▾</a>
     </nav>
-    <button class="global-search" aria-label="Buscar no PokéIdle"><span>⌕</span> Buscar Pokémon, hunts, itens e calculadoras <kbd>⌘ K</kbd></button>
-    <div class="header-tools"><button class="utility discord-cta" aria-label="Entre em nosso Discord"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.32 4.37A19.79 19.79 0 0 0 15.44 3c-.21.38-.45.89-.62 1.29a18.3 18.3 0 0 0-5.64 0A12.7 12.7 0 0 0 8.55 3a19.74 19.74 0 0 0-4.87 1.37C.6 9.03-.23 13.57.19 18.05a19.9 19.9 0 0 0 5.98 3.03c.48-.66.9-1.36 1.26-2.1a12.72 12.72 0 0 1-2-.96c.17-.12.33-.25.49-.38 3.86 1.8 8.05 1.8 11.86 0 .16.13.32.26.49.38-.64.38-1.31.7-2 .96.36.74.78 1.44 1.26 2.1a19.82 19.82 0 0 0 5.98-3.03c.49-5.2-.84-9.7-3.19-13.68ZM8.02 15.32c-1.16 0-2.1-1.06-2.1-2.36s.93-2.36 2.1-2.36 2.12 1.06 2.1 2.36c0 1.3-.93 2.36-2.1 2.36Zm7.76 0c-1.16 0-2.1-1.06-2.1-2.36s.93-2.36 2.1-2.36 2.12 1.06 2.1 2.36c0 1.3-.93 2.36-2.1 2.36Z"/></svg>Entre em nosso Discord</button></div>
+
+    <!-- Quick Search + Theme + Avatar -->
+    <div class="search">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="text" id="global-portal-search" placeholder="Buscar no Atlas...">
+    </div>
+    <label class="ttoggle" title="Alternar tema claro/escuro">
+      <input type="checkbox" id="theme-toggle-check" checked>
+      <span class="ttog"></span>
+    </label>
+    <div class="avatar" id="header-avatar-btn" title="Painel Admin" style="cursor:pointer;" onclick="window.switchView('view-admin');"></div>
   </header>
-  <main id="app" class="page"></main>
-  <script src="app.js"></script>
+
+  <main class="app-container">
+
+    <!-- ====================================================================
+         VIEW 0: INÍCIO (PORTAL LANDING PAGE INTUITIVA)
+         ==================================================================== -->
+    <section id="view-home" class="portal-view active-view">
+      <div class="hero"></div>
+
+      <div class="section">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Acesso rápido</div>
+            <h2>Comece por aqui</h2>
+          </div>
+        </div>
+        <div class="qgrid">
+          <div class="qcard qcard-pokedex" style="--ring:#c23f8a;--glow:rgba(194,63,138,0.35);" onclick="window.switchView('view-pokedex');">
+            <div class="qcard-ic"><img src="assets/atlas/pokeidle-atlas-icones/pokebola.png" alt=""></div>
+            <div>
+              <h3>Pokédex Inteligente</h3>
+              <p>Explore todos os 870 Pokémon ›</p>
+            </div>
+          </div>
+          <div class="qcard qcard-ferramentas" style="--ring:#6d3fc4;--glow:rgba(109,63,196,0.35);" onclick="window.switchView('view-calculators');">
+            <div class="qcard-ic"><img src="assets/atlas/pokeidle-atlas-icones/calculadora-xp.png" alt=""></div>
+            <div>
+              <h3>Calculadoras & XP</h3>
+              <p>Simuladores e otimização de farm ›</p>
+            </div>
+          </div>
+          <div class="qcard qcard-planeje" style="--ring:#2f9d63;--glow:rgba(47,157,99,0.35);" onclick="window.switchView('view-pokedex'); document.getElementById('dex-subtab-hunts')?.click();">
+            <div class="qcard-ic"><img src="assets/atlas/pokeidle-atlas-icones/guias.png" alt=""></div>
+            <div>
+              <h3>Catálogo de Hunts</h3>
+              <p>Rotas de caça por região ›</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="cols">
+          <div class="card">
+            <div class="section-head" style="margin-bottom:12px;"><h2 style="font-size:15px;">Links Rápidos</h2></div>
+            <div class="side-item" onclick="window.switchView('view-pokedex');">Pokédex de Espécies ›</div>
+            <div class="side-item" onclick="window.switchView('view-pokedex'); document.getElementById('dex-subtab-hunts')?.click();">Catálogo de Hunts por Região ›</div>
+            <div class="side-item" onclick="window.switchView('view-calculators');">Calculadora de XP e Tempo ›</div>
+            <div class="side-item" onclick="window.switchView('view-pokedex');">Shinies e Formas Especiais ›</div>
+            <div class="side-item" onclick="window.switchView('view-calculators');">Simulador de Refino e Oferenda ›</div>
+            <div class="side-item" onclick="window.switchView('view-calculators');">Bônus de Boosts e Assinatura VIP ›</div>
+          </div>
+          <div class="card">
+            <div class="section-head" style="margin-bottom:12px;"><h2 style="font-size:15px;">Últimas Atualizações</h2></div>
+            <div class="side-item" onclick="window.switchView('view-calculators');"><span style="display:flex;align-items:center;gap:8px;"><span class="pill" style="background:#2f9d63;">FERRAMENTA</span>Calculadora de XP atualizada</span></div>
+            <div class="side-item" onclick="window.switchView('view-pokedex');"><span style="display:flex;align-items:center;gap:8px;"><span class="pill" style="background:#c23f8a;">POKÉDEX</span>Pokédex com 870 espécies</span></div>
+            <div class="side-item" onclick="window.switchView('view-pokedex'); document.getElementById('dex-subtab-hunts')?.click();"><span style="display:flex;align-items:center;gap:8px;"><span class="pill" style="background:#1f7dc4;">HUNTS</span>Catálogo completo de Hunts</span></div>
+            <div class="side-item" onclick="window.switchView('view-calculators');"><span style="display:flex;align-items:center;gap:8px;"><span class="pill" style="background:#6d3fc4;">FERRAMENTA</span>Simulador de Boosts</span></div>
+            <div class="side-item" onclick="window.switchView('view-pokedex');"><span style="display:flex;align-items:center;gap:8px;"><span class="pill" style="background:#c98a2f;">POKÉDEX</span>Formas Especiais & Shinies</span></div>
+          </div>
+          <div class="card">
+            <div class="section-head" style="margin-bottom:12px;"><h2 style="font-size:15px;">Comunidade</h2></div>
+            <p style="font-size:12.5px;color:var(--ink-soft);line-height:1.5;margin:0 0 16px;">Tem dúvidas? Venha conversar com outros jogadores e os criadores no servidor oficial.</p>
+            <a href="https://discord.gg/pokeidle" target="_blank" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:#fff;background:linear-gradient(135deg,#3f6bff,#57a6ff);padding:12px 20px;border-radius:10px;box-shadow:0 4px 14px rgba(63,107,255,0.35);text-decoration:none;">
+              <img src="assets/site/assets/ui/menu-comunidade.png" alt="" style="width:16px;height:16px;">
+              Acessar o Discord
+            </a>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:16px;font-size:11px;color:var(--muted);">
+              <img src="assets/atlas/pokeidle-atlas-icones/pokebola.png" alt="" style="width:14px;height:14px;flex-shrink:0;">
+              <span><b>Dica:</b> use a busca no topo para encontrar qualquer coisa rapidamente!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 1: POKÉDEX OFICIAL COMPLETA & ANALISADOR DE HUNTS E SHINY
+         ==================================================================== -->
+    <section id="view-pokedex" class="portal-view">
+      
+      <!-- Cabeçalho Atlas Pokédex -->
+      <div class="dex-page-head">
+        <div>
+          <div class="ds-eyebrow">Pokédex</div>
+          <h1 class="ds-page-title" style="margin: 2px 0 0; font-size: 23px; font-weight: 800;">870 espécies catalogadas</h1>
+        </div>
+        <div style="font-size: 12px; color: var(--muted);">dados agregados da comunidade, não oficiais</div>
+      </div>
+
+      <!-- Abas Atlas com classe dex-tab-btn para o JS funcionar -->
+      <div class="dex-tabs-bar">
+        <button class="dex-tab-btn dex-tab-item on active" data-tab="captura">
+          <img src="assets/site/assets/ui/ball-poke.png" style="width:14px;height:14px;object-fit:contain;" alt="">
+          Captura e Shiny <span class="ds-tab-badge clean-pokedex-count">870</span>
+        </button>
+        <button class="dex-tab-btn dex-tab-item" data-tab="hunting">
+          <img src="assets/site/assets/ui/menu-pvp.png" style="width:14px;height:14px;object-fit:contain;" alt="">
+          Hunting
+        </button>
+        <button class="dex-tab-btn dex-tab-item" data-tab="gold_loot">
+          <img src="assets/site/assets/ui/moeda-ouro.png" style="width:14px;height:14px;object-fit:contain;" alt="">
+          Gold e Loot
+        </button>
+        <button class="dex-tab-btn dex-tab-item" data-tab="fortes">
+          <img src="assets/site/assets/loja/boost.png" style="width:14px;height:14px;object-fit:contain;" alt="">
+          Pokémons Fortes
+        </button>
+      </div>
+
+
+
+      <div class="pokedex-master-wrapper pokedex-shell" style="width: 100%; display: flex; flex-direction: column; gap: 16px;">
+        
+        <!-- TOOLBAR DE FILTROS INTEGRADA EM DS-CARD -->
+        <div class="ds-card clean-hunter-toolbar" style="padding: 16px 20px;">
+            
+            <!-- PAINEL DE FILTROS: 1. CAPTURA E SHINY -->
+            <div id="tab-filters-captura" class="tab-filters-panel">
+              <div class="clean-toolbar-main-row">
+                
+                <!-- Lado Esquerdo: Busca, Tipo e Região -->
+                <div class="clean-filters-left">
+                  <div class="clean-input-with-ico">
+                    <img src="assets/site/assets/ui/menu-pokepedia.png" class="search-input-svg" alt="">
+                    <input type="text" class="global-dex-search" placeholder="Buscar por nome ou # (ex: Charizard, #006)...">
+                  </div>
+
+                  <select class="clean-filter-select filter-type1-select">
+                    <option value="all">Tipo 1 (Todos)</option>
+                    <option value="BUG">Bug</option>
+                    <option value="POISON">Poison</option>
+                    <option value="NORMAL">Normal</option>
+                    <option value="FLYING">Flying</option>
+                    <option value="GRASS">Grass</option>
+                    <option value="WATER">Water</option>
+                    <option value="FIRE">Fire</option>
+                    <option value="ELECTRIC">Electric</option>
+                    <option value="GROUND">Ground</option>
+                    <option value="PSYCHIC">Psychic</option>
+                    <option value="ROCK">Rock</option>
+                    <option value="ICE">Ice</option>
+                    <option value="FIGHTING">Fighting</option>
+                    <option value="GHOST">Ghost</option>
+                    <option value="DRAGON">Dragon</option>
+                    <option value="STEEL">Steel</option>
+                    <option value="DARK">Dark</option>
+                    <option value="FAIRY">Fairy</option>
+                  </select>
+
+                  <select class="clean-filter-select filter-type2-select">
+                    <option value="all">Tipo 2 (Qualquer)</option>
+                    <option value="none">Nenhum (Tipo Puro)</option>
+                    <option value="BUG">Bug</option>
+                    <option value="POISON">Poison</option>
+                    <option value="NORMAL">Normal</option>
+                    <option value="FLYING">Flying</option>
+                    <option value="GRASS">Grass</option>
+                    <option value="WATER">Water</option>
+                    <option value="FIRE">Fire</option>
+                    <option value="ELECTRIC">Electric</option>
+                    <option value="GROUND">Ground</option>
+                    <option value="PSYCHIC">Psychic</option>
+                    <option value="ROCK">Rock</option>
+                    <option value="ICE">Ice</option>
+                    <option value="FIGHTING">Fighting</option>
+                    <option value="GHOST">Ghost</option>
+                    <option value="DRAGON">Dragon</option>
+                    <option value="STEEL">Steel</option>
+                    <option value="DARK">Dark</option>
+                    <option value="FAIRY">Fairy</option>
+                  </select>
+
+                  <select class="clean-filter-select filter-region-select">
+                    <option value="all">Todas as Áreas / Regiões</option>
+                    <option value="Kanto">Kanto</option>
+                    <option value="Johto">Johto</option>
+                    <option value="Hoenn">Hoenn</option>
+                    <option value="Sinnoh">Sinnoh</option>
+                    <option value="Unova">Unova</option>
+                    <option value="Kalos">Kalos</option>
+                    <option value="Alola">Alola</option>
+                    <option value="Galar">Galar</option>
+                    <option value="Paldea">Paldea</option>
+                  </select>
+                </div>
+
+                <!-- Lado Direito: Seletor de Bolas e Toggles Táteis -->
+                <div class="clean-filters-right">
+                  <div class="clean-ball-selector-wrap">
+                    <span class="clean-ball-lbl">Pokébola:</span>
+                    <div class="clean-ball-selector">
+                      <button class="clean-ball-btn" data-ball="poke">Poké (×1)</button>
+                      <button class="clean-ball-btn" data-ball="great">Great (×2)</button>
+                      <button class="clean-ball-btn" data-ball="super">Super (×3)</button>
+                      <button class="clean-ball-btn" data-ball="ultra">Ultra (×4)</button>
+                      <button class="clean-ball-btn active" data-ball="beast">Beast (×8)</button>
+                    </div>
+                  </div>
+
+                  <div class="clean-toggles-wrap">
+                    <label class="clean-tactile-toggle-label label-shiny-only" title="Filtrar apenas Pokémon que possuem forma Shiny">
+                      <span class="tactile-switch">
+                        <input type="checkbox" class="filter-shiny-only-check">
+                        <span class="tactile-slider"></span>
+                      </span>
+                      <img src="assets/site/assets/loja/shinysecretlure.png" class="toggle-ico-img" alt="">
+                      <span>Apenas Shiny</span>
+                    </label>
+
+                    <label class="clean-tactile-toggle-label" id="label-capture-boost">
+                      <span class="tactile-switch">
+                        <input type="checkbox" id="clean-toggle-boost">
+                        <span class="tactile-slider"></span>
+                      </span>
+                      <img src="assets/site/assets/loja/catch.png" class="toggle-ico-img" alt="">
+                      <span>Capture Boost (+100%)</span>
+                    </label>
+
+                    <label class="clean-tactile-toggle-label" id="label-shiny-lure">
+                      <span class="tactile-switch">
+                        <input type="checkbox" id="clean-toggle-lure">
+                        <span class="tactile-slider"></span>
+                      </span>
+                      <img src="assets/site/assets/loja/shinysecretlure.png" class="toggle-ico-img" alt="">
+                      <span>Isca Shiny (2x Odds)</span>
+                    </label>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Linha de contador -->
+              <div class="clean-counter-subline">
+                <span class="clean-counter-badge">Mostrando <strong class="clean-pokedex-count">870</strong> espécies</span>
+              </div>
+            </div>
+
+            <!-- PAINEL DE FILTROS: 2. HUNTING -->
+            <div id="tab-filters-hunting" class="tab-filters-panel" style="display: none;">
+              <div class="clean-toolbar-main-row" style="flex-wrap: wrap; gap: 8px;">
+                <div class="clean-input-with-ico">
+                  <img src="assets/site/assets/ui/menu-pokepedia.png" class="search-input-svg" alt="">
+                  <input type="text" class="global-dex-search" placeholder="Nome ou #dex..." style="width: 150px;">
+                </div>
+
+                <select class="clean-filter-select filter-region-select">
+                  <option value="all">Todas as Áreas</option>
+                  <option value="Kanto">Kanto</option>
+                  <option value="Johto">Johto</option>
+                  <option value="Hoenn">Hoenn</option>
+                  <option value="Sinnoh">Sinnoh</option>
+                  <option value="Unova">Unova</option>
+                  <option value="Kalos">Kalos</option>
+                  <option value="Alola">Alola</option>
+                  <option value="Galar">Galar</option>
+                  <option value="Paldea">Paldea</option>
+                </select>
+
+                <div style="display: flex; gap: 4px; align-items: center;">
+                  <input type="number" id="hunt-lvl-min" class="clean-filter-input" placeholder="Nv Mín" style="width: 65px;">
+                  <span style="color: #9ca3af; font-size: 0.8rem;">a</span>
+                  <input type="number" id="hunt-lvl-max" class="clean-filter-input" placeholder="Nv Máx" style="width: 65px;">
+                </div>
+
+                <select class="clean-filter-select filter-type1-select">
+                  <option value="all">Tipo 1 (Todos)</option>
+                  <option value="BUG">Bug</option>
+                  <option value="POISON">Poison</option>
+                  <option value="NORMAL">Normal</option>
+                  <option value="FLYING">Flying</option>
+                  <option value="GRASS">Grass</option>
+                  <option value="WATER">Water</option>
+                  <option value="FIRE">Fire</option>
+                  <option value="ELECTRIC">Electric</option>
+                  <option value="GROUND">Ground</option>
+                  <option value="PSYCHIC">Psychic</option>
+                  <option value="ROCK">Rock</option>
+                  <option value="ICE">Ice</option>
+                  <option value="FIGHTING">Fighting</option>
+                  <option value="GHOST">Ghost</option>
+                  <option value="DRAGON">Dragon</option>
+                  <option value="STEEL">Steel</option>
+                  <option value="DARK">Dark</option>
+                  <option value="FAIRY">Fairy</option>
+                </select>
+
+                <select class="clean-filter-select filter-type2-select">
+                  <option value="all">Tipo 2 (Qualquer)</option>
+                  <option value="none">Nenhum (Tipo Puro)</option>
+                  <option value="BUG">Bug</option>
+                  <option value="POISON">Poison</option>
+                  <option value="NORMAL">Normal</option>
+                  <option value="FLYING">Flying</option>
+                  <option value="GRASS">Grass</option>
+                  <option value="WATER">Water</option>
+                  <option value="FIRE">Fire</option>
+                  <option value="ELECTRIC">Electric</option>
+                  <option value="GROUND">Ground</option>
+                  <option value="PSYCHIC">Psychic</option>
+                  <option value="ROCK">Rock</option>
+                  <option value="ICE">Ice</option>
+                  <option value="FIGHTING">Fighting</option>
+                  <option value="GHOST">Ghost</option>
+                  <option value="DRAGON">Dragon</option>
+                  <option value="STEEL">Steel</option>
+                  <option value="DARK">Dark</option>
+                  <option value="FAIRY">Fairy</option>
+                </select>
+
+                <!-- FRAQUEZA 4X -->
+                <select id="filter-hunting-f4" class="clean-filter-select">
+                  <option value="all">Fraqueza 4x (Todas)</option>
+                  <option value="has_any">Qualquer 4x</option>
+                  <option value="BUG">4x Bug</option>
+                  <option value="DARK">4x Dark</option>
+                  <option value="DRAGON">4x Dragon</option>
+                  <option value="ELECTRIC">4x Electric</option>
+                  <option value="FAIRY">4x Fairy</option>
+                  <option value="FIGHTING">4x Fighting</option>
+                  <option value="FIRE">4x Fire</option>
+                  <option value="FLYING">4x Flying</option>
+                  <option value="GHOST">4x Ghost</option>
+                  <option value="GRASS">4x Grass</option>
+                  <option value="GROUND">4x Ground</option>
+                  <option value="ICE">4x Ice</option>
+                  <option value="NORMAL">4x Normal</option>
+                  <option value="POISON">4x Poison</option>
+                  <option value="PSYCHIC">4x Psychic</option>
+                  <option value="ROCK">4x Rock</option>
+                  <option value="STEEL">4x Steel</option>
+                  <option value="WATER">4x Water</option>
+                </select>
+
+                <!-- FRAQUEZA 2X -->
+                <select id="filter-hunting-f2" class="clean-filter-select">
+                  <option value="all">Fraqueza 2x (Todas)</option>
+                  <option value="has_any">Qualquer 2x</option>
+                  <option value="BUG">2x Bug</option>
+                  <option value="DARK">2x Dark</option>
+                  <option value="DRAGON">2x Dragon</option>
+                  <option value="ELECTRIC">2x Electric</option>
+                  <option value="FAIRY">2x Fairy</option>
+                  <option value="FIGHTING">2x Fighting</option>
+                  <option value="FIRE">2x Fire</option>
+                  <option value="FLYING">2x Flying</option>
+                  <option value="GHOST">2x Ghost</option>
+                  <option value="GRASS">2x Grass</option>
+                  <option value="GROUND">2x Ground</option>
+                  <option value="ICE">2x Ice</option>
+                  <option value="NORMAL">2x Normal</option>
+                  <option value="POISON">2x Poison</option>
+                  <option value="PSYCHIC">2x Psychic</option>
+                  <option value="ROCK">2x Rock</option>
+                  <option value="STEEL">2x Steel</option>
+                  <option value="WATER">2x Water</option>
+                </select>
+
+                <!-- RESISTÊNCIA 0.5X -->
+                <select id="filter-hunting-r05" class="clean-filter-select">
+                  <option value="all">Resistência 0,5x</option>
+                  <option value="has_any">Qualquer 0.5x</option>
+                  <option value="BUG">0.5x Bug</option>
+                  <option value="DARK">0.5x Dark</option>
+                  <option value="DRAGON">0.5x Dragon</option>
+                  <option value="ELECTRIC">0.5x Electric</option>
+                  <option value="FAIRY">0.5x Fairy</option>
+                  <option value="FIGHTING">0.5x Fighting</option>
+                  <option value="FIRE">0.5x Fire</option>
+                  <option value="FLYING">0.5x Flying</option>
+                  <option value="GHOST">0.5x Ghost</option>
+                  <option value="GRASS">0.5x Grass</option>
+                  <option value="GROUND">0.5x Ground</option>
+                  <option value="ICE">0.5x Ice</option>
+                  <option value="NORMAL">0.5x Normal</option>
+                  <option value="POISON">0.5x Poison</option>
+                  <option value="PSYCHIC">0.5x Psychic</option>
+                  <option value="ROCK">0.5x Rock</option>
+                  <option value="STEEL">0.5x Steel</option>
+                  <option value="WATER">0.5x Water</option>
+                </select>
+
+                <!-- RESISTÊNCIA 0.25X -->
+                <select id="filter-hunting-r025" class="clean-filter-select">
+                  <option value="all">Resistência 0,25x</option>
+                  <option value="has_any">Qualquer 0.25x</option>
+                  <option value="BUG">0.25x Bug</option>
+                  <option value="DARK">0.25x Dark</option>
+                  <option value="DRAGON">0.25x Dragon</option>
+                  <option value="ELECTRIC">0.25x Electric</option>
+                  <option value="FAIRY">0.25x Fairy</option>
+                  <option value="FIGHTING">0.25x Fighting</option>
+                  <option value="FIRE">0.25x Fire</option>
+                  <option value="FLYING">0.25x Flying</option>
+                  <option value="GHOST">0.25x Ghost</option>
+                  <option value="GRASS">0.25x Grass</option>
+                  <option value="GROUND">0.25x Ground</option>
+                  <option value="ICE">0.25x Ice</option>
+                  <option value="NORMAL">0.25x Normal</option>
+                  <option value="POISON">0.25x Poison</option>
+                  <option value="PSYCHIC">0.25x Psychic</option>
+                  <option value="ROCK">0.25x Rock</option>
+                  <option value="STEEL">0.25x Steel</option>
+                  <option value="WATER">0.25x Water</option>
+                </select>
+
+                <!-- IMUNIDADE 0X -->
+                <select id="filter-hunting-imune" class="clean-filter-select">
+                  <option value="all">Imunidade 0x</option>
+                  <option value="has_any">Qualquer Imunidade</option>
+                  <option value="DARK">0x Dark</option>
+                  <option value="DRAGON">0x Dragon</option>
+                  <option value="ELECTRIC">0x Electric</option>
+                  <option value="FAIRY">0x Fairy</option>
+                  <option value="FIGHTING">0x Fighting</option>
+                  <option value="GHOST">0x Ghost</option>
+                  <option value="GROUND">0x Ground</option>
+                  <option value="NORMAL">0x Normal</option>
+                  <option value="POISON">0x Poison</option>
+                  <option value="PSYCHIC">0x Psychic</option>
+                  <option value="STEEL">0x Steel</option>
+                </select>
+
+                <label class="clean-tactile-toggle-label" id="label-xp-boost">
+                  <span class="tactile-switch">
+                    <input type="checkbox" id="clean-toggle-xp-boost">
+                    <span class="tactile-slider"></span>
+                  </span>
+                  <img src="assets/site/assets/loja/exp.png" class="toggle-ico-img" alt="">
+                  <span>XP Boost (+50%)</span>
+                </label>
+
+                <div class="clean-counter-badge" style="margin-left: auto;">
+                  Mostrando <strong class="clean-pokedex-count">0</strong> espécies
+                </div>
+              </div>
+            </div>
+
+            <!-- PAINEL DE FILTROS: 3. GOLD E LOOT -->
+            <div id="tab-filters-gold-loot" class="tab-filters-panel" style="display: none;">
+              <div class="clean-toolbar-main-row" style="flex-wrap: wrap; gap: 8px;">
+                <div class="clean-input-with-ico">
+                  <img src="assets/site/assets/ui/menu-pokepedia.png" class="search-input-svg" alt="">
+                  <input type="text" class="global-dex-search" placeholder="Nome ou #dex..." style="width: 150px;">
+                </div>
+
+                <select class="clean-filter-select filter-region-select">
+                  <option value="all">Todas as Áreas</option>
+                  <option value="Kanto">Kanto</option>
+                  <option value="Johto">Johto</option>
+                  <option value="Hoenn">Hoenn</option>
+                  <option value="Sinnoh">Sinnoh</option>
+                  <option value="Unova">Unova</option>
+                  <option value="Kalos">Kalos</option>
+                  <option value="Alola">Alola</option>
+                  <option value="Galar">Galar</option>
+                  <option value="Paldea">Paldea</option>
+                </select>
+
+                <div style="display: flex; gap: 4px; align-items: center;">
+                  <input type="number" id="gold-lvl-min" class="clean-filter-input" placeholder="Nv Mín" style="width: 65px;">
+                  <span style="color: #9ca3af; font-size: 0.8rem;">a</span>
+                  <input type="number" id="gold-lvl-max" class="clean-filter-input" placeholder="Nv Máx" style="width: 65px;">
+                </div>
+
+                <select class="clean-filter-select filter-type1-select">
+                  <option value="all">Tipo 1 (Todos)</option>
+                  <option value="BUG">Bug</option>
+                  <option value="POISON">Poison</option>
+                  <option value="NORMAL">Normal</option>
+                  <option value="FLYING">Flying</option>
+                  <option value="GRASS">Grass</option>
+                  <option value="WATER">Water</option>
+                  <option value="FIRE">Fire</option>
+                  <option value="ELECTRIC">Electric</option>
+                  <option value="GROUND">Ground</option>
+                  <option value="PSYCHIC">Psychic</option>
+                  <option value="ROCK">Rock</option>
+                  <option value="ICE">Ice</option>
+                  <option value="FIGHTING">Fighting</option>
+                  <option value="GHOST">Ghost</option>
+                  <option value="DRAGON">Dragon</option>
+                  <option value="STEEL">Steel</option>
+                  <option value="DARK">Dark</option>
+                  <option value="FAIRY">Fairy</option>
+                </select>
+
+                <select class="clean-filter-select filter-type2-select">
+                  <option value="all">Tipo 2 (Qualquer)</option>
+                  <option value="none">Nenhum (Tipo Puro)</option>
+                  <option value="BUG">Bug</option>
+                  <option value="POISON">Poison</option>
+                  <option value="NORMAL">Normal</option>
+                  <option value="FLYING">Flying</option>
+                  <option value="GRASS">Grass</option>
+                  <option value="WATER">Water</option>
+                  <option value="FIRE">Fire</option>
+                  <option value="ELECTRIC">Electric</option>
+                  <option value="GROUND">Ground</option>
+                  <option value="PSYCHIC">Psychic</option>
+                  <option value="ROCK">Rock</option>
+                  <option value="ICE">Ice</option>
+                  <option value="FIGHTING">Fighting</option>
+                  <option value="GHOST">Ghost</option>
+                  <option value="DRAGON">Dragon</option>
+                  <option value="STEEL">Steel</option>
+                  <option value="DARK">Dark</option>
+                  <option value="FAIRY">Fairy</option>
+                </select>
+
+                <select id="filter-gold-item-drop" class="clean-filter-select" style="max-width: 190px;">
+                  <option value="all">Todos os Drops (Itens)</option>
+                </select>
+
+                <select id="sort-gold-select" class="clean-filter-select">
+                  <option value="gold_desc">Maior Gold NPC</option>
+                  <option value="gold_asc">Menor Gold NPC</option>
+                </select>
+
+                <label class="clean-tactile-toggle-label" id="label-loot-boost">
+                  <span class="tactile-switch">
+                    <input type="checkbox" id="clean-toggle-loot-boost">
+                    <span class="tactile-slider"></span>
+                  </span>
+                  <img src="assets/site/assets/loja/loot.png" class="toggle-ico-img" alt="">
+                  <span>Loot Boost (+40%)</span>
+                </label>
+
+                <div class="clean-counter-badge" style="margin-left: auto;">
+                  Mostrando <strong class="clean-pokedex-count">0</strong> espécies
+                </div>
+              </div>
+            </div>
+
+            <!-- PAINEL DE FILTROS: 4. POKEMONS FORTES -->
+            <div id="tab-filters-fortes" class="tab-filters-panel" style="display: none;">
+              <div class="clean-toolbar-main-row" style="flex-wrap: wrap; gap: 8px;">
+                <div class="clean-input-with-ico">
+                  <img src="assets/site/assets/ui/menu-pokepedia.png" class="search-input-svg" alt="">
+                  <input type="text" class="global-dex-search" placeholder="Nome ou #dex..." style="width: 150px;">
+                </div>
+
+                <select class="clean-filter-select filter-region-select">
+                  <option value="all">Todas as Áreas</option>
+                  <option value="Kanto">Kanto</option>
+                  <option value="Johto">Johto</option>
+                  <option value="Hoenn">Hoenn</option>
+                  <option value="Sinnoh">Sinnoh</option>
+                  <option value="Unova">Unova</option>
+                  <option value="Kalos">Kalos</option>
+                  <option value="Alola">Alola</option>
+                  <option value="Galar">Galar</option>
+                  <option value="Paldea">Paldea</option>
+                </select>
+
+                <div style="display: flex; gap: 4px; align-items: center;">
+                  <input type="number" id="fortes-lvl-min" class="clean-filter-input" placeholder="Nv Mín" style="width: 65px;">
+                  <span style="color: #9ca3af; font-size: 0.8rem;">a</span>
+                  <input type="number" id="fortes-lvl-max" class="clean-filter-input" placeholder="Nv Máx" style="width: 65px;">
+                </div>
+
+                <select class="clean-filter-select filter-type1-select">
+                  <option value="all">Tipo 1 (Todos)</option>
+                  <option value="BUG">Bug</option>
+                  <option value="POISON">Poison</option>
+                  <option value="NORMAL">Normal</option>
+                  <option value="FLYING">Flying</option>
+                  <option value="GRASS">Grass</option>
+                  <option value="WATER">Water</option>
+                  <option value="FIRE">Fire</option>
+                  <option value="ELECTRIC">Electric</option>
+                  <option value="GROUND">Ground</option>
+                  <option value="PSYCHIC">Psychic</option>
+                  <option value="ROCK">Rock</option>
+                  <option value="ICE">Ice</option>
+                  <option value="FIGHTING">Fighting</option>
+                  <option value="GHOST">Ghost</option>
+                  <option value="DRAGON">Dragon</option>
+                  <option value="STEEL">Steel</option>
+                  <option value="DARK">Dark</option>
+                  <option value="FAIRY">Fairy</option>
+                </select>
+
+                <select class="clean-filter-select filter-type2-select">
+                  <option value="all">Tipo 2 (Qualquer)</option>
+                  <option value="none">Nenhum (Tipo Puro)</option>
+                  <option value="BUG">Bug</option>
+                  <option value="POISON">Poison</option>
+                  <option value="NORMAL">Normal</option>
+                  <option value="FLYING">Flying</option>
+                  <option value="GRASS">Grass</option>
+                  <option value="WATER">Water</option>
+                  <option value="FIRE">Fire</option>
+                  <option value="ELECTRIC">Electric</option>
+                  <option value="GROUND">Ground</option>
+                  <option value="PSYCHIC">Psychic</option>
+                  <option value="ROCK">Rock</option>
+                  <option value="ICE">Ice</option>
+                  <option value="FIGHTING">Fighting</option>
+                  <option value="GHOST">Ghost</option>
+                  <option value="DRAGON">Dragon</option>
+                  <option value="STEEL">Steel</option>
+                  <option value="DARK">Dark</option>
+                  <option value="FAIRY">Fairy</option>
+                </select>
+
+                <select id="filter-fortes-estagio" class="clean-filter-select">
+                  <option value="all">Todos Estágios</option>
+                  <option value="1">Estágio 1 (Base)</option>
+                  <option value="2">Estágio 2 (Intermediário)</option>
+                  <option value="3">Estágio 3 (Final)</option>
+                </select>
+
+                <select id="sort-fortes-stats" class="clean-filter-select">
+                  <option value="bst_desc">BST Total (Maior)</option>
+                  <option value="hp_desc">HP (Maior)</option>
+                  <option value="atk_desc">ATK (Maior)</option>
+                  <option value="def_desc">DEF (Maior)</option>
+                  <option value="spatk_desc">SP.ATK (Maior)</option>
+                  <option value="spdef_desc">SP.DEF (Maior)</option>
+                  <option value="speed_desc">SPEED (Maior)</option>
+                  <option value="golpes_desc">QTD. Golpes (Maior)</option>
+                </select>
+
+                <div class="clean-counter-badge" style="margin-left: auto;">
+                  Mostrando <strong class="clean-pokedex-count">0</strong> espécies
+                </div>
+              </div>
+            </div>
+
+          </div><!-- FIM .clean-hunter-toolbar -->
+
+          <!-- 4. TABELA POKÉDEX NOVO DESIGN SYSTEM -->
+          <div class="ds-table-container tbl-wrap">
+            <table class="ds-table clean-pokedex-table">
+              <thead id="clean-table-thead">
+                <!-- Cabeçalho dinâmico gerado conforme a aba selecionada -->
+              </thead>
+              <tbody id="pokedex-body">
+                <tr>
+                  <td colspan="9" style="text-align: center; padding: 3rem; color: var(--text-muted);">
+                    Carregando base de dados oficial...
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- 5. PAGINAÇÃO OFICIAL DO DESIGN SYSTEM -->
+            <div id="pokedex-pagination-wrap" class="ds-pagination">
+              <!-- Gerado dinamicamente via JS -->
+            </div>
+          </div>
+
+      </div><!-- FIM .pokedex-master-wrapper -->
+
+      <!-- PAINEL 2: CATÁLOGO GERAL DE TODAS AS 824 HUNTS -->
+      <div id="dex-panel-hunts" class="dex-panel" style="display: none; margin-top: 20px;">
+        
+        <div class="hunter-toolbar ds-card" style="margin-bottom: 1rem; padding: 16px;">
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; justify-content: space-between;">
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end;">
+              <div class="filter-group">
+                <label class="filter-sublabel">Buscar Hunt ou Pokémon:</label>
+                <input type="text" id="hunts-table-search" class="campo" placeholder="Nome da hunt ou mob..." style="width: 200px;">
+              </div>
+
+              <div class="filter-group">
+                <label class="filter-sublabel">Região Oficial:</label>
+                <select id="hunts-table-region" class="select-filter campo">
+                  <option value="all">Todas as Regiões (824 hunts)</option>
+                  <option value="kanto">Kanto (229 hunts)</option>
+                  <option value="johto">Johto (2 hunts)</option>
+                  <option value="hoenn">Hoenn (124 hunts)</option>
+                  <option value="sinnoh">Sinnoh (99 hunts)</option>
+                  <option value="unova">Unova (131 hunts)</option>
+                  <option value="kalos">Kalos (52 hunts)</option>
+                  <option value="alola">Alola (57 hunts)</option>
+                  <option value="outland">Outland (58 hunts)</option>
+                  <option value="orre">Orre (72 hunts)</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <label class="filter-sublabel">Nível Mín:</label>
+                <input type="number" id="hunts-table-min-lvl" class="campo" placeholder="Ex: 1" style="width: 90px;">
+              </div>
+
+              <div class="filter-group">
+                <label class="filter-sublabel">Nível Máx:</label>
+                <input type="number" id="hunts-table-max-lvl" class="campo" placeholder="Ex: 1000" style="width: 90px;">
+              </div>
+
+              <div class="filter-group">
+                <label class="filter-sublabel">Ordenar por:</label>
+                <select id="hunts-table-sort" class="select-filter campo">
+                  <option value="lvl_asc">Menor Nível (Crescente)</option>
+                  <option value="lvl_desc">Maior Nível (Decrescente)</option>
+                  <option value="xp_desc">Maior XP por Hora</option>
+                  <option value="gold_desc">Maior Ouro por Hora</option>
+                  <option value="name_asc">Nome da Hunt (A-Z)</option>
+                </select>
+              </div>
+            </div>
+
+            <span id="hunts-table-counter" class="hero-badge" style="margin: 0; font-size: 11px;">824 Hunts</span>
+          </div>
+        </div>
+
+        <div class="table-wrapper quadro">
+          <table class="pokedex-table">
+            <thead>
+              <tr>
+                <th>Nível</th>
+                <th>Nome da Hunt</th>
+                <th>Região</th>
+                <th>Spawns / Pokémon da Hunt</th>
+                <th>XP / Hora (e por mob)</th>
+                <th>Ouro / Hora</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+            <tbody id="hunts-catalog-body">
+              <tr><td colspan="7" style="text-align: center; padding: 2rem;">Carregando catálogo de hunts...</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Paginação das Hunts -->
+        <div class="pagination-bar">
+          <button id="hunts-prev-page-btn" class="btn on pagination-btn">← Página Anterior</button>
+          <span id="hunts-page-info" style="font-size: 0.88rem; color: var(--sobre-mad); font-weight: 700;">Página 1</span>
+          <button id="hunts-next-page-btn" class="btn on pagination-btn">Próxima Página →</button>
+        </div>
+      </div><!-- FIM #dex-panel-hunts -->
+
+    </section>
+
+    <!-- ====================================================================
+         VIEW 2: CENTRAL DE CALCULADORAS
+         ==================================================================== -->
+    <section id="view-calculators" class="portal-view">
+      
+      <div style="margin-bottom: 16px;">
+        <div style="font-size: 12.5px; color: var(--muted); margin-bottom: 4px;">Ferramentas › <b style="color: var(--ink);">Calculadora de XP</b></div>
+        <div class="ds-eyebrow">Ferramenta</div>
+        <h1 class="ds-page-title" style="margin: 2px 0 6px; font-size: 24px; font-weight: 800;">Calculadora de XP</h1>
+        <div style="font-size: 13.5px; color: var(--muted);">Calcule custos de evolução, tempo de farm de XP com multiplicadores compostos, pedras de refino e nota oficial (N=).</div>
+      </div>
+
+      <div class="calc-tabs" style="display: flex; gap: 6px; border-bottom: 1px solid var(--line); margin-bottom: 20px;">
+        <button class="calc-subtab-btn tab on active" data-calc-target="calc-xp">Calculadora de XP & Hunts</button>
+        <button class="calc-subtab-btn tab" data-calc-target="calc-boosts">Multiplicadores de Boosts</button>
+        <button class="calc-subtab-btn tab" data-calc-target="calc-refino">Refino & Oferenda</button>
+        <button class="calc-subtab-btn tab" data-calc-target="calc-nota">Nota Oficial (N=) & Poder</button>
+      </div>
+
+      <!-- TAB 1: CALCULADORA DE XP & TEMPO -->
+      <div id="calc-xp" class="calc-panel active-panel">
+        <div class="layout calc-split-layout" style="margin-bottom: 2rem;">
+          
+          <div class="panel form" style="width: 460px; flex-shrink: 0; display: flex; flex-direction: column; gap: 16px;">
+            <div class="section-title">🧭 Parâmetros de Treino do Treinador</div>
+            
+            <div class="split">
+              <div class="field" style="flex: 1;">
+                <label>Nível Atual (Treinador)</label>
+                <input type="number" id="xp-lvl-from" class="input" value="500" min="1" max="100000">
+              </div>
+              <div class="field" style="flex: 1;">
+                <label>Nível Alvo (Treinador)</label>
+                <input type="number" id="xp-lvl-to" class="input" value="1000" min="2" max="100000">
+              </div>
+            </div>
+
+            <!-- MODO DE PROGRESSÃO: ROTA OTIMIZADA VS HUNT FIXA -->
+            <div class="field">
+              <label>Estratégia de Farm</label>
+              <div class="strategy-row">
+                <button type="button" id="btn-mode-route" class="strategy-btn on" data-mode="route">
+                  ↻ Rota Otimizada (Trocar nos Degraus)
+                </button>
+                <button type="button" id="btn-mode-single" class="strategy-btn" data-mode="single">
+                  📍 Hunt Fixa (Mesma Hunt Sempre)
+                </button>
+              </div>
+              <div class="helper">
+                * <strong>Rota Otimizada:</strong> migra automaticamente para hunts mais fortes assim que o nível é alcançado, economizando dias de farm.
+              </div>
+            </div>
+
+            <!-- SELEÇÃO DE HUNT INICIAL / FIXA COM BUSCA -->
+            <div class="field">
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <label id="label-hunt-select">Hunt Inicial de Partida</label>
+                <span id="hunts-count-badge" class="field-count">824 hunts</span>
+              </div>
+              <input type="text" id="xp-hunt-search" class="input" placeholder="🔍 Filtrar por nome ou região..." style="margin-bottom: 8px;">
+              <div style="display: flex; gap: 8px;">
+                <select id="xp-hunt-select" class="select" style="flex: 1;">
+                  <option value="">Carregando hunts...</option>
+                </select>
+                <button type="button" class="hunt-btn" onclick="window.abrirCatalogoHunts()">📋 Ver Tabela Completa</button>
+              </div>
+            </div>
+
+            <!-- VELOCIDADE DE COMBATE -->
+            <div class="field">
+              <label>Velocidade de Combate / Cadência de Abate</label>
+              <div class="split">
+                <select id="xp-speed-select" class="select" style="flex: 2;">
+                  <option value="1100">1-Hit KO Instantâneo (~1.100 abates/hora)</option>
+                  <option value="980" selected>Rápido / Padrão (~980 abates/hora)</option>
+                  <option value="750">Médio (~750 abates/hora)</option>
+                  <option value="450">Lento / Mobs Resistentes (~450 abates/hora)</option>
+                  <option value="custom">Personalizado (Digitar valor)</option>
+                </select>
+                <input type="number" id="xp-speed-custom" class="input" value="980" min="50" max="3000" style="display: none; width: 110px; text-align: center; font-weight: 700;">
+              </div>
+              <div class="helper">
+                * Baseado nos abates reais por hora medidos pelo Hunt Analyser in-game.
+              </div>
+            </div>
+
+            <!-- BÔNUS E MULTIPLICADORES -->
+            <div class="field">
+              <label>Bônus & Multiplicadores Ativos</label>
+              <div class="boost-row">
+                <span style="font-size: 13px; font-weight: 600;">Assinatura VIP (+50% XP Treinador)</span>
+                <label class="switch"><input type="checkbox" id="xp-cb-vip" checked><span class="slider-tog"></span></label>
+              </div>
+              <div class="boost-row">
+                <span style="font-size: 13px; font-weight: 600;">XP Boost da Loja (+50% XP Treinador)</span>
+                <label class="switch"><input type="checkbox" id="xp-cb-boost" checked><span class="slider-tog"></span></label>
+              </div>
+            </div>
+
+            <!-- GUILD BOOST & EVENTO -->
+            <div class="split">
+              <div class="field" style="flex: 1;">
+                <label>Bônus de Guild (0% a 10%)</label>
+                <input type="number" id="xp-guild-input" class="input" value="5" min="0" max="10" step="0.5">
+              </div>
+              <div class="field" style="flex: 1;">
+                <label>Bônus de Evento (+X%)</label>
+                <input type="number" id="xp-event-input" class="input" value="0" min="0" max="100" step="5">
+              </div>
+            </div>
+            <div class="helper">
+              * Bônus de Guild e Evento multiplicam em cima do VIP e Boost de acordo com <code>loja.mjs</code>.
+            </div>
+
+            <button type="button" class="btn-primary" style="margin-top: auto;" onclick="document.getElementById('xp-lvl-from').dispatchEvent(new Event('input'))">Calcular ▶</button>
+          </div>
+
+          <!-- RESULTADOS -->
+          <div class="results">
+            <div class="panel stat-row">
+              <div class="stat">
+                <b id="res-xp-required">1.284.600 XP</b>
+                <span>XP total necessário</span>
+              </div>
+              <div class="divider"></div>
+              <div class="stat">
+                <b id="res-xp-tempo-hero">Calculando...</b>
+                <span id="res-hero-label">Tempo estimado</span>
+              </div>
+            </div>
+
+            <!-- BANNER DE ECONOMIA DA ROTA OTIMIZADA -->
+            <div id="route-savings-banner" class="panel" style="background: var(--accent-soft); border: 1px solid var(--accent); color: var(--accent-ink); padding: 14px; border-radius: 12px; display: none;">
+              <b id="route-savings-title" style="display: block; font-size: 13px; margin-bottom: 4px;">Economia com a Rota Otimizada</b>
+              <span id="route-savings-desc" style="font-size: 12px;">Migrar para hunts superiores reduz seu tempo de farm consideravelmente!</span>
+            </div>
+
+            <!-- MÉTRICAS SECUNDÁRIAS -->
+            <div class="panel">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .03em;">Métricas de Combate</span>
+                <span id="res-xp-mult-val" style="font-size: 12.5px; font-weight: 700; color: var(--accent-ink);">2.36× (+136%)</span>
+              </div>
+              <div style="display: flex; gap: 16px;">
+                <div style="flex: 1;">
+                  <span style="font-size: 11px; color: var(--muted); text-transform: uppercase; font-weight: 700;">Abates Necessários</span>
+                  <b id="res-xp-kills" style="display: block; font-size: 17px; font-family: 'Sora'; margin-top: 2px; color: var(--ink);">~65.252</b>
+                </div>
+                <div style="flex: 1;">
+                  <span style="font-size: 11px; color: var(--muted); text-transform: uppercase; font-weight: 700;">XP Médio / Kill</span>
+                  <b id="res-xp-per-kill" style="display: block; font-size: 17px; font-family: 'Sora'; margin-top: 2px; color: var(--ink);">~222.345</b>
+                </div>
+              </div>
+            </div>
+
+            <p style="font-size: 11px; color: var(--muted); margin: 0;">
+              * Fórmulas oficiais espelhadas de <code>recompensa-hunt.mjs</code>, <code>sell-value.mjs</code> e <code>loja.mjs</code>. Todas as 824 hunts oficiais mapeadas.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- PAINEL DA ROTA DE HUNTS DINÂMICA (TIMELINE DE ETAPAS) -->
+        <div id="xp-route-panel" class="panel" style="margin-top: 20px; margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <div>
+              <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.25rem; display: flex; align-items: center; gap: 8px;">
+                Rota de Hunts Recomendada (Progressão por Degraus)
+              </h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">
+                Veja como o tempo se divide em cada faixa de nível e onde é mais vantajoso caçar em cada etapa.
+              </p>
+            </div>
+            <span id="route-legs-count" class="selo-ouro" style="font-size: 11px;">0 Etapas</span>
+          </div>
+
+          <div id="route-timeline-container" class="route-timeline" style="display: flex; flex-direction: column; gap: 10px;">
+            <!-- Renderizado dinamicamente via JS -->
+          </div>
+        </div>
+
+        <!-- TABELA DE EVOLUÇÃO LEVEL A LEVEL -->
+        <div class="calc-card" style="margin-top: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+            <div>
+              <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.25rem;">
+                Evolução Passo a Passo (Level a Level)
+              </h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem;">
+                Veja exatamente o custo em XP, abates necessários e tempo estimado para cada nível individualmente.
+              </p>
+            </div>
+            <span id="xp-steps-count" class="hero-badge" style="margin: 0;">Calculando...</span>
+          </div>
+
+          <div class="table-wrapper" style="max-height: 480px; overflow-y: auto;">
+            <table class="pokedex-table">
+              <thead>
+                <tr>
+                  <th>Degrau</th>
+                  <th>XP do Nível</th>
+                  <th>Abates Necessários</th>
+                  <th>Tempo Deste Nível</th>
+                  <th>Tempo Acumulado</th>
+                </tr>
+              </thead>
+              <tbody id="xp-steps-table-body">
+                <tr><td colspan="5" style="text-align: center; padding: 1.5rem;">Carregando evolução...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: BOOSTS COMPARATOR -->
+      <div id="calc-boosts" class="calc-panel">
+        <div class="calc-grid">
+          <div class="calc-card">
+            <h3 class="calc-card-title">Selecione Combinações de Boosts</h3>
+            <div class="checkbox-group" style="gap: 1rem;">
+              <label class="checkbox-label">
+                <input type="checkbox" id="boost-calc-vip" checked>
+                <div>
+                  <strong>VIP Pass (+50%)</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">+50% XP Treinador, +50% XP Pokémon, Auto-Ball</div>
+                </div>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="boost-calc-xp-tr" checked>
+                <div>
+                  <strong>XP Boost (Treinador) (+50%)</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Multiplica com o VIP (1,5 × 1,5 = 2,25×)</div>
+                </div>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="boost-calc-xp-pk">
+                <div>
+                  <strong>XP Boost Pokémon (+50%)</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">+50% XP ganho pelo Pokémon ativo</div>
+                </div>
+              </label>
+              
+              <!-- Guild boost no comparador -->
+              <div class="vao" style="padding: 12px; margin-bottom: 10px;">
+                <label class="form-label">Boost de Guild (1% a 10%)</label>
+                <div style="display:flex; align-items: center; gap: 0.75rem;">
+                  <input type="number" id="boost-guild-input" class="form-input" value="5" min="0" max="10" step="0.5" style="width: 100px; color: var(--marca); font-weight: 700;">
+                  <span style="font-size: 0.85rem; color: var(--sobre-mad-dim);">% adicional da sua Guild</span>
+                </div>
+              </div>
+
+              <label class="checkbox-label">
+                <input type="checkbox" id="boost-calc-cap">
+                <div>
+                  <strong>Capture Boost</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Dobra a chance por arremesso (até o teto de 10%)</div>
+                </div>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="boost-calc-lure">
+                <div>
+                  <strong>Shiny Secret Lure</strong>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Dobra o sorteio de shiny (1 em 12.000)</div>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="result-card">
+            <div>
+              <h3 class="calc-card-title">Poder Efetivo do Stack</h3>
+              <div class="stat-metric-box">
+                <div class="stat-metric-label">XP Efetivo do Treinador</div>
+                <div id="res-boost-tr" class="stat-metric-val">2.25× (+125%)</div>
+              </div>
+              <div class="stat-metric-box">
+                <div class="stat-metric-label">XP Efetivo do Pokémon</div>
+                <div id="res-boost-pk" class="stat-metric-val">1.50× (+50%)</div>
+              </div>
+              <div class="stat-metric-box">
+                <div class="stat-metric-label">Bônus de Captura</div>
+                <div id="res-boost-cap" class="stat-metric-val" style="font-size: 1.1rem;">1.00× (Chance normal)</div>
+              </div>
+              <div class="stat-metric-box">
+                <div class="stat-metric-label">Chance de Shiny por Abate</div>
+                <div id="res-boost-lure" class="stat-metric-val" style="font-size: 1.1rem;">1 em 24.000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: REFINO & OFERENDA -->
+      <div id="calc-refino" class="calc-panel">
+        <div class="calc-grid">
+          
+          <!-- Refino -->
+          <div class="calc-card">
+            <h3 class="calc-card-title">Calculadora de Refino (+1 a +N)</h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.25rem;">
+              O refino adiciona <strong>+1 de atributo base</strong> por degrau (em HP, ATK, DEF, Sp. ATK ou Sp. DEF). Custa $500 \times (3N^2 - 3N + 1)$ pedras de evolução do tipo da espécie.
+            </p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+              <div class="form-group">
+                <label class="form-label">Grau Atual</label>
+                <input type="number" id="refino-from" class="form-input" value="0" min="0" max="99">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Grau Alvo</label>
+                <input type="number" id="refino-to" class="form-input" value="5" min="1" max="100">
+              </div>
+            </div>
+
+            <div class="stat-metric-box">
+              <div class="stat-metric-label">Pedras de Evolução Necessárias</div>
+              <div id="res-refino-stones" class="stat-metric-val gold">62.500 pedras</div>
+            </div>
+
+            <div class="stat-metric-box">
+              <div class="stat-metric-label">Custo Apenas do Próximo Degrau</div>
+              <div id="res-refino-next" class="stat-metric-val" style="font-size: 1.2rem;">30.500 pedras</div>
+            </div>
+
+            <div class="stat-metric-box" style="margin-bottom: 0;">
+              <div class="stat-metric-label">Tempo Médio Estimado de Farm</div>
+              <div id="res-refino-time" class="stat-metric-val" style="font-size: 1.1rem; color: var(--accent-emerald);">~3.125 horas (~130 dias)</div>
+            </div>
+          </div>
+
+          <!-- Oferenda Simulator -->
+          <div class="calc-card">
+            <h3 class="calc-card-title">Simulador de Oferenda</h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
+              Coloque até 5 pokémon do depot na roleta para queimar e receber 1 pedra de evolução. Cada pokémon adiciona 20% de chances. Shinies pagam em <strong>Shiny Stones</strong>!
+            </p>
+
+            <div id="oferenda-slots-list" style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem;"></div>
+
+            <div class="vao" style="padding: 12px; margin-bottom: 12px;">
+              <label class="form-label">Adicionar Pokémon à Roleta:</label>
+              <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
+                <select id="oferenda-type-input" class="select-filter" style="flex: 1;">
+                  <option value="FIRE">Fire (Fire Stone)</option>
+                  <option value="WATER">Water (Water Stone)</option>
+                  <option value="GRASS">Grass (Leaf Stone)</option>
+                  <option value="ELECTRIC">Electric (Thunder Stone)</option>
+                  <option value="PSYCHIC">Psychic (Enigma Stone)</option>
+                  <option value="GHOST">Ghost (Darkness Stone)</option>
+                  <option value="DRAGON">Dragon (Dragon Scale)</option>
+                  <option value="FIGHTING">Fighting (Punch Stone)</option>
+                  <option value="ROCK">Rock (Rock Stone)</option>
+                </select>
+                <label class="checkbox-label" style="font-size: 0.82rem;">
+                  <input type="checkbox" id="oferenda-shiny-input">
+                  <span>É Shiny</span>
+                </label>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <button id="oferenda-add-btn" class="details-btn" style="flex: 1; padding: 0.5rem;">+ Adicionar</button>
+                <button id="oferenda-clear-btn" class="details-btn" style="background: rgba(239, 68, 68, 0.2); color: #fca5a5; border-color: rgba(239,68,68,0.4);">Esvaziar</button>
+              </div>
+            </div>
+
+            <div id="oferenda-results-box" class="stat-metric-box"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 4: CALCULADORA OFICIAL DE NOTA (N=) -->
+      <div id="calc-nota" class="calc-panel">
+        <div class="calc-grid">
+          <div class="calc-card">
+            <h3 class="calc-card-title">Ficha de Nascimento</h3>
+            
+            <div class="form-group">
+              <label class="form-label">Espécie Alvo (Para Limites Reais)</label>
+              <select id="nota-spec-select" class="form-input">
+                <option value="">Carregando espécies...</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Soma de IVs (6 a 192)</label>
+              <div class="slider-group">
+                <input type="range" id="nota-iv-sum" min="6" max="192" value="100">
+                <span id="nota-iv-val" class="slider-val">100</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Qualidade (0.80 a 1.80)</label>
+              <div class="slider-group">
+                <input type="range" id="nota-qualidade" min="0.80" max="1.80" step="0.01" value="1.15">
+                <span id="nota-q-val" class="slider-val">1.15</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Potência</label>
+              <select id="nota-potencia" class="form-input">
+                <option value="1">Potência 1 (P1 · +0%)</option>
+                <option value="2">Potência 2 (P2 · +5%)</option>
+                <option value="3">Potência 3 (P3 · +10%)</option>
+                <option value="4">Potência 4 (P4 · +25%)</option>
+                <option value="5">Potência 5 (P5 · +100%)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="nota-shiny">
+                <span>É Pokémon Shiny (Multiplica stats por 3×)</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="result-card">
+            <div>
+              <h3 class="calc-card-title">Nota Calculada</h3>
+              
+              <div class="stat-metric-box" style="text-align: center;">
+                <div class="stat-metric-label">Nota Oficial (N=)</div>
+                <div id="res-nota-score" class="stat-metric-val" style="font-size: 3rem; color: var(--accent-gold);">
+                  3.450
+                </div>
+                <div id="res-nota-faixa" class="hero-badge" style="margin-top: 0.5rem;">
+                  Razoável
+                </div>
+              </div>
+
+              <div class="stat-metric-box">
+                <div class="stat-metric-label">Soma de Stats de Nascimento</div>
+                <div id="res-nota-soma" class="stat-metric-val" style="font-size: 1.4rem;">650</div>
+              </div>
+
+              <div class="callout-box" style="font-size: 0.82rem;">
+                <strong>Regra do Mercado NPC:</strong> Pokémon com nota inferior a <strong>3.0</strong> não entram na vitrine do Mercado da Comunidade a menos que sejam Shiny ou P5.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ====================================================================
+         VIEW 3: GUIA DO INICIANTE & HUNTS (ATLAS GUIAS)
+         ==================================================================== -->
+    <section id="view-guide" class="portal-view">
+      
+      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+        <div>
+          <div class="ds-eyebrow">Guias</div>
+          <h1 class="ds-page-title" style="margin: 2px 0 6px; font-size: 24px; font-weight: 800;">Todos os guias</h1>
+          <div style="font-size: 13.5px; color: var(--muted);">Passo a passo escrito pela comunidade, do início ao endgame.</div>
+        </div>
+        <div style="font-size: 12.5px; color: var(--muted);" id="guide-count-badge">8 guias catalogados</div>
+      </div>
+
+      <div class="chips-bar">
+        <button class="filter-chip on active" data-category="all">Todos</button>
+        <button class="filter-chip" data-category="iniciante">Iniciante</button>
+        <button class="filter-chip" data-category="intermediario">Intermediário</button>
+        <button class="filter-chip" data-category="avancado">Avançado</button>
+        <button class="filter-chip" data-category="evento">Evento</button>
+      </div>
+
+      <div class="grid-4" id="guide-cards-grid">
+        <!-- Card 1 -->
+        <div class="guide-card" data-category="iniciante" onclick="window.abrirGuiaModal?.('start')" style="--glow: rgba(47,157,99,0.4);">
+          <div class="guide-thumb" style="background: #0f2e22;">
+            <img src="assets/site/assets/ui/ball-poke.png" alt="">
+          </div>
+          <div class="guide-body">
+            <span class="guide-pill" style="background: #2f9d63;">INICIANTE</span>
+            <h3>Começando no Pokéidle</h3>
+            <div class="guide-meta">5 min de leitura</div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="guide-card" data-category="iniciante" onclick="window.abrirGuiaModal?.('xp')" style="--glow: rgba(47,157,99,0.4);">
+          <div class="guide-thumb" style="background: #0f2e22;">
+            <img src="assets/site/assets/loja/exp.png" alt="">
+          </div>
+          <div class="guide-body">
+            <span class="guide-pill" style="background: #2f9d63;">INICIANTE</span>
+            <h3>Guia de XP e Evolução</h3>
+            <div class="guide-meta">7 min de leitura</div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="guide-card" data-category="avancado" onclick="window.abrirGuiaModal?.('bosses')" style="--glow: rgba(201,138,47,0.4);">
+          <div class="guide-thumb" style="background: #3a2a12;">
+            <img src="assets/site/assets/items/stone_orb.png" alt="">
+          </div>
+          <div class="guide-body">
+            <span class="guide-pill" style="background: #c98a2f;">AVANÇADO</span>
+            <h3>Bosses e Tokens</h3>
+            <div class="guide-meta">10 min de leitura</div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="guide-card" data-category="intermediario" onclick="window.abrirGuiaModal?.('outland')" style="--glow: rgba(194,63,138,0.4);">
+          <div class="guide-thumb" style="background: #3a1230;">
+            <img src="assets/site/assets/ui/menu-mapa.png" alt="">
+          </div>
+          <div class="guide-body">
+            <span class="guide-pill" style="background: #c23f8a;">INTERMEDIÁRIO</span>
+            <h3>Outland — Guia Completo</h3>
+            <div class="guide-meta">9 min de leitura</div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="guide-card" data-category="avancado" onclick="window.abrirGuiaModal?.('pvp')" style="--glow: rgba(109,63,196,0.4);">
+          <div class="guide-thumb" style="background: #241a3a;">
+            <img src="assets/site/assets/ui/menu-pvp.png" alt="">
+          </div>
+          <div class="guide-body">
+            <span class="guide-pill" style="background: #6d3fc4;">AVANÇADO</span>
+            <h3>Estratégias de PvP e GvG</h3>
+            <div class="guide-meta">12 min de leitura</div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="guide-card" data-category="intermediario" onclick="window.abrirGuiaModal?.('shinies')" style="--glow: rgba(31,125,196,0.4);">
+          <div class="guide-thumb" style="background: #12233f;">
+            <img src="assets/site/assets/ui/menu-pokepedia.png" alt="">
+          </div>
+          <div class="guide-body">
+            <span class="guide-pill" style="background: #1f7dc4;">INTERMEDIÁRIO</span>
+            <h3>Mecânicas de Shinies</h3>
+            <div class="guide-meta">6 min de leitura</div>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="guide-card" data-category="evento" onclick="window.abrirGuiaModal?.('event')" style="--glow: rgba(201,138,47,0.4);">
+          <div class="guide-thumb" style="background: #3a2a12;">
+            <img src="assets/site/assets/ui/menu-comunidade.png" alt="">
+          </div>
+          <div class="guide-body">
+            <span class="guide-pill" style="background: #c98a2f;">EVENTO</span>
+            <h3>Evento Sazonal: Festival</h3>
+            <div class="guide-meta">4 min de leitura</div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="guide-card" data-category="iniciante" onclick="window.abrirGuiaModal?.('gym')" style="--glow: rgba(47,157,99,0.4);">
+          <div class="guide-thumb" style="background: #0f2e22;">
+            <img src="assets/site/assets/ui/menu-ginasio.png" alt="">
+          </div>
+          <div class="guide-body">
+            <span class="guide-pill" style="background: #2f9d63;">INICIANTE</span>
+            <h3>Ginásio: Primeiros Passos</h3>
+            <div class="guide-meta">6 min de leitura</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navegador de Hunts Integrado -->
+      <div class="ds-card" style="margin-top: 24px; padding: 20px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px; flex-wrap:wrap; gap:10px;">
+          <div>
+            <div class="ds-eyebrow">Catálogo</div>
+            <h3 style="font-family: var(--font-display); font-size: 16px; margin: 2px 0 0; color: var(--ink);">Navegador de Hunts por Região</h3>
+          </div>
+          <button class="btn on" style="font-size: 11px; padding: 6px 14px;" onclick="window.abrirCatalogoHunts?.()">Ver Tabela Completa de Hunts →</button>
+        </div>
+        <div style="display: flex; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap;">
+          <select id="guide-region-filter" class="dex-field-input" style="flex: 1; min-width: 160px;">
+            <option value="all">Todas as Regiões</option>
+            <option value="Kanto">Kanto</option>
+            <option value="Johto">Johto</option>
+            <option value="Hoenn">Hoenn</option>
+            <option value="Sinnoh">Sinnoh</option>
+            <option value="Unova">Unova</option>
+            <option value="Kalos">Kalos</option>
+            <option value="Alola">Alola</option>
+            <option value="Outland">Outland</option>
+          </select>
+          <input type="number" id="guide-max-lvl" class="dex-field-input" placeholder="Nível Máximo..." style="width: 150px;">
+        </div>
+        <div class="tbl-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nível Mob</th>
+                <th>Hunt / Rota</th>
+                <th>Região</th>
+                <th>Requisito</th>
+              </tr>
+            </thead>
+            <tbody id="guide-hunts-table-body">
+              <tr><td colspan="4" style="text-align: center; padding: 2rem;">Carregando hunts...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ====================================================================
+         VIEW 4: WIKI OFICIAL
+         ==================================================================== -->
+    <!-- ====================================================================
+         VIEW 4: WIKI OFICIAL (ATLAS WIKI)
+         ==================================================================== -->
+    <section id="view-wiki" class="portal-view">
+      
+      <div class="shell">
+        <!-- Rail Lateral de Categorias -->
+        <div class="rail">
+          <div class="rail-title">Categorias</div>
+          <a class="rail-item on" data-category="all"><span class="rail-ic">☰</span>Todos os artigos</a>
+          <a class="rail-item" data-category="mecanicas"><span class="rail-ic"><img src="assets/site/assets/ui/menu-mapa.png" alt=""></span>Mecânicas do Idle</a>
+          <a class="rail-item" data-category="xp"><span class="rail-ic"><img src="assets/site/assets/loja/exp.png" alt=""></span>Sistema de XP</a>
+          <a class="rail-item" data-category="shinies"><span class="rail-ic"><img src="assets/site/assets/ui/ball-poke.png" alt=""></span>Shinies e Formas</a>
+          <a class="rail-item" data-category="tms"><span class="rail-ic"><img src="assets/site/assets/ui/menu-pokepedia.png" alt=""></span>TMs e Habilidades</a>
+          <a class="rail-item" data-category="bosses"><span class="rail-ic"><img src="assets/site/assets/items/stone_orb.png" alt=""></span>Bosses e Tokens</a>
+          <a class="rail-item" data-category="outland"><span class="rail-ic">🗺</span>Outland</a>
+          <a class="rail-item" data-category="pvp"><span class="rail-ic">⚔</span>PvP e GvG</a>
+          <a class="rail-item" data-category="ginasio"><span class="rail-ic">🏟</span>Ginásio</a>
+          <a class="rail-item" data-category="mercado"><span class="rail-ic">💰</span>Mercado e RMT</a>
+          <a class="rail-item" data-category="eventos"><span class="rail-ic">🎉</span>Eventos Sazonais</a>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="main-content">
+          <!-- Feature Banner da Semana -->
+          <div class="feature-banner">
+            <div class="feature-ic">
+              <img src="assets/site/assets/ui/menu-pokedex.png" alt="">
+            </div>
+            <div class="feature-body">
+              <div class="ds-eyebrow">Destaque da semana</div>
+              <h2>9ª Geração chegou à Pokédex</h2>
+              <p>Confira os novos Pokémon, suas taxas de shiny e onde encontrá-los no catálogo oficial atualizado do PokéIdle.</p>
+            </div>
+            <button class="feature-cta" onclick="document.querySelector('.nav-tab-btn[data-view=\'view-pokedex\']')?.click();">Explorar Pokédex →</button>
+          </div>
+
+          <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+            <div>
+              <div class="ds-eyebrow">Enciclopédia Técnica</div>
+              <h1 class="ds-page-title" style="margin:2px 0 6px; font-size:24px; font-weight:800;">Artigos e Fórmulas Oficiais</h1>
+              <div style="font-size:13.5px;color:var(--muted);">Fórmulas matemáticas exatas, combate, captura e economia do servidor.</div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <input type="text" id="wiki-search-input" class="dex-field-input" placeholder="🔍 Buscar artigo..." style="width:200px;padding:8px 12px;font-size:12.5px;">
+            </div>
+          </div>
+
+          <div class="grid-3" id="wiki-articles-grid">
+            <!-- Artigo 1 -->
+            <div class="atlas-card" data-cat="mecanicas" onclick="window.abrirArtigoWiki?.('combat')" style="--glow:rgba(63,107,255,0.4);">
+              <div class="card-top">
+                <div class="card-ic"><img src="assets/site/assets/ui/menu-pvp.png" alt=""></div>
+                <span class="cat-tag" style="background:#3f6bff;">COMBATE</span>
+              </div>
+              <h3>Fórmulas de Combate & Dano</h3>
+              <p>Fórmulas de dano base, bônus de STAB (×1.5), amplificação elemental em hunts e cálculo de HP dos monstros.</p>
+              <div class="card-foot">
+                <span class="card-meta">Mecânicas · 6 min</span>
+                <span class="card-chev">Ler →</span>
+              </div>
+            </div>
+
+            <!-- Artigo 2 -->
+            <div class="atlas-card" data-cat="mecanicas" onclick="window.abrirArtigoWiki?.('capture')" style="--glow:rgba(47,157,99,0.4);">
+              <div class="card-top">
+                <div class="card-ic"><img src="assets/site/assets/ui/ball-poke.png" alt=""></div>
+                <span class="cat-tag" style="background:#2f9d63;">CAPTURA</span>
+              </div>
+              <h3>Captura & Balanço de Bolas</h3>
+              <p>Como o valor do NPC afeta a raridade logarítmica, fator de captura e a eficiência das bolas (Beast ×8, Ultra ×4).</p>
+              <div class="card-foot">
+                <span class="card-meta">Sistemas · 5 min</span>
+                <span class="card-chev">Ler →</span>
+              </div>
+            </div>
+
+            <!-- Artigo 3 -->
+            <div class="atlas-card" data-cat="shinies" onclick="window.abrirArtigoWiki?.('shiny')" style="--glow:rgba(224,168,58,0.4);">
+              <div class="card-top">
+                <div class="card-ic"><img src="assets/site/assets/ui/menu-pokepedia.png" alt=""></div>
+                <span class="cat-tag" style="background:#e0a83a;">SHINIES</span>
+              </div>
+              <h3>Mecânica Oficial de Shiny</h3>
+              <p>Chance base 1 em 24.000, multiplicador de 3× em todos os stats, IVs garantidos acima de 110 e Shiny Stones.</p>
+              <div class="card-foot">
+                <span class="card-meta">Pokédex · 4 min</span>
+                <span class="card-chev">Ler →</span>
+              </div>
+            </div>
+
+            <!-- Artigo 4 -->
+            <div class="atlas-card" data-cat="mercado" onclick="window.abrirArtigoWiki?.('economy')" style="--glow:rgba(194,63,138,0.4);">
+              <div class="card-top">
+                <div class="card-ic"><img src="assets/site/assets/ui/moeda-ouro.png" alt=""></div>
+                <span class="cat-tag" style="background:#c23f8a;">ECONOMIA</span>
+              </div>
+              <h3>Moedas, Gemas & RMT</h3>
+              <p>Diferenças entre Coins, Gemas com lastro em USDT, Diamantes, taxa de 5% no Mercado da Comunidade e hold de 2 min.</p>
+              <div class="card-foot">
+                <span class="card-meta">Economia · 7 min</span>
+                <span class="card-chev">Ler →</span>
+              </div>
+            </div>
+
+            <!-- Artigo 5 -->
+            <div class="atlas-card" data-cat="xp" onclick="window.abrirArtigoWiki?.('features')" style="--glow:rgba(109,63,196,0.4);">
+              <div class="card-top">
+                <div class="card-ic"><img src="assets/site/assets/loja/exp.png" alt=""></div>
+                <span class="cat-tag" style="background:#6d3fc4;">PROGRESSÃO</span>
+              </div>
+              <h3>Casas com XP Share & TMs</h3>
+              <p>Como treinar pokémons passivamente colocando-os na sua residência, aceleração de corrida com Bikes e TMs.</p>
+              <div class="card-foot">
+                <span class="card-meta">Recursos · 5 min</span>
+                <span class="card-chev">Ler →</span>
+              </div>
+            </div>
+
+            <!-- Artigo 6 -->
+            <div class="atlas-card" data-cat="bosses" onclick="window.abrirArtigoWiki?.('bosses')" style="--glow:rgba(240,104,90,0.4);">
+              <div class="card-top">
+                <div class="card-ic"><img src="assets/site/assets/items/stone_orb.png" alt=""></div>
+                <span class="cat-tag" style="background:#f0685a;">ENDGAME</span>
+              </div>
+              <h3>Outland & Bosses de Raid</h3>
+              <p>Zonas perigosas com respawn de Bosses lendários, drops de tokens bronze/prata e pedras elementais de refino.</p>
+              <div class="card-foot">
+                <span class="card-meta">Endgame · 8 min</span>
+                <span class="card-chev">Ler →</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ====================================================================
+         VIEW 4: ROADMAP DA JORNADA
+         ==================================================================== -->
+    <section id="view-roadmap" class="portal-view">
+      <div class="hero-banner quadro">
+        <div class="hero-badge">Caminho do Treinador</div>
+        <h1 class="hero-title">Roadmap de Progressão do PokéIdle</h1>
+        <p class="hero-subtitle">
+          Guia passo a passo desde o primeiro passo na grama baixa até os confrontos lendários de Outland e o topo do ranking de PvP.
+        </p>
+      </div>
+
+      <div class="roadmap-grid quadro">
+        <div class="roadmap-step vao">
+          <div class="step-badge">Fase 1 · Nv 1 a 40</div>
+          <h3>Início & Fundação</h3>
+          <p>Escolha seu inicial, capture os primeiros pokémons comuns nas rotas de Kanto (Viridian, Pewter, Cerulean). Foque em acumular moedas de ouro para Poké Balls e Great Balls.</p>
+        </div>
+
+        <div class="roadmap-step vao">
+          <div class="step-badge">Fase 2 · Nv 41 a 80</div>
+          <h3>Evoluções & Exploração</h3>
+          <p>Evolua sua equipe para o segundo estágio. Adquira sua primeira Bicicleta para acelerar a caminhada entre mobs. Compre uma Casa simples para ativar o XP Share passivo.</p>
+        </div>
+
+        <div class="roadmap-step vao">
+          <div class="step-badge">Fase 3 · Nv 81 a 120</div>
+          <h3>Johto, Hoenn & Oferendas</h3>
+          <p>Desbloqueie novas regiões, enfrente líderes de ginásio e realize Oferendas na estátua para obter pedras de refino. Equipe TMs com cobertura de tipos vantajosos.</p>
+        </div>
+
+        <div class="roadmap-step vao">
+          <div class="step-badge">Fase 4 · Nv 120+ · Endgame</div>
+          <h3>Outland, Bosses & Torneios</h3>
+          <p>Cace nas zonas perigosas de Outland para dropar Shiny Stone Fragments e Bronze Boss Tokens. Participe da arena PvP semanal e concorra a prêmios em Gemas USDT.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 5: DÚVIDAS FREQUENTES (FAQ)
+         ==================================================================== -->
+    <section id="view-faq" class="portal-view">
+      <div class="hero-banner quadro">
+        <div class="hero-badge">Perguntas Comuns</div>
+        <h1 class="hero-title">Dúvidas Frequentes do PokéIdle</h1>
+        <p class="hero-subtitle">
+          Respostas diretas e precisas para as perguntas mais recorrentes da comunidade.
+        </p>
+      </div>
+
+      <div class="faq-list quadro">
+        <div class="faq-item vao">
+          <h3>Como funciona o sorteio de Shiny no PokéIdle?</h3>
+          <p>O brilho shiny só é sorteado no momento em que você <strong>captura o monstro com sucesso</strong>. A chance padrão é de <strong>1 em 24.000 (0,0042%)</strong>. Com o Shiny Secret Lure ativo, a chance dobra para <strong>1 em 12.000 (0,0083%)</strong>.</p>
+        </div>
+
+        <div class="faq-item vao">
+          <h3>O que é o sistema de Potência (P1 a P5)?</h3>
+          <p>A potência é sorteada uma única vez quando o pokémon fica na bola. Ela concede um bônus permanente em todos os atributos: P1 (padrão), P2 (+5%), P3 (+10%), P4 (+25%) e P5 (+100%).</p>
+        </div>
+
+        <div class="faq-item vao">
+          <h3>Por que alguns pokémon não aparecem na natureza em nível alto?</h3>
+          <p>O jogo possui a mecânica de <strong>Teto de Captura</strong>. Espécies evoluídas têm um nível máximo em que entram na pokébola, incentivando o jogador a treinar e evoluir sua equipe.</p>
+        </div>
+
+        <div class="faq-item vao">
+          <h3>Qual a melhor pokébola para farmar?</h3>
+          <p>Para alvos comuns, a <strong>Ultra Ball (4× eficiência)</strong> oferece o melhor custo-benefício em ouro. Para lendários ou shinies de altíssimo valor, a <strong>Beast Ball (8× eficiência)</strong> garante a máxima chance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 6: GLOSSÁRIO
+         ==================================================================== -->
+    <section id="view-glossary" class="portal-view">
+      <div class="hero-banner quadro">
+        <div class="hero-badge">Termos & Siglas</div>
+        <h1 class="hero-title">Glossário do PokéIdle</h1>
+        <p class="hero-subtitle">
+          Entenda todas as siglas e terminologias utilizadas pelos jogadores e nos guias oficiais.
+        </p>
+      </div>
+
+      <div class="glossary-grid quadro">
+        <div class="glossary-card vao">
+          <span class="glossary-term">BST</span>
+          <span class="glossary-meaning">Base Stats Total — a soma de todos os 6 atributos base da espécie.</span>
+        </div>
+        <div class="glossary-card vao">
+          <span class="glossary-term">IV</span>
+          <span class="glossary-meaning">Individual Values — atributos genéticos de 1 a 32 sorteados para cada atributo.</span>
+        </div>
+        <div class="glossary-card vao">
+          <span class="glossary-term">KPH</span>
+          <span class="glossary-meaning">Kills por Hora — estimativa matemática de monstros abatidos a cada hora de caça.</span>
+        </div>
+        <div class="glossary-card vao">
+          <span class="glossary-term">STAB</span>
+          <span class="glossary-meaning">Same Type Attack Bonus — +50% de bônus de dano ao usar golpe do mesmo tipo do monstro.</span>
+        </div>
+        <div class="glossary-card vao">
+          <span class="glossary-term">Lure</span>
+          <span class="glossary-meaning">Shiny Secret Lure — item da loja que dobra as chances de encontrar um shiny.</span>
+        </div>
+        <div class="glossary-card vao">
+          <span class="glossary-term">Outland</span>
+          <span class="glossary-meaning">Dimensões perigosas de alto nível com multiplicadores aumentados de drop e XP.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW NOVA: PAINEL ADMINISTRATIVO (COMPANION / ATLAS ADMIN)
+         ==================================================================== -->
+    <section id="view-admin" class="portal-view">
+      
+      <!-- Topo do Painel Admin -->
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div>
+            <div class="ds-eyebrow">Gestão do Portal</div>
+            <h1 class="ds-page-title" style="margin: 2px 0 0; font-size: 24px; font-weight: 800;">Painel Administrativo</h1>
+          </div>
+          <span class="admin-role-badge" style="background: rgba(63, 107, 255, 0.2); border: 1px solid var(--accent); color: var(--accent-ink);">MODERADOR</span>
+        </div>
+        <div style="font-size: 13px; color: var(--muted);">
+          Logado como: <strong style="color: var(--ink);">gabi_atlas</strong>
+        </div>
+      </div>
+
+      <div class="admin-shell">
+        <!-- Coluna 1: Rail de Módulos -->
+        <div class="admin-rail">
+          <div class="admin-rail-item" data-admin-tab="dashboard">▦ Dashboard</div>
+          <div class="admin-rail-item on" data-admin-tab="wiki">✎ Wiki</div>
+          <div class="admin-rail-item" data-admin-tab="guias">▤ Guias</div>
+          <div class="admin-rail-item" data-admin-tab="pokedex">◈ Pokédex — dados</div>
+          <div class="admin-rail-item" data-admin-tab="eventos">★ Eventos</div>
+          <div class="admin-rail-item" data-admin-tab="usuarios">☺ Usuários e Mods</div>
+          <div class="rail-title" style="margin-top: 14px;">Seu papel</div>
+          <div class="admin-rail-note">Moderador — pode publicar e editar Wiki e Guias. Alterações de Pokédex e usuários exigem cargo Admin.</div>
+        </div>
+
+        <!-- Coluna 2: Lista de Artigos Gerenciáveis -->
+        <div class="admin-list">
+          <div class="admin-list-head">
+            <h2>Artigos da Wiki</h2>
+            <button class="btn-new-art" id="admin-btn-new">+ Novo</button>
+          </div>
+          <input type="text" class="admin-art-search" id="admin-search-input" placeholder="🔍 Buscar artigo...">
+          <div style="flex: 1; overflow-y: auto; max-height: 480px;" id="admin-articles-list">
+            <div class="admin-art-row active" data-id="idle">
+              <div class="admin-art-ic"><img src="assets/site/assets/ui/menu-mapa.png" style="width:18px;height:18px;object-fit:contain;" alt=""></div>
+              <div style="flex: 1; min-width: 0;">
+                <div class="admin-art-title">Como funciona o Idle</div>
+                <div class="admin-art-meta">Mecânicas · editado há 2h</div>
+              </div>
+              <span class="guide-pill" style="background: var(--ok-bg); color: var(--ok-ink); font-size: 9px;">PUBLICADO</span>
+            </div>
+
+            <div class="admin-art-row" data-id="xp">
+              <div class="admin-art-ic"><img src="assets/site/assets/loja/exp.png" style="width:18px;height:18px;object-fit:contain;" alt=""></div>
+              <div style="flex: 1; min-width: 0;">
+                <div class="admin-art-title">Guia de XP e Evolução</div>
+                <div class="admin-art-meta">Sistemas · editado ontem</div>
+              </div>
+              <span class="guide-pill" style="background: var(--ok-bg); color: var(--ok-ink); font-size: 9px;">PUBLICADO</span>
+            </div>
+
+            <div class="admin-art-row" data-id="festival">
+              <div class="admin-art-ic"><img src="assets/site/assets/ui/menu-comunidade.png" style="width:18px;height:18px;object-fit:contain;" alt=""></div>
+              <div style="flex: 1; min-width: 0;">
+                <div class="admin-art-title">Evento Sazonal: Festival</div>
+                <div class="admin-art-meta">Evento · rascunho</div>
+              </div>
+              <span class="guide-pill" style="background: var(--draft-bg); color: var(--draft-ink); font-size: 9px;">RASCUNHO</span>
+            </div>
+
+            <div class="admin-art-row" data-id="shinies">
+              <div class="admin-art-ic"><img src="assets/site/assets/ui/ball-poke.png" style="width:18px;height:18px;object-fit:contain;" alt=""></div>
+              <div style="flex: 1; min-width: 0;">
+                <div class="admin-art-title">Shinies e Formas Especiais</div>
+                <div class="admin-art-meta">Pokédex · editado há 3 dias</div>
+              </div>
+              <span class="guide-pill" style="background: var(--ok-bg); color: var(--ok-ink); font-size: 9px;">PUBLICADO</span>
+            </div>
+
+            <div class="admin-art-row" data-id="tms">
+              <div class="admin-art-ic"><img src="assets/site/assets/ui/menu-pokepedia.png" style="width:18px;height:18px;object-fit:contain;" alt=""></div>
+              <div style="flex: 1; min-width: 0;">
+                <div class="admin-art-title">TM's e Habilidades</div>
+                <div class="admin-art-meta">Itens · rascunho</div>
+              </div>
+              <span class="guide-pill" style="background: var(--draft-bg); color: var(--draft-ink); font-size: 9px;">RASCUNHO</span>
+            </div>
+
+            <div class="admin-art-row" data-id="bosses">
+              <div class="admin-art-ic"><img src="assets/site/assets/items/stone_orb.png" style="width:18px;height:18px;object-fit:contain;" alt=""></div>
+              <div style="flex: 1; min-width: 0;">
+                <div class="admin-art-title">Bosses e Tokens</div>
+                <div class="admin-art-meta">Evento · editado há 1 semana</div>
+              </div>
+              <span class="guide-pill" style="background: var(--ok-bg); color: var(--ok-ink); font-size: 9px;">PUBLICADO</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna 3: Editor de Artigo -->
+        <div class="admin-editor">
+          <div class="editor-head">
+            <h2 id="admin-editor-title">Editando: Como funciona o Idle</h2>
+            <div style="display: flex; gap: 8px;">
+              <button class="btn-ghost-admin" id="admin-save-draft-btn">Salvar rascunho</button>
+              <button class="btn-primary-admin" id="admin-publish-btn">Publicar ▶</button>
+            </div>
+          </div>
+
+          <div class="admin-field">
+            <label>Título do Artigo</label>
+            <input type="text" class="admin-input" id="admin-input-title" value="Como funciona o Idle">
+          </div>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <div class="admin-field" style="flex: 1; min-width: 140px;">
+              <label>Categoria</label>
+              <select class="admin-input" id="admin-select-cat">
+                <option value="mecanicas">Mecânicas</option>
+                <option value="sistemas">Sistemas</option>
+                <option value="pokedex">Pokédex</option>
+                <option value="itens">Itens</option>
+                <option value="evento">Evento</option>
+              </select>
+            </div>
+            <div class="admin-field" style="flex: 1; min-width: 140px;">
+              <label>Tags (separadas por vírgula)</label>
+              <input type="text" class="admin-input" id="admin-input-tags" value="idle, offline, progresso, fórmulas">
+            </div>
+            <div class="admin-field" style="width: 150px;">
+              <label>Status</label>
+              <select class="admin-input" id="admin-select-status">
+                <option value="pub">Publicado</option>
+                <option value="draft">Rascunho</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="admin-field">
+            <label>Conteúdo em Markdown</label>
+            <div class="admin-toolbar">
+              <button class="tb-btn" onclick="window.inserirTagAdmin?.('**', '**')"><b>B</b></button>
+              <button class="tb-btn" onclick="window.inserirTagAdmin?.('*', '*')"><i>I</i></button>
+              <button class="tb-btn" onclick="window.inserirTagAdmin?.('<u>', '</u>')"><u>U</u></button>
+              <div style="width: 1px; background: var(--line); margin: 4px 2px;"></div>
+              <button class="tb-btn" onclick="window.inserirTagAdmin?.('# ', '')">H1</button>
+              <button class="tb-btn" onclick="window.inserirTagAdmin?.('## ', '')">H2</button>
+              <div style="width: 1px; background: var(--line); margin: 4px 2px;"></div>
+              <button class="tb-btn" onclick="window.inserirTagAdmin?.('- ', '')">• Lista</button>
+              <button class="tb-btn" onclick="window.inserirTagAdmin?.('`', '`')">Código</button>
+            </div>
+            <textarea class="editor-area" id="admin-textarea-content" rows="9">O PokéIdle é um MMO idle em que o monstrinho combate automaticamente na hunt.
+- Nível do Treinador controla o desbloqueio de novas hunts e regiões.
+- Nível do Pokémon controla o poder e estatísticas individuais.
+- Ao alcançar os requisitos de nível, o sistema migra ou destranca rotas de farm com taxas superiores de XP e drop de moedas.</textarea>
+          </div>
+          
+          <div id="admin-feedback-msg" style="display: none; padding: 10px 14px; border-radius: 8px; font-size: 13px; font-weight: 700; background: var(--ok-bg); color: var(--ok-ink);">
+            ✓ Alterações salvas com sucesso!
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- SITE FOOTER (Feito pela comunidade, para a comunidade) -->
+  <footer class="site-footer">
+    <div class="footer-left">
+      <img src="assets/site/assets/ui/ball-poke.png" class="footer-ball-ico" alt="Pokébola">
+      <div class="footer-text-group">
+        <strong class="footer-title">PokéIdle.io</strong>
+        <span class="footer-desc">Feito pela comunidade, para a comunidade.</span>
+      </div>
+    </div>
+    <div class="footer-right">
+      <a href="https://discord.gg/pokeidle" target="_blank" class="footer-link">Discord</a>
+      <span class="footer-dot">•</span>
+      <a href="https://github.com/gabibefoin/pokeidle-hub" target="_blank" class="footer-link">GitHub</a>
+      <span class="footer-dot">•</span>
+      <a href="#" class="footer-link">Contato</a>
+      <span class="footer-dot">•</span>
+      <a href="#" class="footer-link">Sobre</a>
+      <img src="assets/site/assets/ui/menu-comunidade.png" class="footer-heart-svg" alt="">
+    </div>
+  </footer>
+
+  <!-- MODAL OFICIAL: DETALHES DA ESPÉCIE (design.md & Imagens 2-5) -->
+  <div id="species-modal" class="modal-backdrop">
+    <div class="modal-dialog quadro">
+      <div class="modal-topo">
+        <h2 id="modal-species-title">POKÉMON</h2>
+        <button id="modal-close-btn" class="btn on modal-close-btn" title="Fechar ficha">✕</button>
+      </div>
+      <div id="modal-species-content"></div>
+    </div>
+  </div>
+
+  <!-- App Entry Point (ES Modules) -->
+  <script type="module" src="js/app.js?v=20260919_2"></script>
 </body>
 </html>
