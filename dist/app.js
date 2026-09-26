@@ -49,48 +49,70 @@ function cleanHunt(r) {
   return `${reg}, Nv ${lvl}`;
 }
 
-function getBallData(r, ballKey, captureBoost) {
-  const map = {
+function getBallData(r, ballKey, captureBoost, shinyLure) {
+  const ballRaw = {
     poke: {
-      pct: captureBoost ? r.captura_pok_ball_com_capture_boost_pct : r.captura_pok_ball_pct,
-      derrotas: r.captura_pok_ball_derrotas_media,
-      shiny: r.shiny_encontrar_e_capturar_pok_ball_1_em
+      pct: parseFloat(String(r.captura_pok_ball_pct || 0).replace(',', '.')),
+      derrotas: parseInt(r.captura_pok_ball_derrotas_media) || 0,
+      shiny: parseInt(r.shiny_encontrar_e_capturar_pok_ball_1_em) || 0
     },
     great: {
-      pct: captureBoost ? r.captura_great_ball_com_capture_boost_pct : r.captura_great_ball_pct,
-      derrotas: r.captura_great_ball_derrotas_media,
-      shiny: r.shiny_encontrar_e_capturar_great_ball_1_em
+      pct: parseFloat(String(r.captura_great_ball_pct || 0).replace(',', '.')),
+      derrotas: parseInt(r.captura_great_ball_derrotas_media) || 0,
+      shiny: parseInt(r.shiny_encontrar_e_capturar_great_ball_1_em) || 0
     },
     super: {
-      pct: captureBoost ? r.captura_super_ball_com_capture_boost_pct : r.captura_super_ball_pct,
-      derrotas: r.captura_super_ball_derrotas_media,
-      shiny: r.shiny_encontrar_e_capturar_super_ball_1_em
+      pct: parseFloat(String(r.captura_super_ball_pct || 0).replace(',', '.')),
+      derrotas: parseInt(r.captura_super_ball_derrotas_media) || 0,
+      shiny: parseInt(r.shiny_encontrar_e_capturar_super_ball_1_em) || 0
     },
     ultra: {
-      pct: captureBoost ? r.captura_ultra_ball_com_capture_boost_pct : r.captura_ultra_ball_pct,
-      derrotas: r.captura_ultra_ball_derrotas_media,
-      shiny: r.shiny_encontrar_e_capturar_ultra_ball_1_em
+      pct: parseFloat(String(r.captura_ultra_ball_pct || 0).replace(',', '.')),
+      derrotas: parseInt(r.captura_ultra_ball_derrotas_media) || 0,
+      shiny: parseInt(r.shiny_encontrar_e_capturar_ultra_ball_1_em) || 0
     },
     beast: {
-      pct: captureBoost ? r.captura_beast_ball_com_capture_boost_pct : r.captura_beast_ball_pct,
-      derrotas: r.captura_beast_ball_derrotas_media,
-      shiny: r.shiny_encontrar_e_capturar_beast_ball_1_em
+      pct: parseFloat(String(r.captura_beast_ball_pct || 0).replace(',', '.')),
+      derrotas: parseInt(r.captura_beast_ball_derrotas_media) || 0,
+      shiny: parseInt(r.shiny_encontrar_e_capturar_beast_ball_1_em) || 0
     }
   };
-  return map[ballKey] || map.poke;
+
+  const base = ballRaw[ballKey] || ballRaw.poke;
+  let finalPct = base.pct;
+  let finalDerrotas = base.derrotas;
+  let finalShiny = base.shiny;
+
+  if (captureBoost) {
+    finalPct = finalPct * 2;
+    if (finalDerrotas > 0) finalDerrotas = Math.round(finalDerrotas / 2);
+    if (finalShiny > 0) finalShiny = Math.round(finalShiny / 2);
+  }
+
+  if (shinyLure) {
+    if (finalShiny > 0) finalShiny = Math.round(finalShiny / 2);
+  }
+
+  const pctStr = finalPct > 0 ? (finalPct.toFixed(4).replace('.', ',').replace(/0+$/, '').replace(/,$/, '')) + '%' : '—';
+
+  return {
+    pct: pctStr,
+    derrotas: finalDerrotas > 0 ? finalDerrotas : '—',
+    shiny: finalShiny > 0 ? finalShiny : null
+  };
 }
 
 function getFilteredPokemon() {
   return pokemon.filter(r => {
     if (dexState.search) {
-      const q = dexState.search.toLowerCase();
+      const q = dexState.search.toLowerCase().trim();
       const mName = r.nome && r.nome.toLowerCase().includes(q);
       const mDex = r.dex && String(r.dex).includes(q);
       if (!mName && !mDex) return false;
     }
-    if (dexState.tipo1 && (!r.tipos || !r.tipos.includes(dexState.tipo1))) return false;
-    if (dexState.tipo2 && (!r.tipos || !r.tipos.includes(dexState.tipo2))) return false;
-    if (dexState.regiao && r.regiao !== dexState.regiao) return false;
+    if (dexState.tipo1 && (!r.tipos || !r.tipos.map(t=>t.toUpperCase()).includes(dexState.tipo1.toUpperCase()))) return false;
+    if (dexState.tipo2 && (!r.tipos || !r.tipos.map(t=>t.toUpperCase()).includes(dexState.tipo2.toUpperCase()))) return false;
+    if (dexState.regiao && r.regiao && r.regiao.toLowerCase() !== dexState.regiao.toLowerCase()) return false;
     if (dexState.apenasShiny && r.tem_forma_shiny !== 'sim') return false;
     return true;
   });
@@ -103,8 +125,8 @@ function table(mode = 'shiny') {
   if (mode === 'shiny') {
     heads = ['#ID','POKÉMON','TIPOS','HUNT','% CAPTURA','DERROTAS (MÉDIA)','SHINY (1 EM)','AÇÕES'];
     body = list.map(r => {
-      const bData = getBallData(r, dexState.ball, dexState.captureBoost);
-      return `<tr><td class="rank">${r.dex}</td><td>${mon(r)}</td><td><span class="type-row">${r.tipos.map(type).join('')}</span></td><td>${cleanHunt(r)}</td><td class="stat-positive">${bData.pct ? bData.pct + '%' : '—'}<i class="meter"></i></td><td>${bData.derrotas || '—'}</td><td>${bData.shiny ? '1 em ' + formatNum(bData.shiny) : (r.shiny_1_em ? '1 em ' + formatNum(r.shiny_1_em) : '—')}</td><td><button class="detail">Detalhes</button></td></tr>`;
+      const bData = getBallData(r, dexState.ball, dexState.captureBoost, dexState.shinyLure);
+      return `<tr><td class="rank">${r.dex}</td><td>${mon(r)}</td><td><span class="type-row">${r.tipos.map(type).join('')}</span></td><td>${cleanHunt(r)}</td><td class="stat-positive">${bData.pct}<i class="meter"></i></td><td>${bData.derrotas}</td><td>${bData.shiny ? '1 em ' + formatNum(bData.shiny) : (r.shiny_1_em ? '1 em ' + formatNum(r.shiny_1_em) : '—')}</td><td><button class="detail">Detalhes</button></td></tr>`;
     });
   } else if (mode === 'hunt') {
     heads = ['#ID','POKÉMON','TIPOS','HUNT','FRAQUEZA','RESISTÊNCIA','DEF','SP.DEF','HP','XP','AÇÕES'];
@@ -163,7 +185,7 @@ function filterBar(mode) {
       <select class="control dropdown" id="dex-tipo1">${typeOptions}</select>
       <select class="control dropdown" id="dex-tipo2">${typeOptions}</select>
       <select class="control dropdown" id="dex-regiao">${regionOptions}</select>
-      <button class="control dropdown ${dexState.apenasShiny ? 'selected' : ''}" id="dex-apenas-shiny">Apenas Shiny <span class="caret">⌄</span></button>
+      <button class="control ${dexState.apenasShiny ? 'selected' : ''}" id="dex-apenas-shiny">Apenas Shiny</button>
     </div>
     <div class="filter-group ball-group">
       <span class="group-label">POKÉBOLA</span>
