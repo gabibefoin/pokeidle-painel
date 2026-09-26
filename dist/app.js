@@ -431,16 +431,7 @@ function typeSelectorHTML() {
     else if (t === t2) cls += ' sel-2';
     return `<span class="type ${cls}" data-type-filter="${t}">${t[0]+t.slice(1).toLowerCase()}</span>`;
   }).join('');
-  const hint = t1 && t2
-    ? `<span class="type-selector-hint">2 selecionados — clique para remover</span>`
-    : t1
-    ? `<span class="type-selector-hint">+ selecione 2º tipo (amarelo)</span>`
-    : `<span class="type-selector-hint">selecione até 2 tipos</span>`;
-  return `<div class="type-selector" id="type-selector">
-    <span class="type-selector-label">TIPOS</span>
-    ${tags}
-    ${hint}
-  </div>`;
+  return `<div class="type-selector" id="type-selector">${tags}</div>`;
 }
 
 function tableHeader(mode) {
@@ -790,32 +781,38 @@ function attachDexListeners(mode) {
   setVal('filter-imune', dexState.imuneFilter);
 
   // Seletor visual de tipos — clique em tag seleciona tipo 1 (roxo) ou tipo 2 (amarelo)
-  document.getElementById('type-selector')?.addEventListener('click', e => {
-    const tag = e.target.closest('[data-type-filter]');
-    if (!tag) return;
-    const t = tag.dataset.typeFilter;
-    if (dexState.tipo1 === t) {
-      // Remove tipo1, promove tipo2 se existir
-      dexState.tipo1 = dexState.tipo2;
-      dexState.tipo2 = '';
-    } else if (dexState.tipo2 === t) {
-      dexState.tipo2 = '';
-    } else if (!dexState.tipo1) {
-      dexState.tipo1 = t;
-    } else if (!dexState.tipo2) {
-      dexState.tipo2 = t;
-    } else {
-      // Já tem 2 selecionados — substitui o tipo1, mantém tipo2
-      dexState.tipo1 = dexState.tipo2;
-      dexState.tipo2 = t;
-    }
-    // Re-renderiza o seletor de tipos no lugar
-    const sel = document.getElementById('type-selector');
-    if (sel) sel.outerHTML = typeSelectorHTML();
-    // Rebinda o listener no novo elemento
-    document.getElementById('type-selector')?.addEventListener('click', arguments.callee);
-    applyFiltersAndRender();
-  });
+  const typeSel = document.getElementById('type-selector');
+  if (typeSel) {
+    typeSel.addEventListener('click', e => {
+      const tag = e.target.closest('[data-type-filter]');
+      if (!tag) return;
+      const t = tag.dataset.typeFilter;
+      if (dexState.tipo1 === t) {
+        dexState.tipo1 = dexState.tipo2;
+        dexState.tipo2 = '';
+      } else if (dexState.tipo2 === t) {
+        dexState.tipo2 = '';
+      } else if (!dexState.tipo1) {
+        dexState.tipo1 = t;
+      } else if (!dexState.tipo2) {
+        dexState.tipo2 = t;
+      } else {
+        dexState.tipo1 = dexState.tipo2;
+        dexState.tipo2 = t;
+      }
+      
+      // Atualiza classes CSS in-place sem recriar nós do DOM (desempenho instantâneo)
+      typeSel.querySelectorAll('[data-type-filter]').forEach(el => {
+        const val = el.dataset.typeFilter;
+        let cls = `type ${val.toLowerCase()}`;
+        if (val === dexState.tipo1) cls += ' sel-1';
+        else if (val === dexState.tipo2) cls += ' sel-2';
+        el.className = cls;
+      });
+
+      applyFiltersAndRender();
+    });
+  }
 
   // Filtros globais
   document.getElementById('dex-search')?.addEventListener('input', e => {
