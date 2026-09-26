@@ -27,38 +27,160 @@ const mon = p => `<div class="monster"><i class="monster-icon"></i>${p.nome}</di
 const type = x => `<span class="type ${x}">${x}</span>`;
 const panel = (x, c = '') => `<section class="section-card ${c}">${x}</section>`;
 const names = ['Começando no PokéIdle','Guia de XP e Evolução','Bosses e Tokens: rota completa','Outland — guia de região completo','Estratégias de PvP e GvG','Mecânicas de shinies explicadas','Evento sazonal: Festival de Outono','Ginásio: primeiros passos'];
+const dexState = {
+  search: '',
+  tipo1: '',
+  tipo2: '',
+  regiao: '',
+  apenasShiny: false,
+  ball: 'poke',
+  captureBoost: false,
+  shinyLure: false
+};
+
 function formatNum(n) {
   if (!n || isNaN(n)) return n || '—';
   return Number(n).toLocaleString('pt-BR');
 }
-function cleanHunt(str) {
-  if (!str) return '—';
-  return str.replace(/;$/, '');
+
+function cleanHunt(r) {
+  const reg = r.regiao || 'Kanto';
+  const lvl = r.nivel_hunt_min || r.nivel_ao_capturar || 20;
+  return `${reg}, Nv ${lvl}`;
+}
+
+function getBallData(r, ballKey, captureBoost) {
+  const map = {
+    poke: {
+      pct: captureBoost ? r.captura_pok_ball_com_capture_boost_pct : r.captura_pok_ball_pct,
+      derrotas: r.captura_pok_ball_derrotas_media,
+      shiny: r.shiny_encontrar_e_capturar_pok_ball_1_em
+    },
+    great: {
+      pct: captureBoost ? r.captura_great_ball_com_capture_boost_pct : r.captura_great_ball_pct,
+      derrotas: r.captura_great_ball_derrotas_media,
+      shiny: r.shiny_encontrar_e_capturar_great_ball_1_em
+    },
+    super: {
+      pct: captureBoost ? r.captura_super_ball_com_capture_boost_pct : r.captura_super_ball_pct,
+      derrotas: r.captura_super_ball_derrotas_media,
+      shiny: r.shiny_encontrar_e_capturar_super_ball_1_em
+    },
+    ultra: {
+      pct: captureBoost ? r.captura_ultra_ball_com_capture_boost_pct : r.captura_ultra_ball_pct,
+      derrotas: r.captura_ultra_ball_derrotas_media,
+      shiny: r.shiny_encontrar_e_capturar_ultra_ball_1_em
+    },
+    beast: {
+      pct: captureBoost ? r.captura_beast_ball_com_capture_boost_pct : r.captura_beast_ball_pct,
+      derrotas: r.captura_beast_ball_derrotas_media,
+      shiny: r.shiny_encontrar_e_capturar_beast_ball_1_em
+    }
+  };
+  return map[ballKey] || map.poke;
+}
+
+function getFilteredPokemon() {
+  return pokemon.filter(r => {
+    if (dexState.search) {
+      const q = dexState.search.toLowerCase();
+      const mName = r.nome && r.nome.toLowerCase().includes(q);
+      const mDex = r.dex && String(r.dex).includes(q);
+      if (!mName && !mDex) return false;
+    }
+    if (dexState.tipo1 && (!r.tipos || !r.tipos.includes(dexState.tipo1))) return false;
+    if (dexState.tipo2 && (!r.tipos || !r.tipos.includes(dexState.tipo2))) return false;
+    if (dexState.regiao && r.regiao !== dexState.regiao) return false;
+    if (dexState.apenasShiny && r.tem_forma_shiny !== 'sim') return false;
+    return true;
+  });
 }
 
 function table(mode = 'shiny') {
   let heads = [];
   let body = [];
+  const list = getFilteredPokemon();
   if (mode === 'shiny') {
-    heads = ['#ID','POKÉMON','TIPOS','HUNT / LOCAL','% CAPTURA','DERROTAS (MÉDIA)','SHINY (1 EM)','AÇÕES'];
-    body = pokemon.map(r => `<tr><td class="rank">${r.dex}</td><td>${mon(r)}</td><td><span class="type-row">${r.tipos.map(type).join('')}</span></td><td>${cleanHunt(r.onde_encontrar || r.regiao)}</td><td class="stat-positive">${r.captura_pok_ball_pct ? r.captura_pok_ball_pct + '%' : '—'}<i class="meter"></i></td><td>${r.captura_pok_ball_derrotas_media || '—'}</td><td>${r.shiny_encontrar_e_capturar_pok_ball_1_em ? '1 em ' + formatNum(r.shiny_encontrar_e_capturar_pok_ball_1_em) : (r.shiny_1_em ? '1 em ' + formatNum(r.shiny_1_em) : '—')}</td><td><button class="detail">Detalhes</button></td></tr>`);
+    heads = ['#ID','POKÉMON','TIPOS','HUNT','% CAPTURA','DERROTAS (MÉDIA)','SHINY (1 EM)','AÇÕES'];
+    body = list.map(r => {
+      const bData = getBallData(r, dexState.ball, dexState.captureBoost);
+      return `<tr><td class="rank">${r.dex}</td><td>${mon(r)}</td><td><span class="type-row">${r.tipos.map(type).join('')}</span></td><td>${cleanHunt(r)}</td><td class="stat-positive">${bData.pct ? bData.pct + '%' : '—'}<i class="meter"></i></td><td>${bData.derrotas || '—'}</td><td>${bData.shiny ? '1 em ' + formatNum(bData.shiny) : (r.shiny_1_em ? '1 em ' + formatNum(r.shiny_1_em) : '—')}</td><td><button class="detail">Detalhes</button></td></tr>`;
+    });
   } else if (mode === 'hunt') {
-    heads = ['#ID','POKÉMON','TIPOS','HUNT / LOCAL','FRAQUEZA','RESISTÊNCIA','DEF','SP.DEF','HP','XP','AÇÕES'];
-    body = pokemon.map(r => `<tr><td class="rank">${r.dex}</td><td>${mon(r)}</td><td><span class="type-row">${r.tipos.map(type).join('')}</span></td><td>${cleanHunt(r.onde_encontrar || r.regiao)}</td><td>${r.fraco_contra || '—'}</td><td>${r.resiste_a || '—'}</td><td>${r.def || '—'}</td><td>${r.spdef || '—'}</td><td>${r.hp || '—'}</td><td class="stat-green">${r.xp_por_derrota || '—'}</td><td><button class="detail">Detalhes</button></td></tr>`);
+    heads = ['#ID','POKÉMON','TIPOS','HUNT','FRAQUEZA','RESISTÊNCIA','DEF','SP.DEF','HP','XP','AÇÕES'];
+    body = list.map(r => `<tr><td class="rank">${r.dex}</td><td>${mon(r)}</td><td><span class="type-row">${r.tipos.map(type).join('')}</span></td><td>${cleanHunt(r)}</td><td>${r.fraco_contra || '—'}</td><td>${r.resiste_a || '—'}</td><td>${r.def || '—'}</td><td>${r.spdef || '—'}</td><td>${r.hp || '—'}</td><td class="stat-green">${r.xp_por_derrota || '—'}</td><td><button class="detail">Detalhes</button></td></tr>`);
   } else if (mode === 'loot') {
-    heads = ['#ID','POKÉMON','TIPOS','HUNT / LOCAL','GOLD NPC','DROPS & CHANCES','AÇÕES'];
-    body = pokemon.map(r => `<tr><td class="rank">${r.dex}</td><td>${mon(r)}</td><td><span class="type-row">${r.tipos.map(type).join('')}</span></td><td>${cleanHunt(r.onde_encontrar || r.regiao)}</td><td class="stat-gold">${r.ouro_por_derrota ? r.ouro_por_derrota + ' Gold' : '—'}</td><td>${r.drops || '—'}</td><td><button class="detail">Detalhes</button></td></tr>`);
+    heads = ['#ID','POKÉMON','TIPOS','HUNT','GOLD NPC','DROPS & CHANCES','AÇÕES'];
+    body = list.map(r => `<tr><td class="rank">${r.dex}</td><td>${mon(r)}</td><td><span class="type-row">${r.tipos.map(type).join('')}</span></td><td>${cleanHunt(r)}</td><td class="stat-gold">${r.ouro_por_derrota ? r.ouro_por_derrota + ' Gold' : '—'}</td><td>${r.drops || '—'}</td><td><button class="detail">Detalhes</button></td></tr>`);
   } else {
-    heads = ['#ID','POKÉMON','TIPOS','HUNT / LOCAL','BST TOTAL','HP','ATK','DEF','SP.ATK','SP.DEF','SPEED','ESTÁGIO','EVOLUÇÃO','AÇÕES'];
-    body = pokemon.map(r => `<tr><td class="rank">${r.dex}</td><td>${mon(r)}</td><td><span class="type-row">${r.tipos.map(type).join('')}</span></td><td>${cleanHunt(r.onde_encontrar || r.regiao)}</td><td class="stat-positive">${r.total_stats || '—'}</td><td>${r.hp || '—'}</td><td>${r.atk || '—'}</td><td>${r.def || '—'}</td><td>${r.spatk || '—'}</td><td>${r.spdef || '—'}</td><td>${r.spd || '—'}</td><td><span class="badge update">Estágio ${r.estagio_evolutivo || 1}</span></td><td>${r.evolui_para ? '→ ' + r.evolui_para : 'Não evolui'}</td><td><button class="detail">Detalhes</button></td></tr>`);
+    heads = ['#ID','POKÉMON','TIPOS','HUNT','BST TOTAL','HP','ATK','DEF','SP.ATK','SP.DEF','SPEED','ESTÁGIO','EVOLUÇÃO','AÇÕES'];
+    body = list.map(r => `<tr><td class="rank">${r.dex}</td><td>${mon(r)}</td><td><span class="type-row">${r.tipos.map(type).join('')}</span></td><td>${cleanHunt(r)}</td><td class="stat-positive">${r.total_stats || '—'}</td><td>${r.hp || '—'}</td><td>${r.atk || '—'}</td><td>${r.def || '—'}</td><td>${r.spatk || '—'}</td><td>${r.spdef || '—'}</td><td>${r.spd || '—'}</td><td><span class="badge update">Estágio ${r.estagio_evolutivo || 1}</span></td><td>${r.evolui_para ? '→ ' + r.evolui_para : 'Não evolui'}</td><td><button class="detail">Detalhes</button></td></tr>`);
   }
   return `<div class="data-panel"><table class="data-table"><thead><tr>${heads.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${body.join('')}</tbody></table></div>`;
 }
 
-const filters={shiny:['Buscar Pokémon...','Tipo','Tipo','Região','Poké Ball (x1)','Great Ball (x2)','Super Ball (x3)','Ultra Ball (x4)','Beast Ball (x8)','Apenas Shiny','Capture Boost','Shiny Lure'],hunt:['Buscar Pokémon...','Região','Nv. mínimo','Nv. máximo','Tipo','Fraqueza 4x','Fraqueza 2x','Resistência 0,5x','Resistência 0,25x','Imunidade 0x','XP Boost'],loot:['Buscar Pokémon...','Região','Tipo','Tipo','Drops (todos os itens)','Maior Gold NPC','Loot Boost','Mostrando 870 espécies'],strong:['Buscar Pokémon...','Região','Nv. mínimo','Nv. máximo','Tipo','Tipo','Estágio Evolutivo (Todos)']};
-const isDropdown=f=>f==='Tipo'||f==='Região'||f==='Apenas Shiny';
-const control=(f,i)=>`<button class="control ${i===0?'search-field':''} ${f.includes('Boost')||f.includes('Lure')?'check':''} ${f.includes('Ball')?'ball':''} ${f.includes('Poké Ball')?'selected':''} ${isDropdown(f)?'dropdown':''}">${i===0?'<b class="filter-search-icon">⌕</b> ':''}${f}${isDropdown(f)?' <span class="caret">⌄</span>':''}</button>`;
-const filterBar=mode=>{if(mode!=='shiny')return `<div class="filters">${filters[mode].map(control).join('')}</div>`;const basic=filters.shiny.slice(0,5),balls=filters.shiny.slice(5,10),boosts=filters.shiny.slice(10);return `<div class="filter-groups"><div class="filter-group filter-basics">${basic.map(control).join('')}</div><div class="filter-group ball-group"><span class="group-label">Pokébola</span>${balls.map((f,i)=>control(f.replace(/ \(x\d\)/,''),i+5)).join('')}</div><div class="filter-group boost-options"><span class="group-label">Boosts ativos</span>${boosts.map((f,i)=>control(f,i+10)).join('')}</div></div>`};
+function filterBar(mode) {
+  if (mode !== 'shiny') return `<div class="filters">${filters[mode].map(control).join('')}</div>`;
+
+  const typeOptions = `
+    <option value="">Tipo</option>
+    <option value="NORMAL">Normal</option>
+    <option value="FIRE">Fire</option>
+    <option value="WATER">Water</option>
+    <option value="GRASS">Grass</option>
+    <option value="ELECTRIC">Electric</option>
+    <option value="ICE">Ice</option>
+    <option value="FIGHTING">Fighting</option>
+    <option value="POISON">Poison</option>
+    <option value="GROUND">Ground</option>
+    <option value="FLYING">Flying</option>
+    <option value="PSYCHIC">Psychic</option>
+    <option value="BUG">Bug</option>
+    <option value="ROCK">Rock</option>
+    <option value="GHOST">Ghost</option>
+    <option value="DRAGON">Dragon</option>
+    <option value="STEEL">Steel</option>
+    <option value="DARK">Dark</option>
+    <option value="FAIRY">Fairy</option>
+  `;
+
+  const regionOptions = `
+    <option value="">Região</option>
+    <option value="Kanto">Kanto</option>
+    <option value="Johto">Johto</option>
+    <option value="Hoenn">Hoenn</option>
+    <option value="Sinnoh">Sinnoh</option>
+    <option value="Unova">Unova</option>
+    <option value="Kalos">Kalos</option>
+    <option value="Alola">Alola</option>
+    <option value="Galar">Galar</option>
+    <option value="Outland">Outland</option>
+  `;
+
+  return `<div class="filter-groups">
+    <div class="filter-group filter-basics">
+      <input class="control search-field" id="dex-search" placeholder="⌕ Buscar Pokémon..." value="${dexState.search}">
+      <select class="control dropdown" id="dex-tipo1">${typeOptions}</select>
+      <select class="control dropdown" id="dex-tipo2">${typeOptions}</select>
+      <select class="control dropdown" id="dex-regiao">${regionOptions}</select>
+      <button class="control dropdown ${dexState.apenasShiny ? 'selected' : ''}" id="dex-apenas-shiny">Apenas Shiny <span class="caret">⌄</span></button>
+    </div>
+    <div class="filter-group ball-group">
+      <span class="group-label">POKÉBOLA</span>
+      <button class="control ball ${dexState.ball === 'poke' ? 'selected' : ''}" data-ball="poke">Poké Ball (x1)</button>
+      <button class="control ball ${dexState.ball === 'great' ? 'selected' : ''}" data-ball="great">Great Ball</button>
+      <button class="control ball ${dexState.ball === 'super' ? 'selected' : ''}" data-ball="super">Super Ball</button>
+      <button class="control ball ${dexState.ball === 'ultra' ? 'selected' : ''}" data-ball="ultra">Ultra Ball</button>
+      <button class="control ball ${dexState.ball === 'beast' ? 'selected' : ''}" data-ball="beast">Beast Ball</button>
+    </div>
+    <div class="filter-group boost-options">
+      <span class="group-label">BOOSTS ATIVOS</span>
+      <button class="control check ${dexState.captureBoost ? 'selected' : ''}" id="dex-boost-capture">Capture Boost</button>
+      <button class="control check ${dexState.shinyLure ? 'selected' : ''}" id="dex-boost-lure">Shiny Lure</button>
+    </div>
+  </div>`;
+}
+
 function pokedex(mode='shiny'){return `<div class="tabbar" id="dex-tabs"><button class="${mode==='shiny'?'active':''}" data-mode="shiny">Captura e Shiny</button><button class="${mode==='hunt'?'active':''}" data-mode="hunt">Hunting</button><button class="${mode==='loot'?'active':''}" data-mode="loot">Gold e Loot</button><button class="${mode==='strong'?'active':''}" data-mode="strong">Pokémons Fortes</button></div>${filterBar(mode)}${table(mode)}`}
 function home(){const quick=[['Iniciante?','Veja nosso guia para entender tudo sobre o jogo.','Comece aqui','guides'],['Captura de Shiny','Entenda a dificuldade de captura de cada espécie.','Ver Pokédex','pokedex'],['Calculadora de XP','Veja o tempo para o próximo nível.','Calcular agora','xp'],['Wiki','Todas as informações do jogo em um só lugar.','Explorar','wiki']];return `<section class="home-wire"><section class="section-card home-banner"><div class="banner-image"><span>Imagem promocional do jogo</span></div><div class="banner-cta"><h1>Jogue agora</h1><p>Acesse o PokéIdle e comece sua jornada.</p><button class="primary">Jogue agora</button></div></section><div class="wire-quick-grid">${quick.map(x=>`<article class="section-card wire-quick"><h2>${x[0]}</h2><p>${x[1]}</p><div class="wire-image">Imagem</div><button class="secondary" data-go="${x[3]}">${x[2]}</button></article>`).join('')}</div><div class="wire-bottom"><article class="section-card wire-wide"><div><h2>Tier List <span class="badge new">Novo</span></h2><p>Crie tier lists dos seus Pokémon favoritos e compartilhe com amigos!</p><button class="secondary" data-go="tier">Criar agora</button></div><div class="wide-image">Imagem</div></article><article class="section-card wire-wide"><div><h2>Entre na comunidade</h2><p>Troque dicas, encontre players, negocie e fique por dentro de todas as novidades.</p><button class="secondary">Entrar no Discord</button></div><div class="wide-image">Imagem</div></article></div></section>`}
 function tier(){const tiers=[['fav','FAVS','MEUS FAVORITOS',3],['ideal','TIME IDEAL','ENDGAME',4],['current','TIME ATUAL','EM USO AGORA',3],['farm','BONS DE FARM','CUSTO-BENEFÍCIO',3],['over','SUPERESTIMADOS','NA REAL, MEH',1],['hate','ODEIO','NUNCA MAIS',2]];return `<div class="split-top"><div class="tier-toolbar"><span class="eyebrow">Tier List ›</span><input class="tier-name" value="Melhores da minha conta" aria-label="Nome da tier list"></div><div class="tier-toolbar"><span class="segmented"><button>Ver</button><button class="active">Editar</button></span><button class="share">⌘ Compartilhar</button></div></div><div class="tier-layout"><div>${tiers.map(t=>`<section class="tier-row"><div class="tier-label ${t[0]}"><b>${t[1]}</b><small>${t[2]}</small></div><div class="tier-drop">${Array.from({length:t[3]},()=>'<i class="slot"></i>').join('')}</div></section>`).join('')}</div><aside class="section-card toolbox"><h3>□ Toolbox</h3><div class="toolbox-actions"><button class="primary">+ Nova Linha</button><button class="secondary">Limpar Tudo</button></div><input class="toolbox-search" placeholder="⌕  Buscar Pokémon..."><div class="tool-tabs"><span class="on">Todos</span><span>Tipos</span><span>Regiões</span></div><div class="tool-grid">${'<i></i>'.repeat(8)}</div></aside></div>`}
@@ -185,6 +307,87 @@ function attachXpListeners() {
 function guides(){return `<div class="split-top"><div><p class="eyebrow">Aprender › Guias</p><h1>Guias da comunidade</h1><p style="color:#a5a9b2;font-size:12px">Passo a passo escrito por jogadores, do início ao endgame.</p></div><span class="eyebrow">42 guias publicados</span></div><section class="guides-feature"><div><span class="badge">Destaque da semana</span><h2>Rota otimizada pós-500: o guia definitivo de farm</h2><p>Como migrar de hunt na hora certa e cortar dias do seu grind até o nível 1000.</p></div></section><div class="chips"><button class="chip active">Todos</button><button class="chip">Iniciante</button><button class="chip">Intermediário</button><button class="chip">Avançado</button><button class="chip">Evento</button></div><div class="guide-grid">${names.map((n,i)=>`<article class="guide-card"><span class="badge ${i%3===1?'update':''}">${i%2?'Intermediário':'Iniciante'}</span><h3>${n}</h3><small><span>${4+i} min</span><span>${i+2} dias atrás</span></small></article>`).join('')}</div>`}
 function wiki(){return `<div class="wiki-layout"><aside class="wiki-rail"><strong>BUSCAR</strong><input placeholder="⌕  Buscar na wiki..."><strong>MECÂNICAS DO IDLE</strong><button class="active">▣ Como funciona o Idle</button><button>□ Sistema de progresso offline</button><strong>SISTEMA DE XP</strong><button>□ Guia de XP e Evolução</button><button>□ Bônus e multiplicadores</button><strong>POKÉDEX</strong><button>□ Shinies e formas especiais</button><button>□ Mecânicas de captura</button><strong>ITENS</strong><button>□ TM's e habilidades</button><button>□ Fragmentos e refino</button></aside><article class="article"><p class="crumb">Wiki › Mecânicas do Idle › <b>Como funciona o Idle</b></p><h1>Como funciona o Idle <span class="badge update">Mecânicas</span></h1><p class="meta">Atualizado há 2 dias · editado por 4 colaboradores</p><div class="article-visual"></div><p>O PokéIdle continua gerando progresso mesmo com o jogo fechado. Seus Pokémon em campo acumulam XP, itens e moedas com base no tempo offline, até um teto de 8 horas sem boosts ativos.</p><h2>Como maximizar o ganho offline</h2><ul><li>Deixe Pokémon de tier alto em rotas de XP antes de fechar o app.</li><li>Ative um XP Boost antes de sair para dobrar o acúmulo.</li><li>Colete assim que voltar — o teto de 8h não acumula além disso.</li></ul><aside class="callout">💡 Dica: a Assinatura VIP aumenta o teto de acúmulo offline para 12 horas.</aside><h2>O que conta como progresso offline</h2><p>XP de treinador, XP dos Pokémon em campo, gold de NPCs derrotados e chances de drop de itens comuns. Shiny odds e drops raros não são calculados durante o tempo offline.</p></article></div>`}
 function admin(){const assets=['Hero da Home','Card “Jogue Agora”','Destaque da Wiki','Guia em Destaque','Promo App Mobile','Card “Entre na Comunidade”'];return `<h1>Painel Administrativo</h1><p style="margin:3px 0 14px;color:#a6abb4;font-size:12px">Edite imagens, atualize a wiki e poste novidades — tudo sem mexer em código.</p><div class="admin-layout"><aside class="section-card module-nav"><button class="active">▧ Imagens do Site<small>Hero, cards e banners</small></button><button>▤ Guias<small>42 publicados · 3 rascunhos</small></button><button>▯ Wiki<small>128 artigos</small></button><button>⌁ Atualizações<small>Feed da Home</small></button><p>Você é <b>Moderador</b> — pode editar Guias, Wiki e Imagens.</p></aside><section class="section-card admin-content"><header><div><h2>Imagens do Site</h2><p>Troque qualquer imagem usada no portal — sem precisar editar código.</p></div><button class="primary">+ Enviar Imagem</button></header><div class="asset-grid">${assets.map(a=>`<article class="asset"><div class="asset-preview"></div><b>${a}</b><small>Imagem do portal</small><div class="asset-actions"><button class="secondary">Trocar</button><button class="secondary danger">Remover</button></div></article>`).join('')}</div></section></div>`}
+function attachDexListeners(mode) {
+  document.querySelectorAll('#dex-tabs button').forEach(b=>b.addEventListener('click',()=>location.hash=`pokedex/${b.dataset.mode}`));
+
+  const updateTable = () => {
+    const dataPanel = document.querySelector('.data-panel');
+    if (dataPanel) {
+      dataPanel.outerHTML = table(mode);
+    }
+  };
+
+  const searchIn = document.getElementById('dex-search');
+  if (searchIn) {
+    searchIn.addEventListener('input', e => {
+      dexState.search = e.target.value;
+      updateTable();
+    });
+  }
+
+  const t1 = document.getElementById('dex-tipo1');
+  if (t1) {
+    t1.value = dexState.tipo1;
+    t1.addEventListener('change', e => {
+      dexState.tipo1 = e.target.value;
+      updateTable();
+    });
+  }
+
+  const t2 = document.getElementById('dex-tipo2');
+  if (t2) {
+    t2.value = dexState.tipo2;
+    t2.addEventListener('change', e => {
+      dexState.tipo2 = e.target.value;
+      updateTable();
+    });
+  }
+
+  const reg = document.getElementById('dex-regiao');
+  if (reg) {
+    reg.value = dexState.regiao;
+    reg.addEventListener('change', e => {
+      dexState.regiao = e.target.value;
+      updateTable();
+    });
+  }
+
+  const shinyBtn = document.getElementById('dex-apenas-shiny');
+  if (shinyBtn) {
+    shinyBtn.addEventListener('click', () => {
+      dexState.apenasShiny = !dexState.apenasShiny;
+      shinyBtn.classList.toggle('selected', dexState.apenasShiny);
+      updateTable();
+    });
+  }
+
+  document.querySelectorAll('.ball-group button[data-ball]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      dexState.ball = btn.dataset.ball;
+      document.querySelectorAll('.ball-group button[data-ball]').forEach(b => b.classList.toggle('selected', b.dataset.ball === dexState.ball));
+      updateTable();
+    });
+  });
+
+  const capBoostBtn = document.getElementById('dex-boost-capture');
+  if (capBoostBtn) {
+    capBoostBtn.addEventListener('click', () => {
+      dexState.captureBoost = !dexState.captureBoost;
+      capBoostBtn.classList.toggle('selected', dexState.captureBoost);
+      updateTable();
+    });
+  }
+
+  const lureBtn = document.getElementById('dex-boost-lure');
+  if (lureBtn) {
+    lureBtn.addEventListener('click', () => {
+      dexState.shinyLure = !dexState.shinyLure;
+      lureBtn.classList.toggle('selected', dexState.shinyLure);
+      updateTable();
+    });
+  }
+}
+
 const views={home,pokedex,tier,xp,guides,wiki,admin};
 function render(){
   const route=(location.hash.slice(1)||'home').split('/'),
@@ -197,7 +400,7 @@ function render(){
   document.querySelectorAll('[data-route]').forEach(a=>a.classList.toggle('active',a.dataset.route===view));
   document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>location.hash=b.dataset.go));
   if(view==='pokedex'){
-    document.querySelectorAll('#dex-tabs button').forEach(b=>b.addEventListener('click',()=>location.hash=`pokedex/${b.dataset.mode}`));
+    attachDexListeners(route[1]||'shiny');
   }
   if(view==='xp'){
     attachXpListeners();
