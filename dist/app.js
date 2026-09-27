@@ -918,8 +918,28 @@ function home() {
 }
 
 function tier() {
-  const tiers = [['fav','FAVS','MEUS FAVORITOS',3],['ideal','TIME IDEAL','ENDGAME',4],['current','TIME ATUAL','EM USO AGORA',3],['farm','BONS DE FARM','CUSTO-BENEFÍCIO',3],['over','SUPERESTIMADOS','NA REAL, MEH',1],['hate','ODEIO','NUNCA MAIS',2]];
-  return `<div class="split-top"><div class="tier-toolbar"><span class="eyebrow">Tier List ›</span><input class="tier-name" value="Melhores da minha conta" aria-label="Nome da tier list"></div><div class="tier-toolbar"><span class="segmented"><button>Ver</button><button class="active">Editar</button></span><button class="share">⌘ Compartilhar</button></div></div><div class="tier-layout"><div>${tiers.map(t=>`<section class="tier-row"><div class="tier-label ${t[0]}"><b>${t[1]}</b><small>${t[2]}</small></div><div class="tier-drop">${Array.from({length:t[3]},()=>'<i class="slot"></i>').join('')}</div></section>`).join('')}</div><aside class="section-card toolbox"><h3>□ Toolbox</h3><div class="toolbox-actions"><button class="primary">+ Nova Linha</button><button class="secondary">Limpar Tudo</button></div><input class="toolbox-search" placeholder="⌕  Buscar Pokémon..."><div class="tool-tabs"><span class="on">Todos</span><span>Tipos</span><span>Regiões</span></div><div class="tool-grid">${'<i></i>'.repeat(8)}</div></aside></div>`;
+  return `<section class="section-card" style="max-width: 760px; margin: 40px auto; padding: 48px 32px; text-align: center; background: linear-gradient(145deg, #181b22 0%, #13161c 100%); border: 1px solid #2d323c; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+    <div style="display:inline-flex; align-items:center; justify-content:center; width:64px; height:64px; border-radius:16px; background:rgba(244,175,37,0.1); border:1px solid rgba(244,175,37,0.25); color:#f4af25; font-size:28px; margin-bottom:20px;">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+        <path d="M4 22h16"></path>
+        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+        <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
+      </svg>
+    </div>
+    <div style="margin-bottom:12px;">
+      <span class="badge" style="background:#f4af25; color:#181b22; font-weight:800; font-size:10px; padding:4px 10px; border-radius:20px; letter-spacing:0.08em; text-transform:uppercase;">EM BREVE</span>
+    </div>
+    <h1 style="font-size:26px; font-weight:700; color:#ebeef0; margin-bottom:12px;">Criador de Tier Lists</h1>
+    <p style="color:#a5a9b2; font-size:14px; max-width:520px; margin:0 auto 28px; line-height:1.6;">
+      Estamos desenvolvendo uma ferramenta completa para você criar, personalizar e compartilhar suas próprias Tier Lists de Pokémons e estratégias com a comunidade.
+    </p>
+    <button class="primary" style="margin-top:0; padding:12px 24px; font-size:12px;" onclick="location.hash='pokedex'">
+      Explorar Pokédex
+    </button>
+  </section>`;
 }
 
 // ==========================================
