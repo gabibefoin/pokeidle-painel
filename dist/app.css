@@ -85,3 +85,63 @@
   margin-left: auto !important;
   flex-shrink: 0 !important;
 }
+
+/* XP Calculator Upgrades */
+.xp-strategy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.xp-strategy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border: 1px solid #373c46;
+  border-radius: 8px;
+  background: #1c1f26;
+  color: #aeb3bd;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.xp-strategy-btn:hover {
+  background: #252932;
+  color: #fff;
+}
+.xp-strategy-btn.active {
+  border-color: #3b82f6;
+  background: #1e3a8a;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.25);
+}
+.xp-note-text {
+  font-size: 11px;
+  color: #8b929e;
+  line-height: 1.4;
+  margin-top: 4px;
+  margin-bottom: 14px;
+}
+.xp-hunt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.xp-hunt-count {
+  font-size: 11px;
+  font-weight: 700;
+  color: #7984f4;
+}
+.xp-hunt-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+.xp-hunt-row select {
+  flex: 1;
+}
+

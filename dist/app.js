@@ -943,70 +943,482 @@ function tier() {
 }
 
 // ==========================================
-// CALCULADORA DE XP
+// CALCULADORA DE XP (Hunts, Pokédex & Hunt Analyser)
 // ==========================================
 function xpTotal(level) {
   const L = Math.max(1, Math.floor(Number(level) || 1));
   if (L <= 1) return 0;
   return Math.round((50 / 3) * (Math.pow(L, 3) - 6 * Math.pow(L, 2) + 17 * L - 12));
 }
+
 function xpCustoNivel(level) {
   const L = Math.max(1, Math.floor(Number(level) || 1));
   return xpTotal(L + 1) - xpTotal(L);
 }
-function calcXpState({ lvlFrom=500, lvlTo=1000, huntLvl=500, speed=1670, vip=false, xpBoost=false, guild=5, event=0 }) {
-  const from = Math.max(1, Number(lvlFrom)||1);
-  const to = Math.max(from+1, Number(lvlTo)||(from+1));
-  const hLvl = Math.max(1, Number(huntLvl)||1);
-  const spd = Math.max(1, Number(speed)||1);
-  let mult = 1.0;
-  if (vip) mult += 0.20;
-  if (xpBoost) mult += 0.50;
-  mult += ((Number(guild)||0)/100);
-  mult += ((Number(event)||0)/100);
-  const totalXp = Math.max(0, xpTotal(to) - xpTotal(from));
-  const xpBase = hLvl <= 150 ? (Math.floor((6*hLvl*hLvl)/10)+8) : Math.round(13500*Math.pow(hLvl/150,1.25));
-  const xpEfetivo = Math.max(1, Math.round(xpBase*mult));
-  const abates = Math.ceil(totalXp/xpEfetivo);
-  const tempoSeg = (abates/spd)*3600;
-  const h = Math.floor(tempoSeg/3600);
-  const m = Math.floor((tempoSeg%3600)/60);
-  const s = Math.floor(tempoSeg%60);
-  const limit = Math.min(from+15, to);
-  let rowsHtml = '';
-  let acumXp = 0;
-  for (let l = from; l < limit; l++) {
-    const c = xpCustoNivel(l);
-    acumXp += c;
-    const kNivel = Math.ceil(c/xpEfetivo);
-    const kAcum = Math.ceil(acumXp/xpEfetivo);
-    const tNivel = `${Math.floor((kNivel/spd)*60)}m`;
-    const tAcum = `${Math.floor((kAcum/spd)*60)}m`;
-    rowsHtml += `<tr><td>${l}</td><td class="stat-positive">${c.toLocaleString('pt-BR')}</td><td class="stat-gold">~${kNivel.toLocaleString('pt-BR')}</td><td>${tNivel}</td><td>${tAcum}</td></tr>`;
+
+const xpState = {
+  strategy: 'optimized', // 'optimized' | 'fixed'
+  searchQuery: '',
+  selectedDex: '303', // Default Mawile
+  lvlFrom: 500,
+  lvlTo: 1000,
+  speedPreset: '980', // '980' | '1200' | '1500' | '1670' | 'custom'
+  customSpeed: 980,
+  vip: false,
+  xpBoost: false,
+  guild: 5,
+  event: 0
+};
+
+function getXpSpeciesList() {
+  const all = dexState.allSpecies || [];
+  return Array.from(all).sort((a, b) => {
+    const minA = Number(a.hunt_lvl_min ?? a.nivel_hunt_min ?? 1);
+    const minB = Number(b.hunt_lvl_min ?? b.nivel_hunt_min ?? 1);
+    return minA - minB;
+  });
+}
+
+function getFilteredXpSpecies() {
+  const species = getXpSpeciesList();
+  const q = (xpState.searchQuery || '').trim().toLowerCase();
+  if (!q) return species;
+  return species.filter(p => {
+    const nameMatch = (p.nome || '').toLowerCase().includes(q);
+    const regMatch = (p.regiao || '').toLowerCase().includes(q);
+    const dexMatch = String(p.dex || '').includes(q);
+    const lvlMatch = String(p.hunt_lvl_min ?? p.nivel_hunt_min ?? '').includes(q);
+    return nameMatch || regMatch || dexMatch || lvlMatch;
+  });
+}
+
+function getFallbackBaseXp(huntLvl) {
+  const hLvl = Math.max(1, Number(huntLvl) || 1);
+  if (hLvl <= 150) {
+    return Math.floor((6 * hLvl * hLvl) / 10) + 8;
   }
-  return { totalXp, mult, xpEfetivo, abates, tempoStr:`${h}h ${m}m ${s}s`, rowsHtml };
+  return Math.round(13500 * Math.pow(hLvl / 150, 1.25));
+}
+
+function formatSecShort(sec) {
+  const h = Math.floor(sec / 3600);
+  const m = Math.floor((sec % 3600) / 60);
+  if (h > 0) return `${h}h ${m}m`;
+  return `${m}m`;
+}
+
+function formatSecFull(sec) {
+  const totalH = Math.floor(sec / 3600);
+  const d = Math.floor(totalH / 24);
+  const h = totalH % 24;
+  const m = Math.floor((sec % 3600) / 60);
+  if (d > 0) return `${d}d ${h}h ${m}m`;
+  return `${h}h ${m}m`;
+}
+
+function calcXpState() {
+  const from = Math.max(1, Number(xpState.lvlFrom) || 1);
+  const to = Math.max(from + 1, Number(xpState.lvlTo) || (from + 1));
+  const spd = xpState.speedPreset === 'custom' 
+    ? Math.max(1, Number(xpState.customSpeed) || 1)
+    : Math.max(1, Number(xpState.speedPreset) || 980);
+
+  let mult = 1.0;
+  if (xpState.vip) mult += 0.20;
+  if (xpState.xpBoost) mult += 0.50;
+  mult += (Number(xpState.guild) || 0) / 100;
+  mult += (Number(xpState.event) || 0) / 100;
+
+  const totalXpNeeded = Math.max(0, xpTotal(to) - xpTotal(from));
+  const speciesList = getXpSpeciesList();
+  
+  let selectedSpecies = speciesList.find(s => String(s.dex) === String(xpState.selectedDex));
+  if (!selectedSpecies && speciesList.length > 0) {
+    selectedSpecies = speciesList[0];
+    xpState.selectedDex = String(selectedSpecies.dex);
+  }
+
+  let totalKills = 0;
+  let totalTimeSec = 0;
+  let rowsHtml = '';
+
+  if (xpState.strategy === 'fixed') {
+    const hLvl = Number(selectedSpecies?.hunt_lvl_min ?? selectedSpecies?.nivel_hunt_min ?? from);
+    const baseXp = Number(selectedSpecies?.xp_base) || getFallbackBaseXp(hLvl);
+    const xpEfetivo = Math.max(1, Math.floor(baseXp * mult));
+    totalKills = Math.ceil(totalXpNeeded / xpEfetivo);
+    totalTimeSec = (totalKills / spd) * 3600;
+
+    if (to - from <= 25) {
+      let acumSec = 0;
+      for (let L = from; L < to; L++) {
+        const cost = xpCustoNivel(L);
+        const killsL = Math.ceil(cost / xpEfetivo);
+        const timeSecL = (killsL / spd) * 3600;
+        acumSec += timeSecL;
+        rowsHtml += `<tr>
+          <td>Nv ${L}</td>
+          <td>${selectedSpecies ? `[Nv ${hLvl}] ${selectedSpecies.nome}` : 'Hunt Fixa'}</td>
+          <td class="stat-positive">${baseXp.toLocaleString('pt-BR')} XP</td>
+          <td class="stat-green">${xpEfetivo.toLocaleString('pt-BR')} XP</td>
+          <td>${cost.toLocaleString('pt-BR')}</td>
+          <td class="stat-gold">~${killsL.toLocaleString('pt-BR')}</td>
+          <td>${formatSecShort(timeSecL)}</td>
+          <td>${formatSecShort(acumSec)}</td>
+        </tr>`;
+      }
+    } else {
+      const timeStr = formatSecFull(totalTimeSec);
+      rowsHtml = `<tr>
+        <td>Nv ${from} - ${to - 1}</td>
+        <td>${selectedSpecies ? `[Nv ${hLvl}] ${selectedSpecies.nome} (${selectedSpecies.regiao || 'Hoenn'})` : 'Hunt Fixa'}</td>
+        <td class="stat-positive">${baseXp.toLocaleString('pt-BR')} XP</td>
+        <td class="stat-green">${xpEfetivo.toLocaleString('pt-BR')} XP</td>
+        <td>${totalXpNeeded.toLocaleString('pt-BR')}</td>
+        <td class="stat-gold">~${totalKills.toLocaleString('pt-BR')}</td>
+        <td>${timeStr}</td>
+        <td>${timeStr}</td>
+      </tr>`;
+    }
+  } else {
+    const stages = [];
+    let currentHunt = null;
+    let stageStartLvl = from;
+    let stageXp = 0;
+    let stageKills = 0;
+    let stageTimeSec = 0;
+    let stageBaseXp = 0;
+    let stageEfetivoXp = 0;
+
+    function getBestHunt(L) {
+      let best = null;
+      for (const s of speciesList) {
+        const minL = Number(s.hunt_lvl_min ?? s.nivel_hunt_min ?? 1);
+        if (minL <= L) {
+          if (!best || (Number(s.xp_base) || 0) > (Number(best.xp_base) || 0)) {
+            best = s;
+          }
+        }
+      }
+      return best;
+    }
+
+    for (let L = from; L < to; L++) {
+      const best = getBestHunt(L);
+      const cost = xpCustoNivel(L);
+      const hLvl = Number(best?.hunt_lvl_min ?? best?.nivel_hunt_min ?? L);
+      const baseXp = Number(best?.xp_base) || getFallbackBaseXp(hLvl);
+      const xpEfetivo = Math.max(1, Math.floor(baseXp * mult));
+      const kills = Math.ceil(cost / xpEfetivo);
+      const timeSec = (kills / spd) * 3600;
+
+      if (!currentHunt || currentHunt.dex !== (best?.dex ?? 0)) {
+        if (currentHunt) {
+          stages.push({
+            hunt: currentHunt,
+            fromLvl: stageStartLvl,
+            toLvl: L - 1,
+            xp: stageXp,
+            kills: stageKills,
+            baseXp: stageBaseXp,
+            efetivoXp: stageEfetivoXp,
+            timeSec: stageTimeSec
+          });
+        }
+        currentHunt = best;
+        stageStartLvl = L;
+        stageXp = 0;
+        stageKills = 0;
+        stageTimeSec = 0;
+        stageBaseXp = baseXp;
+        stageEfetivoXp = xpEfetivo;
+      }
+      stageXp += cost;
+      stageKills += kills;
+      stageTimeSec += timeSec;
+      totalTimeSec += timeSec;
+      totalKills += kills;
+    }
+    if (currentHunt) {
+      stages.push({
+        hunt: currentHunt,
+        fromLvl: stageStartLvl,
+        toLvl: to - 1,
+        xp: stageXp,
+        kills: stageKills,
+        baseXp: stageBaseXp,
+        efetivoXp: stageEfetivoXp,
+        timeSec: stageTimeSec
+      });
+    }
+
+    let acumSec = 0;
+    stages.forEach(st => {
+      acumSec += st.timeSec;
+      const hLvl = Number(st.hunt?.hunt_lvl_min ?? st.hunt?.nivel_hunt_min ?? st.fromLvl);
+      const huntLabel = st.hunt ? `[Nv ${hLvl}] ${st.hunt.nome} (${st.hunt.regiao || ''})` : `Nv ${st.fromLvl}`;
+      const lvlLabel = st.fromLvl === st.toLvl ? `Nv ${st.fromLvl}` : `Nv ${st.fromLvl} - ${st.toLvl}`;
+      rowsHtml += `<tr>
+        <td>${lvlLabel}</td>
+        <td>${huntLabel}</td>
+        <td class="stat-positive">${st.baseXp.toLocaleString('pt-BR')} XP</td>
+        <td class="stat-green">${st.efetivoXp.toLocaleString('pt-BR')} XP</td>
+        <td>${st.xp.toLocaleString('pt-BR')}</td>
+        <td class="stat-gold">~${st.kills.toLocaleString('pt-BR')}</td>
+        <td>${formatSecShort(st.timeSec)}</td>
+        <td>${formatSecShort(acumSec)}</td>
+      </tr>`;
+    });
+  }
+
+  const avgXpPerKill = totalKills > 0 ? Math.round(totalXpNeeded / totalKills) : 0;
+  const tempoStr = formatSecFull(totalTimeSec);
+
+  return {
+    totalXp: totalXpNeeded,
+    tempoStr,
+    totalKills,
+    avgXpPerKill,
+    rowsHtml,
+    mult
+  };
 }
 
 function xp() {
-  const res = calcXpState({ lvlFrom:500, lvlTo:1000, huntLvl:500, speed:1670, vip:false, xpBoost:false, guild:5, event:0 });
-  return `<p class="eyebrow">Ferramentas › Calculadora de XP</p><h1 style="margin:2px 0 12px">Calculadora de XP</h1><div class="xp-layout"><div>${panel(`<h3>PARÂMETROS DE TREINO DO TREINADOR</h3><div class="form-grid"><div class="field"><label>Nível atual</label><input id="xp-in-from" value="500"></div><div class="field"><label>Nível alvo</label><input id="xp-in-to" value="1000"></div><div class="field"><label>Nível da Hunt</label><input id="xp-in-hunt" value="500"></div><div class="field"><label>Abates/h</label><input id="xp-in-speed" value="1670"></div></div><h3 style="margin-top:18px">BÔNUS & MULTIPLICADORES ATIVOS</h3><div class="toggle-line"><label style="cursor:pointer;display:flex;align-items:center;gap:8px;"><input type="checkbox" id="xp-ck-vip"> Assinatura VIP (+20% XP)</label></div><div class="toggle-line"><label style="cursor:pointer;display:flex;align-items:center;gap:8px;"><input type="checkbox" id="xp-ck-boost"> XP Boost (+50% XP)</label></div><div class="form-grid"><div class="field"><label>Bônus de Guild (%)</label><input id="xp-in-guild" value="5"></div><div class="field"><label>Bônus de Evento (%)</label><input id="xp-in-event" value="0"></div></div><button id="xp-btn-calc" class="primary" style="width:100%;margin-top:12px;">Calcular XP</button>`,'form-card')}</div><div><div class="metrics"><article class="metric"><b id="xp-out-total">${res.totalXp.toLocaleString('pt-BR')}</b><small>XP TOTAL NECESSÁRIO</small></article><article class="metric"><b id="xp-out-tempo">${res.tempoStr}</b><small>TEMPO TOTAL ESTIMADO</small></article><article class="metric yellow"><b id="xp-out-abates">~${res.abates.toLocaleString('pt-BR')}</b><small>ABATES NECESSÁRIOS</small></article><article class="metric yellow"><b id="xp-out-efetivo">~${res.xpEfetivo.toLocaleString('pt-BR')} XP</b><small>XP MÉDIO / KILL</small></article></div><p class="note">Calculado usando as fórmulas oficiais do jogo.</p><div class="data-panel"><table class="data-table"><thead><tr><th>NÍVEL</th><th>XP DO PRÓXIMO NÍVEL</th><th>ABATES NECESSÁRIOS</th><th>TEMPO DESSE NÍVEL</th><th>TEMPO ACUMULADO</th></tr></thead><tbody id="xp-out-rows">${res.rowsHtml}</tbody></table></div></div></div>`;
+  const filteredSpecies = getFilteredXpSpecies();
+  const res = calcXpState();
+
+  const optionsHtml = filteredSpecies.map(p => {
+    const hLvl = p.hunt_lvl_min ?? p.nivel_hunt_min ?? 1;
+    const baseXp = p.xp_base ? `${p.xp_base.toLocaleString('pt-BR')} Base XP` : '';
+    const sel = String(p.dex) === String(xpState.selectedDex) ? 'selected' : '';
+    return `<option value="${p.dex}" ${sel}>[Nv ${hLvl}] ${p.nome} (${p.regiao || 'Kanto'}) ${baseXp ? '— ' + baseXp : ''}</option>`;
+  }).join('');
+
+  const isCustomSpeed = xpState.speedPreset === 'custom';
+
+  return `
+    <p class="eyebrow">Ferramentas › Calculadora de XP</p>
+    <h1 style="margin:2px 0 16px">Calculadora de XP</h1>
+    
+    <div class="xp-layout">
+      <div>
+        <div class="form-card section-card">
+          <h3 style="margin-bottom:8px">ESTRATÉGIA DE FARM</h3>
+          <div class="xp-strategy-grid">
+            <button class="xp-strategy-btn ${xpState.strategy === 'optimized' ? 'active' : ''}" id="xp-strat-opt">
+              ↺ Rota Otimizada (Trocar nos Degraus)
+            </button>
+            <button class="xp-strategy-btn ${xpState.strategy === 'fixed' ? 'active' : ''}" id="xp-strat-fixed">
+              📍 Hunt Fixa (Mesma Hunt Sempre)
+            </button>
+          </div>
+          <p class="xp-note-text">
+            ${xpState.strategy === 'optimized' 
+              ? '* <b>Rota Otimizada</b>: migra automaticamente para hunts mais fortes assim que o nível da próxima hunt é alcançado, economizando dias de farm.'
+              : '* <b>Hunt Fixa</b>: calcula o tempo e abates necessários permanecendo exclusivamente na hunt selecionada do início ao fim.'}
+          </p>
+
+          <h3 style="margin-top:14px;margin-bottom:8px">NÍVEL DO TREINADOR</h3>
+          <div class="form-grid">
+            <div class="field">
+              <label>Nível Atual (de)</label>
+              <input type="number" id="xp-in-from" value="${xpState.lvlFrom}">
+            </div>
+            <div class="field">
+              <label>Nível Alvo (até)</label>
+              <input type="number" id="xp-in-to" value="${xpState.lvlTo}">
+            </div>
+          </div>
+
+          <div class="xp-hunt-header" style="margin-top:14px">
+            <span style="font-size:11px;font-weight:800;color:#a9aeb8;text-transform:uppercase;">
+              ${xpState.strategy === 'fixed' ? 'HUNT FIXA SELECIONADA' : 'HUNT INICIAL DE PARTIDA'}
+            </span>
+            <span class="xp-hunt-count" id="xp-hunt-count-badge">${filteredSpecies.length} Hunts</span>
+          </div>
+          <div style="margin-bottom:6px">
+            <input class="control search-field" id="xp-search-hunt" placeholder="⌕ Pesquisar hunt (ex: mawil)..." value="${xpState.searchQuery}" style="width:100%;">
+          </div>
+          <div class="xp-hunt-row">
+            <select id="xp-select-hunt" class="field">
+              ${optionsHtml}
+            </select>
+            <button id="xp-btn-pokedex" class="secondary" title="Ver tabela na Pokédex">📋 Tabela</button>
+          </div>
+
+          <h3 style="margin-top:14px;margin-bottom:8px">VELOCIDADE DE COMBATE / CADÊNCIA DE ABATE</h3>
+          <div class="field" style="margin-bottom:6px">
+            <select id="xp-select-speed">
+              <option value="980" ${xpState.speedPreset === '980' ? 'selected' : ''}>Rápido / Padrão (~980 abates/hora)</option>
+              <option value="1200" ${xpState.speedPreset === '1200' ? 'selected' : ''}>Eficiente (~1200 abates/hora)</option>
+              <option value="1500" ${xpState.speedPreset === '1500' ? 'selected' : ''}>Avançado (~1500 abates/hora)</option>
+              <option value="1670" ${xpState.speedPreset === '1670' ? 'selected' : ''}>Máximo (~1670 abates/hora)</option>
+              <option value="custom" ${isCustomSpeed ? 'selected' : ''}>Personalizado (Hunt Analyser)</option>
+            </select>
+          </div>
+          ${isCustomSpeed ? `
+            <div class="field" style="margin-top:6px;">
+              <label>Abates / Hora (Hunt Analyser)</label>
+              <input type="number" id="xp-custom-speed" value="${xpState.customSpeed}" placeholder="Ex: 1100">
+            </div>
+          ` : ''}
+          <p class="xp-note-text" style="margin-top:4px;">
+            * Baseado nos abates reais por hora medidos pelo <b>Hunt Analyser</b> in-game.
+          </p>
+
+          <h3 style="margin-top:14px;margin-bottom:8px">BÔNUS & MULTIPLICADORES ATIVOS</h3>
+          <div class="toggle-line">
+            <label style="cursor:pointer;display:flex;align-items:center;gap:8px;">
+              <input type="checkbox" id="xp-ck-vip" ${xpState.vip ? 'checked' : ''}> Assinatura VIP (+20% XP)
+            </label>
+          </div>
+          <div class="toggle-line">
+            <label style="cursor:pointer;display:flex;align-items:center;gap:8px;">
+              <input type="checkbox" id="xp-ck-boost" ${xpState.xpBoost ? 'checked' : ''}> XP Boost (+50% XP)
+            </label>
+          </div>
+          <div class="form-grid" style="margin-top:8px">
+            <div class="field">
+              <label>Bônus de Guild (%)</label>
+              <input type="number" id="xp-in-guild" value="${xpState.guild}">
+            </div>
+            <div class="field">
+              <label>Bônus de Evento (%)</label>
+              <input type="number" id="xp-in-event" value="${xpState.event}">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="metrics">
+          <article class="metric">
+            <b id="xp-out-total">${res.totalXp.toLocaleString('pt-BR')}</b>
+            <small>XP TOTAL NECESSÁRIO</small>
+          </article>
+          <article class="metric">
+            <b id="xp-out-tempo">${res.tempoStr}</b>
+            <small>TEMPO TOTAL ESTIMADO</small>
+          </article>
+          <article class="metric yellow">
+            <b id="xp-out-abates">~${res.totalKills.toLocaleString('pt-BR')}</b>
+            <small>ABATES NECESSÁRIOS</small>
+          </article>
+          <article class="metric yellow">
+            <b id="xp-out-efetivo">~${res.avgXpPerKill.toLocaleString('pt-BR')} XP</b>
+            <small>XP MÉDIO / KILL</small>
+          </article>
+        </div>
+        <p class="note">* Tabela de progressão calculada com base nas mecânicas de hunt e XP do PokéIdle.</p>
+        <div class="data-panel">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>FAIXA / NÍVEL</th>
+                <th>HUNT</th>
+                <th>XP BASE</th>
+                <th>XP/KILL C/ BÔNUS</th>
+                <th>XP NECESSÁRIO</th>
+                <th>ABATES EST.</th>
+                <th>TEMPO DA ETAPA</th>
+                <th>TEMPO ACUMULADO</th>
+              </tr>
+            </thead>
+            <tbody id="xp-out-rows">
+              ${res.rowsHtml}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 function attachXpListeners() {
-  const getVal = id => document.getElementById(id)?.value;
-  const getCk  = id => document.getElementById(id)?.checked;
-  const recalc = () => {
-    const s = calcXpState({ lvlFrom:getVal('xp-in-from'), lvlTo:getVal('xp-in-to'), huntLvl:getVal('xp-in-hunt'), speed:getVal('xp-in-speed'), vip:getCk('xp-ck-vip'), xpBoost:getCk('xp-ck-boost'), guild:getVal('xp-in-guild'), event:getVal('xp-in-event') });
-    document.getElementById('xp-out-total').textContent = s.totalXp.toLocaleString('pt-BR');
-    document.getElementById('xp-out-tempo').textContent = s.tempoStr;
-    document.getElementById('xp-out-abates').textContent = '~'+s.abates.toLocaleString('pt-BR');
-    document.getElementById('xp-out-efetivo').textContent = '~'+s.xpEfetivo.toLocaleString('pt-BR')+' XP';
-    document.getElementById('xp-out-rows').innerHTML = s.rowsHtml;
+  const updateUI = () => {
+    const container = document.getElementById('app') || document.body;
+    if (container) {
+      container.innerHTML = xp();
+      attachXpListeners();
+    }
   };
-  ['xp-in-from','xp-in-to','xp-in-hunt','xp-in-speed','xp-in-guild','xp-in-event'].forEach(id => document.getElementById(id)?.addEventListener('input', recalc));
-  ['xp-ck-vip','xp-ck-boost'].forEach(id => document.getElementById(id)?.addEventListener('change', recalc));
-  document.getElementById('xp-btn-calc')?.addEventListener('click', recalc);
+
+  const softRecalc = () => {
+    const res = calcXpState();
+    const outTotal = document.getElementById('xp-out-total');
+    const outTempo = document.getElementById('xp-out-tempo');
+    const outAbates = document.getElementById('xp-out-abates');
+    const outEfetivo = document.getElementById('xp-out-efetivo');
+    const outRows = document.getElementById('xp-out-rows');
+
+    if (outTotal) outTotal.textContent = res.totalXp.toLocaleString('pt-BR');
+    if (outTempo) outTempo.textContent = res.tempoStr;
+    if (outAbates) outAbates.textContent = '~' + res.totalKills.toLocaleString('pt-BR');
+    if (outEfetivo) outEfetivo.textContent = '~' + res.avgXpPerKill.toLocaleString('pt-BR') + ' XP';
+    if (outRows) outRows.innerHTML = res.rowsHtml;
+  };
+
+  document.getElementById('xp-strat-opt')?.addEventListener('click', () => {
+    xpState.strategy = 'optimized';
+    updateUI();
+  });
+  document.getElementById('xp-strat-fixed')?.addEventListener('click', () => {
+    xpState.strategy = 'fixed';
+    updateUI();
+  });
+
+  document.getElementById('xp-in-from')?.addEventListener('input', (e) => {
+    xpState.lvlFrom = Number(e.target.value) || 1;
+    softRecalc();
+  });
+  document.getElementById('xp-in-to')?.addEventListener('input', (e) => {
+    xpState.lvlTo = Number(e.target.value) || 2;
+    softRecalc();
+  });
+
+  document.getElementById('xp-search-hunt')?.addEventListener('input', (e) => {
+    xpState.searchQuery = e.target.value;
+    updateUI();
+  });
+
+  document.getElementById('xp-select-hunt')?.addEventListener('change', (e) => {
+    xpState.selectedDex = e.target.value;
+    softRecalc();
+  });
+
+  document.getElementById('xp-btn-pokedex')?.addEventListener('click', () => {
+    window.location.hash = '#pokedex';
+  });
+
+  document.getElementById('xp-select-speed')?.addEventListener('change', (e) => {
+    xpState.speedPreset = e.target.value;
+    updateUI();
+  });
+
+  document.getElementById('xp-custom-speed')?.addEventListener('input', (e) => {
+    xpState.customSpeed = Number(e.target.value) || 1;
+    softRecalc();
+  });
+
+  document.getElementById('xp-ck-vip')?.addEventListener('change', (e) => {
+    xpState.vip = e.target.checked;
+    softRecalc();
+  });
+  document.getElementById('xp-ck-boost')?.addEventListener('change', (e) => {
+    xpState.xpBoost = e.target.checked;
+    softRecalc();
+  });
+  document.getElementById('xp-in-guild')?.addEventListener('input', (e) => {
+    xpState.guild = Number(e.target.value) || 0;
+    softRecalc();
+  });
+  document.getElementById('xp-in-event')?.addEventListener('input', (e) => {
+    xpState.event = Number(e.target.value) || 0;
+    softRecalc();
+  });
 }
+
 
 function guides() {
   return `<div class="split-top"><div><p class="eyebrow">Aprender › Guias</p><h1>Guias da comunidade</h1></div></div><div class="guide-grid">${names.map((n,i)=>`<article class="guide-card"><span class="badge ${i%2?'update':''}">Guia</span><h3>${n}</h3><small><span>${5+i} min</span></small></article>`).join('')}</div>`;
@@ -1326,7 +1738,7 @@ function render() {
   const route = (location.hash.slice(1) || 'home').split('/');
   const view = views[route[0]] ? route[0] : 'home';
 
-  if (view === 'pokedex' && dexState.allSpecies.length === 0) {
+  if ((view === 'pokedex' || view === 'xp') && dexState.allSpecies.length === 0) {
     loadPokemonData().then(() => render());
     return;
   }
