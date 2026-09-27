@@ -397,7 +397,6 @@ function applyFiltersAndRender() {
     if (currentTab === 'loot') {
       if (goldLvlMin !== null && (s.hunt_lvl_max || 0) < goldLvlMin) return false;
       if (goldLvlMax !== null && (s.hunt_lvl_min || 0) > goldLvlMax) return false;
-      if (itemDropFilter && !(s.item_names || []).includes(itemDropFilter)) return false;
     }
 
     // Filtros da aba Fortes
@@ -1085,6 +1084,7 @@ function attachDexListeners(mode) {
   setVal('filter-f2', dexState.f2Filter);
   setVal('filter-resist', dexState.resistFilter);
   setVal('filter-imune', dexState.imuneFilter);
+  setVal('filter-item-drop', dexState.itemDropFilter);
 
   // Seletor visual de tipos — clique em tag seleciona tipo 1 (roxo) ou tipo 2 (amarelo)
   const typeSel = document.getElementById('type-selector');
