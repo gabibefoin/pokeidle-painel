@@ -891,16 +891,54 @@ function pokedex(mode = 'shiny') {
   `;
 }
 
+const defaultAdminImages = {
+  homeBanner: 'assets/banner-home.png',
+  quickIniciante: '',
+  quickShiny: '',
+  quickXp: '',
+  quickWiki: '',
+  cardTier: '',
+  cardDiscord: ''
+};
+
+function getAdminConfig() {
+  try {
+    const saved = localStorage.getItem('pokeidle_admin_images');
+    if (saved) return { ...defaultAdminImages, ...JSON.parse(saved) };
+  } catch (e) {}
+  return { ...defaultAdminImages };
+}
+
+function saveAdminConfig(cfg) {
+  try {
+    localStorage.setItem('pokeidle_admin_images', JSON.stringify(cfg));
+  } catch (e) {
+    console.error('Erro ao salvar imagens admin:', e);
+  }
+}
+
 function home() {
+  const cfg = getAdminConfig();
+
   const quick = [
-    ['Iniciante?','Veja nosso guia para entender tudo sobre o jogo.','Comece aqui','guides'],
-    ['Captura de Shiny','Entenda a dificuldade de captura de cada espécie.','Ver Pokédex','pokedex'],
-    ['Calculadora de XP','Veja o tempo para o próximo nível.','Calcular agora','xp'],
-    ['Wiki','Todas as informações do jogo em um só lugar.','Explorar','wiki']
+    ['Iniciante?', 'Veja nosso guia para entender tudo sobre o jogo.', 'Comece aqui', 'guides', cfg.quickIniciante],
+    ['Captura de Shiny', 'Entenda a dificuldade de captura de cada espécie.', 'Ver Pokédex', 'pokedex', cfg.quickShiny],
+    ['Calculadora de XP', 'Veja o tempo para o próximo nível.', 'Calcular agora', 'xp', cfg.quickXp],
+    ['Wiki', 'Todas as informações do jogo em um só lugar.', 'Explorar', 'wiki', cfg.quickWiki]
   ];
+
+  const renderCardImg = (url, fallbackText) => {
+    if (url) {
+      return `<img src="${url}" alt="${fallbackText}" style="width:100%;height:100%;object-fit:cover;object-position:center;border-radius:inherit;">`;
+    }
+    return `<span>${fallbackText}</span>`;
+  };
+
   return `<section class="home-wire">
     <section class="section-card home-banner">
-      <div class="banner-image"><img src="assets/banner-home.png" alt="Charizard PokéIdle Banner" style="width:100%;height:100%;object-fit:cover;object-position:center;border-radius:inherit;"></div>
+      <div class="banner-image">
+        ${renderCardImg(cfg.homeBanner, 'Banner promocional')}
+      </div>
       <div class="banner-cta">
         <h1>Jogue agora</h1>
         <p>Acesse o PokéIdle e comece sua jornada.</p>
@@ -908,11 +946,32 @@ function home() {
       </div>
     </section>
     <div class="wire-quick-grid">
-      ${quick.map(x => `<article class="section-card wire-quick"><h2>${x[0]}</h2><p>${x[1]}</p><div class="wire-image">Imagem</div><button class="secondary" data-go="${x[3]}">${x[2]}</button></article>`).join('')}
+      ${quick.map(x => `
+        <article class="section-card wire-quick">
+          <h2>${x[0]}</h2>
+          <p>${x[1]}</p>
+          <div class="wire-image">${renderCardImg(x[4], 'Imagem')}</div>
+          <button class="secondary" data-go="${x[3]}">${x[2]}</button>
+        </article>
+      `).join('')}
     </div>
     <div class="wire-bottom">
-      <article class="section-card wire-wide"><div><h2>Tier List <span class="badge new">Novo</span></h2><p>Crie tier lists dos seus Pokémon favoritos e compartilhe com amigos!</p><button class="secondary" data-go="tier">Criar agora</button></div><div class="wide-image">Imagem</div></article>
-      <article class="section-card wire-wide"><div><h2>Entre na comunidade</h2><p>Troque dicas, encontre players, negocie e fique por dentro de todas as novidades.</p><a href="https://discord.gg/cX3nYH9GXa" target="_blank" rel="noopener noreferrer" class="secondary" style="display:inline-flex;align-items:center;text-decoration:none;">Entrar no Discord</a></div><div class="wide-image">Imagem</div></article>
+      <article class="section-card wire-wide">
+        <div>
+          <h2>Tier List <span class="badge new">Novo</span></h2>
+          <p>Crie tier lists dos seus Pokémon favoritos e compartilhe com amigos!</p>
+          <button class="secondary" data-go="tier">Criar agora</button>
+        </div>
+        <div class="wide-image">${renderCardImg(cfg.cardTier, 'Imagem')}</div>
+      </article>
+      <article class="section-card wire-wide">
+        <div>
+          <h2>Entre na comunidade</h2>
+          <p>Troque dicas, encontre players, negocie e fique por dentro de todas as novidades.</p>
+          <a href="https://discord.gg/cX3nYH9GXa" target="_blank" rel="noopener noreferrer" class="secondary" style="display:inline-flex;align-items:center;text-decoration:none;">Entrar no Discord</a>
+        </div>
+        <div class="wide-image">${renderCardImg(cfg.cardDiscord, 'Imagem')}</div>
+      </article>
     </div>
   </section>`;
 }
@@ -1427,7 +1486,161 @@ function wiki() {
   return `<div class="wiki-layout"><aside class="wiki-rail"><strong>BUSCAR</strong><input placeholder="⌕ Buscar na wiki..."><strong>MECÂNICAS DO IDLE</strong><button class="active">Como funciona o Idle</button></aside><article class="article"><h1>Como funciona o Idle <span class="badge update">Mecânicas</span></h1><p>O PokéIdle gera progresso continuamente.</p></article></div>`;
 }
 function admin() {
-  return `<h1>Painel Administrativo</h1>`;
+  const cfg = getAdminConfig();
+
+  const slots = [
+    { key: 'homeBanner', title: 'Banner Principal da Home', desc: 'Imagem do banner no topo da Home (ex: Charizard)' },
+    { key: 'quickIniciante', title: 'Card Iniciante?', desc: 'Imagem promocional do card de guias iniciais' },
+    { key: 'quickShiny', title: 'Card Captura de Shiny', desc: 'Imagem promocional do card da Pokédex Shiny' },
+    { key: 'quickXp', title: 'Card Calculadora de XP', desc: 'Imagem promocional do card Calculadora de XP' },
+    { key: 'quickWiki', title: 'Card Wiki', desc: 'Imagem promocional do card da Wiki' },
+    { key: 'cardTier', title: 'Card Tier List', desc: 'Imagem promocional do card Tier List' },
+    { key: 'cardDiscord', title: 'Card Comunidade (Discord)', desc: 'Imagem promocional do card do Discord' }
+  ];
+
+  return `
+    <div class="split-top" style="align-items:center;">
+      <div>
+        <p class="eyebrow">Administração › Gerenciador de Mídia</p>
+        <h1 style="margin-top:2px;">Painel Administrativo de Imagens</h1>
+      </div>
+      <button class="primary" id="adm-btn-save" style="margin:0;padding:10px 22px;font-size:12px;">
+        💾 Salvar Alterações
+      </button>
+    </div>
+
+    <p class="note" style="margin-top:-6px;margin-bottom:24px;">
+      Altere os links das imagens ou faça upload de arquivos diretamente do seu computador. As alterações são aplicadas instantaneamente em todas as páginas do PokéIdle.
+    </p>
+
+    <div class="asset-grid" style="display:grid;grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px;">
+      ${slots.map(s => {
+        const val = cfg[s.key] || '';
+        return `
+          <div class="section-card asset" style="padding:16px;">
+            <b style="font-size:14px;color:#ebeef0;">${s.title}</b>
+            <small style="display:block;color:#858b95;margin:2px 0 12px;font-size:11px;">${s.desc}</small>
+            
+            <div class="asset-preview" style="height:150px;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #303641;border-radius:6px;background:#171a21;position:relative;">
+              <img class="adm-img-preview" data-key="${s.key}" src="${val}" style="width:100%;height:100%;object-fit:cover;object-position:center;${val ? '' : 'display:none;'}" alt="${s.title}">
+              <span style="color:#69707c;font-size:11px;font-weight:700;${val ? 'display:none;' : ''}">Sem Imagem Definida</span>
+            </div>
+
+            <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px;">
+              <input type="text" class="control adm-url-input" data-key="${s.key}" value="${val}" placeholder="URL da imagem ou caminho..." style="width:100%;">
+              
+              <input type="file" accept="image/*" class="adm-file-input" data-key="${s.key}" style="display:none;">
+              <div class="asset-actions" style="display:flex;gap:8px;">
+                <button class="secondary adm-btn-upload" data-key="${s.key}" style="flex:1;">📁 Upload de Imagem</button>
+                <button class="secondary danger adm-btn-reset" data-key="${s.key}" title="Restaurar imagem padrão">↺ Padrão</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
+}
+
+function showAdminToast(msg) {
+  let toast = document.getElementById('adm-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'adm-toast';
+    toast.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:9999;background:#22d656;color:#102818;font-weight:800;font-size:13px;padding:12px 20px;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.5);transition:all 0.2s ease;';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.style.display = 'block';
+  toast.style.opacity = '1';
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    setTimeout(() => { toast.style.display = 'none'; }, 200);
+  }, 2500);
+}
+
+function attachAdminListeners() {
+  const cfg = getAdminConfig();
+
+  document.querySelectorAll('.adm-file-input').forEach(input => {
+    input.addEventListener('change', (e) => {
+      const key = e.target.dataset.key;
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (evt) => {
+          const dataUrl = evt.target.result;
+          cfg[key] = dataUrl;
+          saveAdminConfig(cfg);
+          const textInput = document.querySelector(`.adm-url-input[data-key="${key}"]`);
+          if (textInput) textInput.value = dataUrl;
+          const imgPreview = document.querySelector(`.adm-img-preview[data-key="${key}"]`);
+          if (imgPreview) {
+            imgPreview.src = dataUrl;
+            imgPreview.style.display = 'block';
+            if (imgPreview.nextElementSibling) imgPreview.nextElementSibling.style.display = 'none';
+          }
+          showAdminToast('Imagem carregada com sucesso!');
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  });
+
+  document.querySelectorAll('.adm-btn-upload').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.key;
+      const fileInput = document.querySelector(`.adm-file-input[data-key="${key}"]`);
+      fileInput?.click();
+    });
+  });
+
+  document.querySelectorAll('.adm-url-input').forEach(input => {
+    input.addEventListener('input', (e) => {
+      const key = e.target.dataset.key;
+      const val = e.target.value.trim();
+      cfg[key] = val;
+      saveAdminConfig(cfg);
+      const imgPreview = document.querySelector(`.adm-img-preview[data-key="${key}"]`);
+      if (imgPreview) {
+        if (val) {
+          imgPreview.src = val;
+          imgPreview.style.display = 'block';
+          if (imgPreview.nextElementSibling) imgPreview.nextElementSibling.style.display = 'none';
+        } else {
+          imgPreview.style.display = 'none';
+          if (imgPreview.nextElementSibling) imgPreview.nextElementSibling.style.display = 'inline';
+        }
+      }
+    });
+  });
+
+  document.querySelectorAll('.adm-btn-reset').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.key;
+      cfg[key] = defaultAdminImages[key] || '';
+      saveAdminConfig(cfg);
+      const textInput = document.querySelector(`.adm-url-input[data-key="${key}"]`);
+      if (textInput) textInput.value = cfg[key];
+      const imgPreview = document.querySelector(`.adm-img-preview[data-key="${key}"]`);
+      if (imgPreview) {
+        if (cfg[key]) {
+          imgPreview.src = cfg[key];
+          imgPreview.style.display = 'block';
+          if (imgPreview.nextElementSibling) imgPreview.nextElementSibling.style.display = 'none';
+        } else {
+          imgPreview.style.display = 'none';
+          if (imgPreview.nextElementSibling) imgPreview.nextElementSibling.style.display = 'inline';
+        }
+      }
+      showAdminToast('Imagem restaurada para o padrão!');
+    });
+  });
+
+  document.getElementById('adm-btn-save')?.addEventListener('click', () => {
+    saveAdminConfig(cfg);
+    showAdminToast('✓ Todas as alterações foram salvas com sucesso!');
+  });
 }
 
 // ==========================================
@@ -1752,6 +1965,9 @@ function render() {
   }
   if (view === 'xp') {
     attachXpListeners();
+  }
+  if (view === 'admin') {
+    attachAdminListeners();
   }
   window.scrollTo(0, 0);
 }
