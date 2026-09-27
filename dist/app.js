@@ -912,7 +912,7 @@ function home() {
     </div>
     <div class="wire-bottom">
       <article class="section-card wire-wide"><div><h2>Tier List <span class="badge new">Novo</span></h2><p>Crie tier lists dos seus Pokémon favoritos e compartilhe com amigos!</p><button class="secondary" data-go="tier">Criar agora</button></div><div class="wide-image">Imagem</div></article>
-      <article class="section-card wire-wide"><div><h2>Entre na comunidade</h2><p>Troque dicas, encontre players, negocie e fique por dentro de todas as novidades.</p><button class="secondary">Entrar no Discord</button></div><div class="wide-image">Imagem</div></article>
+      <article class="section-card wire-wide"><div><h2>Entre na comunidade</h2><p>Troque dicas, encontre players, negocie e fique por dentro de todas as novidades.</p><a href="https://discord.gg/cX3nYH9GXa" target="_blank" rel="noopener noreferrer" class="secondary" style="display:inline-flex;align-items:center;text-decoration:none;">Entrar no Discord</a></div><div class="wide-image">Imagem</div></article>
     </div>
   </section>`;
 }

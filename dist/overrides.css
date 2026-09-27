@@ -26,7 +26,7 @@
 .wire-wide>div:first-child{max-width:72%}
 @media(max-width:760px){.home-banner{aspect-ratio:auto;min-height:235px}.wire-wide>div:first-child{max-width:100%}}
 
-.discord-cta{display:inline-flex;align-items:center;gap:9px;height:36px!important;border:0!important;border-radius:7px!important;padding:0 17px!important;background:#f2295e!important;color:#fff!important;font-size:12px!important;font-weight:700!important;box-shadow:none}.discord-cta svg{width:18px;height:18px;flex:none}.discord-cta:hover{background:#ff3c70!important}
+.discord-cta{display:inline-flex;align-items:center;gap:9px;height:36px!important;border:0!important;border-radius:7px!important;padding:0 17px!important;background:#f2295e!important;color:#fff!important;font-size:12px!important;font-weight:700!important;box-shadow:none;text-decoration:none!important}.discord-cta svg{width:18px;height:18px;flex:none}.discord-cta:hover{background:#ff3c70!important}
 
 .filter-search-icon{font-size:22px;line-height:0;font-weight:400}.control.dropdown{min-width:104px;justify-content:space-between}.control .caret{margin-left:8px;color:#a7adb7;font-size:15px}.data-panel{max-height:none!important;overflow-x:auto;overflow-y:visible!important}
 
