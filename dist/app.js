@@ -514,7 +514,7 @@ function renderTable(xpBoost, lootBoost) {
   const tbody = document.querySelector('.data-table tbody');
   if (!tbody) return;
 
-  const { filteredSpecies, currentTab, ball, captureBoost, shinyLure, hiddenCols = [] } = dexState;
+  const { filteredSpecies, currentTab, ball, captureBoost, shinyLure, itemDropFilter, hiddenCols = [] } = dexState;
   const isHidden = colKey => hiddenCols.includes(colKey) ? ' col-hidden' : '';
   const cell = (colKey, content, extraCls = '') => {
     const cls = (extraCls + ' ' + isHidden(colKey)).trim();
