@@ -438,6 +438,20 @@ function applyFiltersAndRender() {
       case 'spdef':  comp = (a.spdef_num || 0) - (b.spdef_num || 0); break;
       case 'hp':     comp = (a.hp_num || 0) - (b.hp_num || 0); break;
       case 'gold':   comp = (parseInt(a.ouro_por_derrota, 10) || 0) - (parseInt(b.ouro_por_derrota, 10) || 0); break;
+      case 'drops': {
+        const getDropPct = species => {
+          const drops = species.drops_parsed || [];
+          if (itemDropFilter) {
+            const found = drops.find(d => (d.name || d.nome || d.item) === itemDropFilter);
+            return found ? (found.pct || 0) : 0;
+          }
+          const rels = drops.filter(d => isRelevantDrop(d.name || d.nome || d.item));
+          if (!rels.length) return 0;
+          return Math.max(...rels.map(d => d.pct || 0));
+        };
+        comp = getDropPct(a) - getDropPct(b);
+        break;
+      }
       case 'bst':    comp = (a.bst_num || 0) - (b.bst_num || 0); break;
       case 'atk':    comp = (a.atk_num || 0) - (b.atk_num || 0); break;
       case 'spatk':  comp = (a.spatk_num || 0) - (b.spatk_num || 0); break;
@@ -552,7 +566,10 @@ function renderTable(xpBoost, lootBoost) {
 
     if (currentTab === 'loot') {
       const goldNum = parseInt(r.ouro_por_derrota, 10) || 0;
-      const relevantDrops = (r.drops_parsed || []).filter(d => isRelevantDrop(d.name || d.nome || d.item));
+      let relevantDrops = (r.drops_parsed || []).filter(d => isRelevantDrop(d.name || d.nome || d.item));
+      if (itemDropFilter) {
+        relevantDrops = relevantDrops.filter(d => (d.name || d.nome || d.item) === itemDropFilter);
+      }
       const dropsHtml = relevantDrops.length
         ? relevantDrops.map(d => {
             let pct = d.pct;
@@ -1181,6 +1198,13 @@ function attachDexListeners(mode) {
   });
   document.getElementById('filter-item-drop')?.addEventListener('change', e => {
     dexState.itemDropFilter = e.target.value;
+    if (e.target.value) {
+      dexState.sortCol = 'drops';
+      dexState.sortDir = 'desc';
+    } else {
+      dexState.sortCol = 'gold';
+      dexState.sortDir = 'desc';
+    }
     applyFiltersAndRender();
   });
   document.getElementById('dex-loot-boost')?.addEventListener('click', function() {
