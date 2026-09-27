@@ -904,7 +904,7 @@ function home() {
       <div class="banner-cta">
         <h1>Jogue agora</h1>
         <p>Acesse o PokéIdle e comece sua jornada.</p>
-        <button class="primary">Jogue agora</button>
+        <a href="https://pokeidle.io/?ref=befoin" target="_blank" rel="noopener noreferrer" class="primary" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none;">Jogue agora</a>
       </div>
     </section>
     <div class="wire-quick-grid">
