@@ -900,7 +900,7 @@ function home() {
   ];
   return `<section class="home-wire">
     <section class="section-card home-banner">
-      <div class="banner-image"><span>Imagem promocional do jogo</span></div>
+      <div class="banner-image"><img src="assets/banner-home.png" alt="Charizard PokéIdle Banner" style="width:100%;height:100%;object-fit:cover;object-position:center;border-radius:inherit;"></div>
       <div class="banner-cta">
         <h1>Jogue agora</h1>
         <p>Acesse o PokéIdle e comece sua jornada.</p>
