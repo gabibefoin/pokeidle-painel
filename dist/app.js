@@ -892,7 +892,9 @@ function pokedex(mode = 'shiny') {
 }
 
 const defaultAdminImages = {
-  homeBanner: '',
+  homeBanner1: '',
+  homeBanner2: '',
+  homeBanner3: '',
   quickIniciante: '',
   quickShiny: '',
   quickXp: '',
@@ -912,13 +914,53 @@ function getAdminConfig() {
 function saveAdminConfig(cfg) {
   try {
     localStorage.setItem('pokeidle_admin_images', JSON.stringify(cfg));
+    return true;
   } catch (e) {
-    console.error('Erro ao salvar imagens admin:', e);
+    console.error('Erro ao salvar imagens admin (Quota excedida):', e);
+    showAdminToast('⚠️ Imagem muito grande para o armazenamento do navegador!');
+    return false;
   }
+}
+
+function compressImage(file, callback) {
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const img = new Image();
+    img.onload = () => {
+      let w = img.width;
+      let h = img.height;
+      const maxDim = 1200;
+      if (w > maxDim || h > maxDim) {
+        if (w > h) {
+          h = Math.round((h * maxDim) / w);
+          w = maxDim;
+        } else {
+          w = Math.round((w * maxDim) / h);
+          h = maxDim;
+        }
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, w, h);
+      const compressed = canvas.toDataURL('image/webp', 0.82) || canvas.toDataURL('image/jpeg', 0.82);
+      callback(compressed);
+    };
+    img.onerror = () => callback(e.target.result);
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
 }
 
 function home() {
   const cfg = getAdminConfig();
+
+  const heroBanners = [
+    cfg.homeBanner1 || cfg.homeBanner,
+    cfg.homeBanner2,
+    cfg.homeBanner3
+  ].filter(Boolean);
 
   const quick = [
     ['Iniciante?', 'Veja nosso guia para entender tudo sobre o jogo.', 'Comece aqui', 'guides', cfg.quickIniciante],
@@ -934,10 +976,34 @@ function home() {
     return `<span>${fallbackText}</span>`;
   };
 
+  let heroHTML = '';
+  if (heroBanners.length === 0) {
+    heroHTML = `<span>Sem Imagem</span>`;
+  } else if (heroBanners.length === 1) {
+    heroHTML = `<img src="${heroBanners[0]}" alt="Banner Hero" style="width:100%;height:100%;object-fit:cover;object-position:center;border-radius:inherit;">`;
+  } else {
+    heroHTML = `
+      <div class="hero-carousel" style="position:relative;width:100%;height:100%;overflow:hidden;border-radius:inherit;">
+        <div class="hero-slides" style="position:relative;width:100%;height:100%;">
+          ${heroBanners.map((imgUrl, i) => `
+            <div class="hero-slide" data-slide-index="${i}" style="position:absolute;inset:0;opacity:${i === 0 ? 1 : 0};transition:opacity 0.7s ease-in-out;z-index:${i === 0 ? 2 : 1};">
+              <img src="${imgUrl}" alt="Hero Banner ${i + 1}" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+            </div>
+          `).join('')}
+        </div>
+        <div class="hero-dots" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10;">
+          ${heroBanners.map((_, i) => `
+            <button class="hero-dot ${i === 0 ? 'active' : ''}" data-index="${i}" style="width:10px;height:10px;border-radius:50%;border:0;background:${i === 0 ? '#f4af25' : 'rgba(255,255,255,0.4)'};cursor:pointer;padding:0;transition:all 0.2s ease;"></button>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+
   return `<section class="home-wire">
     <section class="section-card home-banner">
       <div class="banner-image">
-        ${renderCardImg(cfg.homeBanner, 'Banner promocional')}
+        ${heroHTML}
       </div>
       <div class="banner-cta">
         <h1>Jogue agora</h1>
@@ -974,6 +1040,48 @@ function home() {
       </article>
     </div>
   </section>`;
+}
+
+function attachHomeListeners() {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  if (slides.length <= 1) return;
+
+  let current = 0;
+  let interval = null;
+
+  function showSlide(idx) {
+    slides.forEach((s, i) => {
+      s.style.opacity = i === idx ? '1' : '0';
+      s.style.zIndex = i === idx ? '2' : '1';
+    });
+    dots.forEach((d, i) => {
+      d.style.background = i === idx ? '#f4af25' : 'rgba(255,255,255,0.4)';
+    });
+    current = idx;
+  }
+
+  function nextSlide() {
+    showSlide((current + 1) % slides.length);
+  }
+
+  dots.forEach(d => {
+    d.addEventListener('click', (e) => {
+      const idx = parseInt(e.target.dataset.index, 10);
+      showSlide(idx);
+      startAuto();
+    });
+  });
+
+  function startAuto() {
+    stopAuto();
+    interval = setInterval(nextSlide, 4500);
+  }
+  function stopAuto() {
+    if (interval) clearInterval(interval);
+  }
+
+  startAuto();
 }
 
 function tier() {
@@ -1489,7 +1597,9 @@ function admin() {
   const cfg = getAdminConfig();
 
   const slots = [
-    { key: 'homeBanner', title: 'Banner Principal da Home', desc: 'Imagem do banner no topo da Home (ex: Charizard)' },
+    { key: 'homeBanner1', title: 'Banner Hero 1 (Carrossel)', desc: 'Primeira imagem do banner principal da Home' },
+    { key: 'homeBanner2', title: 'Banner Hero 2 (Carrossel)', desc: 'Segunda imagem do banner principal da Home' },
+    { key: 'homeBanner3', title: 'Banner Hero 3 (Carrossel)', desc: 'Terceira imagem do banner principal da Home' },
     { key: 'quickIniciante', title: 'Card Iniciante?', desc: 'Imagem promocional do card de guias iniciais' },
     { key: 'quickShiny', title: 'Card Captura de Shiny', desc: 'Imagem promocional do card da Pokédex Shiny' },
     { key: 'quickXp', title: 'Card Calculadora de XP', desc: 'Imagem promocional do card Calculadora de XP' },
@@ -1510,7 +1620,7 @@ function admin() {
     </div>
 
     <p class="note" style="margin-top:-6px;margin-bottom:24px;">
-      Altere os links das imagens ou faça upload de arquivos diretamente do seu computador. As alterações são aplicadas instantaneamente em todas as páginas do PokéIdle.
+      Altere os links das imagens ou faça upload de arquivos diretamente do seu computador. O banner Hero aceita até 3 imagens em carrossel!
     </p>
 
     <div class="asset-grid" style="display:grid;grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px;">
@@ -1567,9 +1677,7 @@ function attachAdminListeners() {
       const key = e.target.dataset.key;
       const file = e.target.files[0];
       if (file) {
-        const reader = new FileReader();
-        reader.onload = (evt) => {
-          const dataUrl = evt.target.result;
+        compressImage(file, (dataUrl) => {
           cfg[key] = dataUrl;
           saveAdminConfig(cfg);
           const textInput = document.querySelector(`.adm-url-input[data-key="${key}"]`);
@@ -1580,9 +1688,8 @@ function attachAdminListeners() {
             imgPreview.style.display = 'block';
             if (imgPreview.nextElementSibling) imgPreview.nextElementSibling.style.display = 'none';
           }
-          showAdminToast('Imagem carregada com sucesso!');
-        };
-        reader.readAsDataURL(file);
+          showAdminToast('✓ Imagem otimizada e carregada!');
+        });
       }
     });
   });
@@ -1638,8 +1745,14 @@ function attachAdminListeners() {
   });
 
   document.getElementById('adm-btn-save')?.addEventListener('click', () => {
-    saveAdminConfig(cfg);
-    showAdminToast('✓ Todas as alterações foram salvas com sucesso!');
+    document.querySelectorAll('.adm-url-input').forEach(input => {
+      const key = input.dataset.key;
+      cfg[key] = input.value.trim();
+    });
+    const success = saveAdminConfig(cfg);
+    if (success) {
+      showAdminToast('✓ Todas as alterações foram salvas com sucesso!');
+    }
   });
 }
 
@@ -1960,6 +2073,9 @@ function render() {
   document.querySelectorAll('[data-route]').forEach(a => a.classList.toggle('active', a.dataset.route === view));
   document.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => location.hash = b.dataset.go));
 
+  if (view === 'home') {
+    attachHomeListeners();
+  }
   if (view === 'pokedex') {
     attachDexListeners(route[1] || 'shiny');
   }
