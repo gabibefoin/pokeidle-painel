@@ -9,15 +9,15 @@
 /* A Home usa a estrutura aprovada no wireframe; os acabamentos continuam do sistema Blitz. */
 .home-wire{max-width:1220px;margin:10px auto 0}.home-banner{display:grid;grid-template-columns:minmax(0,1fr) 260px;min-height:178px;padding:10px;gap:12px}.banner-image,.wire-image,.wide-image{display:grid;place-items:center;border:1px solid #303641;border-radius:5px;background:linear-gradient(135deg,#20242c,#171a21);color:#69707c;font-size:11px;font-weight:700;text-transform:uppercase}.banner-image{min-height:156px}.banner-image span{text-transform:none;font-size:13px}.banner-cta{display:flex;flex-direction:column;justify-content:center;padding:8px}.banner-cta h1{font-size:22px}.banner-cta p{margin-top:5px;color:var(--muted);font-size:12px}.banner-cta .primary{margin-top:18px}.wire-quick-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:12px}.wire-quick{display:flex;min-height:316px;flex-direction:column;padding:14px}.wire-quick h2{font-size:16px}.wire-quick p,.wire-wide p{margin-top:6px;color:var(--muted);font-size:12px;line-height:1.45}.wire-image{flex:1;min-height:132px;margin:12px 0}.wire-quick .secondary{width:100%;margin-top:auto}.wire-bottom{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.wire-wide{display:flex;justify-content:space-between;gap:20px;min-height:135px;padding:16px}.wire-wide h2{font-size:16px}.wire-wide .badge{margin-left:6px;vertical-align:2px}.wire-wide .secondary{margin-top:14px}.wide-image{width:155px;min-height:100px}@media(max-width:760px){.home-banner{grid-template-columns:1fr}.banner-cta{padding:8px 4px}.wire-quick-grid{grid-template-columns:repeat(2,1fr)}.wire-bottom{grid-template-columns:1fr}.banner-image{min-height:120px}}@media(max-width:460px){.wire-quick-grid{grid-template-columns:1fr}.wire-wide{flex-direction:column}.wide-image{width:100%;min-height:92px}}
 
-/* Banner desktop 1600 × 400: relação 4:1, com CTA sobre a imagem. */
-.home-banner{position:relative;display:block;min-height:0;aspect-ratio:4 / 1;overflow:hidden;padding:10px}
+/* Banner desktop 3200 × 700: relação 32:7, com CTA sobre a imagem. */
+.home-banner{position:relative;display:block;min-height:0;aspect-ratio:32 / 7;overflow:hidden;padding:10px}
 .banner-image{position:absolute;inset:10px;min-height:0;overflow:hidden;border-radius:6px}.banner-image span{display:none!important}
 .banner-cta{position:absolute;top:50%;right:26px;width:270px;min-height:150px;transform:translateY(-50%);border:1px solid #383e49;border-radius:8px;padding:18px;background:rgba(21,24,30,.95);box-shadow:0 4px 34px rgba(7,9,14,.75)}
 .banner-cta .primary{width:100%}
 @media(max-width:760px){.home-banner{aspect-ratio:auto;min-height:275px}.banner-image{inset:10px}.banner-cta{right:20px;bottom:20px;left:20px;top:auto;width:auto;min-height:0;transform:none}}
 
 /* Imagem como base: textos e ações ficam sobrepostos em todos os cards da Home. */
-.home-banner{aspect-ratio:16 / 3}
+.home-banner{aspect-ratio:32 / 7}
 .wire-quick,.wire-wide{position:relative;isolation:isolate;overflow:hidden;background:#171a21}
 .wire-quick .wire-image,.wire-wide .wide-image{position:absolute;inset:0;z-index:-2;width:auto;height:auto;min-height:0;margin:0;border:0;border-radius:0}
 .wire-quick:after,.wire-wide:after{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(21,24,30,.96) 0%,rgba(21,24,30,.78) 56%,rgba(21,24,30,.42) 100%);content:""}
