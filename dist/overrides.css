@@ -11,7 +11,7 @@
 
 /* Banner desktop 1600 × 400: relação 4:1, com CTA sobre a imagem. */
 .home-banner{position:relative;display:block;min-height:0;aspect-ratio:4 / 1;overflow:hidden;padding:10px}
-.banner-image{position:absolute;inset:10px;min-height:0;overflow:hidden;border-radius:6px;background-image:url('assets/banner-home.png')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}.banner-image span{display:none!important}
+.banner-image{position:absolute;inset:10px;min-height:0;overflow:hidden;border-radius:6px}.banner-image span{display:none!important}
 .banner-cta{position:absolute;top:50%;right:26px;width:270px;min-height:150px;transform:translateY(-50%);border:1px solid #383e49;border-radius:8px;padding:18px;background:rgba(21,24,30,.95);box-shadow:0 4px 34px rgba(7,9,14,.75)}
 .banner-cta .primary{width:100%}
 @media(max-width:760px){.home-banner{aspect-ratio:auto;min-height:275px}.banner-image{inset:10px}.banner-cta{right:20px;bottom:20px;left:20px;top:auto;width:auto;min-height:0;transform:none}}
