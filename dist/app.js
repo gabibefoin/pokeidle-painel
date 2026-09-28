@@ -892,7 +892,7 @@ function pokedex(mode = 'shiny') {
 }
 
 const defaultAdminImages = {
-  homeBanner: 'assets/banner-home.png',
+  homeBanner: '',
   quickIniciante: '',
   quickShiny: '',
   quickXp: '',
