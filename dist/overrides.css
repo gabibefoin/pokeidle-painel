@@ -96,4 +96,94 @@ select option {
   background: #434b5c;
 }
 
+/* Layout boundaries & overflow safety */
+.xp-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr) !important;
+  gap: 14px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.xp-layout > div {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.form-card, .data-panel {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Autocomplete Popover */
+.xp-search-wrap {
+  position: relative !important;
+  width: 100% !important;
+}
+
+.xp-autocomplete-popover {
+  position: absolute !important;
+  top: calc(100% + 4px) !important;
+  left: 0 !important;
+  right: 0 !important;
+  max-height: 240px !important;
+  overflow-y: auto !important;
+  background: #181b22 !important;
+  border: 1px solid #343a47 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75) !important;
+  z-index: 1000 !important;
+}
+
+.xp-auto-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 9px 12px !important;
+  border-bottom: 1px solid #232731 !important;
+  color: #ebeef0 !important;
+  font-size: 12px !important;
+  cursor: pointer !important;
+  transition: background 0.1s ease !important;
+}
+
+.xp-auto-item:last-child {
+  border-bottom: 0 !important;
+}
+
+.xp-auto-item:hover, .xp-auto-item.active {
+  background: #232833 !important;
+}
+
+.xp-auto-item b {
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+.xp-auto-item .auto-tag {
+  margin-left: auto !important;
+  background: #282d38 !important;
+  color: #7984f4 !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+}
+
+.xp-auto-item .auto-xp {
+  color: #f4af25 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+}
+
+.xp-auto-item.empty {
+  color: #858b95 !important;
+  font-size: 12px !important;
+  justify-content: center !important;
+  cursor: default !important;
+}
+
+
 

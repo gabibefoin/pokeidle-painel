@@ -1059,6 +1059,7 @@ function xpCustoNivel(level) {
 
 const xpState = {
   strategy: 'optimized', // 'optimized' | 'fixed'
+  regionFilter: 'all',
   searchQuery: '',
   selectedDex: '303', // Default Mawile
   lvlFrom: 500,
@@ -1083,8 +1084,14 @@ function getXpSpeciesList() {
 function getFilteredXpSpecies() {
   const species = getXpSpeciesList();
   const q = (xpState.searchQuery || '').trim().toLowerCase();
-  if (!q) return species;
+  const reg = (xpState.regionFilter || 'all').toLowerCase();
+
   return species.filter(p => {
+    if (reg !== 'all') {
+      const pReg = (p.regiao || '').toLowerCase();
+      if (!pReg.includes(reg)) return false;
+    }
+    if (!q) return true;
     const nameMatch = (p.nome || '').toLowerCase().includes(q);
     const regMatch = (p.regiao || '').toLowerCase().includes(q);
     const dexMatch = String(p.dex || '').includes(q);
@@ -1125,7 +1132,7 @@ function calcXpState() {
     : Math.max(1, Number(xpState.speedPreset) || 980);
 
   let mult = 1.0;
-  if (xpState.vip) mult += 0.20;
+  if (xpState.vip) mult += 0.50;
   if (xpState.xpBoost) mult += 0.50;
   mult += (Number(xpState.guild) || 0) / 100;
   mult += (Number(xpState.event) || 0) / 100;
@@ -1338,14 +1345,45 @@ function xp() {
             </span>
             <span class="xp-hunt-count" id="xp-hunt-count-badge">${filteredSpecies.length} Hunts</span>
           </div>
-          <div style="margin-bottom:6px">
-            <input class="control search-field" id="xp-search-hunt" placeholder="⌕ Pesquisar hunt (ex: mawil)..." value="${xpState.searchQuery}" style="width:100%;">
+
+          <div style="margin-top:6px; margin-bottom:8px;">
+            <div class="field">
+              <label>Região da Hunt</label>
+              <select id="xp-select-region" class="control select-control" style="width:100%;">
+                <option value="all" ${xpState.regionFilter === 'all' ? 'selected' : ''}>Todas as Regiões</option>
+                <option value="kanto" ${xpState.regionFilter === 'kanto' ? 'selected' : ''}>Kanto</option>
+                <option value="johto" ${xpState.regionFilter === 'johto' ? 'selected' : ''}>Johto</option>
+                <option value="hoenn" ${xpState.regionFilter === 'hoenn' ? 'selected' : ''}>Hoenn</option>
+                <option value="sinnoh" ${xpState.regionFilter === 'sinnoh' ? 'selected' : ''}>Sinnoh</option>
+                <option value="unova" ${xpState.regionFilter === 'unova' ? 'selected' : ''}>Unova</option>
+                <option value="kalos" ${xpState.regionFilter === 'kalos' ? 'selected' : ''}>Kalos</option>
+                <option value="alola" ${xpState.regionFilter === 'alola' ? 'selected' : ''}>Alola</option>
+                <option value="galar" ${xpState.regionFilter === 'galar' ? 'selected' : ''}>Galar</option>
+                <option value="paldea" ${xpState.regionFilter === 'paldea' ? 'selected' : ''}>Paldea</option>
+              </select>
+            </div>
           </div>
-          <div class="xp-hunt-row">
-            <select id="xp-select-hunt" class="control select-control" style="flex:1;">
-              ${optionsHtml}
-            </select>
-            <button id="xp-btn-pokedex" class="secondary" title="Ver tabela na Pokédex">📋 Tabela</button>
+
+          <div class="xp-search-wrap" style="position:relative; width:100%; margin-bottom:10px;">
+            <label style="display:block;margin-bottom:5px;color:#9298a2;font-size:9px;font-weight:800;text-transform:uppercase;">Pesquisar Hunt / Autocomplete</label>
+            <input class="control search-field" id="xp-search-hunt" placeholder="⌕ Digite o nome da hunt ou Pokémon..." value="${selectedSpecies ? selectedSpecies.nome : xpState.searchQuery}" style="width:100%; box-sizing:border-box;">
+            
+            <div id="xp-autocomplete-list" class="xp-autocomplete-popover" style="display:none;"></div>
+          </div>
+
+          <div id="xp-selected-hunt-card" class="selected-hunt-card" style="margin-bottom:14px;">
+            ${selectedSpecies ? `
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; background:#181b22; border:1px solid #323844; border-radius:8px; padding:10px 12px; min-width:0;">
+                <div style="min-width:0; flex:1;">
+                  <span style="display:block; font-size:9px; font-weight:800; color:#7984f4; text-transform:uppercase;">Hunt Selecionada</span>
+                  <b style="font-size:13px; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; display:block;">
+                    [Nv ${selectedSpecies.hunt_lvl_min ?? selectedSpecies.nivel_hunt_min ?? 1}] ${selectedSpecies.nome} (${selectedSpecies.regiao || 'Kanto'})
+                  </b>
+                  <small style="color:#a5a9b2; font-size:11px;">Base XP: ${selectedSpecies.xp_base || 0}</small>
+                </div>
+                <button id="xp-btn-pokedex" class="secondary" title="Ver na Pokédex" style="flex:none; padding:6px 10px; font-size:11px;">📋 Tabela</button>
+              </div>
+            ` : ''}
           </div>
 
           <h3 style="margin-top:14px;margin-bottom:8px">VELOCIDADE DE COMBATE / CADÊNCIA DE ABATE</h3>
@@ -1371,7 +1409,7 @@ function xp() {
           <h3 style="margin-top:14px;margin-bottom:8px">BÔNUS & MULTIPLICADORES ATIVOS</h3>
           <div class="toggle-line">
             <label style="cursor:pointer;display:flex;align-items:center;gap:8px;">
-              <input type="checkbox" id="xp-ck-vip" ${xpState.vip ? 'checked' : ''}> Assinatura VIP (+20% XP)
+              <input type="checkbox" id="xp-ck-vip" ${xpState.vip ? 'checked' : ''}> Assinatura VIP (+50% XP)
             </label>
           </div>
           <div class="toggle-line">
@@ -1478,32 +1516,69 @@ function attachXpListeners() {
     softRecalc();
   });
 
-  const searchInput = document.getElementById('xp-search-hunt');
-  if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-      xpState.searchQuery = e.target.value;
-      const filteredSpecies = getFilteredXpSpecies();
-      const badge = document.getElementById('xp-hunt-count-badge');
-      if (badge) badge.textContent = `${filteredSpecies.length} Hunts`;
+  // Filtro de Região
+  document.getElementById('xp-select-region')?.addEventListener('change', (e) => {
+    xpState.regionFilter = e.target.value;
+    const filtered = getFilteredXpSpecies();
+    if (filtered.length > 0 && !filtered.some(p => String(p.dex) === String(xpState.selectedDex))) {
+      xpState.selectedDex = String(filtered[0].dex);
+    }
+    updateUI();
+  });
 
-      const select = document.getElementById('xp-select-hunt');
-      if (select) {
-        if (filteredSpecies.length > 0 && !filteredSpecies.some(p => String(p.dex) === String(xpState.selectedDex))) {
-          xpState.selectedDex = String(filteredSpecies[0].dex);
-        }
-        select.innerHTML = filteredSpecies.map(p => {
-          const minLvl = p.hunt_lvl_min ?? p.nivel_hunt_min ?? 1;
-          const label = `[Nv ${minLvl}] ${p.nome} (${p.regiao || 'Kanto'}) — ${p.xp_base || 0} Base XP`;
-          return `<option value="${p.dex}" ${String(p.dex) === String(xpState.selectedDex) ? 'selected' : ''}>${label}</option>`;
-        }).join('');
-      }
-      softRecalc();
+  // Autocomplete e Busca de Hunt
+  const searchInput = document.getElementById('xp-search-hunt');
+  const autoList = document.getElementById('xp-autocomplete-list');
+
+  const renderAutocomplete = (query) => {
+    xpState.searchQuery = query;
+    const filtered = getFilteredXpSpecies();
+    const badge = document.getElementById('xp-hunt-count-badge');
+    if (badge) badge.textContent = `${filtered.length} Hunts`;
+
+    if (!autoList) return;
+    if (filtered.length === 0) {
+      autoList.innerHTML = `<div class="xp-auto-item empty">Nenhuma hunt encontrada</div>`;
+    } else {
+      autoList.innerHTML = filtered.slice(0, 35).map(p => {
+        const minLvl = p.hunt_lvl_min ?? p.nivel_hunt_min ?? 1;
+        return `
+          <div class="xp-auto-item" data-dex="${p.dex}" data-nome="${p.nome}">
+            <b>[Nv ${minLvl}] ${p.nome}</b>
+            <span class="auto-tag">${p.regiao || 'Kanto'}</span>
+            <span class="auto-xp">${p.xp_base || 0} XP</span>
+          </div>
+        `;
+      }).join('');
+    }
+    autoList.style.display = 'block';
+  };
+
+  if (searchInput) {
+    searchInput.addEventListener('focus', () => {
+      renderAutocomplete(searchInput.value);
+    });
+    searchInput.addEventListener('input', (e) => {
+      renderAutocomplete(e.target.value);
     });
   }
 
-  document.getElementById('xp-select-hunt')?.addEventListener('change', (e) => {
-    xpState.selectedDex = e.target.value;
-    softRecalc();
+  if (autoList) {
+    autoList.addEventListener('click', (e) => {
+      const item = e.target.closest('.xp-auto-item');
+      if (item && item.dataset.dex) {
+        xpState.selectedDex = item.dataset.dex;
+        if (searchInput) searchInput.value = item.dataset.nome || '';
+        autoList.style.display = 'none';
+        updateUI();
+      }
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.xp-search-wrap') && autoList) {
+      autoList.style.display = 'none';
+    }
   });
 
   document.getElementById('xp-btn-pokedex')?.addEventListener('click', () => {
