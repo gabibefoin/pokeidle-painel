@@ -1,9 +1,0 @@
-Barlow e Cinzel — SIL Open Font License 1.1.
-
-Baixadas do Google Fonts por tools/fetch-chat-fonts.mjs (subsets latin e latin-ext).
-Licença completa: https://openfontlicense.org
-Barlow  © Jeremy Tribby     — https://fonts.google.com/specimen/Barlow
-Cinzel  © Natanael Gama     — https://fonts.google.com/specimen/Cinzel
-
-Rode o script de novo para atualizar; os @font-face saem no console prontos para colar
-em estilo.css.

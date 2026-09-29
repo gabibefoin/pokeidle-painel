@@ -1342,7 +1342,7 @@ function xp() {
             <input class="control search-field" id="xp-search-hunt" placeholder="⌕ Pesquisar hunt (ex: mawil)..." value="${xpState.searchQuery}" style="width:100%;">
           </div>
           <div class="xp-hunt-row">
-            <select id="xp-select-hunt" class="field">
+            <select id="xp-select-hunt" class="control select-control" style="flex:1;">
               ${optionsHtml}
             </select>
             <button id="xp-btn-pokedex" class="secondary" title="Ver tabela na Pokédex">📋 Tabela</button>
@@ -1478,10 +1478,28 @@ function attachXpListeners() {
     softRecalc();
   });
 
-  document.getElementById('xp-search-hunt')?.addEventListener('input', (e) => {
-    xpState.searchQuery = e.target.value;
-    updateUI();
-  });
+  const searchInput = document.getElementById('xp-search-hunt');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      xpState.searchQuery = e.target.value;
+      const filteredSpecies = getFilteredXpSpecies();
+      const badge = document.getElementById('xp-hunt-count-badge');
+      if (badge) badge.textContent = `${filteredSpecies.length} Hunts`;
+
+      const select = document.getElementById('xp-select-hunt');
+      if (select) {
+        if (filteredSpecies.length > 0 && !filteredSpecies.some(p => String(p.dex) === String(xpState.selectedDex))) {
+          xpState.selectedDex = String(filteredSpecies[0].dex);
+        }
+        select.innerHTML = filteredSpecies.map(p => {
+          const minLvl = p.hunt_lvl_min ?? p.nivel_hunt_min ?? 1;
+          const label = `[Nv ${minLvl}] ${p.nome} (${p.regiao || 'Kanto'}) — ${p.xp_base || 0} Base XP`;
+          return `<option value="${p.dex}" ${String(p.dex) === String(xpState.selectedDex) ? 'selected' : ''}>${label}</option>`;
+        }).join('');
+      }
+      softRecalc();
+    });
+  }
 
   document.getElementById('xp-select-hunt')?.addEventListener('change', (e) => {
     xpState.selectedDex = e.target.value;

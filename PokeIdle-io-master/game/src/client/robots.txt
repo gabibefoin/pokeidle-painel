@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /admin
-Disallow: /auth/
-Disallow: /webhooks/
-Disallow: /tracker/api/
-
-Sitemap: https://pokeidle.io/sitemap.xml
