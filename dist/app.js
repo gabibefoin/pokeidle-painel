@@ -1295,13 +1295,8 @@ function calcXpState() {
 function xp() {
   const filteredSpecies = getFilteredXpSpecies();
   const res = calcXpState();
-
-  const optionsHtml = filteredSpecies.map(p => {
-    const hLvl = p.hunt_lvl_min ?? p.nivel_hunt_min ?? 1;
-    const baseXp = p.xp_base ? `${p.xp_base.toLocaleString('pt-BR')} Base XP` : '';
-    const sel = String(p.dex) === String(xpState.selectedDex) ? 'selected' : '';
-    return `<option value="${p.dex}" ${sel}>[Nv ${hLvl}] ${p.nome} (${p.regiao || 'Kanto'}) ${baseXp ? '— ' + baseXp : ''}</option>`;
-  }).join('');
+  const allSpecies = getXpSpeciesList();
+  const selectedSpecies = allSpecies.find(s => String(s.dex) === String(xpState.selectedDex)) || filteredSpecies[0] || null;
 
   const isCustomSpeed = xpState.speedPreset === 'custom';
 
