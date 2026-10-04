@@ -2076,13 +2076,54 @@ function attachDexListeners(mode) {
 }
 
 // ==========================================
-// ROTEAMENTO
+// ROTEAMENTO & MODO DEV / MVP PRODUÇÃO
 // ==========================================
 const views = { home, pokedex, tier, xp, guides, wiki, admin };
 
+function isDevEnvironment() {
+  return location.search.includes('dev=true') || 
+         location.hash.includes('dev') || 
+         location.hostname.includes('localhost') || 
+         location.hostname.includes('127.0.0.1') || 
+         location.hostname.includes('-git-dev-');
+}
+
+function updateNavigation(isDev) {
+  const nav = document.querySelector('.product-nav');
+  if (!nav) return;
+  if (isDev) {
+    nav.innerHTML = `
+      <a href="#home" data-route="home">Home</a>
+      <a href="#pokedex" data-route="pokedex">Pokédex</a>
+      <a href="#tier" data-route="tier">Tier List</a>
+      <a href="#xp" data-route="xp">Calculadora de XP</a>
+      <a href="#guides" data-route="guides">Guias</a>
+      <a href="#wiki" data-route="wiki">Wiki</a>
+      <a href="#admin" data-route="admin">Admin</a>
+    `;
+  } else {
+    nav.innerHTML = `
+      <a href="#pokedex" data-route="pokedex">Pokédex</a>
+      <a href="#xp" data-route="xp">Calculadora de XP</a>
+    `;
+  }
+}
+
 function render() {
-  const route = (location.hash.slice(1) || 'home').split('/');
-  const view = views[route[0]] ? route[0] : 'home';
+  const isDev = isDevEnvironment();
+  updateNavigation(isDev);
+
+  const rawRoute = location.hash.slice(1) || '';
+  const route = rawRoute.split('/');
+  let requestedView = route[0];
+
+  // Em produção (MVP), apenas 'pokedex' e 'xp' ficam visíveis. Demais caem em 'pokedex'.
+  let view = requestedView;
+  if (!isDev && view !== 'xp' && view !== 'pokedex') {
+    view = 'pokedex';
+  } else if (!views[view]) {
+    view = isDev ? 'home' : 'pokedex';
+  }
 
   if ((view === 'pokedex' || view === 'xp') && dexState.allSpecies.length === 0) {
     loadPokemonData().then(() => render());
